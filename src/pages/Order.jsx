@@ -8,6 +8,7 @@ const Order = () => {
         window.scrollTo(0, 0);
     }, []);
 
+    const [selectedOption, setSelectedOption] = useState(1);
     const [formData, setFormData] = useState({
         name: '',
         phone: '',
@@ -15,6 +16,33 @@ const Order = () => {
         city: '',
         address: ''
     });
+
+    const options = [
+        {
+            id: 1,
+            title: "THE STARTER PACK",
+            description: "1 Full 300g Box (5 Individual Packs)",
+            price: 189,
+            saving: "SAVE 0%",
+            badge: "POPULAR"
+        },
+        {
+            id: 2,
+            title: "THE REBEL BUNDLE",
+            description: "2 Full 300g Boxes (600g Total)",
+            price: 290,
+            saving: "SAVE ₹88",
+            badge: "BEST VALUE"
+        },
+        {
+            id: 3,
+            title: "THE MYSTERY COMBO",
+            description: "1 Box 300g Pohafix + 1 Secret Sev (150g)",
+            price: 290,
+            saving: "LIMITED",
+            badge: "TASTE TEST"
+        }
+    ];
 
     const handleInputChange = (e) => {
         const { name, value } = e.target;
@@ -29,6 +57,11 @@ const Order = () => {
             return;
         }
 
+        if (typeof window.Razorpay === 'undefined') {
+            alert('Razorpay is still loading... Please wait a few seconds and try again.');
+            return;
+        }
+
         const currentPack = options.find(o => o.id === selectedOption);
         
         const options_rzp = {
@@ -40,7 +73,6 @@ const Order = () => {
             image: "/logo.png",
             handler: function (response) {
                 alert(`SUCCESS! Payment ID: ${response.razorpay_payment_id}. Your PohaFix is starting its journey.`);
-                // In a real production environment, you would call your backend to verify the signature here.
             },
             prefill: {
                 name: formData.name,
