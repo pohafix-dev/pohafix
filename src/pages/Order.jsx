@@ -8,34 +8,56 @@ const Order = () => {
         window.scrollTo(0, 0);
     }, []);
 
-    const [selectedOption, setSelectedOption] = useState(1);
+    const [formData, setFormData] = useState({
+        name: '',
+        phone: '',
+        pincode: '',
+        city: '',
+        address: ''
+    });
 
-    const options = [
-        {
-            id: 1,
-            title: "THE STARTER PACK",
-            description: "1 Full 300g Box (5 Individual Packs)",
-            price: 189,
-            saving: "SAVE 0%",
-            badge: "POPULAR"
-        },
-        {
-            id: 2,
-            title: "THE REBEL BUNDLE",
-            description: "2 Full 300g Boxes (600g Total)",
-            price: 290,
-            saving: "SAVE ₹88",
-            badge: "BEST VALUE"
-        },
-        {
-            id: 3,
-            title: "THE MYSTERY COMBO",
-            description: "1 Box 300g Pohafix + 1 Secret Sev (150g)",
-            price: 290,
-            saving: "LIMITED",
-            badge: "TASTE TEST"
+    const handleInputChange = (e) => {
+        const { name, value } = e.target;
+        setFormData(prev => ({ ...prev, [name]: value }));
+    };
+
+    const handlePayment = () => {
+        const { name, phone, address, city, pincode } = formData;
+        
+        if (!name || !phone || !address || !city || !pincode) {
+            alert('Please fill out all shipping details first, rebel!');
+            return;
         }
-    ];
+
+        const currentPack = options.find(o => o.id === selectedOption);
+        
+        const options_rzp = {
+            key: "rzp_live_ScdhUpGns0TDZA", // Your Live Key ID
+            amount: currentPack.price * 100, // Amount in paise
+            currency: "INR",
+            name: "PohaFix | Synnc Foods",
+            description: `Order for ${currentPack.title}`,
+            image: "/logo.png",
+            handler: function (response) {
+                alert(`SUCCESS! Payment ID: ${response.razorpay_payment_id}. Your PohaFix is starting its journey.`);
+                // In a real production environment, you would call your backend to verify the signature here.
+            },
+            prefill: {
+                name: formData.name,
+                contact: formData.phone
+            },
+            notes: {
+                address: `${formData.address}, ${formData.city} - ${formData.pincode}`,
+                pack: currentPack.title
+            },
+            theme: {
+                color: "#ffd16c" // PohaFix Primary Yellow
+            }
+        };
+
+        const rzp = new window.Razorpay(options_rzp);
+        rzp.open();
+    };
 
     return (
         <div className="bg-background text-on-background min-h-screen font-body selection:bg-primary selection:text-black overflow-x-hidden">
@@ -79,7 +101,10 @@ const Order = () => {
                     {/* Welcome / Urgency */}
                     <div className="bg-primary p-6 md:p-8 border-4 md:border-8 border-black shadow-[8px_8px_0px_0px_#e53935] md:shadow-[12px_12px_0px_0px_#e53935]">
                         <h1 className="font-headline text-4xl md:text-5xl font-black text-black uppercase leading-[0.9] tracking-tighter mb-4 text-left">CHOOSE YOUR VICTORY.</h1>
-                        <p className="text-black/80 font-bold uppercase tracking-widest text-xs md:text-sm text-left">FREE DELIVERY APPLIED AUTOMATICALLY</p>
+                        <div className="flex flex-wrap gap-4">
+                            <p className="text-black/80 font-bold uppercase tracking-widest text-xs md:text-sm text-left">FREE DELIVERY APPLIED AUTOMATICALLY</p>
+                            <span className="bg-black text-white px-3 py-1 text-[10px] items-center flex gap-1 font-black uppercase tracking-tighter leading-none italic"><span className="material-symbols-outlined text-xs">shield_check</span> SECURE FULL PAY</span>
+                        </div>
                     </div>
 
                     {/* Options Grid */}
@@ -109,19 +134,20 @@ const Order = () => {
                         ))}
                     </div>
 
-                    {/* Shipping Form Placeholder */}
+                    {/* Shipping Form */}
                     <div className="bg-black border-2 md:border-4 border-white/10 p-6 md:p-10 space-y-6 md:space-y-8">
                         <h2 className="font-headline text-2xl md:text-3xl font-black uppercase text-white border-b-2 md:border-b-4 border-primary inline-block pb-2">WHERE DO WE SEND IT?</h2>
                         <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6">
-                            <input type="text" placeholder="FULL NAME" className="bg-surface-container p-4 border-2 md:border-4 border-black outline-none focus:border-primary font-black uppercase placeholder:text-black/30 text-sm md:text-base" />
-                            <input type="text" placeholder="PHONE NUMBER" className="bg-surface-container p-4 border-2 md:border-4 border-black outline-none focus:border-primary font-black uppercase placeholder:text-black/30 text-sm md:text-base" />
-                            <input type="text" placeholder="PINCODE" className="bg-surface-container p-4 border-2 md:border-4 border-black outline-none focus:border-primary font-black uppercase placeholder:text-black/30 text-sm md:text-base" />
-                            <input type="text" placeholder="CITY" className="bg-surface-container p-4 border-2 md:border-4 border-black outline-none focus:border-primary font-black uppercase placeholder:text-black/30 text-sm md:text-base" />
-                            <textarea placeholder="FULL ADDRESS" className="md:col-span-2 bg-surface-container p-4 border-2 md:border-4 border-black outline-none focus:border-primary font-black uppercase placeholder:text-black/30 h-24 md:h-32 text-sm md:text-base"></textarea>
+                            <input name="name" value={formData.name} onChange={handleInputChange} type="text" placeholder="FULL NAME" className="bg-surface-container p-4 border-2 md:border-4 border-black outline-none focus:border-primary font-black uppercase placeholder:text-black/30 text-sm md:text-base text-white" />
+                            <input name="phone" value={formData.phone} onChange={handleInputChange} type="text" placeholder="PHONE NUMBER" className="bg-surface-container p-4 border-2 md:border-4 border-black outline-none focus:border-primary font-black uppercase placeholder:text-black/30 text-sm md:text-base text-white" />
+                            <input name="pincode" value={formData.pincode} onChange={handleInputChange} type="text" placeholder="PINCODE" className="bg-surface-container p-4 border-2 md:border-4 border-black outline-none focus:border-primary font-black uppercase placeholder:text-black/30 text-sm md:text-base text-white" />
+                            <input name="city" value={formData.city} onChange={handleInputChange} type="text" placeholder="CITY" className="bg-surface-container p-4 border-2 md:border-4 border-black outline-none focus:border-primary font-black uppercase placeholder:text-black/30 text-sm md:text-base text-white" />
+                            <textarea name="address" value={formData.address} onChange={handleInputChange} placeholder="FULL ADDRESS" className="md:col-span-2 bg-surface-container p-4 border-2 md:border-4 border-black outline-none focus:border-primary font-black uppercase placeholder:text-black/30 h-24 md:h-32 text-sm md:text-base text-white"></textarea>
                         </div>
-                        <button className="w-full bg-secondary text-black font-black text-2xl md:text-4xl py-6 md:py-8 border-4 md:border-8 border-black shadow-[8px_8px_0px_0px_#ffd16c] md:shadow-[12px_12px_0px_0px_#ffd16c] hover:translate-y-2 hover:translate-x-2 hover:shadow-none transition-all uppercase font-headline">
+                        <button onClick={handlePayment} className="w-full bg-secondary text-black font-black text-2xl md:text-4xl py-6 md:py-8 border-4 md:border-8 border-black shadow-[8px_8px_0px_0px_#ffd16c] md:shadow-[12px_12px_0px_0px_#ffd16c] hover:translate-y-2 hover:translate-x-2 hover:shadow-none transition-all uppercase font-headline">
                             FINISH ORDER & PAY
                         </button>
+                        <p className="text-white/20 text-[10px] md:text-xs font-black uppercase text-center tracking-widest italic leading-none pt-4">FULL PAYMENT ONLY. NO CASH ON DELIVERY. SECURE CHECKOUT VIA RAZORPAY LIVE.</p>
                     </div>
                 </div>
 
