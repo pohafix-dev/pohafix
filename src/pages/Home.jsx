@@ -18,7 +18,7 @@ const Home = () => {
             price: 189,
             tag: "POPULAR",
             tagColor: "bg-[#716016]",
-            images: ["/box-front.png"],
+            images: ["/combo-single.png"],
             theme: "light"
         },
         {
@@ -28,7 +28,7 @@ const Home = () => {
             originalPrice: 378,
             tag: "SAVE ₹88",
             tagColor: "bg-[#af101a]",
-            images: ["/box-front.png", "/box-front.png"],
+            images: ["/combo-2box.png"],
             theme: "dark"
         },
         {
@@ -37,7 +37,7 @@ const Home = () => {
             price: 290,
             tag: "LIMITED",
             tagColor: "bg-[#716016]",
-            images: ["/box-front.png", "https://lh3.googleusercontent.com/aida-public/AB6AXuA7pqw5METmPpb2qUhurAxbPyusnsGFgl59MD7GR_eOrGpL7fP8DJjIvHu-j7aqITinhuuIkzd6f3hMtUZPxY6wE9SnjDe2WsffkD9iB6IJzrqRaBwpMLOoBMmZFDnQlY0iZ6ocEziBns7ECuuiEUbxX5cj9W_yychyozV4pqUDYwdkVIST_qQ8AYJLvcCyh7cY5VE8CCdQo4MjTF4MdH5zDnHer8UHY1efPXPgDvQA_eGrCeDEN_jMIiZUc2Vt5KH5hVKIo-C1E1s"],
+            images: ["/combo-sev.png"],
             theme: "dark"
         }
     ];
@@ -215,18 +215,16 @@ const Home = () => {
                                                     {/* Left Image Section */}
                                                     <div className="md:w-1/2 p-12 bg-[#fdfaf2] flex items-center justify-center relative border-b md:border-b-0 md:border-r border-gray-100">
                                                         <div className="flex flex-col items-center">
-                                                            <div className="flex gap-2 items-center justify-center relative">
-                                                                {bundle.images.map((img, i) => (
-                                                                    <img key={i} src={img} alt="Product" className={`w-48 h-48 md:w-64 md:h-64 object-contain ${i===1 && idx===2 ? 'rounded-full border-[6px] border-white shadow-xl absolute -bottom-6 -right-6 md:-right-4 w-32 h-32 md:w-40 md:h-40' : 'drop-shadow-[0_20px_20px_rgba(0,0,0,0.15)] relative z-10'}`} />
-                                                                ))}
+                                                            <div className="flex gap-2 items-center justify-center relative w-full h-full min-h-[300px]">
+                                                                <img src={bundle.images[0]} alt="Product" className="w-[85%] h-auto md:max-w-md object-contain drop-shadow-[0_20px_20px_rgba(0,0,0,0.15)] relative z-10 hover:scale-105 transition-transform duration-500" />
                                                             </div>
                                                             {/* Tiny pseudo-thumbnails at bottom based on user design */}
                                                             <div className="flex gap-2 mt-8 absolute bottom-6 right-6">
-                                                                <div className="w-10 h-10 bg-black rounded shadow overflow-hidden p-1 border-2 border-transparent hover:border-gray-300 transition-colors cursor-pointer">
-                                                                     <img src="/box-front.png" className="w-full h-full object-cover" />
+                                                                <div className="w-10 h-10 bg-white rounded shadow overflow-hidden p-1 border-2 border-transparent hover:border-gray-300 transition-colors cursor-pointer">
+                                                                     <img src="/combo-single.png" className="w-full h-full object-cover" />
                                                                 </div>
-                                                                <div className="w-10 h-10 bg-black rounded shadow overflow-hidden p-1 border-2 border-transparent hover:border-gray-300 transition-colors cursor-pointer">
-                                                                     {bundle.images.length > 1 ? <img src={bundle.images[1]} className="w-full h-full object-cover" /> : <div className="w-full h-full bg-[#af101a]"></div>}
+                                                                <div className="w-10 h-10 bg-white rounded shadow flex items-center justify-center overflow-hidden p-1 border-2 border-transparent hover:border-gray-300 transition-colors cursor-pointer text-[10px] font-bold text-gray-500">
+                                                                     +1
                                                                 </div>
                                                             </div>
                                                         </div>
