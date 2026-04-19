@@ -450,29 +450,7 @@ const Home = () => {
                         </div>
                     </div>
                 </div>
-                {/* Hero Section: Recall from Screen 6 */}
-                <section className="relative bg-surface-container-low pt-12 pb-24 px-8 overflow-hidden">
-                    <div className="max-w-screen-2xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-                        <div>
-                            <h1 className="font-headline text-7xl md:text-8xl font-black tracking-tighter text-primary leading-[0.9] mb-8 uppercase">
-                                Late uthte ho?<br/>
-                                <span className="text-secondary">Breakfast skip</span><br/>
-                                karte ho?
-                            </h1>
-                            <p className="text-xl max-w-lg mb-10 text-on-surface-variant leading-relaxed">
-                                Don't let the morning rush steal your Indori ritual. Authentic, steamy Poha delivered before your first meeting starts.
-                            </p>
-                            <div className="flex flex-wrap gap-4">
-                                <button className="bg-primary text-on-primary px-8 py-4 font-headline font-bold text-lg tracking-tight uppercase rounded-md active:scale-95 transition-transform">Fix My Morning</button>
-                                <button className="bg-secondary-container text-on-secondary-container px-8 py-4 font-headline font-bold text-lg tracking-tight uppercase rounded-md active:scale-95 transition-transform">Explore Menu</button>
-                            </div>
-                        </div>
-                        <div className="relative">
-                            <div className="absolute -top-10 -right-10 text-9xl font-black opacity-5 text-on-surface rotate-12 select-none">स्वादिष्ट</div>
-                            <img alt="Authentic Indori Poha" className="rounded-xl shadow-2xl relative z-10 w-full object-cover aspect-[4/3] transform -rotate-2" data-alt="Close-up of steaming Indori Poha in a stainless steel plate, topped with yellow sev, pomegranate seeds, and fresh coriander, morning light." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCnztsELaOsYUUF8xPImC0C2KakyarWOJsz18T6w8nOF70SaXwml4Azq-cr-oNXn59Zdi6QHpjoimz1WT3kddqLsfs3sp16RqunKMEDYumzhZLFmLBDuGxIla8AuJL3lZq8Jj5NYpyyrDquZDcx33F0Bh8Ga-Z2-S2zXyeZ5glW9exe0wW7Dzmji0qNiLZcKZ50l5dGUfIobZ6SensGELIjshjBZhvdGIhyW7-rq9TzOErNyBSxzOsSpsGyJZfluU4vapCtaPMRtX8" />
-                        </div>
-                    </div>
-                </section>
+
 
                 {/* The World is Poha-Fixated: Celebrity Reels */}
                 <section className="py-24 bg-surface">
