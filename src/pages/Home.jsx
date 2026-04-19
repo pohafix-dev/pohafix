@@ -3,11 +3,43 @@ import { Link } from 'react-router-dom';
 
 const Home = () => {
     const [currentSlide, setCurrentSlide] = useState(0);
+    const [bundleSlide, setBundleSlide] = useState(0);
     const slides = [
         "/box-front.png",
         "/box-right.png",
         "/box-left.png",
         "/box-group.png"
+    ];
+
+    const bundles = [
+        {
+            title: "THE STARTER PACK",
+            subtitle: "1 Full 300g Box (5 Individual Packs)",
+            price: 189,
+            tag: "POPULAR",
+            tagColor: "bg-[#716016]",
+            images: ["/box-front.png"],
+            theme: "light"
+        },
+        {
+            title: "THE REBEL BUNDLE",
+            subtitle: "2 Full 300g Boxes (600g Total)",
+            price: 290,
+            originalPrice: 378,
+            tag: "SAVE ₹88",
+            tagColor: "bg-[#af101a]",
+            images: ["/box-front.png", "/box-front.png"],
+            theme: "dark"
+        },
+        {
+            title: "THE MYSTERY COMBO",
+            subtitle: "1 Box 300g Pohafix + 1 Secret Sev (150g)",
+            price: 290,
+            tag: "LIMITED",
+            tagColor: "bg-[#716016]",
+            images: ["/box-front.png", "https://lh3.googleusercontent.com/aida-public/AB6AXuA7pqw5METmPpb2qUhurAxbPyusnsGFgl59MD7GR_eOrGpL7fP8DJjIvHu-j7aqITinhuuIkzd6f3hMtUZPxY6wE9SnjDe2WsffkD9iB6IJzrqRaBwpMLOoBMmZFDnQlY0iZ6ocEziBns7ECuuiEUbxX5cj9W_yychyozV4pqUDYwdkVIST_qQ8AYJLvcCyh7cY5VE8CCdQo4MjTF4MdH5zDnHer8UHY1efPXPgDvQA_eGrCeDEN_jMIiZUc2Vt5KH5hVKIo-C1E1s"],
+            theme: "dark"
+        }
     ];
 
     useEffect(() => {
@@ -161,6 +193,89 @@ const Home = () => {
                             <p className="text-7xl md:text-9xl font-hindi text-white/10 font-bold tracking-wider mt-4">
                                 सराफ़ा बाज़ार
                             </p>
+                        </div>
+                    </div>
+                </section>
+
+                {/* Product Combos Carousel */}
+                <section className="py-24 bg-[#fef9f0] relative overflow-hidden">
+                    <div className="container mx-auto px-6">
+                        <div className="max-w-5xl mx-auto">
+                            <div className="relative group p-4 md:p-8">
+                                {/* Slides Container */}
+                                <div className="overflow-hidden">
+                                    <div 
+                                        className="flex transition-transform duration-700 ease-[cubic-bezier(0.25,1,0.5,1)]" 
+                                        style={{ transform: `translateX(-${bundleSlide * 100}%)` }}
+                                    >
+                                        {bundles.map((bundle, idx) => (
+                                            <div key={idx} className="w-full flex-shrink-0 px-2 md:px-6">
+                                                {/* Brutalist Combo Card */}
+                                                <div className={`relative ${bundle.theme === 'light' ? 'bg-[#f0e6d2] border-[12px] border-[#af101a]' : 'bg-black border-4 border-black'} p-6 md:p-12 min-h-[400px] flex flex-col justify-center`}>
+                                                    <div className="absolute -top-6 -left-2 md:-left-6">
+                                                        <span className={`${bundle.tagColor} text-white font-bold px-6 py-2 tracking-widest text-sm uppercase transform -rotate-2 inline-block`}>
+                                                            {bundle.tag}
+                                                        </span>
+                                                    </div>
+                                                    
+                                                    <div className="flex flex-col md:flex-row justify-between items-center gap-12 mt-8 md:mt-0">
+                                                        <div className="space-y-6 flex-1 text-center md:text-left">
+                                                            <h3 className="text-3xl md:text-5xl font-black font-headline">
+                                                                <span className="bg-[#af101a] text-black px-3 py-1 inline-block uppercase whitespace-nowrap">{bundle.title}</span>
+                                                            </h3>
+                                                            <p className={`text-lg md:text-xl font-bold font-body ${bundle.theme === 'light' ? 'text-[#af101a]' : 'text-[#af101a]'}`}>
+                                                                {bundle.subtitle}
+                                                            </p>
+                                                            <div className="pt-4">
+                                                                <Link to="/order" className={`inline-block px-10 py-4 font-black uppercase tracking-widest border-4 transition-transform hover:-translate-y-1 active:translate-y-1 ${bundle.theme === 'light' ? 'border-[#af101a] text-[#af101a] hover:bg-[#af101a] hover:text-white' : 'border-white text-white hover:bg-white hover:text-black'}`}>
+                                                                    Order Now
+                                                                </Link>
+                                                            </div>
+                                                        </div>
+                                                        
+                                                        <div className="flex flex-col items-center md:items-end gap-6">
+                                                            <div className="flex gap-2 items-center justify-center relative">
+                                                                {bundle.images.map((img, i) => (
+                                                                    <img key={i} src={img} alt="Product" className={`w-36 h-36 md:w-48 md:h-48 object-contain ${i===1 && idx===2 ? 'rounded-full border-[6px] border-[#af101a] drop-shadow-2xl absolute -bottom-6 -right-6 md:-right-10' : 'drop-shadow-2xl transform hover:rotate-3 transition-transform relative z-10'}`} />
+                                                                ))}
+                                                            </div>
+                                                            <div className="text-center md:text-right w-full mt-4">
+                                                                <p className="text-6xl md:text-7xl font-black font-headline inline-block bg-[#af101a] text-black px-4 pt-2">₹{bundle.price}</p>
+                                                                {bundle.originalPrice && <p className="text-[#af101a] line-through text-2xl font-bold mt-2">₹{bundle.originalPrice}</p>}
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        ))}
+                                    </div>
+                                </div>
+                                
+                                {/* Carousel Navigation */}
+                                <button 
+                                    onClick={() => setBundleSlide(prev => prev === 0 ? bundles.length - 1 : prev - 1)}
+                                    className="absolute left-0 md:-left-6 top-1/2 -translate-y-1/2 bg-white border-4 border-black w-14 h-14 flex items-center justify-center rounded-full shadow-[4px_4px_0_0_#af101a] hover:translate-x-1 hover:shadow-none transition-all z-20"
+                                >
+                                    <span className="material-symbols-outlined text-black font-bold text-3xl">west</span>
+                                </button>
+                                <button 
+                                    onClick={() => setBundleSlide(prev => (prev + 1) % bundles.length)}
+                                    className="absolute right-0 md:-right-6 top-1/2 -translate-y-1/2 bg-white border-4 border-black w-14 h-14 flex items-center justify-center rounded-full shadow-[4px_4px_0_0_#af101a] hover:-translate-x-1 hover:shadow-none transition-all z-20"
+                                >
+                                    <span className="material-symbols-outlined text-black font-bold text-3xl">east</span>
+                                </button>
+
+                                {/* Dot Indicators */}
+                                <div className="flex justify-center gap-3 mt-12">
+                                    {bundles.map((_, idx) => (
+                                        <button 
+                                            key={idx}
+                                            onClick={() => setBundleSlide(idx)}
+                                            className={`h-3 transition-all duration-300 ${idx === bundleSlide ? 'w-12 bg-[#af101a]' : 'w-3 bg-surface-variant hover:bg-black'} rounded-full border border-black/10`}
+                                        />
+                                    ))}
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </section>
