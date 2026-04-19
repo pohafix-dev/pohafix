@@ -118,11 +118,11 @@ const Home = () => {
                                 {/* Layered Image Stack */}
                                 <div className="relative w-full max-w-md aspect-square">
                                     <div className="absolute top-0 left-0 w-64 h-80 bg-surface-variant rotate-[-6deg] shadow-lg overflow-hidden border-8 border-white p-2">
-                                        <img alt="Diljit Poha" className="w-full h-full object-cover" data-alt="Editorial portrait of a famous celebrity laughing while eating street food from a paper bowl in a vibrant city setting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuC92rdWGQNgweBtAaTp6Ylo7g21W2rmxhUAvnPhvK4iTOMFdvPb2weUQAnEWxWwMfYYGgUSdzD22sdQdYh_rI1siJa7hAy35O7VicEwoAd3_IWQla0KrQ_WGmU1wpe_ws9kxtQCVN8XkommrkhLrn8Rj-yDRx_hGp3nqYejtQ9FlVUghtHDgUWWBCd8qcTicHYvmVNmEbrkZCC3ukxrmi8zPfgJcyIm36xODlSYRAF3HuQMa_XTBpBgJNZSv5YTbYzBkS9DxowO4NE" />
+                                        <img alt="Diljit Poha" className="w-full h-full object-cover" data-alt="Editorial portrait of a famous celebrity laughing while eating street food from a paper bowl in a vibrant city setting" src="/diljit.jpg" />
                                         <p className="absolute bottom-4 left-4 bg-primary text-white text-[10px] px-2 py-1 font-bold">DILJIT LOVES IT</p>
                                     </div>
                                     <div className="absolute bottom-0 right-0 w-64 h-80 bg-surface-variant rotate-[8deg] shadow-xl overflow-hidden border-8 border-white p-2">
-                                        <img alt="David Poha" className="w-full h-full object-cover" data-alt="A distinguished international statesman smiling warmly while holding a traditional leaf bowl of Indian street food" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD1rCJcMiKyZ0FBzpBUj_EQ5j22S2cfWFJfIcZ5V-5u1c8nQr0iRiAcOuOPno0NOyGQvbAJl2rEoyNRoWrbCQQJSfkz5-FRzz9uybCRl5wYIUV-wZSuGJf-nUleVK4aB-tPxUFW1UEjgF7TCaILzpVv3AbpUqDBpmQSRmmyQlgt6W7m86jBxp13Tplp7PxGaKc778s6Q1vuh5M9atF_0zOWDeaTEnIvR5zEahrCEY5QiMpLrPqWPup6QE2VgUlbBXlcJI2QG5WH8_w" />
+                                        <img alt="David Poha" className="w-full h-full object-cover" data-alt="A distinguished international statesman smiling warmly while holding a traditional leaf bowl of Indian street food" src="/david.jpg" />
                                         <p className="absolute bottom-4 left-4 bg-primary text-white text-[10px] px-2 py-1 font-bold">STREET SIDE STORY</p>
                                     </div>
                                 </div>
