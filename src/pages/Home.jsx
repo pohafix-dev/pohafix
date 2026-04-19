@@ -210,40 +210,65 @@ const Home = () => {
                                     >
                                         {bundles.map((bundle, idx) => (
                                             <div key={idx} className="w-full flex-shrink-0 px-2 md:px-6">
-                                                {/* Brutalist Combo Card */}
-                                                <div className={`relative ${bundle.theme === 'light' ? 'bg-[#f0e6d2] border-[12px] border-[#af101a]' : 'bg-black border-4 border-black'} p-6 md:p-12 min-h-[400px] flex flex-col justify-center`}>
-                                                    <div className="absolute -top-6 -left-2 md:-left-6">
-                                                        <span className={`${bundle.tagColor} text-white font-bold px-6 py-2 tracking-widest text-sm uppercase transform -rotate-2 inline-block`}>
-                                                            {bundle.tag}
-                                                        </span>
+                                                {/* Editorial Combo Card */}
+                                                <div className="bg-white rounded-[2rem] shadow-[0_8px_30px_rgb(0,0,0,0.04)] hover:shadow-[0_8px_30px_rgb(0,0,0,0.08)] transition-all duration-300 overflow-hidden flex flex-col md:flex-row min-h-[450px]">
+                                                    {/* Left Image Section */}
+                                                    <div className="md:w-1/2 p-12 bg-[#fdfaf2] flex items-center justify-center relative border-b md:border-b-0 md:border-r border-gray-100">
+                                                        <div className="flex flex-col items-center">
+                                                            <div className="flex gap-2 items-center justify-center relative">
+                                                                {bundle.images.map((img, i) => (
+                                                                    <img key={i} src={img} alt="Product" className={`w-48 h-48 md:w-64 md:h-64 object-contain ${i===1 && idx===2 ? 'rounded-full border-[6px] border-white shadow-xl absolute -bottom-6 -right-6 md:-right-4 w-32 h-32 md:w-40 md:h-40' : 'drop-shadow-[0_20px_20px_rgba(0,0,0,0.15)] relative z-10'}`} />
+                                                                ))}
+                                                            </div>
+                                                            {/* Tiny pseudo-thumbnails at bottom based on user design */}
+                                                            <div className="flex gap-2 mt-8 absolute bottom-6 right-6">
+                                                                <div className="w-10 h-10 bg-black rounded shadow overflow-hidden p-1 border-2 border-transparent hover:border-gray-300 transition-colors cursor-pointer">
+                                                                     <img src="/box-front.png" className="w-full h-full object-cover" />
+                                                                </div>
+                                                                <div className="w-10 h-10 bg-black rounded shadow overflow-hidden p-1 border-2 border-transparent hover:border-gray-300 transition-colors cursor-pointer">
+                                                                     {bundle.images.length > 1 ? <img src={bundle.images[1]} className="w-full h-full object-cover" /> : <div className="w-full h-full bg-[#af101a]"></div>}
+                                                                </div>
+                                                            </div>
+                                                        </div>
                                                     </div>
                                                     
-                                                    <div className="flex flex-col md:flex-row justify-between items-center gap-12 mt-8 md:mt-0">
-                                                        <div className="space-y-6 flex-1 text-center md:text-left">
-                                                            <h3 className="text-3xl md:text-5xl font-black font-headline">
-                                                                <span className="bg-[#af101a] text-black px-3 py-1 inline-block uppercase whitespace-nowrap">{bundle.title}</span>
-                                                            </h3>
-                                                            <p className={`text-lg md:text-xl font-bold font-body ${bundle.theme === 'light' ? 'text-[#af101a]' : 'text-[#af101a]'}`}>
-                                                                {bundle.subtitle}
-                                                            </p>
-                                                            <div className="pt-4">
-                                                                <Link to="/order" className={`inline-block px-10 py-4 font-black uppercase tracking-widest border-4 transition-transform hover:-translate-y-1 active:translate-y-1 ${bundle.theme === 'light' ? 'border-[#af101a] text-[#af101a] hover:bg-[#af101a] hover:text-white' : 'border-white text-white hover:bg-white hover:text-black'}`}>
-                                                                    Order Now
-                                                                </Link>
+                                                    {/* Right Content Section */}
+                                                    <div className="md:w-1/2 p-8 md:p-12 flex flex-col justify-center bg-white">
+                                                        <div className="flex items-center gap-3 mb-4 md:mb-6">
+                                                            <span className="bg-[#eaf4e5] text-[#347b4e] text-[9px] md:text-[10px] font-black uppercase tracking-widest px-3 py-1 rounded-full">
+                                                                {bundle.tag}
+                                                            </span>
+                                                            <div className="flex text-[#8b7921] text-xs md:text-sm">
+                                                                <span className="material-symbols-outlined text-[1rem]" style={{ fontVariationSettings: "'FILL' 1" }}>star</span>
+                                                                <span className="material-symbols-outlined text-[1rem]" style={{ fontVariationSettings: "'FILL' 1" }}>star</span>
+                                                                <span className="material-symbols-outlined text-[1rem]" style={{ fontVariationSettings: "'FILL' 1" }}>star</span>
+                                                                <span className="material-symbols-outlined text-[1rem]" style={{ fontVariationSettings: "'FILL' 1" }}>star</span>
+                                                                <span className="material-symbols-outlined text-[1rem]" style={{ fontVariationSettings: "'FILL' 1" }}>star</span>
                                                             </div>
                                                         </div>
                                                         
-                                                        <div className="flex flex-col items-center md:items-end gap-6">
-                                                            <div className="flex gap-2 items-center justify-center relative">
-                                                                {bundle.images.map((img, i) => (
-                                                                    <img key={i} src={img} alt="Product" className={`w-36 h-36 md:w-48 md:h-48 object-contain ${i===1 && idx===2 ? 'rounded-full border-[6px] border-[#af101a] drop-shadow-2xl absolute -bottom-6 -right-6 md:-right-10' : 'drop-shadow-2xl transform hover:rotate-3 transition-transform relative z-10'}`} />
-                                                                ))}
+                                                        <h3 className="text-3xl md:text-4xl lg:text-5xl font-black font-headline text-gray-900 mb-4 leading-[1.1] tracking-tight">
+                                                            Pohafix {bundle.title === 'THE STARTER PACK' ? 'Starter Pack' : bundle.title === 'THE REBEL BUNDLE' ? 'Rebel Bundle' : 'Mystery Combo'}
+                                                        </h3>
+                                                        
+                                                        <p className="text-gray-500 font-medium leading-relaxed mb-8 font-body text-sm md:text-base pr-4">
+                                                            {bundle.subtitle}. The ultimate breakfast solution for busy mornings. Each pack comes with authentic Jeeravan spices and a separate sachet of crispy Indori Sev for that perfect crunch.
+                                                        </p>
+                                                        
+                                                        {/* Pricing Block */}
+                                                        <div className="bg-[#f6f4ed] rounded-xl p-4 md:p-6 mb-6 flex justify-between items-center border border-[#ece9df]">
+                                                            <div className="flex items-baseline gap-3">
+                                                                <span className="text-3xl md:text-4xl font-black font-headline text-[#af101a]">₹{bundle.price}</span>
+                                                                {bundle.originalPrice && <span className="text-gray-400 line-through font-bold text-sm md:text-base">₹{bundle.originalPrice}</span>}
                                                             </div>
-                                                            <div className="text-center md:text-right w-full mt-4">
-                                                                <p className="text-6xl md:text-7xl font-black font-headline inline-block bg-[#af101a] text-black px-4 pt-2">₹{bundle.price}</p>
-                                                                {bundle.originalPrice && <p className="text-[#af101a] line-through text-2xl font-bold mt-2">₹{bundle.originalPrice}</p>}
-                                                            </div>
+                                                            <span className="text-[#8b7921] font-bold text-[10px] md:text-xs uppercase tracking-widest text-right">
+                                                                {bundle.originalPrice ? `SAVE ₹${bundle.originalPrice - bundle.price} TODAY` : 'LIMITED STOCK TODAY'}
+                                                            </span>
                                                         </div>
+                                                        
+                                                        <Link to="/order" className="w-full bg-[#ae1925] text-white py-4 rounded-xl font-bold text-lg hover:bg-[#8f121d] transition-colors text-center shadow-[0_4px_14px_0_rgb(174,25,37,0.39)] hover:shadow-[0_6px_20px_rgba(174,25,37,0.23)] active:scale-[0.98] duration-200">
+                                                            Buy Now
+                                                        </Link>
                                                     </div>
                                                 </div>
                                             </div>
