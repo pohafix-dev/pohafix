@@ -78,13 +78,13 @@ const Home = () => {
                             <div className="absolute -top-10 -left-10 text-9xl font-hindi hindi-layer rotate-[-15deg]">ताज़ा</div>
                             <div className="absolute -bottom-10 -right-10 text-9xl font-hindi hindi-layer rotate-[15deg]">ज़ायका</div>
                             {/* Main Product Carousel */}
-                            <div className="relative transform hover:scale-105 transition-transform duration-500 bg-surface-container-lowest rounded-[2rem] shadow-2xl p-4 md:p-8 overflow-hidden aspect-[4/5] flex items-center justify-center">
+                            <div className="relative transform hover:scale-105 transition-transform duration-500 bg-surface-container-lowest rounded-[2rem] shadow-2xl overflow-hidden aspect-[4/5] flex items-center justify-center">
                                 {slides.map((slide, index) => (
                                     <img 
                                         key={slide}
                                         src={slide}
                                         alt={`Pohafix Box Design ${index + 1}`}
-                                        className={`absolute inset-0 w-full h-full object-contain transition-opacity duration-1000 p-6 ${index === currentSlide ? 'opacity-100 z-10' : 'opacity-0 z-0'}`} 
+                                        className={`absolute inset-0 w-full h-full object-contain transition-opacity duration-1000 ${index === currentSlide ? 'opacity-100 z-10' : 'opacity-0 z-0'}`} 
                                     />
                                 ))}
                                 
@@ -103,6 +103,7 @@ const Home = () => {
                                 <div className="absolute top-12 -right-4 bg-surface-container-lowest p-3 rounded-xl shadow-lg rotate-12 max-w-[140px] z-20">
                                     <p className="font-label text-[10px] font-bold text-secondary uppercase tracking-widest">New Design</p>
                                     <p className="font-headline font-bold text-xs mt-1">Authentic Retained</p>
+                                    <p className="font-headline font-bold text-[10px] mt-1 text-on-surface-variant">Extra Sev &amp; Pomegranate Included</p>
                                 </div>
                             </div>
                         </div>
