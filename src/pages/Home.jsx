@@ -1,5 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
+import VideoCard from '../components/VideoCard';
+import { videoData } from '../data/videos';
 
 const Home = () => {
     const [currentSlide, setCurrentSlide] = useState(0);
@@ -462,54 +464,9 @@ const Home = () => {
                             <p className="font-label font-semibold text-tertiary uppercase tracking-widest bg-tertiary-container/10 px-4 py-1">Global Endorsements</p>
                         </div>
                         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-                            {/* Reel Card 1: Diljit */}
-                            <div className="group relative aspect-[9/16] overflow-hidden rounded-xl bg-surface-container-highest shadow-xl transition-all hover:scale-[1.02]">
-                                <img alt="Diljit Dosanjh" className="absolute inset-0 h-full w-full object-cover" data-alt="Portrait of a stylish Indian man with a bright turban smiling and enjoying a plate of street food, vibrant warm lighting." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCHaJQFrW_i9vuAasgeVSU0PmmBTRonFhBAEnRQnj37WSE44QGnpW3FIldk9CIZyQcldCDX1HlXWuO5LqvYDFJipNwWUz-mGQKxLxM0GOpv3IsgU4MXUMdySG929GjuOJbji40xutKBflbgnok7kVIjaopMXlLqHe7onMZU0VwmBu6cbmV-cWtVrUbbfv7Tue7qaSd0OKqIOR4HCqiXR94WGVj5C9aQsQJ4HB6lqjcuZY_iGeo_7FDMr4rwA6ULzQ18v5CgmWdNAL0" />
-                                <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent"></div>
-                                <div className="absolute bottom-6 left-6 right-6">
-                                    <span className="bg-secondary text-on-secondary px-3 py-1 rounded-full text-xs font-bold font-label mb-2 inline-block">@diljitdosanjh</span>
-                                    <blockquote className="text-white font-headline text-2xl font-bold italic leading-tight mb-4">"Asli Swad!"</blockquote>
-                                    <button className="w-full bg-primary text-on-primary py-3 rounded-md font-headline font-bold uppercase tracking-tight flex items-center justify-center gap-2 backdrop-blur-sm bg-opacity-90 hover:bg-opacity-100 transition-all">
-                                        <span className="material-symbols-outlined text-sm">shopping_bag</span> Order Now
-                                    </button>
-                                </div>
-                            </div>
-                            {/* Reel Card 2: David Cameron */}
-                            <div className="group relative aspect-[9/16] overflow-hidden rounded-xl bg-surface-container-highest shadow-xl transition-all hover:scale-[1.02]">
-                                <img alt="David Cameron Lookalike/Rep" className="absolute inset-0 h-full w-full object-cover" data-alt="Dignified older gentleman in a suit sitting at a traditional Indian street stall, holding a plate of poha, authentic atmosphere." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBiTTQElcqshMCzikh2aIRE39bERZry32TaiP2BhL7m-PZlFOKSPi3fUvhNmhvwPdjuoVJwbJ2ur0rWVSZHRj4qAgr5j1Eesy0bonAeG8gvl7xFylrAppZnKE021_kh5TS9U7B7PxeRX5OXInhwD2neqpMeiecFDy744P2SBbXlFbzznTn35C8TgPJlfeOaBuToToMkwyxIH04ky7eFluLanpyvMp4JbkpmCPsJKfbeyb5UF0FDqOoCgaoAaGLW_arq5yMefluhu7Y" />
-                                <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent"></div>
-                                <div className="absolute bottom-6 left-6 right-6">
-                                    <span className="bg-tertiary text-on-tertiary px-3 py-1 rounded-full text-xs font-bold font-label mb-2 inline-block">Global Diplomat</span>
-                                    <blockquote className="text-white font-headline text-2xl font-bold italic leading-tight mb-4">"Truly Authentic"</blockquote>
-                                    <button className="w-full bg-primary text-on-primary py-3 rounded-md font-headline font-bold uppercase tracking-tight flex items-center justify-center gap-2 backdrop-blur-sm bg-opacity-90 hover:bg-opacity-100 transition-all">
-                                        <span className="material-symbols-outlined text-sm">shopping_bag</span> Order Now
-                                    </button>
-                                </div>
-                            </div>
-                            {/* Reel Card 3: Lifestyle */}
-                            <div className="group relative aspect-[9/16] overflow-hidden rounded-xl bg-surface-container-highest shadow-xl transition-all hover:scale-[1.02] hidden lg:block">
-                                <img alt="Food Blogger" className="absolute inset-0 h-full w-full object-cover" data-alt="Overhead close-up of hands reaching for a vibrant bowl of poha on a rustic wooden table with morning shadows." src="https://lh3.googleusercontent.com/aida-public/AB6AXuC1UozEW7ue-kWcq-ldZH1at2QitPJ-XT72E2iT7naTbi1cn3692NsH0wx5s8oUf7jTWMuPJfc10J3HMcOELzwuZieQrx0SNkH4GYcwFbN_cSDm3ypgHOs-KwhFDb4KietqOYLY3uvgVFig_yiTiTOg65d-fbjNnKqtUNNl9n_pHYnnT7PqL7ek6EG9jH9TW48fhC3cNYboPuc5Z6JijJj4kF8ENpw971Oy9IJ05hZEcp2RBPux8SDCFk-mPw0N6jWUCZbggmDYA2c" />
-                                <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent"></div>
-                                <div className="absolute bottom-6 left-6 right-6">
-                                    <span className="bg-secondary text-on-secondary px-3 py-1 rounded-full text-xs font-bold font-label mb-2 inline-block">Indore Diaries</span>
-                                    <blockquote className="text-white font-headline text-2xl font-bold italic leading-tight mb-4">"Morning Fuel!"</blockquote>
-                                    <button className="w-full bg-primary text-on-primary py-3 rounded-md font-headline font-bold uppercase tracking-tight flex items-center justify-center gap-2 backdrop-blur-sm bg-opacity-90 hover:bg-opacity-100 transition-all">
-                                        <span className="material-symbols-outlined text-sm">shopping_bag</span> Order Now
-                                    </button>
-                                </div>
-                            </div>
-                            {/* Reel Card 4: Chef */}
-                            <div className="group relative aspect-[9/16] overflow-hidden rounded-xl bg-surface-container-highest shadow-xl transition-all hover:scale-[1.02] hidden lg:block">
-                                <img alt="Chef Detail" className="absolute inset-0 h-full w-full object-cover" data-alt="Chef in a white coat sprinkling fresh pomegranate seeds over a steaming mountain of yellow poha, focus on motion." src="https://lh3.googleusercontent.com/aida-public/AB6AXuD7SCKVzc-i55yZStyOXRHxVi9X7u6qWJp1ksw2u--BssbAWSYzY7MSX3lYzLPKsxlXs2O8c3BRNZp444tz6gtU0y1TD6BZ4koXkaAliENSplqFDfOCIpjJckNu2TuzLtJY0WkuaHtvN3VD6e2KL2iwCHAwu4qZCLDPPnhvyvFaQGek6oAV7O_jVe-4dBpx6CF-H7UZ2Z5F0MOqVw-JFo60KqUAGMXTnOLfBgkvlzkdlJB1YpTflvWWVO1bxrx4cOTX7ax_fG5wRBU" />
-                                <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent"></div>
-                                <div className="absolute bottom-6 left-6 right-6">
-                                    <span className="bg-primary text-on-primary px-3 py-1 rounded-full text-xs font-bold font-label mb-2 inline-block">Craftsman</span>
-                                    <blockquote className="text-white font-headline text-2xl font-bold italic leading-tight mb-4">"Pure Craft"</blockquote>
-                                    <button className="w-full bg-primary text-on-primary py-3 rounded-md font-headline font-bold uppercase tracking-tight flex items-center justify-center gap-2 backdrop-blur-sm bg-opacity-90 hover:bg-opacity-100 transition-all">
-                                        <span className="material-symbols-outlined text-sm">shopping_bag</span> Order Now
-                                    </button>
-                                </div>
-                            </div>
+                            {videoData.map((video) => (
+                                <VideoCard key={video.id} video={video} />
+                            ))}
                         </div>
                     </div>
                 </section>
