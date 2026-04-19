@@ -143,6 +143,28 @@ const Home = () => {
                     </div>
                 </section>
 
+                {/* Nostalgia Section */}
+                <section className="relative py-32 lg:py-48 overflow-hidden flex items-center bg-[#1d1c16]">
+                    <div className="absolute inset-0 z-0">
+                        <img alt="Sarafa Bazaar Indore" className="w-full h-full object-cover opacity-40 grayscale" src="/sarafa-bg.jpg" />
+                        <div className="absolute inset-0 bg-black/60"></div>
+                        <div className="absolute inset-0 bg-gradient-to-r from-black/80 via-black/50 to-transparent"></div>
+                    </div>
+                    <div className="container mx-auto px-6 relative z-10">
+                        <div className="max-w-3xl border-l-[6px] border-[#af101a] pl-8 md:pl-12 py-2">
+                            <h2 className="text-5xl md:text-7xl font-black font-headline text-white leading-tight mb-6 tracking-tight">
+                                Indore ki galiyon se <br/> inspired.
+                            </h2>
+                            <p className="text-xl md:text-2xl text-gray-300 font-medium leading-relaxed mb-8 max-w-xl">
+                                Same taste, same feeling. We didn't just bottle<br className="hidden md:block" /> the recipe, we bottled the nostalgia of 7:00 AM<br className="hidden md:block" /> at the street corner.
+                            </p>
+                            <p className="text-7xl md:text-9xl font-hindi text-white/10 font-bold tracking-wider mt-4">
+                                सराफ़ा बाज़ार
+                            </p>
+                        </div>
+                    </div>
+                </section>
+
                 {/* Why Pohafix Section */}
                 <section className="py-24 bg-surface-container-high bg-newsprint relative" id="features">
                     <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-primary/20 to-transparent"></div>
