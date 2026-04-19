@@ -101,8 +101,7 @@ const Home = () => {
                                 </div>
 
                                 <div className="absolute top-12 -right-4 bg-surface-container-lowest p-3 rounded-xl shadow-lg rotate-12 max-w-[140px] z-20">
-                                    <p className="font-label text-[10px] font-bold text-secondary uppercase tracking-widest">New Design</p>
-                                    <p className="font-headline font-bold text-xs mt-1">Authentic Retained</p>
+                                    <p className="font-headline font-bold text-xs">Authentic Retained</p>
                                     <p className="font-headline font-bold text-[10px] mt-1 text-on-surface-variant">Extra Sev &amp; Pomegranate Included</p>
                                 </div>
                             </div>
