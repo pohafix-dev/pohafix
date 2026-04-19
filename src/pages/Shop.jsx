@@ -1,231 +1,186 @@
+import React, { useState, useEffect } from 'react';
+import { Link } from 'react-router-dom';
+import { motion, AnimatePresence } from 'framer-motion';
+
 const Shop = () => {
+    const [selectedPlan, setSelectedPlan] = useState(0);
+
+    const plans = [
+        {
+            id: 0,
+            name: "THE STARTER PACK",
+            description: "1 Full 300g Box (5 Individual Packs)",
+            price: 189,
+            tag: "POPULAR",
+            image: "/box-front.png",
+            features: ["5 Single Servings", "Jeeravan Spice Mix", "Ratlam Sev Included"]
+        },
+        {
+            id: 1,
+            name: "THE REBEL BUNDLE",
+            description: "2 Full 300g Boxes (600g Total)",
+            price: 290,
+            originalPrice: 378,
+            tag: "BEST VALUE",
+            image: "/combo-2box.png",
+            features: ["10 Single Servings", "2x Sev Packs", "Free Shipping"]
+        },
+        {
+            id: 2,
+            name: "THE MYSTERY COMBO",
+            description: "1 Box 300g Pohafix + 1 Secret Sev (150g)",
+            price: 290,
+            tag: "LIMITED",
+            image: "/combo-sev.png",
+            features: ["5 Single Servings", "150g Extra Sev", "Premium Pomegranate"]
+        }
+    ];
+
+    useEffect(() => {
+        window.scrollTo(0, 0);
+    }, []);
+
     return (
-        <main className="pt-24 lg:pt-32 pb-10 overflow-x-hidden">
-            {/* Hero Section: Editorial Layout */}
-            <section className="max-w-7xl mx-auto px-6 md:px-12 grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-20 mb-24">
-                {/* Asymmetric Image Column */}
-                <div className="lg:col-span-7 relative">
-                    <div className="rounded-2xl overflow-hidden bg-surface-container-low aspect-[4/5] lg:aspect-[3/4]">
-                        <img 
-                            className="w-full h-full object-cover" 
-                            alt="Close-up of premium artisanal poha grains in a vintage ceramic bowl" 
-                            src="https://lh3.googleusercontent.com/aida-public/AB6AXuAXfhYj6wuX-Hu046DbIZwQe_BKGTcBW5VWYGkqpoPwBPmZqTH8T6f1SjfRFiS7XdHa5ExDK4hX79aD_RLZgjudG4G9_bqmglPGHvmp1vo5z3ARHWAcn9PMobdfzPFKxj00p_n3zRorX6zWWgtHJZ_enSpx4lt6Lco8mrpL0eU5HCVNRAKHPNFCzVQyuBEM1J5NG3AaDDTZNBTwmxCpnfp89HWdznWeZFPLDGfRMAsc_aBUcCdO9E2tC4wn2nDjZ-9HtmF9Uv7DZQ" 
-                        />
-                    </div>
-                    <div className="absolute -bottom-8 -right-8 hidden lg:block w-64 h-64 rounded-2xl overflow-hidden border-8 border-surface shadow-xl">
-                        <img 
-                            className="w-full h-full object-cover" 
-                            alt="Traditional Indori breakfast spread with golden poha" 
-                            src="https://lh3.googleusercontent.com/aida-public/AB6AXuB2AeZj33ZDxr5hstC-U31joqu-6jnKncTsMfDFYg4w3krHL1d-8BsGluiV3WYomQFg2gu6TWWSMC8dB6Oce5GC4lVSVClq6UmeMP8bErLlrBlaf9-dJ18kTdqsIbtrODQ-heZO7zDxAQL8I0plxbFi3bzpCO3Er0VEOdu6BM-Gr6idkgxulLERqwrqRfPgMguRBoX1zxz-OY5FNLFqVx2hNRyvD04K6UUdTBLUsCzqZ1OQ75rZlvKU7TnSCr7P_JbDAillVgH7zA" 
-                        />
+        <main className="pt-24 lg:pt-32 pb-20 bg-background selection:bg-primary/10">
+            {/* Main Product Stage */}
+            <section className="max-w-7xl mx-auto px-6 grid grid-cols-1 lg:grid-cols-2 gap-16 items-start">
+                
+                {/* Visual Showcase */}
+                <div className="relative sticky top-32">
+                    <AnimatePresence mode="wait">
+                        <motion.div 
+                            key={selectedPlan}
+                            initial={{ opacity: 0, scale: 0.95 }}
+                            animate={{ opacity: 1, scale: 1 }}
+                            exit={{ opacity: 0, scale: 1.05 }}
+                            transition={{ duration: 0.4 }}
+                            className="aspect-square rounded-[3rem] bg-surface-container-low overflow-hidden shadow-2xl flex items-center justify-center p-12"
+                        >
+                            <img 
+                                src={plans[selectedPlan].image} 
+                                alt={plans[selectedPlan].name}
+                                className="w-full h-full object-contain mix-blend-multiply drop-shadow-[0_20px_50px_rgba(0,0,0,0.15)]"
+                            />
+                        </motion.div>
+                    </AnimatePresence>
+                    
+                    {/* Floating Badges */}
+                    <div className="absolute -top-6 -left-6 bg-primary text-on-primary px-6 py-2 rounded-full font-headline font-black text-xs uppercase tracking-[0.2em] shadow-xl rotate-[-4deg]">
+                        Indore Certified
                     </div>
                 </div>
-                {/* Product Details Column */}
-                <div className="lg:col-span-5 flex flex-col justify-center">
-                    <div className="flex gap-2 mb-6">
-                        <span className="px-4 py-1 rounded-full bg-secondary-container text-on-secondary-container text-xs font-bold uppercase tracking-widest">Made-to-order</span>
-                        <span className="px-4 py-1 rounded-full bg-tertiary-fixed text-on-tertiary-fixed-variant text-xs font-bold uppercase tracking-widest">100% Preservative Free</span>
-                    </div>
-                    <h1 className="text-5xl lg:text-6xl font-black text-on-surface tracking-tight mb-4 leading-tight">
-                        Pohafix: Authentic <span className="text-primary">Indori Poha</span>
-                    </h1>
-                    <div className="flex items-center gap-4 mb-8">
-                        <div className="flex text-secondary">
-                            <span className="material-symbols-outlined" style={{ fontVariationSettings: "'FILL' 1" }}>star</span>
-                            <span className="material-symbols-outlined" style={{ fontVariationSettings: "'FILL' 1" }}>star</span>
-                            <span className="material-symbols-outlined" style={{ fontVariationSettings: "'FILL' 1" }}>star</span>
-                            <span className="material-symbols-outlined" style={{ fontVariationSettings: "'FILL' 1" }}>star</span>
-                            <span className="material-symbols-outlined" style={{ fontVariationSettings: "'FILL' 1" }}>star_half</span>
-                        </div>
-                        <span className="text-on-surface-variant font-medium">(482 Reviews)</span>
-                    </div>
+
+                {/* Configuration details */}
+                <div className="flex flex-col">
                     <div className="mb-10">
-                        <p className="text-4xl font-bold text-on-surface mb-2">₹249.00</p>
-                        <p className="text-on-surface-variant leading-relaxed">Pack of 5 individual servings (75g each). Experience the soul of Indore in every bite.</p>
-                    </div>
-                    <div className="flex flex-col gap-4">
-                        <button className="w-full bg-primary hover:bg-primary-container text-on-primary py-5 rounded-full font-bold text-lg transition-all active:scale-95 shadow-lg shadow-primary/20">
-                            Add to Cart
-                        </button>
-                        <div className="flex items-center justify-center gap-6 py-4 border-t border-outline-variant/20">
-                            <div className="flex items-center gap-2 text-sm font-semibold text-tertiary">
-                                <span className="material-symbols-outlined">bolt</span>
-                                Just Add Hot Water
-                            </div>
-                            <div className="flex items-center gap-2 text-sm font-semibold text-secondary">
-                                <span className="material-symbols-outlined">eco</span>
-                                Healthy & Tasty
-                            </div>
+                        <div className="flex items-center gap-3 mb-4">
+                             <span className="material-symbols-outlined text-secondary text-base" style={{ fontVariationSettings: "'FILL' 1" }}>verified</span>
+                             <span className="text-secondary font-headline font-bold text-xs uppercase tracking-widest">Small Batch Produced Weekly</span>
                         </div>
+                        <h1 className="text-5xl md:text-6xl font-black font-headline text-on-surface leading-[1.1] tracking-tighter mb-6 uppercase">
+                            Authentic <br/><span className="text-primary italic">Indori Poha</span>
+                        </h1>
+                        <p className="text-lg text-on-surface-variant font-medium leading-relaxed max-w-xl">
+                            The original Chhappan Dukaan ritual, captured in an instant. No laboratory shelf-extenders—just raw, natural ingredients and the soul of Malwa.
+                        </p>
                     </div>
-                </div>
-            </section>
 
-            {/* Product Narrative Section */}
-            <section className="bg-surface-container-low py-24">
-                <div className="max-w-5xl mx-auto px-6 text-center">
-                    <span className="text-primary font-bold tracking-widest uppercase text-sm mb-4 block">The Heritage</span>
-                    <h2 className="text-4xl font-extrabold mb-8 tracking-tight">The Authentic Taste of Indore</h2>
-                    <div className="space-y-6 text-lg text-on-surface-variant leading-relaxed max-w-3xl mx-auto">
-                        <p>Our Pohafix journey begins in the heart of Malwa, where we source premium quality medium-thick rice flakes, specifically chosen for their ability to remain fluffy yet firm. No mass production, no stale inventory.</p>
-                        <p>Each batch is crafted only after you place your order, blending handpicked spices—the signature Indori Jeeravan, Fennel seeds, and a hint of turmeric—to recreate that nostalgic morning vibe of Rajwada. It’s not just instant food; it’s a preserved tradition.</p>
-                    </div>
-                </div>
-            </section>
-
-            {/* Preparation Guide: 4-Step Process */}
-            <section className="py-24 max-w-7xl mx-auto px-6">
-                <h2 className="text-3xl font-black mb-16 text-center">Ready in 4 Simple Steps</h2>
-                <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
-                    <div className="flex flex-col items-center text-center group">
-                        <div className="w-20 h-20 rounded-full bg-surface-container-high flex items-center justify-center mb-6 group-hover:bg-primary group-hover:text-on-primary transition-colors">
-                            <span className="material-symbols-outlined text-4xl">nest_remote_comfort_sensor</span>
-                        </div>
-                        <h3 className="font-bold mb-2">1. Empty</h3>
-                        <p className="text-sm text-on-surface-variant">Pour the Pohafix mix into a bowl.</p>
-                    </div>
-                    <div className="flex flex-col items-center text-center group">
-                        <div className="w-20 h-20 rounded-full bg-surface-container-high flex items-center justify-center mb-6 group-hover:bg-primary group-hover:text-on-primary transition-colors">
-                            <span className="material-symbols-outlined text-4xl">water_drop</span>
-                        </div>
-                        <h3 className="font-bold mb-2">2. Add Water</h3>
-                        <p className="text-sm text-on-surface-variant">Pour boiling water up to the marked line.</p>
-                    </div>
-                    <div className="flex flex-col items-center text-center group">
-                        <div className="w-20 h-20 rounded-full bg-surface-container-high flex items-center justify-center mb-6 group-hover:bg-primary group-hover:text-on-primary transition-colors">
-                            <span className="material-symbols-outlined text-4xl">restaurant_menu</span>
-                        </div>
-                        <h3 className="font-bold mb-2">3. Cover</h3>
-                        <p className="text-sm text-on-surface-variant">Close the lid and wait for 4 minutes.</p>
-                    </div>
-                    <div className="flex flex-col items-center text-center group">
-                        <div className="w-20 h-20 rounded-full bg-surface-container-high flex items-center justify-center mb-6 group-hover:bg-primary group-hover:text-on-primary transition-colors">
-                            <span className="material-symbols-outlined text-4xl">soup_kitchen</span>
-                        </div>
-                        <h3 className="font-bold mb-2">4. Stir</h3>
-                        <p className="text-sm text-on-surface-variant">Give it a gentle stir and enjoy hot!</p>
-                    </div>
-                </div>
-                <div className="mt-16 rounded-2xl overflow-hidden aspect-video max-w-4xl mx-auto shadow-2xl">
-                    <img 
-                        className="w-full h-full object-cover" 
-                        alt="High-resolution lifestyle collage showing steam rising from Indori Poha" 
-                        src="https://lh3.googleusercontent.com/aida-public/AB6AXuBZ7iGM2C2Br1elRYU3fLeAYYU6vmBk7hZeBHG-RPtVpBRSnKWNEtrtQylQIvyvmeiEND3gTPAaGRhT_7OA5nkh3UUTRk-ofEO5jTZ7UhbBcKhvWjCMIzJX9uZt6Smt2lPmC9eXqbL3RWj5GwhatBA_7JvsNmM3benmbbBc5PKCQNBBRuoflekJbKgbonjlOlg2sW1OlMIrrKFNwoX3YGkZeN73rrORf6s42XG0AznLMHV1EFaE4iRXq1djjgBqZv-CjQ8IiE90CQ" 
-                    />
-                </div>
-            </section>
-
-            {/* Freshness Timeline */}
-            <section className="bg-[#1a1c1a] text-white py-24 px-6">
-                <div className="max-w-7xl mx-auto">
-                    <div className="text-center mb-16">
-                        <h2 className="text-4xl font-black mb-4">Our Freshness Promise</h2>
-                        <p className="text-stone-400">We don't stock. We create for you.</p>
-                    </div>
-                    <div className="relative flex flex-col md:flex-row justify-between items-start md:items-center gap-12">
-                        <div className="hidden md:block absolute top-1/2 left-0 w-full h-px bg-stone-700 -z-0"></div>
+                    {/* Plan Selection Grid */}
+                    <div className="space-y-4 mb-10">
+                        <h3 className="font-headline font-black text-xs uppercase tracking-[0.2em] text-on-surface-variant mb-6 flex items-center gap-2">
+                             Select Your Experience
+                             <div className="h-px flex-1 bg-outline-variant/20"></div>
+                        </h3>
                         
-                        <div className="relative z-10 flex flex-col items-center text-center bg-[#1a1c1a] px-4">
-                            <div className="w-12 h-12 rounded-full bg-primary flex items-center justify-center mb-4 ring-8 ring-[#1a1c1a]">
-                                <span className="material-symbols-outlined">shopping_basket</span>
+                        {plans.map((plan, idx) => (
+                            <button 
+                                key={plan.id}
+                                onClick={() => setSelectedPlan(idx)}
+                                className={`w-full text-left p-6 rounded-2xl border-4 transition-all duration-300 relative overflow-hidden group ${
+                                    selectedPlan === idx 
+                                    ? 'border-primary bg-surface-container-lowest shadow-xl' 
+                                    : 'border-outline-variant/10 bg-surface-container-low hover:border-primary/30'
+                                }`}
+                            >
+                                {plan.tag && (
+                                    <div className={`absolute top-0 right-0 px-4 py-1.5 font-headline font-black text-[9px] uppercase tracking-widest rounded-bl-xl ${
+                                        selectedPlan === idx ? 'bg-primary text-on-primary' : 'bg-outline-variant/20 text-on-surface-variant'
+                                    }`}>
+                                        {plan.tag}
+                                    </div>
+                                )}
+                                <div className="flex justify-between items-center mb-1">
+                                    <h4 className="font-headline font-black text-lg group-hover:text-primary transition-colors">{plan.name}</h4>
+                                    <span className="text-2xl font-black font-headline">₹{plan.price}</span>
+                                </div>
+                                <p className={`text-sm font-medium transition-colors ${selectedPlan === idx ? 'text-on-surface' : 'text-on-surface-variant'}`}>
+                                    {plan.description}
+                                </p>
+                            </button>
+                        ))}
+                    </div>
+
+                    {/* Features checklist */}
+                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-10">
+                        {plans[selectedPlan].features.map((feature, i) => (
+                            <div key={i} className="flex items-center gap-4 bg-white px-5 py-4 rounded-xl border border-secondaryContainer/20 shadow-sm hover:shadow-md transition-shadow">
+                                <div className="w-8 h-8 rounded-full bg-[#fcedea] text-primary flex items-center justify-center shrink-0">
+                                    <span className="material-symbols-outlined text-base" style={{ fontVariationSettings: "'FILL' 1" }}>check_circle</span>
+                                </div>
+                                <span className="text-sm font-bold text-gray-800 tracking-tight leading-snug">{feature}</span>
                             </div>
-                            <h4 className="font-bold mb-1">Order Received</h4>
-                            <p className="text-xs text-stone-400">Day 0</p>
-                        </div>
-                        
-                        <div className="relative z-10 flex flex-col items-center text-center bg-[#1a1c1a] px-4">
-                            <div className="w-12 h-12 rounded-full bg-secondary flex items-center justify-center mb-4 ring-8 ring-[#1a1c1a]">
-                                <span className="material-symbols-outlined">outdoor_grill</span>
-                            </div>
-                            <h4 className="font-bold mb-1">Hand-Mixed Batch</h4>
-                            <p className="text-xs text-stone-400">Day 1 Morning</p>
-                        </div>
-                        
-                        <div className="relative z-10 flex flex-col items-center text-center bg-[#1a1c1a] px-4">
-                            <div className="w-12 h-12 rounded-full bg-tertiary flex items-center justify-center mb-4 ring-8 ring-[#1a1c1a]">
-                                <span className="material-symbols-outlined">inventory_2</span>
-                            </div>
-                            <h4 className="font-bold mb-1">Packaged Fresh</h4>
-                            <p className="text-xs text-stone-400">Day 1 Afternoon</p>
-                        </div>
-                        
-                        <div className="relative z-10 flex flex-col items-center text-center bg-[#1a1c1a] px-4">
-                            <div className="w-12 h-12 rounded-full bg-white text-black flex items-center justify-center mb-4 ring-8 ring-[#1a1c1a]">
-                                <span className="material-symbols-outlined">local_shipping</span>
-                            </div>
-                            <h4 className="font-bold mb-1">Express Delivery</h4>
-                            <p className="text-xs text-stone-400">Day 2-3</p>
-                        </div>
+                        ))}
+                    </div>
+
+                    {/* Action Block */}
+                    <div className="space-y-4 pt-6 border-t border-outline-variant/10">
+                        <Link 
+                            to="/order" 
+                            className="w-full bg-primary text-on-primary py-6 rounded-2xl font-headline font-black text-xl uppercase tracking-tight flex items-center justify-center gap-3 hover:bg-primary-container transition-all shadow-[0_12px_24px_rgba(175,16,26,0.25)] active:scale-[0.98]"
+                        >
+                            Grab Your Pack
+                            <span className="material-symbols-outlined font-black">arrow_forward</span>
+                        </Link>
+                        <p className="text-center text-[10px] font-bold text-on-surface-variant uppercase tracking-[0.2em] opacity-60">
+                             FSSAI Approved • Made in Hygienic Facility • No MSG
+                        </p>
                     </div>
                 </div>
             </section>
 
-            {/* Nutritional & Ingredients */}
-            <section className="py-24 max-w-7xl mx-auto px-6 grid grid-cols-1 lg:grid-cols-2 gap-16">
-                <div className="bg-surface-container-low p-8 md:p-12 rounded-2xl">
-                    <h3 className="text-2xl font-black mb-8 border-b-2 border-primary/20 pb-4">Ingredients</h3>
-                    <p className="text-on-surface-variant leading-relaxed mb-8">
-                        Premium Beaten Rice (Poha), Peanut Oil, Peanuts, Onion Flakes, Green Chilli, Curry Leaves, Mustard Seeds, Fennel Seeds (Saunf), Turmeric, Indori Jeeravan Masala (Salt, Coriander, Cumin, Dry Mango, Asafoetida, Black Pepper), Sugar, Lemon Powder.
-                    </p>
-                    <div className="flex flex-wrap gap-3">
-                        <span className="px-4 py-2 bg-white rounded-lg text-xs font-bold shadow-sm">NO ARTIFICIAL COLORS</span>
-                        <span className="px-4 py-2 bg-white rounded-lg text-xs font-bold shadow-sm">NO MSG</span>
-                        <span className="px-4 py-2 bg-white rounded-lg text-xs font-bold shadow-sm">NO PRESERVATIVES</span>
+            {/* Preparation ritual */}
+            <section className="mt-32 border-y border-outline-variant/10">
+                <div className="max-w-7xl mx-auto grid md:grid-cols-4 divide-x divide-outline-variant/10">
+                    <div className="p-12 text-center group bg-surface-container-low/30 hover:bg-background transition-colors">
+                        <div className="text-primary font-headline font-black text-5xl mb-6 group-hover:scale-110 transition-transform">01</div>
+                        <h4 className="font-headline font-black text-lg mb-2">POUR</h4>
+                        <p className="text-sm font-medium text-on-surface-variant">Empty the 75g pack into a bowl.</p>
                     </div>
-                </div>
-                <div className="bg-surface-container-lowest border border-outline-variant/10 p-8 md:p-12 rounded-2xl shadow-sm">
-                    <h3 className="text-2xl font-black mb-8 border-b-2 border-secondary/20 pb-4">Nutritional Facts</h3>
-                    <div className="space-y-4">
-                        <div className="flex justify-between border-b border-outline-variant/10 pb-2">
-                            <span className="font-medium">Energy</span>
-                            <span className="font-bold">382 kcal</span>
-                        </div>
-                        <div className="flex justify-between border-b border-outline-variant/10 pb-2">
-                            <span className="font-medium">Protein</span>
-                            <span className="font-bold">8.4 g</span>
-                        </div>
-                        <div className="flex justify-between border-b border-outline-variant/10 pb-2">
-                            <span className="font-medium">Carbohydrates</span>
-                            <span className="font-bold">72.1 g</span>
-                        </div>
-                        <div className="flex justify-between border-b border-outline-variant/10 pb-2">
-                            <span className="font-medium">Total Fat</span>
-                            <span className="font-bold">6.8 g</span>
-                        </div>
-                        <div className="flex justify-between border-b border-outline-variant/10 pb-2">
-                            <span className="font-medium">Dietary Fiber</span>
-                            <span className="font-bold">4.2 g</span>
-                        </div>
-                        <div className="flex justify-between border-b border-outline-variant/10 pb-2">
-                            <span className="font-medium">Sodium</span>
-                            <span className="font-bold">580 mg</span>
-                        </div>
-                        <p className="text-[10px] text-on-surface-variant italic mt-4">*Values are per 100g of dry mix as per analysis of image-5 data.</p>
+                    <div className="p-12 text-center group bg-surface-container-low/30 hover:bg-background transition-colors">
+                        <div className="text-primary font-headline font-black text-5xl mb-6 group-hover:scale-110 transition-transform">02</div>
+                        <h4 className="font-headline font-black text-lg mb-2">HOT WATER</h4>
+                        <p className="text-sm font-medium text-on-surface-variant">Add 80ml of boiling water.</p>
+                    </div>
+                    <div className="p-12 text-center group bg-surface-container-low/30 hover:bg-background transition-colors">
+                        <div className="text-primary font-headline font-black text-5xl mb-6 group-hover:scale-110 transition-transform">03</div>
+                        <h4 className="font-headline font-black text-lg mb-2">COVER</h4>
+                        <p className="text-sm font-medium text-on-surface-variant">Close the lid for 5 minutes.</p>
+                    </div>
+                    <div className="p-12 text-center group bg-surface-container-low/30 hover:bg-background transition-colors">
+                        <div className="text-primary font-headline font-black text-5xl mb-6 group-hover:scale-110 transition-transform">04</div>
+                        <h4 className="font-headline font-black text-lg mb-2">STIR</h4>
+                        <p className="text-sm font-medium text-on-surface-variant">Uncover, stir, and enjoy Indori love.</p>
                     </div>
                 </div>
             </section>
 
-            {/* Final CTA / Bento Grid Elements */}
-            <section className="mb-24 px-6 max-w-7xl mx-auto">
-                <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-                    <div className="md:col-span-2 relative h-80 rounded-2xl overflow-hidden group">
-                        <img 
-                            className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" 
-                            alt="Close up of nutritional label and premium quality seal" 
-                            src="https://lh3.googleusercontent.com/aida-public/AB6AXuCPGa8niynHwEN_g7kEKKDMPv5eqIeJwgSCMYtXcMNmD4rfz7fzWnY3itNwZcIRmlO0HP6g3x2i8XXROU8F2sUDv-Ggwltct3iT0gY_r1ipRA7-rzd9vRQ-G0fPZXTiB7L-DCnzbumYIyCKqIdoRO1M6q1NAeBijZdrKKxziYqPsBKRsimr93hDBi-eE3yrDf-wJJ0pgZMZ_VzR7sIo9KsabRStCL6CbpALfn0J0t0EvA9ZGWwqgL7zFVU5eJPjQZ4GLzNaMddalw" 
-                        />
-                        <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent flex flex-col justify-end p-10">
-                            <h3 className="text-white text-3xl font-black mb-2">Quality is our only ingredient.</h3>
-                            <p className="text-stone-300">Lab tested and approved for purity.</p>
-                        </div>
-                    </div>
-                    <div className="bg-secondary-container rounded-2xl p-10 flex flex-col justify-center items-center text-center">
-                        <span className="material-symbols-outlined text-5xl mb-4 text-on-secondary-container">local_fire_department</span>
-                        <h3 className="text-2xl font-black text-on-secondary-container mb-2">Bestseller</h3>
-                        <p className="text-on-secondary-container/80 text-sm mb-6">Join 10,000+ happy breakfast lovers.</p>
-                        <button className="bg-on-secondary-container text-secondary-container px-8 py-3 rounded-full font-bold uppercase tracking-widest text-xs">Buy Now</button>
-                    </div>
-                </div>
+            {/* Narrative detail */}
+            <section className="py-24 max-w-4xl mx-auto px-6 text-center">
+                <span className="material-symbols-outlined text-secondary text-5xl mb-8" style={{ fontVariationSettings: "'FILL' 1" }}>eco</span>
+                <h2 className="text-4xl md:text-5xl font-black font-headline text-on-surface mb-8 tracking-tighter">Better for you, <br/>Better than street.</h2>
+                <p className="text-xl text-on-surface-variant leading-relaxed font-medium">
+                    Most instant foods rely on laboratory-synthesized stabilizers and hidden sugars to extend shelf life. At Pohafix, we believe in the power of raw, natural ingredients. No MSG, no artificial fillers—just the purest Malwa rice flakes and hand-ground spices, batched weekly for maximum vibrancy.
+                </p>
             </section>
         </main>
     );
