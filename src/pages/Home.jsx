@@ -252,7 +252,7 @@ const Home = () => {
                                                         </h3>
                                                         
                                                         <p className="text-gray-500 font-medium leading-relaxed mb-8 font-body text-sm md:text-base pr-4">
-                                                            {bundle.subtitle}. The ultimate breakfast solution for busy mornings. Each pack comes with authentic Jeeravan spices and a separate sachet of crispy Indori Sev for that perfect crunch.
+                                                            {bundle.subtitle}. The ultimate breakfast solution for busy mornings.
                                                         </p>
                                                         
                                                         {/* Pricing Block */}
