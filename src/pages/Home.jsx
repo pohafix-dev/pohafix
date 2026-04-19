@@ -1,9 +1,21 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 
 const Home = () => {
+    const [currentSlide, setCurrentSlide] = useState(0);
+    const slides = [
+        "/box-front.png",
+        "/box-right.png",
+        "/box-left.png",
+        "/box-group.png"
+    ];
+
     useEffect(() => {
         window.scrollTo(0, 0);
+        const timer = setInterval(() => {
+            setCurrentSlide((prev) => (prev + 1) % slides.length);
+        }, 3000);
+        return () => clearInterval(timer);
     }, []);
 
     return (
@@ -65,12 +77,32 @@ const Home = () => {
                         <div className="relative group">
                             <div className="absolute -top-10 -left-10 text-9xl font-hindi hindi-layer rotate-[-15deg]">ताज़ा</div>
                             <div className="absolute -bottom-10 -right-10 text-9xl font-hindi hindi-layer rotate-[15deg]">ज़ायका</div>
-                            {/* Main Product Image with Asymmetry */}
-                            <div className="relative transform hover:scale-105 transition-transform duration-500">
-                                <img alt="Pohafix Bowl" className="rounded-full shadow-2xl border-8 border-surface-container-lowest" data-alt="Macro shot of steamy indori poha served in a traditional stainless steel plate topped with yellow sev pomegranate seeds and fresh coriander" src="https://lh3.googleusercontent.com/aida-public/AB6AXuA7pqw5METmPpb2qUhurAxbPyusnsGFgl59MD7GR_eOrGpL7fP8DJjIvHu-j7aqITinhuuIkzd6f3hMtUZPxY6wE9SnjDe2WsffkD9iB6IJzrqRaBwpMLOoBMmZFDnQlY0iZ6ocEziBns7ECuuiEUbxX5cj9W_yychyozV4pqUDYwdkVIST_qQ8AYJLvcCyh7cY5VE8CCdQo4MjTF4MdH5zDnHer8UHY1efPXPgDvQA_eGrCeDEN_jMIiZUc2Vt5KH5hVKIo-C1E1s" />
-                                <div className="absolute top-1/4 -right-12 bg-surface-container-lowest p-4 rounded shadow-lg rotate-12 max-w-[150px]">
-                                    <p className="font-label text-[10px] font-bold text-secondary uppercase tracking-widest">Garnish King</p>
-                                    <p className="font-headline font-bold text-xs">Extra Sev &amp; Pomegranate Included</p>
+                            {/* Main Product Carousel */}
+                            <div className="relative transform hover:scale-105 transition-transform duration-500 bg-surface-container-lowest rounded-[2rem] shadow-2xl p-4 md:p-8 overflow-hidden aspect-[4/5] flex items-center justify-center">
+                                {slides.map((slide, index) => (
+                                    <img 
+                                        key={slide}
+                                        src={slide}
+                                        alt={`Pohafix Box Design ${index + 1}`}
+                                        className={`absolute inset-0 w-full h-full object-contain transition-opacity duration-1000 p-6 ${index === currentSlide ? 'opacity-100 z-10' : 'opacity-0 z-0'}`} 
+                                    />
+                                ))}
+                                
+                                {/* Carousel Indicators */}
+                                <div className="absolute bottom-6 flex gap-2 z-20">
+                                    {slides.map((_, idx) => (
+                                        <button 
+                                            key={idx}
+                                            onClick={() => setCurrentSlide(idx)}
+                                            className={`w-3 h-3 rounded-full transition-colors duration-300 ${idx === currentSlide ? 'bg-primary' : 'bg-surface-variant hover:bg-surface-dim'}`}
+                                            aria-label={`Go to slide ${idx + 1}`}
+                                        />
+                                    ))}
+                                </div>
+
+                                <div className="absolute top-12 -right-4 bg-surface-container-lowest p-3 rounded-xl shadow-lg rotate-12 max-w-[140px] z-20">
+                                    <p className="font-label text-[10px] font-bold text-secondary uppercase tracking-widest">New Design</p>
+                                    <p className="font-headline font-bold text-xs mt-1">Authentic Retained</p>
                                 </div>
                             </div>
                         </div>
