@@ -216,7 +216,7 @@ const Home = () => {
                                                     <div className="md:w-1/2 p-12 bg-[#fdfaf2] flex items-center justify-center relative border-b md:border-b-0 md:border-r border-gray-100">
                                                         <div className="flex flex-col items-center">
                                                             <div className="flex gap-2 items-center justify-center relative w-full h-full min-h-[300px]">
-                                                                <img src={bundle.images[0]} alt="Product" className="w-[85%] h-auto md:max-w-md object-contain drop-shadow-[0_20px_20px_rgba(0,0,0,0.15)] relative z-10 hover:scale-105 transition-transform duration-500" />
+                                                                <img src={bundle.images[0]} alt="Product" className="w-[85%] h-auto md:max-w-md object-contain mix-blend-multiply relative z-10 hover:scale-105 transition-transform duration-500" />
                                                             </div>
                                                             {/* Tiny pseudo-thumbnails at bottom based on user design */}
                                                             <div className="flex gap-2 mt-8 absolute bottom-6 right-6">
