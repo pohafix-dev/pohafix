@@ -450,7 +450,179 @@ const Home = () => {
                         </div>
                     </div>
                 </div>
+                {/* Hero Section: Recall from Screen 6 */}
+                <section className="relative bg-surface-container-low pt-12 pb-24 px-8 overflow-hidden">
+                    <div className="max-w-screen-2xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                        <div>
+                            <h1 className="font-headline text-7xl md:text-8xl font-black tracking-tighter text-primary leading-[0.9] mb-8 uppercase">
+                                Late uthte ho?<br/>
+                                <span className="text-secondary">Breakfast skip</span><br/>
+                                karte ho?
+                            </h1>
+                            <p className="text-xl max-w-lg mb-10 text-on-surface-variant leading-relaxed">
+                                Don't let the morning rush steal your Indori ritual. Authentic, steamy Poha delivered before your first meeting starts.
+                            </p>
+                            <div className="flex flex-wrap gap-4">
+                                <button className="bg-primary text-on-primary px-8 py-4 font-headline font-bold text-lg tracking-tight uppercase rounded-md active:scale-95 transition-transform">Fix My Morning</button>
+                                <button className="bg-secondary-container text-on-secondary-container px-8 py-4 font-headline font-bold text-lg tracking-tight uppercase rounded-md active:scale-95 transition-transform">Explore Menu</button>
+                            </div>
+                        </div>
+                        <div className="relative">
+                            <div className="absolute -top-10 -right-10 text-9xl font-black opacity-5 text-on-surface rotate-12 select-none">स्वादिष्ट</div>
+                            <img alt="Authentic Indori Poha" className="rounded-xl shadow-2xl relative z-10 w-full object-cover aspect-[4/3] transform -rotate-2" data-alt="Close-up of steaming Indori Poha in a stainless steel plate, topped with yellow sev, pomegranate seeds, and fresh coriander, morning light." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCnztsELaOsYUUF8xPImC0C2KakyarWOJsz18T6w8nOF70SaXwml4Azq-cr-oNXn59Zdi6QHpjoimz1WT3kddqLsfs3sp16RqunKMEDYumzhZLFmLBDuGxIla8AuJL3lZq8Jj5NYpyyrDquZDcx33F0Bh8Ga-Z2-S2zXyeZ5glW9exe0wW7Dzmji0qNiLZcKZ50l5dGUfIobZ6SensGELIjshjBZhvdGIhyW7-rq9TzOErNyBSxzOsSpsGyJZfluU4vapCtaPMRtX8" />
+                        </div>
+                    </div>
+                </section>
 
+                {/* The World is Poha-Fixated: Celebrity Reels */}
+                <section className="py-24 bg-surface">
+                    <div className="max-w-screen-2xl mx-auto px-8">
+                        <div className="flex flex-col md:flex-row justify-between items-end mb-16 gap-4">
+                            <h2 className="font-headline text-5xl md:text-6xl font-black text-primary tracking-tighter uppercase max-w-xl">
+                                The World is <span className="text-secondary">Poha-Fixated</span>
+                            </h2>
+                            <p className="font-label font-semibold text-tertiary uppercase tracking-widest bg-tertiary-container/10 px-4 py-1">Global Endorsements</p>
+                        </div>
+                        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+                            {/* Reel Card 1: Diljit */}
+                            <div className="group relative aspect-[9/16] overflow-hidden rounded-xl bg-surface-container-highest shadow-xl transition-all hover:scale-[1.02]">
+                                <img alt="Diljit Dosanjh" className="absolute inset-0 h-full w-full object-cover" data-alt="Portrait of a stylish Indian man with a bright turban smiling and enjoying a plate of street food, vibrant warm lighting." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCHaJQFrW_i9vuAasgeVSU0PmmBTRonFhBAEnRQnj37WSE44QGnpW3FIldk9CIZyQcldCDX1HlXWuO5LqvYDFJipNwWUz-mGQKxLxM0GOpv3IsgU4MXUMdySG929GjuOJbji40xutKBflbgnok7kVIjaopMXlLqHe7onMZU0VwmBu6cbmV-cWtVrUbbfv7Tue7qaSd0OKqIOR4HCqiXR94WGVj5C9aQsQJ4HB6lqjcuZY_iGeo_7FDMr4rwA6ULzQ18v5CgmWdNAL0" />
+                                <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent"></div>
+                                <div className="absolute bottom-6 left-6 right-6">
+                                    <span className="bg-secondary text-on-secondary px-3 py-1 rounded-full text-xs font-bold font-label mb-2 inline-block">@diljitdosanjh</span>
+                                    <blockquote className="text-white font-headline text-2xl font-bold italic leading-tight mb-4">"Asli Swad!"</blockquote>
+                                    <button className="w-full bg-primary text-on-primary py-3 rounded-md font-headline font-bold uppercase tracking-tight flex items-center justify-center gap-2 backdrop-blur-sm bg-opacity-90 hover:bg-opacity-100 transition-all">
+                                        <span className="material-symbols-outlined text-sm">shopping_bag</span> Order Now
+                                    </button>
+                                </div>
+                            </div>
+                            {/* Reel Card 2: David Cameron */}
+                            <div className="group relative aspect-[9/16] overflow-hidden rounded-xl bg-surface-container-highest shadow-xl transition-all hover:scale-[1.02]">
+                                <img alt="David Cameron Lookalike/Rep" className="absolute inset-0 h-full w-full object-cover" data-alt="Dignified older gentleman in a suit sitting at a traditional Indian street stall, holding a plate of poha, authentic atmosphere." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBiTTQElcqshMCzikh2aIRE39bERZry32TaiP2BhL7m-PZlFOKSPi3fUvhNmhvwPdjuoVJwbJ2ur0rWVSZHRj4qAgr5j1Eesy0bonAeG8gvl7xFylrAppZnKE021_kh5TS9U7B7PxeRX5OXInhwD2neqpMeiecFDy744P2SBbXlFbzznTn35C8TgPJlfeOaBuToToMkwyxIH04ky7eFluLanpyvMp4JbkpmCPsJKfbeyb5UF0FDqOoCgaoAaGLW_arq5yMefluhu7Y" />
+                                <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent"></div>
+                                <div className="absolute bottom-6 left-6 right-6">
+                                    <span className="bg-tertiary text-on-tertiary px-3 py-1 rounded-full text-xs font-bold font-label mb-2 inline-block">Global Diplomat</span>
+                                    <blockquote className="text-white font-headline text-2xl font-bold italic leading-tight mb-4">"Truly Authentic"</blockquote>
+                                    <button className="w-full bg-primary text-on-primary py-3 rounded-md font-headline font-bold uppercase tracking-tight flex items-center justify-center gap-2 backdrop-blur-sm bg-opacity-90 hover:bg-opacity-100 transition-all">
+                                        <span className="material-symbols-outlined text-sm">shopping_bag</span> Order Now
+                                    </button>
+                                </div>
+                            </div>
+                            {/* Reel Card 3: Lifestyle */}
+                            <div className="group relative aspect-[9/16] overflow-hidden rounded-xl bg-surface-container-highest shadow-xl transition-all hover:scale-[1.02] hidden lg:block">
+                                <img alt="Food Blogger" className="absolute inset-0 h-full w-full object-cover" data-alt="Overhead close-up of hands reaching for a vibrant bowl of poha on a rustic wooden table with morning shadows." src="https://lh3.googleusercontent.com/aida-public/AB6AXuC1UozEW7ue-kWcq-ldZH1at2QitPJ-XT72E2iT7naTbi1cn3692NsH0wx5s8oUf7jTWMuPJfc10J3HMcOELzwuZieQrx0SNkH4GYcwFbN_cSDm3ypgHOs-KwhFDb4KietqOYLY3uvgVFig_yiTiTOg65d-fbjNnKqtUNNl9n_pHYnnT7PqL7ek6EG9jH9TW48fhC3cNYboPuc5Z6JijJj4kF8ENpw971Oy9IJ05hZEcp2RBPux8SDCFk-mPw0N6jWUCZbggmDYA2c" />
+                                <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent"></div>
+                                <div className="absolute bottom-6 left-6 right-6">
+                                    <span className="bg-secondary text-on-secondary px-3 py-1 rounded-full text-xs font-bold font-label mb-2 inline-block">Indore Diaries</span>
+                                    <blockquote className="text-white font-headline text-2xl font-bold italic leading-tight mb-4">"Morning Fuel!"</blockquote>
+                                    <button className="w-full bg-primary text-on-primary py-3 rounded-md font-headline font-bold uppercase tracking-tight flex items-center justify-center gap-2 backdrop-blur-sm bg-opacity-90 hover:bg-opacity-100 transition-all">
+                                        <span className="material-symbols-outlined text-sm">shopping_bag</span> Order Now
+                                    </button>
+                                </div>
+                            </div>
+                            {/* Reel Card 4: Chef */}
+                            <div className="group relative aspect-[9/16] overflow-hidden rounded-xl bg-surface-container-highest shadow-xl transition-all hover:scale-[1.02] hidden lg:block">
+                                <img alt="Chef Detail" className="absolute inset-0 h-full w-full object-cover" data-alt="Chef in a white coat sprinkling fresh pomegranate seeds over a steaming mountain of yellow poha, focus on motion." src="https://lh3.googleusercontent.com/aida-public/AB6AXuD7SCKVzc-i55yZStyOXRHxVi9X7u6qWJp1ksw2u--BssbAWSYzY7MSX3lYzLPKsxlXs2O8c3BRNZp444tz6gtU0y1TD6BZ4koXkaAliENSplqFDfOCIpjJckNu2TuzLtJY0WkuaHtvN3VD6e2KL2iwCHAwu4qZCLDPPnhvyvFaQGek6oAV7O_jVe-4dBpx6CF-H7UZ2Z5F0MOqVw-JFo60KqUAGMXTnOLfBgkvlzkdlJB1YpTflvWWVO1bxrx4cOTX7ax_fG5wRBU" />
+                                <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent"></div>
+                                <div className="absolute bottom-6 left-6 right-6">
+                                    <span className="bg-primary text-on-primary px-3 py-1 rounded-full text-xs font-bold font-label mb-2 inline-block">Craftsman</span>
+                                    <blockquote className="text-white font-headline text-2xl font-bold italic leading-tight mb-4">"Pure Craft"</blockquote>
+                                    <button className="w-full bg-primary text-on-primary py-3 rounded-md font-headline font-bold uppercase tracking-tight flex items-center justify-center gap-2 backdrop-blur-sm bg-opacity-90 hover:bg-opacity-100 transition-all">
+                                        <span className="material-symbols-outlined text-sm">shopping_bag</span> Order Now
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                {/* Powerful Street View: Sarafa Bazaar */}
+                <section className="relative h-[819px] w-full flex items-center justify-center overflow-hidden">
+                    <div className="absolute inset-0 bg-black/40 z-10"></div>
+                    <img alt="Sarafa Bazaar at Dawn" className="absolute inset-0 w-full h-full object-cover grayscale-[20%] brightness-[70%]" data-alt="Cinematic wide shot of a bustling Indian street food market at dawn with thick steam rising from large copper pots and warm glowing lights." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAZ9XlFqJx7nDJ3BqSEVAnFf6nQI2b4SJ2MHnattAg45Vx6HNOFZku9m5PFYRxqbGrNmWmpdAMhR_KeeAInZZnsWLlZM1jCEJj9gcrVFdHDhXuHkAh67iAAYa7upgiLp650-EAvCDm8sXOYJS4hF9489d53Ft-QGgqis0Gd8gChLyu8wbkXdGfjaHeYtUwtHE6RnGOf0-e17RYXHk-aAM9G8CGxmcSAaXRfdsoe4UeulyGoG2Mxu_waEUeAnAgCE4QSQ2iN8ZOswVQ" />
+                    <div className="relative z-20 text-center px-8">
+                        <h3 className="font-headline text-white text-6xl md:text-9xl font-black uppercase tracking-tighter leading-none mb-4">
+                            Born in the <br/><span className="text-secondary-fixed">Galiyan</span> of Indore
+                        </h3>
+                        <p className="text-white/80 font-label tracking-widest text-lg uppercase mb-8">Sarafa Bazaar • Chhappan Dukaan • Every Corner</p>
+                        <div className="h-1 w-32 bg-primary mx-auto"></div>
+                    </div>
+                </section>
+
+                {/* Thelagadi Experience */}
+                <section className="py-24 bg-surface-container-low overflow-hidden">
+                    <div className="max-w-screen-2xl mx-auto px-8 relative">
+                        <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+                            <div className="relative">
+                                {/* Asymmetric Card Layout */}
+                                <div className="absolute -top-12 -left-12 font-headline text-9xl text-primary/5 select-none rotate-[-15deg]">thela</div>
+                                <div className="bg-surface-container-lowest p-6 rounded-xl shadow-2xl relative z-10 transform rotate-2">
+                                    <img alt="Street Cart Poha" className="w-full aspect-video object-cover rounded-lg mb-6" data-alt="A stylized, premium Indian street cart decorated with brass details, featuring a large heap of yellow poha and bowls of sev and lemon." src="https://lh3.googleusercontent.com/aida-public/AB6AXuC8_ksPOcAWXxBSKHYO9Kh6gW9b5_1DcltbPse_S2f5onONNs7UzRlJT8FJx4_JZ7o3AvzUC5MynwWIkJn2zCkwDnS10NwPngGbeV3i88SYuON0rCk5XMHgym7hDxuAQpvxZbw-t7MsifA8XcSpE70vWQhOPqCZRyDOtHIec_3P-dGwzpX99Gg5sOl7SiLBnbdlopyjpZvk8BhzjIekceVlE-yWHLnJG9Ijvz0HRksIfzZjAvK7vp33wlnUHMBKB4WhsD3voS_aV7c" />
+                                    <div className="flex justify-between items-center">
+                                        <div>
+                                            <h4 className="font-headline text-2xl font-bold text-on-surface">The Signature Cart</h4>
+                                            <p className="text-on-surface-variant italic">Served with Jeeravan &amp; Love</p>
+                                        </div>
+                                        <span className="bg-tertiary-container text-on-tertiary-container font-headline font-black px-4 py-2 text-xl">₹49/-</span>
+                                    </div>
+                                </div>
+                                <div className="absolute -bottom-8 -right-8 bg-secondary-container p-8 rounded-xl shadow-xl z-20 max-w-xs transform -rotate-3 border-4 border-surface-container-lowest">
+                                    <p className="font-headline text-3xl font-black text-secondary leading-tight mb-2 uppercase">Thela-waala swad</p>
+                                    <p className="text-on-secondary-container font-medium">That unmistakable smoky aroma of the street, captured in every bite.</p>
+                                </div>
+                            </div>
+                            <div className="lg:pl-12">
+                                <span className="text-primary font-headline font-extrabold uppercase tracking-widest block mb-4">Indori Heritage</span>
+                                <h2 className="font-headline text-5xl md:text-7xl font-black text-on-surface tracking-tighter leading-[0.9] mb-8 uppercase">
+                                    The Authentic <span className="text-primary">Thela Experience</span>, Delivered.
+                                </h2>
+                                <div className="space-y-6 mb-12">
+                                    <div className="flex items-start gap-4">
+                                        <div className="bg-primary-container p-2 rounded-lg">
+                                            <span className="material-symbols-outlined text-on-primary-container">done_all</span>
+                                        </div>
+                                        <div>
+                                            <h5 className="font-headline font-bold text-xl uppercase">Steamy Texture</h5>
+                                            <p className="text-on-surface-variant">Soft, flattened rice steamed over a double boiler just like the vendors.</p>
+                                        </div>
+                                    </div>
+                                    <div className="flex items-start gap-4">
+                                        <div className="bg-secondary-container p-2 rounded-lg">
+                                            <span className="material-symbols-outlined text-on-secondary-container">restaurant_menu</span>
+                                        </div>
+                                        <div>
+                                            <h5 className="font-headline font-bold text-xl uppercase">The Fixings Cluster</h5>
+                                            <p className="text-on-surface-variant">Ratlam-grade Sev, Indori Jeeravan, freshly chopped onions, and lemon.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <button className="group bg-primary text-on-primary px-10 py-5 font-headline font-black text-xl tracking-tight uppercase rounded-md shadow-xl flex items-center gap-4 hover:bg-primary-container transition-all">
+                                    Experience the Ritual
+                                    <span className="material-symbols-outlined group-hover:translate-x-1 transition-transform">arrow_forward</span>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                {/* Newspaper Snip (Testimonial) */}
+                <section className="py-20 bg-surface">
+                    <div className="max-w-4xl mx-auto px-8">
+                        <div className="bg-surface-variant p-12 relative" style={{ WebkitMaskImage: "url('data:image/svg+xml;utf8,<svg viewBox=\"0 0 100 10\" preserveAspectRatio=\"none\" xmlns=\"http://www.w3.org/2000/svg\"><path d=\"M0 10 L5 8 L10 10 L15 7 L20 10 L25 8 L30 10 L35 7 L40 10 L45 8 L50 10 L55 7 L60 10 L65 8 L70 10 L75 7 L80 10 L85 8 L90 10 L95 7 L100 10 V0 H0 Z\" fill=\"black\"/></svg>')", maskImage: "url('data:image/svg+xml;utf8,<svg viewBox=\"0 0 100 10\" preserveAspectRatio=\"none\" xmlns=\"http://www.w3.org/2000/svg\"><path d=\"M0 10 L5 8 L10 10 L15 7 L20 10 L25 8 L30 10 L35 7 L40 10 L45 8 L50 10 L55 7 L60 10 L65 8 L70 10 L75 7 L80 10 L85 8 L90 10 L95 7 L100 10 V0 H0 Z\" fill=\"black\"/></svg>')" }}>
+                            <div className="absolute -top-6 left-12 bg-primary text-on-primary px-4 py-1 font-headline font-bold uppercase tracking-widest text-sm">Special Dispatch</div>
+                            <blockquote className="font-headline text-3xl font-black text-on-surface-variant italic leading-tight mb-8">
+                                "I used to skip breakfast because Indore was 800 miles away. Now, Pohafix brings the Galiyan of my childhood right to my dining table in London."
+                            </blockquote>
+                            <div className="flex items-center gap-4">
+                                <div className="w-12 h-12 rounded-full bg-outline-variant"></div>
+                                <div>
+                                    <p className="font-headline font-bold uppercase">Aryan Sharma</p>
+                                    <p className="text-sm font-label text-on-surface-variant/70">Ex-Indori, Software Lead</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
             </main>
 
             {/* Footer Component */}
