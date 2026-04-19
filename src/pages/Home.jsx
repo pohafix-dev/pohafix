@@ -66,7 +66,7 @@ const Home = () => {
                         <Link className="text-[#1d1c16] dark:text-[#e7e2d9] opacity-80 hover:opacity-100 hover:text-[#af101a] transition-all duration-300" to="/order">Bulk Orders</Link>
                         <a className="text-[#1d1c16] dark:text-[#e7e2d9] opacity-80 hover:opacity-100 hover:text-[#af101a] transition-all duration-300" href="#street">Street View</a>
                     </div>
-                    <Link to="/order" className="bg-primary text-on-primary px-6 py-2 rounded-lg font-bold scale-95 active:scale-90 transition-transform shadow-lg shadow-primary/20 inline-block">
+                    <Link to="/shop" className="bg-primary text-on-primary px-6 py-2 rounded-lg font-bold scale-95 active:scale-90 transition-transform shadow-lg shadow-primary/20 inline-block">
                         Order Now
                     </Link>
                 </div>
@@ -91,7 +91,7 @@ const Home = () => {
                                 इंदौर का स्वाद, अब कहीं भी
                             </p>
                             <div className="flex items-center gap-6 pt-4">
-                                <Link to="/order" className="bg-primary text-on-primary px-10 py-4 rounded-md font-bold text-lg hover:bg-primary-container transition-all shadow-xl shadow-primary/30 flex items-center gap-2 group">
+                                <Link to="/shop" className="bg-primary text-on-primary px-10 py-4 rounded-md font-bold text-lg hover:bg-primary-container transition-all shadow-xl shadow-primary/30 flex items-center gap-2 group">
                                     Order Now
                                     <span className="material-symbols-outlined group-hover:translate-x-1 transition-transform">arrow_forward</span>
                                 </Link>
@@ -266,7 +266,7 @@ const Home = () => {
                                                             </span>
                                                         </div>
                                                         
-                                                        <Link to="/order" className="w-full bg-[#ae1925] text-white py-4 rounded-xl font-bold text-lg hover:bg-[#8f121d] transition-colors text-center shadow-[0_4px_14px_0_rgb(174,25,37,0.39)] hover:shadow-[0_6px_20px_rgba(174,25,37,0.23)] active:scale-[0.98] duration-200">
+                                                        <Link to="/shop" className="w-full bg-[#ae1925] text-white py-4 rounded-xl font-bold text-lg hover:bg-[#8f121d] transition-colors text-center shadow-[0_4px_14px_0_rgb(174,25,37,0.39)] hover:shadow-[0_6px_20px_rgba(174,25,37,0.23)] active:scale-[0.98] duration-200">
                                                             Buy Now
                                                         </Link>
                                                     </div>
@@ -445,7 +445,7 @@ const Home = () => {
                             Healthy bhi, tasty bhi –<br className="hidden md:block" /> ab try karo.
                         </h2>
                         <div className="flex justify-center items-center gap-6 relative inline-flex">
-                            <Link to="/order" className="bg-[#be1e2d] text-white px-12 py-5 font-black text-2xl tracking-wide hover:bg-[#a11825] transition-colors shadow-[0_6px_0_0_#8f121b] active:translate-y-1 active:shadow-[0_2px_0_0_#8f121b] min-w-[240px] rounded-sm relative z-10">
+                            <Link to="/shop" className="bg-[#be1e2d] text-white px-12 py-5 font-black text-2xl tracking-wide hover:bg-[#a11825] transition-colors shadow-[0_6px_0_0_#8f121b] active:translate-y-1 active:shadow-[0_2px_0_0_#8f121b] min-w-[240px] rounded-sm relative z-10">
                                 Order Now
                             </Link>
                             <span className="material-symbols-outlined text-[#fdbd30] text-6xl transform -rotate-[20deg] absolute -right-16 top-4 animate-[bounce_2s_infinite] hidden md:block" style={{ fontVariationSettings: "'FILL' 1" }}>near_me</span>
