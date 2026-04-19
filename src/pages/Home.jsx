@@ -303,39 +303,153 @@ const Home = () => {
                     </div>
                 </section>
 
-                {/* Why Pohafix Section */}
-                <section className="py-24 bg-surface-container-high bg-newsprint relative" id="features">
-                    <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-primary/20 to-transparent"></div>
-                    <div className="container mx-auto px-6 text-center">
-                        <h3 className="text-4xl font-black font-headline mb-16">The Pohafix Promise</h3>
-                        <div className="grid md:grid-cols-3 gap-8">
-                            {/* Card 1 */}
-                            <div className="bg-surface-container-lowest p-10 rounded-xl shadow-sm hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 border-b-4 border-secondary">
-                                <div className="w-20 h-20 bg-secondary-container/20 rounded-full flex items-center justify-center mx-auto mb-6">
-                                    <span className="material-symbols-outlined text-secondary text-5xl">health_and_safety</span>
+                {/* Features & Why It Matters Section */}
+                <div className="bg-[#fcfaf5] pt-24 font-body relative overflow-hidden" id="features">
+                    <div className="container mx-auto px-6 max-w-6xl">
+                        {/* Top 3 Cards */}
+                        <div className="grid md:grid-cols-3 gap-6 mb-24">
+                            <div className="bg-white p-10 rounded shadow-sm border border-gray-100 hover:shadow-md transition-shadow">
+                                <div className="w-12 h-12 bg-[#ffe8e8] text-[#d63535] rounded-xl flex items-center justify-center mb-6">
+                                    <span className="material-symbols-outlined text-[20px]" style={{ fontVariationSettings: "'FILL' 1" }}>eco</span>
                                 </div>
-                                <h4 className="text-xl font-bold font-headline mb-3">No Preservatives</h4>
-                                <p className="text-on-surface-variant font-medium">Just pure, natural ingredients sun-dried and packed with love.</p>
+                                <h4 className="text-xl font-black font-headline text-gray-900 mb-4 tracking-tight">No Preservatives</h4>
+                                <p className="text-gray-500 font-medium text-sm leading-relaxed">Milled fresh, Zero chemicals in. We rely on moisture control, not laboratory shelf-extenders.</p>
                             </div>
-                            {/* Card 2 */}
-                            <div className="bg-surface-container-lowest p-10 rounded-xl shadow-sm hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 border-b-4 border-primary">
-                                <div className="w-20 h-20 bg-primary-container/10 rounded-full flex items-center justify-center mx-auto mb-6">
-                                    <span className="material-symbols-outlined text-primary text-5xl">flight_takeoff</span>
+                            
+                            <div className="bg-white p-10 rounded shadow-sm border border-gray-100 hover:shadow-md transition-shadow">
+                                <div className="w-12 h-12 bg-[#fdf2d0] text-[#b68c1c] rounded-xl flex items-center justify-center mb-6">
+                                    <span className="material-symbols-outlined text-[20px]" style={{ fontVariationSettings: "'FILL' 1" }}>military_tech</span>
                                 </div>
-                                <h4 className="text-xl font-bold font-headline mb-3">Travel Friendly</h4>
-                                <p className="text-on-surface-variant font-medium">Fits in your backpack, office bag, or carry-on. Anywhere you go, Indore follows.</p>
+                                <h4 className="text-xl font-black font-headline text-gray-900 mb-4 tracking-tight">Premium Quality Poha</h4>
+                                <p className="text-gray-500 font-medium text-sm leading-relaxed">Soft, light & perfectly cooked texture. Selected fresh poha grains that don't go mushy.</p>
                             </div>
-                            {/* Card 3 */}
-                            <div className="bg-surface-container-lowest p-10 rounded-xl shadow-sm hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 border-b-4 border-tertiary">
-                                <div className="w-20 h-20 bg-tertiary-container/10 rounded-full flex items-center justify-center mx-auto mb-6">
-                                    <span className="material-symbols-outlined text-tertiary text-5xl">timer</span>
+                            
+                            <div className="bg-white p-10 rounded shadow-sm border border-gray-100 hover:shadow-md transition-shadow">
+                                <div className="w-12 h-12 bg-[#e4f0e6] text-[#347b4e] rounded-xl flex items-center justify-center mb-6">
+                                    <span className="material-symbols-outlined text-[20px]" style={{ fontVariationSettings: "'FILL' 1" }}>local_florist</span>
                                 </div>
-                                <h4 className="text-xl font-bold font-headline mb-3">Ready in 5 Mins</h4>
-                                <p className="text-on-surface-variant font-medium">Add hot water, wait for 5 mins, and your morning ritual is served.</p>
+                                <h4 className="text-xl font-black font-headline text-gray-900 mb-4 tracking-tight">Real Indian Spices</h4>
+                                <p className="text-gray-500 font-medium text-sm leading-relaxed">Awesome style authentic Indori flavor. Our spice mix is pounded fresh every week.</p>
+                            </div>
+                        </div>
+
+                        {/* Why It Matters Header */}
+                        <div className="text-center mb-12">
+                            <h2 className="text-4xl md:text-5xl font-black font-headline text-[#be1e2d] tracking-tight">Why It Matters.</h2>
+                        </div>
+
+                        {/* 3 Staggered Grid Boxes */}
+                        <div className="flex flex-col md:flex-row gap-6 mb-8">
+                            <div className="md:w-[50%] lg:w-[60%] bg-gradient-to-r from-[#efe0bc] to-[#dfc38f] p-8 md:p-12 rounded relative overflow-hidden flex flex-col justify-end min-h-[260px] group">
+                                <span className="text-[#dbb771] opacity-50 text-8xl font-black absolute top-2 left-6 group-hover:scale-110 transition-transform duration-500">01</span>
+                                {/* Floating abstract flakes using text shapes */}
+                                <div className="absolute inset-0 overflow-hidden pointer-events-none opacity-40">
+                                    <div className="absolute top-1/4 left-1/3 w-8 h-4 bg-white/40 rounded-full rotate-45 blur-[1px]"></div>
+                                    <div className="absolute top-1/2 left-2/3 w-6 h-3 bg-white/40 rounded-full -rotate-12 blur-[1px]"></div>
+                                    <div className="absolute bottom-1/3 left-1/2 w-10 h-5 bg-white/40 rounded-full rotate-[60deg] blur-[1px]"></div>
+                                </div>
+                                <div className="relative z-10">
+                                    <h3 className="text-3xl md:text-4xl font-black font-headline text-gray-900 mb-2">Light Poha</h3>
+                                    <p className="text-gray-800 text-sm md:text-base font-medium pr-12 md:pr-24">Easy to digest, keeps you active without the mid-morning slump.</p>
+                                </div>
+                            </div>
+                            <div className="md:w-[25%] lg:w-[20%] bg-[#fdbd30] p-8 md:p-10 rounded flex flex-col min-h-[260px]">
+                                <span className="material-symbols-outlined text-gray-900 mb-auto text-4xl" style={{ fontVariationSettings: "'FILL' 1" }}>bolt</span>
+                                <div>
+                                    <h3 className="text-2xl font-black font-headline text-gray-900 mb-2">Peanuts</h3>
+                                    <p className="text-gray-900 font-medium text-xs md:text-sm">Crunchy bursts energy boost in every bite.</p>
+                                </div>
+                            </div>
+                            <div className="md:w-[25%] lg:w-[20%] bg-[#e7e7e3] p-8 md:p-10 rounded flex flex-col min-h-[260px] relative border-t-[8px] border-[#be1e2d]">
+                                <h3 className="text-sm md:text-base font-black font-headline text-[#be1e2d] mb-auto">Fresh Spices</h3>
+                                <p className="text-gray-700 font-medium text-xs md:text-sm mt-8">Authentic taste using age-old Jeeravan techniques.</p>
+                            </div>
+                        </div>
+
+                        {/* Green Banner */}
+                        <div className="bg-[#0b6c28] rounded p-8 md:p-12 flex flex-col md:flex-row justify-between items-center gap-8 mb-20 shadow-xl border border-[#0d5924]">
+                            <div className="text-white max-w-2xl text-center md:text-left">
+                                <h3 className="text-2xl md:text-4xl font-black font-headline mb-4 tracking-tight">No Preservatives = Healthy Choice</h3>
+                                <p className="text-green-100/90 font-medium text-sm md:text-base leading-relaxed max-w-xl mx-auto md:mx-0">Most instant foods use stabilizers that slow your metabolism. Pohafix uses the power of nature to stay fresh.</p>
+                            </div>
+                            <div className="border border-green-400/30 bg-[#127e32] px-8 py-6 rounded min-w-[160px] text-center shadow-inner">
+                                <p className="text-white font-black font-headline text-sm md:text-base uppercase tracking-widest leading-tight">100%<br/>Natural</p>
                             </div>
                         </div>
                     </div>
-                </section>
+                        
+                    {/* Comparison Block (Full Width Background) */}
+                    <div className="bg-[#1e201b]">
+                        <div className="max-w-6xl mx-auto flex flex-col md:flex-row">
+                            {/* Left: Other Instant Foods */}
+                            <div className="w-full md:w-1/2 p-12 lg:p-20 border-b md:border-b-0 md:border-r border-[#2d2e29]">
+                                <h4 className="text-[#db3838] font-black font-headline text-2xl mb-10 tracking-tight">Other instant foods</h4>
+                                <ul className="space-y-8 text-gray-400 font-medium text-sm md:text-base">
+                                    <li className="flex items-center gap-4">
+                                        <span className="material-symbols-outlined text-[#db3838] text-xl font-bold">close</span>
+                                        Chemicals & Preservatives
+                                    </li>
+                                    <li className="flex items-center gap-4">
+                                        <span className="material-symbols-outlined text-[#db3838] text-xl font-bold">close</span>
+                                        Heavy, bloated feeling
+                                    </li>
+                                    <li className="flex items-center gap-4">
+                                        <span className="material-symbols-outlined text-[#db3838] text-xl font-bold">close</span>
+                                        Artificial, flat taste
+                                    </li>
+                                </ul>
+                            </div>
+                            {/* Right: Pohafix Heritage */}
+                            <div className="w-full md:w-1/2 p-12 lg:p-20 bg-[#1c1d18]">
+                                <h4 className="text-[#dbb771] font-black font-headline text-2xl mb-10 tracking-tight">Pohafix Heritage</h4>
+                                <ul className="space-y-8 text-gray-300 font-medium text-sm md:text-base">
+                                    <li className="flex items-center gap-4">
+                                        <span className="material-symbols-outlined text-[#dbb771] text-xl font-bold" style={{ fontVariationSettings: "'FILL' 1" }}>check_circle</span>
+                                        Natural, raw ingredients only
+                                    </li>
+                                    <li className="flex items-center gap-4">
+                                        <span className="material-symbols-outlined text-[#dbb771] text-xl font-bold" style={{ fontVariationSettings: "'FILL' 1" }}>check_circle</span>
+                                        Light, filling & energetic
+                                    </li>
+                                    <li className="flex items-center gap-4">
+                                        <span className="material-symbols-outlined text-[#dbb771] text-xl font-bold" style={{ fontVariationSettings: "'FILL' 1" }}>check_circle</span>
+                                        Real, homemade Indori taste
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                        {/* Bottom Banner Tags */}
+                        <div className="bg-[#f0ece1] py-6 w-full border-t-[12px] border-[#ede8db]">
+                            <div className="max-w-5xl mx-auto px-6 flex flex-wrap justify-center md:justify-between items-center text-xs md:text-sm font-black tracking-[0.2em] text-gray-500 uppercase gap-8">
+                                <span className="flex items-center gap-2">
+                                    <span className="material-symbols-outlined text-[#b96b6b] text-xl">verified</span>
+                                    Made in Hygienic Facility
+                                </span>
+                                <span className="flex items-center gap-2">
+                                    <span className="material-symbols-outlined text-[#b96b6b] text-xl">task_alt</span>
+                                    FSSAI Approved
+                                </span>
+                                <span className="flex items-center gap-2">
+                                    <span className="material-symbols-outlined text-[#b96b6b] text-xl">science</span>
+                                    Quality Checked Batches
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+
+                    {/* Bottom Try Now Callout */}
+                    <div className="bg-[#fcedea] py-24 lg:py-32 px-6 text-center shadow-inner">
+                        <h2 className="text-5xl md:text-7xl font-black font-headline text-[#be1e2d] tracking-tight leading-[1.1] mb-12 max-w-4xl mx-auto">
+                            Healthy bhi, tasty bhi –<br className="hidden md:block" /> ab try karo.
+                        </h2>
+                        <div className="flex justify-center items-center gap-6 relative inline-flex">
+                            <Link to="/order" className="bg-[#be1e2d] text-white px-12 py-5 font-black text-2xl tracking-wide hover:bg-[#a11825] transition-colors shadow-[0_6px_0_0_#8f121b] active:translate-y-1 active:shadow-[0_2px_0_0_#8f121b] min-w-[240px] rounded-sm relative z-10">
+                                Order Now
+                            </Link>
+                            <span className="material-symbols-outlined text-[#fdbd30] text-6xl transform -rotate-[20deg] absolute -right-16 top-4 animate-[bounce_2s_infinite] hidden md:block" style={{ fontVariationSettings: "'FILL' 1" }}>near_me</span>
+                        </div>
+                    </div>
+                </div>
 
                 {/* Target Audience (Split Screen) */}
                 <section className="flex flex-col md:flex-row min-h-[819px]">
