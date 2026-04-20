@@ -65,8 +65,8 @@ const Home = () => {
                         <img alt="Indore Street" className="w-full h-full object-cover opacity-20 grayscale brightness-50" data-alt="Blurred, atmospheric night view of Sarafa Bazaar Indore with warm street lights and historic architecture bokeh" src="https://lh3.googleusercontent.com/aida-public/AB6AXuASSLwDz51eJkm7d0B6sAIZZ80lu-apFrOBDhI6cNVzeXZYuOvGDi6uBaJ5z-lc9G9ucsaAx-P6JfMjfCbO0H9kH0MRWOp2CD9oPVrJNS8k4IjpQycKW0hxScNZvUTa6wkEn5U6TIGnk8GkBZ7j9I3hha1rbLkxyfTh8FTCA4GJ__-CfBGi6f7iJigwN_Rj5ZXAdHDmNYS60RqgowG8uCohCk0-du38KgcSBdqsUICVlISqh7pkyTUvkH-hg1Xjvbpx8TnNsEkbmEE" />
                         <div className="absolute inset-0 bg-gradient-to-t from-background via-transparent to-transparent"></div>
                     </div>
-                    <div className="container mx-auto px-6 grid md:grid-cols-2 gap-12 items-center relative z-10">
-                        <div className="space-y-6">
+                    <div className="container mx-auto px-6 grid md:grid-cols-2 gap-12 items-center relative z-10 py-12 md:py-0">
+                        <div className="space-y-6 order-2 md:order-1">
                             <div className="inline-block px-3 py-1 bg-secondary-container text-on-secondary-container rounded-sm text-xs font-bold tracking-widest uppercase mb-4">
                                 Breakfast Revolution
                             </div>
@@ -77,24 +77,24 @@ const Home = () => {
                                 इंदौर का स्वाद, अब कहीं भी
                             </p>
                             <div className="flex items-center gap-6 pt-4">
-                                <Link to="/shop" className="bg-primary text-on-primary px-10 py-4 rounded-md font-bold text-lg hover:bg-primary-container transition-all shadow-xl shadow-primary/30 flex items-center gap-2 group">
+                                <Link to="/shop" className="bg-primary text-on-primary px-6 md:px-10 py-3 md:py-4 rounded-md font-bold text-base md:text-lg hover:bg-primary-container transition-all shadow-xl shadow-primary/30 flex items-center gap-2 group whitespace-nowrap">
                                     Order Now
-                                    <span className="material-symbols-outlined group-hover:translate-x-1 transition-transform">arrow_forward</span>
+                                    <span className="material-symbols-outlined group-hover:translate-x-1 transition-transform text-sm md:text-base">arrow_forward</span>
                                 </Link>
-                                <div className="flex -space-x-3">
-                                    <div className="w-10 h-10 rounded-full border-2 border-surface bg-gray-200 overflow-hidden">
-                                        <img alt="User" data-alt="close up headshot of a smiling young man" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDZMaD6NT3vB_C-xOnrq1ryqINMVeb6wn3HYk5ThDJxt-JGh62pDrANAzOpMMk5RVmPxOkdRFaRWYXY7cPvowij1L0ic-p6OELBNR69a3K3jF-4j019-5X7traThh-8Du_0bOn1BX8kKv-4nj-wK7TS_P_A7r2N-OHVEHif7tAd2VUAELbDIL8tGPd9eCI4pQD59D3fwXU4ec0pWQqNhwhuOMhdl0DX1P3AM-l36nFV6TpN3n7Lgbln2FHQxObWMlEAoHPCuhSAY9Y" />
+                                <div className="flex -space-x-3 flex-shrink-0">
+                                    <div className="w-8 h-8 md:w-10 md:h-10 rounded-full border-2 border-surface bg-gray-200 overflow-hidden">
+                                        <img alt="User" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDZMaD6NT3vB_C-xOnrq1ryqINMVeb6wn3HYk5ThDJxt-JGh62pDrANAzOpMMk5RVmPxOkdRFaRWYXY7cPvowij1L0ic-p6OELBNR69a3K3jF-4j019-5X7traThh-8Du_0bOn1BX8kKv-4nj-wK7TS_P_A7r2N-OHVEHif7tAd2VUAELbDIL8tGPd9eCI4pQD59D3fwXU4ec0pWQqNhwhuOMhdl0DX1P3AM-l36nFV6TpN3n7Lgbln2FHQxObWMlEAoHPCuhSAY9Y" />
                                     </div>
-                                    <div className="w-10 h-10 rounded-full border-2 border-surface bg-gray-200 overflow-hidden">
-                                        <img alt="User" data-alt="close up headshot of a smiling young woman" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBy8kUtbzsBmwIUTAO7fyxffDumGLIoJNV29LC8wixog09vBBgzG6uVlv6oC5pIAzof5Sd2jBhJfdOoUFRrZhGCAptFgWgPgiTijl_UFVIog1d0F1LOZV7NreMZCoWBhuLAaIrMUt3NtwQYQDE40VD54dHg7cOilkFJ1Z6xjstpgTpyLkINEyU0C9rPz3nHUTX-TYbUzMwgJjG8ajSm4lxGOl5hQD6kdFh_nGsx7fwnF7ZtZrlgAAKxBQCawJHG8DrKwFf6dHAcnc0" />
+                                    <div className="w-8 h-8 md:w-10 md:h-10 rounded-full border-2 border-surface bg-gray-200 overflow-hidden">
+                                        <img alt="User" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBy8kUtbzsBmwIUTAO7fyxffDumGLIoJNV29LC8wixog09vBBgzG6uVlv6oC5pIAzof5Sd2jBhJfdOoUFRrZhGCAptFgWgPgiTijl_UFVIog1d0F1LOZV7NreMZCoWBhuLAaIrMUt3NtwQYQDE40VD54dHg7cOilkFJ1Z6xjstpgTpyLkINEyU0C9rPz3nHUTX-TYbUzMwgJjG8ajSm4lxGOl5hQD6kdFh_nGsx7fwnF7ZtZrlgAAKxBQCawJHG8DrKwFf6dHAcnc0" />
                                     </div>
-                                    <div className="w-10 h-10 rounded-full border-2 border-surface bg-primary flex items-center justify-center text-[10px] text-white font-bold">
+                                    <div className="w-8 h-8 md:w-10 md:h-10 rounded-full border-2 border-surface bg-primary flex items-center justify-center text-[8px] md:text-[10px] text-white font-bold">
                                         10k+
                                     </div>
                                 </div>
                             </div>
                         </div>
-                        <div className="relative group mt-12 md:mt-0">
+                        <div className="relative group mt-8 md:mt-0 order-1 md:order-2">
                             <div className="absolute -top-6 -left-6 md:-top-10 md:-left-10 text-6xl md:text-9xl font-hindi hindi-layer rotate-[-15deg] opacity-60 md:opacity-100">ताज़ा</div>
                             <div className="absolute -bottom-6 -right-6 md:-bottom-10 md:-right-10 text-6xl md:text-9xl font-hindi hindi-layer rotate-[15deg] opacity-60 md:opacity-100">ज़ायका</div>
                             {/* Main Product Carousel */}
