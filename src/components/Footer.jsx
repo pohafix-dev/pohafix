@@ -1,15 +1,12 @@
-import React from 'react';
 import { Link } from 'react-router-dom';
+import Logo from './Logo';
 
 const Footer = () => {
     return (
         <footer className="bg-[#e7e2d9] dark:bg-[#12110e] font-['Epilogue'] uppercase tracking-widest text-xs w-full mt-auto relative overflow-hidden border-t border-[#d32f2f]/10 shadow-inner">
             <div className="flex flex-col md:flex-row justify-between items-start px-6 md:px-12 py-20 w-full gap-12 relative z-10">
                 <div className="text-left space-y-6 max-w-sm">
-                    <Link to="/" className="flex items-center bg-[#ca2221] px-4 py-2 rounded shadow-md transform hover:scale-105 transition-transform duration-300 w-fit">
-                        <span className="text-[#ffdf00] font-black italic text-2xl tracking-tight leading-none">Poha</span>
-                        <span className="text-white font-black italic text-2xl tracking-tight leading-none">fix</span>
-                    </Link>
+                    <Logo />
                     <p className="normal-case text-on-surface-variant font-medium tracking-normal opacity-80 leading-relaxed">
                         The original Chhappan Dukaan ritual, captured in an instant. Traditional Malwa soul delivered to your doorstep. No laboratory shelf-extenders—just raw, natural ingredients.
                     </p>

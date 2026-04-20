@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { motion, AnimatePresence } from 'framer-motion';
+import Logo from './Logo';
 
 const Header = () => {
     const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -39,10 +40,7 @@ const Header = () => {
 
                 {/* Center: Logo */}
                 <div className="flex justify-center">
-                    <Link to="/" className="flex items-center bg-[#ca2221] px-3 md:px-5 py-2 md:py-2.5 rounded shadow-lg transform hover:scale-105 transition-transform duration-300">
-                        <span className="text-[#ffdf00] font-black italic text-xl md:text-3xl tracking-tighter leading-none">Poha</span>
-                        <span className="text-white font-black italic text-xl md:text-3xl tracking-tighter leading-none">fix</span>
-                    </Link>
+                    <Logo />
                 </div>
 
                 {/* Right: Desktop Contact */}
@@ -62,10 +60,7 @@ const Header = () => {
                     >
                         {/* Overlay Header - Matching Screenshot */}
                         <div className="flex items-center justify-between px-6 py-4 w-full">
-                            <Link to="/" className="flex items-center bg-[#ca2221] px-5 py-2 rounded shadow-md" onClick={() => setIsMenuOpen(false)}>
-                                <span className="text-[#ffdf00] font-black italic text-2xl tracking-tighter leading-none">Poha</span>
-                                <span className="text-white font-black italic text-2xl tracking-tighter leading-none">fix</span>
-                            </Link>
+                            <Logo onClick={() => setIsMenuOpen(false)} />
                             <button 
                                 onClick={() => setIsMenuOpen(false)}
                                 className="w-12 h-12 rounded-2xl bg-[#e7e2d9] flex items-center justify-center text-stone-900 border border-stone-300/30 shadow-sm transition-transform active:scale-95"
