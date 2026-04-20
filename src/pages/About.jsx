@@ -112,7 +112,7 @@ const About = () => {
                     <Link to="/shop" className="px-10 py-5 bg-primary text-on-primary rounded-full font-bold text-lg hover:bg-primary-container transition-all active:scale-95 shadow-xl shadow-primary/20">
                         Shop Pohafix Classic
                     </Link>
-                    <Link to="/mom-magic" className="px-10 py-5 bg-secondary text-on-secondary rounded-full font-bold text-lg hover:bg-[#5a4200] transition-all active:scale-95 shadow-xl shadow-secondary/20">
+                    <Link to="/shop" className="px-10 py-5 bg-secondary text-on-secondary rounded-full font-bold text-lg hover:bg-[#5a4200] transition-all active:scale-95 shadow-xl shadow-secondary/20">
                         Shop Mom Magic Sev
                     </Link>
                 </div>

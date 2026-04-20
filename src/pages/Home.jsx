@@ -70,10 +70,10 @@ const Home = () => {
                             <div className="inline-block px-3 py-1 bg-secondary-container text-on-secondary-container rounded-sm text-xs font-bold tracking-widest uppercase mb-4">
                                 Breakfast Revolution
                             </div>
-                            <h1 className="text-6xl md:text-8xl font-black font-headline text-on-background leading-tight">
+                            <h1 className="text-4xl md:text-8xl font-black font-headline text-on-background leading-tight">
                                 Authentic Indori Poha in <span className="text-primary italic">5 Minutes</span>
                             </h1>
-                            <p className="text-4xl font-hindi text-primary-container font-medium opacity-90">
+                            <p className="text-xl md:text-4xl font-hindi text-primary-container font-medium opacity-90">
                                 इंदौर का स्वाद, अब कहीं भी
                             </p>
                             <div className="flex items-center gap-6 pt-4">
@@ -94,9 +94,9 @@ const Home = () => {
                                 </div>
                             </div>
                         </div>
-                        <div className="relative group">
-                            <div className="absolute -top-10 -left-10 text-9xl font-hindi hindi-layer rotate-[-15deg]">ताज़ा</div>
-                            <div className="absolute -bottom-10 -right-10 text-9xl font-hindi hindi-layer rotate-[15deg]">ज़ायका</div>
+                        <div className="relative group mt-12 md:mt-0">
+                            <div className="absolute -top-6 -left-6 md:-top-10 md:-left-10 text-6xl md:text-9xl font-hindi hindi-layer rotate-[-15deg] opacity-60 md:opacity-100">ताज़ा</div>
+                            <div className="absolute -bottom-6 -right-6 md:-bottom-10 md:-right-10 text-6xl md:text-9xl font-hindi hindi-layer rotate-[15deg] opacity-60 md:opacity-100">ज़ायका</div>
                             {/* Main Product Carousel */}
                             <div className="relative transform hover:scale-105 transition-transform duration-500 bg-surface-container-lowest rounded-[2rem] shadow-2xl overflow-hidden aspect-[4/5] flex items-center justify-center">
                                 {slides.map((slide, index) => (
@@ -477,8 +477,8 @@ const Home = () => {
                             <div className="relative">
                                 {/* Asymmetric Card Layout */}
                                 <div className="absolute -top-12 -left-12 font-headline text-9xl text-primary/5 select-none rotate-[-15deg]">thela</div>
-                                <div className="bg-surface-container-lowest p-6 rounded-xl shadow-2xl relative z-10 transform rotate-2">
-                                    <img alt="Street Cart Poha" className="w-full aspect-video object-contain rounded-lg mb-6" src="/thela-v3.png" />
+                                <div className="bg-surface-container-lowest p-4 md:p-6 rounded-xl shadow-2xl relative z-10 transform rotate-2">
+                                    <img alt="Street Cart Poha" className="w-full aspect-video object-contain rounded-lg mb-4 md:mb-6" src="/thela-v3.png" />
                                     <div className="flex justify-between items-center">
                                         <div>
                                             <h4 className="font-headline text-2xl font-bold text-on-surface">The Signature Cart</h4>
@@ -487,9 +487,9 @@ const Home = () => {
                                         <span className="bg-tertiary-container text-on-tertiary-container font-headline font-black px-4 py-2 text-xl">₹49/-</span>
                                     </div>
                                 </div>
-                                <div className="absolute -bottom-8 -right-8 bg-secondary-container p-8 rounded-xl shadow-xl z-20 max-w-xs transform -rotate-3 border-4 border-surface-container-lowest">
-                                    <p className="font-headline text-3xl font-black text-secondary leading-tight mb-2 uppercase">Thela-waala swad</p>
-                                    <p className="text-on-secondary-container font-medium">That unmistakable smoky aroma of the street, captured in every bite.</p>
+                                <div className="absolute -bottom-6 -right-4 md:-bottom-8 md:-right-8 bg-secondary-container p-4 md:p-8 rounded-xl shadow-xl z-20 max-w-[200px] md:max-w-xs transform -rotate-3 border-4 border-surface-container-lowest">
+                                    <p className="font-headline text-xl md:text-3xl font-black text-secondary leading-tight mb-1 md:mb-2 uppercase">Thela-waala swad</p>
+                                    <p className="text-on-secondary-container font-medium text-xs md:text-base">That unmistakable smoky aroma of the street, captured in every bite.</p>
                                 </div>
                             </div>
                             <div className="lg:pl-12">
@@ -517,10 +517,13 @@ const Home = () => {
                                         </div>
                                     </div>
                                 </div>
-                                <button className="group bg-primary text-on-primary px-10 py-5 font-headline font-black text-xl tracking-tight uppercase rounded-md shadow-xl flex items-center gap-4 hover:bg-primary-container transition-all">
+                                <Link 
+                                    to="/shop" 
+                                    className="group bg-primary text-on-primary px-8 md:px-10 py-4 md:py-5 font-headline font-black text-lg md:text-xl tracking-tight uppercase rounded-md shadow-xl flex items-center justify-center md:justify-start gap-4 hover:bg-primary-container transition-all"
+                                >
                                     Experience the Ritual
                                     <span className="material-symbols-outlined group-hover:translate-x-1 transition-transform">arrow_forward</span>
-                                </button>
+                                </Link>
                             </div>
                         </div>
                     </div>
