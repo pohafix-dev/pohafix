@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { motion, AnimatePresence } from 'framer-motion';
+import Header from '../components/Header';
 
 const Shop = () => {
     const [selectedPlan, setSelectedPlan] = useState(0);
@@ -41,8 +42,10 @@ const Shop = () => {
     }, []);
 
     return (
-        <main className="pt-24 lg:pt-32 pb-20 bg-background selection:bg-primary/10">
-            {/* Main Product Stage */}
+        <>
+            <Header />
+            <main className="pt-24 lg:pt-32 pb-20 bg-background selection:bg-primary/10">
+                {/* Main Product Stage */}
             <section className="max-w-7xl mx-auto px-6 grid grid-cols-1 lg:grid-cols-2 gap-16 items-start">
                 
                 {/* Visual Showcase */}
@@ -196,6 +199,7 @@ const Shop = () => {
                 </p>
             </section>
         </main>
+        </>
     );
 };
 
