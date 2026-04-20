@@ -236,25 +236,46 @@ const Home = () => {
                             </div>
                         </div>
 
-                        <div className="md:hidden space-y-6">
+                        <div className="md:hidden grid grid-cols-1 gap-8">
                             {bundles.map((bundle, idx) => (
-                                <div key={idx} className="bg-white rounded-3xl overflow-hidden shadow-sm border border-stone-200">
-                                    <div className="p-6 bg-[#fdfaf2] aspect-square flex items-center justify-center relative">
-                                        <img src={bundle.images[0]} alt={bundle.title} className="w-[80%] h-auto object-contain" />
-                                        <span className="absolute top-4 left-4 bg-[#eaf4e5] text-[#347b4e] text-[8px] font-black tracking-widest px-3 py-1 rounded-full uppercase">
+                                <div key={idx} className="bg-white rounded-[2rem] overflow-hidden shadow-lg border border-stone-100 flex flex-col">
+                                    {/* Product Visual Header */}
+                                    <div className="bg-[#fcf7ec] aspect-square relative flex items-center justify-center p-8">
+                                        <img src={bundle.images[0]} alt={bundle.title} className="w-full h-full object-contain mix-blend-multiply drop-shadow-xl" />
+                                        <div className="absolute top-4 right-4 bg-primary text-white text-[9px] font-black px-3 py-1 rounded-full uppercase tracking-widest shadow-md">
                                             {bundle.tag}
-                                        </span>
-                                    </div>
-                                    <div className="p-6">
-                                        <div className="flex justify-between items-start mb-2">
-                                            <h3 className="text-xl font-black font-headline text-stone-900 leading-tight uppercase">{bundle.title}</h3>
-                                            <span className="text-xl font-black font-headline text-primary">₹{bundle.price}</span>
                                         </div>
-                                        <p className="text-stone-500 text-xs font-medium mb-6 leading-relaxed line-clamp-2">
-                                            {bundle.subtitle}. Authentic Indori taste captured for your busy mornings.
-                                        </p>
-                                        <Link to="/shop" className="block w-full bg-[#ae1925] text-white py-3 rounded-xl font-bold text-sm text-center shadow-md active:translate-y-1 transition-all">
-                                            Order Now
+                                    </div>
+
+                                    {/* Product Content Details */}
+                                    <div className="p-6 flex-1">
+                                        <h3 className="text-xl font-bold text-stone-900 mb-1 leading-tight">{bundle.title.toLowerCase().includes('the ') ? bundle.title.split('THE ')[1] : bundle.title}</h3>
+                                        
+                                        {/* Stars & Reviews */}
+                                        <div className="flex items-center gap-1 mb-4">
+                                            <div className="flex text-[#ce1d2a]">
+                                                <span className="material-symbols-outlined text-[1rem]" style={{ fontVariationSettings: "'FILL' 1" }}>star</span>
+                                                <span className="material-symbols-outlined text-[1rem]" style={{ fontVariationSettings: "'FILL' 1" }}>star</span>
+                                                <span className="material-symbols-outlined text-[1rem]" style={{ fontVariationSettings: "'FILL' 1" }}>star</span>
+                                                <span className="material-symbols-outlined text-[1rem]" style={{ fontVariationSettings: "'FILL' 1" }}>star</span>
+                                                <span className="material-symbols-outlined text-[1rem]" style={{ fontVariationSettings: "'FILL' 1" }}>star</span>
+                                            </div>
+                                            <span className="text-stone-400 text-xs font-semibold">(652)</span>
+                                        </div>
+
+                                        <div className="mb-6">
+                                            <div className="text-2xl font-black text-stone-900">₹{bundle.price}</div>
+                                            <div className="text-[10px] text-stone-400 font-medium">(Inclusive of all taxes)</div>
+                                        </div>
+                                    </div>
+
+                                    {/* Footer Button Strategy */}
+                                    <div className="border-t border-stone-100 p-4">
+                                        <Link 
+                                            to="/shop" 
+                                            className="block w-full text-center text-[#ce1d2a] font-black text-sm uppercase tracking-widest py-2 hover:opacity-80 transition-opacity"
+                                        >
+                                            ADD TO CART
                                         </Link>
                                     </div>
                                 </div>
