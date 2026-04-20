@@ -236,36 +236,36 @@ const Home = () => {
                             </div>
                         </div>
 
-                        <div className="md:hidden grid grid-cols-1 gap-8">
+                        <div className="md:hidden grid grid-cols-1 gap-4">
                             {bundles.map((bundle, idx) => (
-                                <div key={idx} className="bg-white rounded-[2rem] overflow-hidden shadow-lg border border-stone-100 flex flex-col">
-                                    {/* Product Visual Header */}
-                                    <div className="bg-[#fcf7ec] aspect-square relative flex items-center justify-center p-8">
-                                        <img src={bundle.images[0]} alt={bundle.title} className="w-full h-full object-contain mix-blend-multiply drop-shadow-xl" />
-                                        <div className="absolute top-4 right-4 bg-primary text-white text-[9px] font-black px-3 py-1 rounded-full uppercase tracking-widest shadow-md">
+                                <div key={idx} className="bg-white rounded-[1.5rem] overflow-hidden shadow-lg border border-stone-100 flex flex-col">
+                                    {/* Product Visual Header - Zero Blank Space */}
+                                    <div className="bg-[#fcf7ec] aspect-[5/4] relative flex items-center justify-center p-0">
+                                        <img src={bundle.images[0]} alt={bundle.title} className="w-full h-full object-contain mix-blend-multiply scale-110 drop-shadow-2xl" />
+                                        <div className="absolute top-3 right-3 bg-primary text-white text-[8px] font-black px-2 py-0.5 rounded-full uppercase tracking-widest shadow-md z-10">
                                             {bundle.tag}
                                         </div>
                                     </div>
 
-                                    {/* Product Content Details */}
-                                    <div className="p-6 flex-1">
-                                        <h3 className="text-xl font-bold text-stone-900 mb-1 leading-tight">{bundle.title.toLowerCase().includes('the ') ? bundle.title.split('THE ')[1] : bundle.title}</h3>
+                                    {/* Product Content Details - Tightened */}
+                                    <div className="px-5 pt-4 pb-2 flex-1">
+                                        <h3 className="text-lg font-bold text-stone-900 mb-0.5 leading-tight">{bundle.title.toLowerCase().includes('the ') ? bundle.title.split('THE ')[1] : bundle.title}</h3>
                                         
                                         {/* Stars & Reviews */}
-                                        <div className="flex items-center gap-1 mb-4">
+                                        <div className="flex items-center gap-1 mb-2">
                                             <div className="flex text-[#ce1d2a]">
-                                                <span className="material-symbols-outlined text-[1rem]" style={{ fontVariationSettings: "'FILL' 1" }}>star</span>
-                                                <span className="material-symbols-outlined text-[1rem]" style={{ fontVariationSettings: "'FILL' 1" }}>star</span>
-                                                <span className="material-symbols-outlined text-[1rem]" style={{ fontVariationSettings: "'FILL' 1" }}>star</span>
-                                                <span className="material-symbols-outlined text-[1rem]" style={{ fontVariationSettings: "'FILL' 1" }}>star</span>
-                                                <span className="material-symbols-outlined text-[1rem]" style={{ fontVariationSettings: "'FILL' 1" }}>star</span>
+                                                <span className="material-symbols-outlined text-[0.9rem]" style={{ fontVariationSettings: "'FILL' 1" }}>star</span>
+                                                <span className="material-symbols-outlined text-[0.9rem]" style={{ fontVariationSettings: "'FILL' 1" }}>star</span>
+                                                <span className="material-symbols-outlined text-[0.9rem]" style={{ fontVariationSettings: "'FILL' 1" }}>star</span>
+                                                <span className="material-symbols-outlined text-[0.9rem]" style={{ fontVariationSettings: "'FILL' 1" }}>star</span>
+                                                <span className="material-symbols-outlined text-[0.9rem]" style={{ fontVariationSettings: "'FILL' 1" }}>star</span>
                                             </div>
-                                            <span className="text-stone-400 text-xs font-semibold">(652)</span>
+                                            <span className="text-stone-400 text-[10px] font-semibold">(652)</span>
                                         </div>
 
-                                        <div className="mb-6">
-                                            <div className="text-2xl font-black text-stone-900">₹{bundle.price}</div>
-                                            <div className="text-[10px] text-stone-400 font-medium">(Inclusive of all taxes)</div>
+                                        <div className="mb-2">
+                                            <div className="text-xl font-black text-stone-900 leading-none">₹{bundle.price}</div>
+                                            <div className="text-[9px] text-stone-400 font-medium">(Inclusive of all taxes)</div>
                                         </div>
                                     </div>
 
