@@ -7,10 +7,20 @@ const Header = () => {
     const [isMenuOpen, setIsMenuOpen] = useState(false);
     const location = useLocation();
 
-    // Close menu when route changes
+    // Close menu when route changes and handle body scroll lock
     useEffect(() => {
         setIsMenuOpen(false);
+        document.body.style.overflow = 'auto';
     }, [location]);
+
+    useEffect(() => {
+        if (isMenuOpen) {
+            document.body.style.overflow = 'hidden';
+        } else {
+            document.body.style.overflow = 'auto';
+        }
+        return () => { document.body.style.overflow = 'auto'; };
+    }, [isMenuOpen]);
 
     return (
         <nav className="fixed top-0 w-full z-[100] bg-[#faf9f6]/95 dark:bg-[#12110e]/95 backdrop-blur-xl border-b border-outline-variant/10 shadow-sm transition-all duration-300">
@@ -56,12 +66,18 @@ const Header = () => {
                         initial={{ opacity: 0 }}
                         animate={{ opacity: 1 }}
                         exit={{ opacity: 0 }}
-                        className="fixed inset-0 z-[9999] md:hidden flex flex-col items-center justify-between"
-                        style={{ backgroundColor: '#fef9f0' }}
+                        className="fixed inset-0 z-[9999] md:hidden flex flex-col"
                     >
-                        {/* Overlay Header - Matching Screenshot */}
-                        <div className="flex items-center justify-between px-6 py-4 w-full">
-                            <Logo onClick={() => setIsMenuOpen(false)} />
+                        {/* Pure Opaque Background Layer */}
+                        <div 
+                            className="absolute inset-0 bg-[#fef9f0] opacity-100" 
+                            style={{ backgroundColor: '#fef9f0' }}
+                        />
+                        
+                        {/* Overlay Content */}
+                        <div className="relative z-10 flex flex-col h-full justify-between pb-12">
+                            <div className="flex items-center justify-between px-6 py-4 w-full">
+                                <Logo onClick={() => setIsMenuOpen(false)} />
                             <button 
                                 onClick={() => setIsMenuOpen(false)}
                                 className="w-12 h-12 rounded-2xl bg-[#e7e2d9] flex items-center justify-center text-stone-900 border border-stone-300/30 shadow-sm transition-transform active:scale-95"
