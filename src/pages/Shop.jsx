@@ -131,7 +131,7 @@ const Shop = () => {
                             to="/order" 
                             className="w-full bg-primary text-on-primary py-6 rounded-2xl font-headline font-black text-xl uppercase tracking-tight flex items-center justify-center gap-3 hover:bg-primary-container transition-all shadow-[0_12px_24px_rgba(175,16,26,0.25)] active:scale-[0.98]"
                         >
-                            Grab Your Pack
+                            Order Now
                             <span className="material-symbols-outlined font-black">arrow_forward</span>
                         </Link>
                         
@@ -160,22 +160,22 @@ const Shop = () => {
                     <div className="p-12 text-center group bg-surface-container-low/30 hover:bg-background transition-colors">
                         <div className="text-primary font-headline font-black text-5xl mb-6 group-hover:scale-110 transition-transform">01</div>
                         <h4 className="font-headline font-black text-lg mb-2">POUR</h4>
-                        <p className="text-sm font-medium text-on-surface-variant">Empty the 75g pack into a bowl.</p>
+                        <p className="text-sm font-medium text-on-surface-variant">Empty 1 serving (60 g poha) into a bowl.</p>
                     </div>
                     <div className="p-12 text-center group bg-surface-container-low/30 hover:bg-background transition-colors">
                         <div className="text-primary font-headline font-black text-5xl mb-6 group-hover:scale-110 transition-transform">02</div>
                         <h4 className="font-headline font-black text-lg mb-2">HOT WATER</h4>
-                        <p className="text-sm font-medium text-on-surface-variant">Add 80ml of boiling water.</p>
+                        <p className="text-sm font-medium text-on-surface-variant">Add 60 ml hot boiled water.</p>
                     </div>
                     <div className="p-12 text-center group bg-surface-container-low/30 hover:bg-background transition-colors">
                         <div className="text-primary font-headline font-black text-5xl mb-6 group-hover:scale-110 transition-transform">03</div>
                         <h4 className="font-headline font-black text-lg mb-2">COVER</h4>
-                        <p className="text-sm font-medium text-on-surface-variant">Close the lid for 5 minutes.</p>
+                        <p className="text-sm font-medium text-on-surface-variant">Cover &amp; keep for 5 minutes.</p>
                     </div>
                     <div className="p-12 text-center group bg-surface-container-low/30 hover:bg-background transition-colors">
                         <div className="text-primary font-headline font-black text-5xl mb-6 group-hover:scale-110 transition-transform">04</div>
                         <h4 className="font-headline font-black text-lg mb-2">STIR</h4>
-                        <p className="text-sm font-medium text-on-surface-variant">Uncover, stir, and enjoy Indori love.</p>
+                        <p className="text-sm font-medium text-on-surface-variant">Stir well - your Poha is ready!</p>
                     </div>
                 </div>
             </section>
