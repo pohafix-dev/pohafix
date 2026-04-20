@@ -558,6 +558,32 @@ const Home = () => {
                         </div>
                     </div>
                 </section>
+
+                {/* Final Call to Action - Red Section */}
+                <section className="bg-[#be1e2d] py-24 relative overflow-hidden">
+                    {/* Hindi Watermarks */}
+                    <div className="absolute top-10 right-10 text-8xl md:text-[12rem] font-hindi text-white/5 select-none rotate-12 pointer-events-none">
+                        इंदौर
+                    </div>
+                    <div className="absolute bottom-10 left-10 text-8xl md:text-[10rem] font-hindi text-white/5 select-none -rotate-12 pointer-events-none">
+                        स्वादिष्ट
+                    </div>
+
+                    <div className="container mx-auto px-6 text-center relative z-10">
+                        <h2 className="text-4xl md:text-7xl font-black font-headline text-white mb-6 tracking-tighter leading-tight drop-shadow-lg">
+                            Kal se breakfast skip <br className="hidden md:block" /> mat karo.
+                        </h2>
+                        <p className="text-lg md:text-xl text-white/90 font-medium mb-10 max-w-2xl mx-auto">
+                            Pohafix ke saath har subah easy banao. Real Indori taste is just a click away.
+                        </p>
+                        <Link 
+                            to="/shop" 
+                            className="inline-block bg-[#fdbd30] text-[#1d1c16] px-12 py-5 rounded-xl font-black text-xl md:text-2xl hover:bg-[#ffcf5c] transition-all shadow-[0_10px_25px_-5px_rgba(0,0,0,0.3)] hover:scale-105 active:scale-95"
+                        >
+                            Order Now
+                        </Link>
+                    </div>
+                </section>
             </main>
 
             {/* Footer Component */}
