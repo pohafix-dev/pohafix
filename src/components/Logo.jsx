@@ -6,10 +6,13 @@ const Logo = ({ className = "", onClick }) => {
         <Link 
             to="/" 
             onClick={onClick}
-            className={`inline-flex items-center bg-[#ca2221] px-5 md:px-7 py-2.5 rounded-2xl shadow-lg transform hover:scale-105 transition-all duration-300 ${className}`}
+            className={`inline-block transform hover:scale-105 transition-all duration-300 ${className}`}
         >
-            <span className="text-[#ffdf00] font-black italic text-xl md:text-2xl tracking-tighter leading-none select-none" style={{ fontFamily: "'Inter', sans-serif" }}>Poha</span>
-            <span className="text-white font-black italic text-xl md:text-2xl tracking-tighter leading-none select-none" style={{ fontFamily: "'Inter', sans-serif" }}>fix</span>
+            <img 
+                src="/logo.png" 
+                alt="Pohafix Logo" 
+                className="h-10 md:h-12 w-auto object-contain select-none pointer-events-none drop-shadow-sm" 
+            />
         </Link>
     );
 };
