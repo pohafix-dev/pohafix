@@ -133,7 +133,7 @@ const Shop = () => {
                     </div>
 
                     {/* Action Block */}
-                    <div className="space-y-4 pt-6 border-t border-outline-variant/10">
+                    <div className="space-y-6 pt-6 border-t border-outline-variant/10">
                         <Link 
                             to="/order" 
                             className="w-full bg-primary text-on-primary py-6 rounded-2xl font-headline font-black text-xl uppercase tracking-tight flex items-center justify-center gap-3 hover:bg-primary-container transition-all shadow-[0_12px_24px_rgba(175,16,26,0.25)] active:scale-[0.98]"
@@ -141,9 +141,22 @@ const Shop = () => {
                             Grab Your Pack
                             <span className="material-symbols-outlined font-black">arrow_forward</span>
                         </Link>
-                        <p className="text-center text-[10px] font-bold text-on-surface-variant uppercase tracking-[0.2em] opacity-60">
-                             FSSAI Approved • Made in Hygienic Facility • No MSG
-                        </p>
+                        
+                        {/* Trust Icons Grid */}
+                        <div className="grid grid-cols-3 gap-2 mt-4 pt-4">
+                            <div className="flex flex-col items-center text-center gap-2">
+                                <span className="material-symbols-outlined text-secondary text-2xl" style={{ fontVariationSettings: "'FILL' 1" }}>eco</span>
+                                <span className="text-[10px] font-bold text-on-surface-variant uppercase tracking-widest leading-tight">No<br/>Preservatives</span>
+                            </div>
+                            <div className="flex flex-col items-center text-center gap-2">
+                                <span className="material-symbols-outlined text-primary text-2xl" style={{ fontVariationSettings: "'FILL' 1" }}>restaurant</span>
+                                <span className="text-[10px] font-bold text-on-surface-variant uppercase tracking-widest leading-tight">Authentic<br/>Indori Taste</span>
+                            </div>
+                            <div className="flex flex-col items-center text-center gap-2">
+                                <span className="material-symbols-outlined text-tertiary text-2xl" style={{ fontVariationSettings: "'FILL' 1" }}>inventory_2</span>
+                                <span className="text-[10px] font-bold text-on-surface-variant uppercase tracking-widest leading-tight">Fresh Batches<br/>Every Week</span>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </section>

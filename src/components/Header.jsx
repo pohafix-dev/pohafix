@@ -23,9 +23,10 @@ const Header = () => {
                 
                 {/* Left: Navigation Links */}
                 <div className="hidden md:flex items-center gap-8 justify-start">
-                    <Link className="text-stone-900 dark:text-stone-100 font-bold tracking-tight hover:text-primary transition-colors text-sm" to="/shop">Pohafix - Instant Poha</Link>
-                    <Link className="text-stone-900 dark:text-stone-100 font-bold tracking-tight hover:text-primary transition-colors text-sm" to="/about">About</Link>
-                    <Link className="text-stone-900 dark:text-stone-100 font-bold tracking-tight hover:text-primary transition-colors text-sm" to="/contact">Contact</Link>
+                    <Link className="text-stone-900 dark:text-stone-100 font-bold tracking-tight hover:text-primary transition-colors text-sm" to="/">Home</Link>
+                    <Link className="text-stone-900 dark:text-stone-100 font-bold tracking-tight hover:text-primary transition-colors text-sm" to="/shop">Shop</Link>
+                    <Link className="text-stone-900 dark:text-stone-100 font-bold tracking-tight hover:text-primary transition-colors text-sm" to="/about">About Us</Link>
+                    <Link className="text-stone-900 dark:text-stone-100 font-bold tracking-tight hover:text-primary transition-colors text-sm" to="/blog">Blogs</Link>
                 </div>
 
                 {/* Center: Logo Container */}
