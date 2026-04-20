@@ -365,7 +365,7 @@ const Shop = () => {
                             Join over 50,000+ satisfied poha lovers and get your authentic Malwa fix today.
                         </p>
                         <Link 
-                            to="/shop" 
+                            to={`/order?plan=${selectedPlan}`} 
                             className="inline-block bg-[#fcc92f] text-black px-12 py-5 rounded font-headline font-black text-xl hover:bg-[#f6bb12] transition-colors shadow-[0_8px_0_0_#b78401] active:translate-y-2 active:shadow-[0_0px_0_0_#b78401]"
                         >
                             Order Your Pack Now
