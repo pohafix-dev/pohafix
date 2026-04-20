@@ -50,7 +50,7 @@ const Shop = () => {
             <section className="max-w-7xl mx-auto px-6 grid grid-cols-1 lg:grid-cols-2 gap-16 items-start">
                 
                 {/* Visual Showcase */}
-                <div className="relative sticky top-32">
+                <div className="relative lg:sticky lg:top-32 mb-8 lg:mb-0">
                     <AnimatePresence mode="wait">
                         <motion.div 
                             key={selectedPlan}
