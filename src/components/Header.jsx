@@ -63,63 +63,48 @@ const Header = () => {
                             animate={{ opacity: 1 }}
                             exit={{ opacity: 0 }}
                             onClick={() => setIsMenuOpen(false)}
-                            className="fixed inset-0 bg-black/60 backdrop-blur-md z-[110] md:hidden"
+                            className="fixed inset-0 bg-stone-900/60 backdrop-blur-sm z-[110] md:hidden"
                         />
                         <motion.div 
-                            initial={{ x: '-100%' }}
+                            initial={{ x: '100%' }}
                             animate={{ x: 0 }}
-                            exit={{ x: '-100%' }}
+                            exit={{ x: '100%' }}
                             transition={{ type: 'spring', damping: 25, stiffness: 200 }}
-                            className="fixed top-0 left-0 bottom-0 w-[85%] max-w-sm bg-[#faf9f6] dark:bg-[#12110e] z-[120] md:hidden shadow-3xl flex flex-col overflow-hidden"
+                            className="fixed top-0 right-0 bottom-0 w-full bg-[#f9f5f0] z-[120] md:hidden flex flex-col shadow-2xl"
                         >
-                            {/* Texture Overlay for Drawer */}
-                            <div className="absolute inset-0 pointer-events-none opacity-5 mix-blend-multiply bg-[url('https://www.transparenttextures.com/patterns/natural-paper.png')]"></div>
-                            
-                            {/* Drawer Header */}
-                            <div className="flex items-center justify-between p-6 border-b border-outline-variant/10 relative z-10">
-                                <Link to="/" className="flex items-center bg-[#ca2221] px-3 py-1.5 rounded shadow-sm scale-90">
-                                    <span className="text-[#ffdf00] font-black italic text-lg tracking-tighter">Poha</span>
-                                    <span className="text-white font-black italic text-lg tracking-tighter">fix</span>
+                            {/* Drawer Header - Matching Screenshot */}
+                            <div className="flex items-center justify-between px-6 py-4 border-b border-stone-200/50">
+                                <Link to="/" className="flex items-center bg-[#ca2221] px-5 py-2 rounded shadow-md">
+                                    <span className="text-[#ffdf00] font-black italic text-2xl tracking-tighter leading-none">Poha</span>
+                                    <span className="text-white font-black italic text-2xl tracking-tighter leading-none">fix</span>
                                 </Link>
                                 <button 
                                     onClick={() => setIsMenuOpen(false)}
-                                    className="w-10 h-10 rounded-full bg-surface-container-highest flex items-center justify-center text-on-surface hover:text-primary transition-colors"
+                                    className="w-12 h-12 rounded-2xl bg-[#e7e2d9] flex items-center justify-center text-stone-900 border border-stone-300/30 shadow-sm transition-transform active:scale-90"
                                 >
-                                    <span className="material-symbols-outlined text-[24px]">close</span>
+                                    <span className="material-symbols-outlined text-[28px] font-light">close</span>
                                 </button>
                             </div>
 
-                            <div className="flex flex-col gap-6 p-8 relative z-10">
-                                <Link className="text-4xl font-black font-headline text-on-surface tracking-tighter hover:text-primary transition-colors flex items-center justify-between group" to="/">
-                                    HOME
-                                    <span className="material-symbols-outlined opacity-0 group-hover:opacity-100 -translate-x-4 group-hover:translate-x-0 transition-all font-black">arrow_forward</span>
-                                </Link>
-                                <Link className="text-4xl font-black font-headline text-on-surface tracking-tighter hover:text-primary transition-colors flex items-center justify-between group" to="/shop">
-                                    SHOP
-                                    <span className="material-symbols-outlined opacity-0 group-hover:opacity-100 -translate-x-4 group-hover:translate-x-0 transition-all font-black">arrow_forward</span>
-                                </Link>
-                                <Link className="text-4xl font-black font-headline text-on-surface tracking-tighter hover:text-primary transition-colors flex items-center justify-between group" to="/about">
-                                    ABOUT
-                                    <span className="material-symbols-outlined opacity-0 group-hover:opacity-100 -translate-x-4 group-hover:translate-x-0 transition-all font-black">arrow_forward</span>
-                                </Link>
-                                <Link className="text-4xl font-black font-headline text-on-surface tracking-tighter hover:text-primary transition-colors flex items-center justify-between group" to="/blog">
-                                    JOURNAL
-                                    <span className="material-symbols-outlined opacity-0 group-hover:opacity-100 -translate-x-4 group-hover:translate-x-0 transition-all font-black">arrow_forward</span>
-                                </Link>
-                                <Link className="text-4xl font-black font-headline text-on-surface tracking-tighter hover:text-primary transition-colors flex items-center justify-between group" to="/contact">
-                                    CONTACT
-                                    <span className="material-symbols-outlined opacity-0 group-hover:opacity-100 -translate-x-4 group-hover:translate-x-0 transition-all font-black">arrow_forward</span>
-                                </Link>
+                            <div className="flex flex-col gap-8 p-10 mt-8">
+                                <Link className="text-5xl font-black font-headline text-stone-900 tracking-tighter hover:text-primary transition-colors block uppercase" to="/">Home</Link>
+                                <Link className="text-5xl font-black font-headline text-stone-900 tracking-tighter hover:text-primary transition-colors block uppercase" to="/shop">Shop</Link>
+                                <Link className="text-5xl font-black font-headline text-stone-900 tracking-tighter hover:text-primary transition-colors block uppercase" to="/about">About Us</Link>
+                                <Link className="text-5xl font-black font-headline text-stone-900 tracking-tighter hover:text-primary transition-colors block uppercase" to="/blog">Journal</Link>
+                                <Link className="text-5xl font-black font-headline text-stone-900 tracking-tighter hover:text-primary transition-colors block uppercase" to="/contact">Contact</Link>
                             </div>
 
-                            <div className="mt-auto p-8 pt-0 space-y-6 relative z-10">
-                                <div className="h-px w-full bg-outline-variant/20" />
-                                <div className="space-y-1">
-                                    <p className="text-[10px] font-black uppercase tracking-[0.2em] text-primary">Made with Malwa Soul</p>
-                                    <p className="text-xs text-on-surface-variant italic">Indore's Breakfast Tradition, Delivered.</p>
+                            <div className="mt-auto p-10 pb-12 space-y-8">
+                                <div className="h-0.5 w-full bg-stone-900/10" />
+                                <div>
+                                    <p className="text-[10px] font-black uppercase tracking-[0.3em] text-primary mb-2">INDORE'S MORNING SOUL</p>
+                                    <p className="text-sm text-stone-500 font-medium italic">Traditional Home-Kitchen Quality, Delivered.</p>
                                 </div>
-                                <Link to="/shop" className="w-full bg-primary text-white text-center py-4 font-black rounded-lg shadow-xl block uppercase tracking-widest text-sm">
-                                    ORDER YOUR PACK
+                                <Link 
+                                    to="/shop" 
+                                    className="block w-full bg-[#ca2221] text-white text-center py-5 rounded-xl font-black text-lg uppercase tracking-widest shadow-xl shadow-red-900/20 active:translate-y-1 transition-all"
+                                >
+                                    GET YOUR POHA NOW
                                 </Link>
                             </div>
                         </motion.div>
