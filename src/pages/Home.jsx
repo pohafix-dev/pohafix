@@ -149,7 +149,7 @@ const Home = () => {
                 </section>
 
                 {/* Global Appeal Section */}
-                <section className="py-24 bg-surface-container-low overflow-hidden">
+                <section className="py-12 md:py-24 bg-surface-container-low overflow-hidden">
                     <div className="container mx-auto px-6">
                         <div className="flex flex-col md:flex-row items-center gap-16">
                             <div className="w-full md:w-1/2 relative">
@@ -206,7 +206,7 @@ const Home = () => {
                 </section>
 
                 {/* Nostalgia Section */}
-                <section className="relative py-32 lg:py-48 overflow-hidden flex items-center bg-[#1d1c16]">
+                <section className="relative py-20 lg:py-48 overflow-hidden flex items-center bg-[#1d1c16]">
                     <div className="absolute inset-0 z-0">
                         <img alt="Sarafa Bazaar Indore" className="w-full h-full object-cover opacity-40 grayscale" src="/sarafa-bg.jpg" />
                         <div className="absolute inset-0 bg-black/60"></div>
@@ -227,75 +227,70 @@ const Home = () => {
                     </div>
                 </section>
 
-                {/* Product Combos Carousel */}
-                <section className="pt-24 pb-4 bg-[#fef9f0] relative overflow-hidden">
-                    <div className="container mx-auto px-6">
-                        <div className="max-w-5xl mx-auto">
-                            <div className="relative group p-4 md:p-8">
-                                {/* Slides Container */}
+                {/* Product Combos - Mobile Grid / Desktop Carousel */}
+                <section className="py-12 md:py-24 bg-[#fef9f0] relative overflow-hidden">
+                    <div className="container mx-auto px-4 md:px-6">
+                        <div className="flex flex-col md:flex-row justify-between items-end mb-8 md:mb-12 gap-4">
+                            <div>
+                                <h2 className="text-3xl md:text-6xl font-black font-headline text-on-surface tracking-tighter uppercase">Pick Your <span className="text-primary italic">Poha Fix.</span></h2>
+                            </div>
+                        </div>
+
+                        <div className="md:hidden space-y-6">
+                            {bundles.map((bundle, idx) => (
+                                <div key={idx} className="bg-white rounded-3xl overflow-hidden shadow-sm border border-stone-200">
+                                    <div className="p-6 bg-[#fdfaf2] aspect-square flex items-center justify-center relative">
+                                        <img src={bundle.images[0]} alt={bundle.title} className="w-[80%] h-auto object-contain" />
+                                        <span className="absolute top-4 left-4 bg-[#eaf4e5] text-[#347b4e] text-[8px] font-black tracking-widest px-3 py-1 rounded-full uppercase">
+                                            {bundle.tag}
+                                        </span>
+                                    </div>
+                                    <div className="p-6">
+                                        <div className="flex justify-between items-start mb-2">
+                                            <h3 className="text-xl font-black font-headline text-stone-900 leading-tight uppercase">{bundle.title}</h3>
+                                            <span className="text-xl font-black font-headline text-primary">₹{bundle.price}</span>
+                                        </div>
+                                        <p className="text-stone-500 text-xs font-medium mb-6 leading-relaxed line-clamp-2">
+                                            {bundle.subtitle}. Authentic Indori taste captured for your busy mornings.
+                                        </p>
+                                        <Link to="/shop" className="block w-full bg-[#ae1925] text-white py-3 rounded-xl font-bold text-sm text-center shadow-md active:translate-y-1 transition-all">
+                                            Order Now
+                                        </Link>
+                                    </div>
+                                </div>
+                            ))}
+                        </div>
+
+                        <div className="hidden md:block max-w-5xl mx-auto">
+                            <div className="relative group p-8">
+                                {/* Desktop Slides Container (Previous Logic) */}
                                 <div className="overflow-hidden">
                                     <div 
                                         className="flex transition-transform duration-700 ease-[cubic-bezier(0.25,1,0.5,1)]" 
                                         style={{ transform: `translateX(-${bundleSlide * 100}%)` }}
                                     >
                                         {bundles.map((bundle, idx) => (
-                                            <div key={idx} className="w-full flex-shrink-0 px-2 md:px-6">
-                                                {/* Editorial Combo Card */}
-                                                <div className="bg-white rounded-[2rem] shadow-[0_8px_30px_rgb(0,0,0,0.04)] hover:shadow-[0_8px_30px_rgb(0,0,0,0.08)] transition-all duration-300 overflow-hidden flex flex-col md:flex-row min-h-[450px]">
-                                                    {/* Left Image Section */}
-                                                    <div className="md:w-1/2 p-12 bg-[#fdfaf2] flex items-center justify-center relative border-b md:border-b-0 md:border-r border-gray-100">
-                                                        <div className="flex flex-col items-center">
-                                                            <div className="flex gap-2 items-center justify-center relative w-full h-full min-h-[300px]">
-                                                                <img src={bundle.images[0]} alt="Product" className="w-[85%] h-auto md:max-w-md object-contain mix-blend-multiply relative z-10 hover:scale-105 transition-transform duration-500" />
-                                                            </div>
-                                                            {/* Tiny pseudo-thumbnails at bottom based on user design */}
-                                                            <div className="flex gap-2 mt-8 absolute bottom-6 right-6">
-                                                                <div className="w-10 h-10 bg-white rounded shadow overflow-hidden p-1 border-2 border-transparent hover:border-gray-300 transition-colors cursor-pointer">
-                                                                     <img src="/combo-single.png" className="w-full h-full object-cover" />
-                                                                </div>
-                                                                <div className="w-10 h-10 bg-white rounded shadow flex items-center justify-center overflow-hidden p-1 border-2 border-transparent hover:border-gray-300 transition-colors cursor-pointer text-[10px] font-bold text-gray-500">
-                                                                     +1
-                                                                </div>
-                                                            </div>
-                                                        </div>
+                                            <div key={idx} className="w-full flex-shrink-0 px-6">
+                                                <div className="bg-white rounded-[2rem] shadow-[0_8px_30px_rgb(0,0,0,0.04)] overflow-hidden flex flex-col md:flex-row min-h-[450px]">
+                                                    <div className="md:w-1/2 p-12 bg-[#fdfaf2] flex items-center justify-center relative border-r border-gray-100">
+                                                        <img src={bundle.images[0]} alt="Product" className="w-[85%] h-auto object-contain mix-blend-multiply transition-transform duration-500 hover:scale-105" />
                                                     </div>
-                                                    
-                                                    {/* Right Content Section */}
-                                                    <div className="md:w-1/2 p-8 md:p-12 flex flex-col justify-center bg-white">
-                                                        <div className="flex items-center gap-3 mb-4 md:mb-6">
-                                                            <span className="bg-[#eaf4e5] text-[#347b4e] text-[9px] md:text-[10px] font-black uppercase tracking-widest px-3 py-1 rounded-full">
-                                                                {bundle.tag}
-                                                            </span>
-                                                            <div className="flex text-[#8b7921] text-xs md:text-sm">
-                                                                <span className="material-symbols-outlined text-[1rem]" style={{ fontVariationSettings: "'FILL' 1" }}>star</span>
-                                                                <span className="material-symbols-outlined text-[1rem]" style={{ fontVariationSettings: "'FILL' 1" }}>star</span>
-                                                                <span className="material-symbols-outlined text-[1rem]" style={{ fontVariationSettings: "'FILL' 1" }}>star</span>
-                                                                <span className="material-symbols-outlined text-[1rem]" style={{ fontVariationSettings: "'FILL' 1" }}>star</span>
-                                                                <span className="material-symbols-outlined text-[1rem]" style={{ fontVariationSettings: "'FILL' 1" }}>star</span>
-                                                            </div>
-                                                        </div>
-                                                        
-                                                        <h3 className="text-3xl md:text-4xl lg:text-5xl font-black font-headline text-gray-900 mb-4 leading-[1.1] tracking-tight">
-                                                            Pohafix {bundle.title === 'THE STARTER PACK' ? 'Starter Pack' : bundle.title === 'THE REBEL BUNDLE' ? 'Rebel Bundle' : 'Mystery Combo'}
+                                                    <div className="md:w-1/2 p-12 flex flex-col justify-center">
+                                                        <span className="bg-[#eaf4e5] text-[#347b4e] text-[10px] font-black uppercase tracking-widest px-3 py-1 rounded-full w-fit mb-6">
+                                                            {bundle.tag}
+                                                        </span>
+                                                        <h3 className="text-5xl font-black font-headline text-gray-900 mb-4 leading-[1.1] tracking-tight uppercase">
+                                                            Pohafix {bundle.title.split('THE ')[1]}
                                                         </h3>
-                                                        
-                                                        <p className="text-gray-500 font-medium leading-relaxed mb-8 font-body text-sm md:text-base pr-4">
-                                                            {bundle.subtitle}. The ultimate breakfast solution for busy mornings.
+                                                        <p className="text-gray-500 font-medium leading-relaxed mb-8 pr-4 italic">
+                                                            {bundle.subtitle}.
                                                         </p>
-                                                        
-                                                        {/* Pricing Block */}
-                                                        <div className="bg-[#f6f4ed] rounded-xl p-4 md:p-6 mb-6 flex justify-between items-center border border-[#ece9df]">
-                                                            <div className="flex items-baseline gap-3">
-                                                                <span className="text-3xl md:text-4xl font-black font-headline text-[#af101a]">₹{bundle.price}</span>
-                                                                {bundle.originalPrice && <span className="text-gray-400 line-through font-bold text-sm md:text-base">₹{bundle.originalPrice}</span>}
-                                                            </div>
-                                                            <span className="text-[#8b7921] font-bold text-[10px] md:text-xs uppercase tracking-widest text-right">
-                                                                {bundle.originalPrice ? `SAVE ₹${bundle.originalPrice - bundle.price} TODAY` : 'LIMITED STOCK TODAY'}
-                                                            </span>
+                                                        <div className="bg-[#f6f4ed] rounded-xl p-6 mb-6 flex justify-between items-center border border-[#ece9df]">
+                                                            <span className="text-4xl font-black font-headline text-[#af101a]">₹{bundle.price}</span>
+                                                            <span className="text-[#8b7921] font-bold text-xs uppercase tracking-widest">SAVE ₹{bundle.originalPrice ? bundle.originalPrice - bundle.price : '0'}</span>
                                                         </div>
-                                                        
-                                                        <Link to="/shop" className="w-full bg-[#ae1925] text-white py-4 rounded-xl font-bold text-lg hover:bg-[#8f121d] transition-colors text-center shadow-[0_4px_14px_0_rgb(174,25,37,0.39)] hover:shadow-[0_6px_20px_rgba(174,25,37,0.23)] active:scale-[0.98] duration-200">
-                                                            Buy Now
+                                                        <Link to="/shop" className="w-full bg-[#ae1925] text-white py-4 rounded-xl font-bold text-lg hover:bg-[#8f121d] transition-colors text-center shadow-lg active:scale-[0.98]">
+                                                            Order Now
                                                         </Link>
                                                     </div>
                                                 </div>
@@ -303,38 +298,17 @@ const Home = () => {
                                         ))}
                                     </div>
                                 </div>
-                                
-                                {/* Carousel Navigation */}
-                                <button 
-                                    onClick={() => setBundleSlide(prev => prev === 0 ? bundles.length - 1 : prev - 1)}
-                                    className="absolute left-0 md:-left-6 top-1/2 -translate-y-1/2 bg-white border-4 border-black w-14 h-14 flex items-center justify-center rounded-full shadow-[4px_4px_0_0_#af101a] hover:translate-x-1 hover:shadow-none transition-all z-20"
-                                >
-                                    <span className="material-symbols-outlined text-black font-bold text-3xl">west</span>
-                                </button>
-                                <button 
-                                    onClick={() => setBundleSlide(prev => (prev + 1) % bundles.length)}
-                                    className="absolute right-0 md:-right-6 top-1/2 -translate-y-1/2 bg-white border-4 border-black w-14 h-14 flex items-center justify-center rounded-full shadow-[4px_4px_0_0_#af101a] hover:-translate-x-1 hover:shadow-none transition-all z-20"
-                                >
-                                    <span className="material-symbols-outlined text-black font-bold text-3xl">east</span>
-                                </button>
-
-                                {/* Dot Indicators */}
-                                <div className="flex justify-center gap-3 mt-12">
-                                    {bundles.map((_, idx) => (
-                                        <button 
-                                            key={idx}
-                                            onClick={() => setBundleSlide(idx)}
-                                            className={`h-3 transition-all duration-300 ${idx === bundleSlide ? 'w-12 bg-[#af101a]' : 'w-3 bg-surface-variant hover:bg-black'} rounded-full border border-black/10`}
-                                        />
-                                    ))}
-                                </div>
                             </div>
+                        </div>
+                    </div>
+                </section>
+                    </div>
                         </div>
                     </div>
                 </section>
 
                 {/* Features & Why It Matters Section */}
-                <div className="bg-[#fcfaf5] pt-8 font-body relative overflow-hidden" id="features">
+                <div className="bg-[#fcfaf5] py-12 md:py-8 font-body relative overflow-hidden" id="features">
                     <div className="container mx-auto px-6 max-w-6xl">
                         {/* Top 3 Cards */}
                         <div className="grid md:grid-cols-3 gap-6 mb-24">
@@ -468,7 +442,7 @@ const Home = () => {
                     </div>
 
                     {/* Bottom Try Now Callout */}
-                    <div className="bg-[#fcedea] py-24 lg:py-32 px-6 text-center shadow-inner">
+                    <div className="bg-[#fcedea] py-16 md:py-24 lg:py-32 px-6 text-center shadow-inner">
                         <h2 className="text-5xl md:text-7xl font-black font-headline text-[#be1e2d] tracking-tight leading-[1.1] mb-12 max-w-4xl mx-auto">
                             Healthy bhi, tasty bhi –<br className="hidden md:block" /> ab try karo.
                         </h2>
@@ -483,7 +457,7 @@ const Home = () => {
 
 
                 {/* The World is Poha-Fixated: Celebrity Reels */}
-                <section className="py-24 bg-surface">
+                <section className="py-12 md:py-24 bg-surface">
                     <div className="max-w-screen-2xl mx-auto px-8">
                         <div className="flex flex-col md:flex-row justify-between items-end mb-16 gap-4">
                             <h2 className="font-headline text-5xl md:text-6xl font-black text-primary tracking-tighter uppercase max-w-xl">
@@ -513,7 +487,7 @@ const Home = () => {
                 </section>
 
                 {/* Thelagadi Experience */}
-                <section className="py-24 bg-surface-container-low overflow-hidden">
+                <section className="py-12 md:py-24 bg-surface-container-low overflow-hidden">
                     <div className="max-w-screen-2xl mx-auto px-8 relative">
                         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
                             <div className="relative">
@@ -572,7 +546,7 @@ const Home = () => {
                 </section>
 
                 {/* Newspaper Snip (Testimonial) */}
-                <section className="py-20 bg-surface">
+                <section className="py-12 md:py-20 bg-surface">
                     <div className="max-w-4xl mx-auto px-8">
                         <div className="bg-surface-variant p-12 relative" style={{ WebkitMaskImage: "url('data:image/svg+xml;utf8,<svg viewBox=\"0 0 100 10\" preserveAspectRatio=\"none\" xmlns=\"http://www.w3.org/2000/svg\"><path d=\"M0 10 L5 8 L10 10 L15 7 L20 10 L25 8 L30 10 L35 7 L40 10 L45 8 L50 10 L55 7 L60 10 L65 8 L70 10 L75 7 L80 10 L85 8 L90 10 L95 7 L100 10 V0 H0 Z\" fill=\"black\"/></svg>')", maskImage: "url('data:image/svg+xml;utf8,<svg viewBox=\"0 0 100 10\" preserveAspectRatio=\"none\" xmlns=\"http://www.w3.org/2000/svg\"><path d=\"M0 10 L5 8 L10 10 L15 7 L20 10 L25 8 L30 10 L35 7 L40 10 L45 8 L50 10 L55 7 L60 10 L65 8 L70 10 L75 7 L80 10 L85 8 L90 10 L95 7 L100 10 V0 H0 Z\" fill=\"black\"/></svg>')" }}>
                             <div className="absolute -top-6 left-12 bg-primary text-on-primary px-4 py-1 font-headline font-bold uppercase tracking-widest text-sm">Special Dispatch</div>
@@ -591,7 +565,7 @@ const Home = () => {
                 </section>
 
                 {/* Final Call to Action - Red Section */}
-                <section className="bg-[#be1e2d] py-24 relative overflow-hidden">
+                <section className="bg-[#be1e2d] py-16 md:py-24 relative overflow-hidden">
                     {/* Hindi Watermarks */}
                     <div className="absolute top-10 right-10 text-8xl md:text-[12rem] font-hindi text-white/5 select-none rotate-12 pointer-events-none">
                         इंदौर
