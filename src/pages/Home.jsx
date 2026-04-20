@@ -152,22 +152,45 @@ const Home = () => {
                 <section className="py-24 bg-surface-container-low overflow-hidden">
                     <div className="container mx-auto px-6">
                         <div className="flex flex-col md:flex-row items-center gap-16">
-                            <div className="w-full md:w-1/2 relative flex justify-center">
-                                {/* Layered Image Stack */}
-                                <div className="relative w-full max-w-md aspect-square">
-                                    <div className="absolute top-0 left-0 w-64 h-80 bg-surface-variant rotate-[-6deg] shadow-lg overflow-hidden border-8 border-white p-2">
-                                        <img alt="Diljit Poha" className="w-full h-full object-cover" data-alt="Editorial portrait of a famous celebrity laughing while eating street food from a paper bowl in a vibrant city setting" src="/diljit.jpg" />
-                                        <p className="absolute bottom-4 left-4 bg-primary text-white text-[10px] px-2 py-1 font-bold">DILJIT LOVES IT</p>
+                            <div className="w-full md:w-1/2 relative">
+                                {/* Mobile: Swippable Carousel | Desktop: Layered Stack */}
+                                <div className="block md:hidden">
+                                    <div className="flex overflow-x-auto snap-x snap-mandatory gap-6 no-scrollbar pb-8 px-4">
+                                        {[
+                                            { id: 1, img: "/diljit.jpg", caption: "DILJIT LOVES IT", rotate: "-rotate-2" },
+                                            { id: 2, img: "/david.jpg", caption: "STREET SIDE STORY", rotate: "rotate-2" }
+                                        ].map((p) => (
+                                            <div key={p.id} className="min-w-[85%] snap-center">
+                                                <div className={`bg-white shadow-2xl border-8 border-white p-2 aspect-[4/5] relative ${p.rotate}`}>
+                                                    <img src={p.img} alt={p.caption} className="w-full h-full object-cover" />
+                                                    <p className="absolute bottom-4 left-4 bg-primary text-white text-[10px] px-3 py-1 font-black uppercase tracking-widest">{p.caption}</p>
+                                                </div>
+                                            </div>
+                                        ))}
                                     </div>
-                                    <div className="absolute bottom-0 right-0 w-64 h-80 bg-surface-variant rotate-[8deg] shadow-xl overflow-hidden border-8 border-white p-2">
-                                        <img alt="David Poha" className="w-full h-full object-cover" data-alt="A distinguished international statesman smiling warmly while holding a traditional leaf bowl of Indian street food" src="/david.jpg" />
-                                        <p className="absolute bottom-4 left-4 bg-primary text-white text-[10px] px-2 py-1 font-bold">STREET SIDE STORY</p>
+                                    <div className="flex justify-center gap-2 mt-4">
+                                        <div className="w-8 h-1 bg-primary rounded-full"></div>
+                                        <div className="w-4 h-1 bg-gray-300 rounded-full"></div>
+                                    </div>
+                                </div>
+
+                                {/* Desktop Stacked View */}
+                                <div className="hidden md:flex justify-center">
+                                    <div className="relative w-full max-w-md aspect-square lg:scale-110">
+                                        <div className="absolute top-0 left-0 w-64 h-80 bg-surface-variant rotate-[-6deg] shadow-lg overflow-hidden border-8 border-white p-2 hover:rotate-0 hover:z-20 transition-all duration-300 cursor-pointer group">
+                                            <img alt="Diljit Poha" className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" src="/diljit.jpg" />
+                                            <p className="absolute bottom-4 left-4 bg-primary text-white text-[10px] px-2 py-1 font-bold">DILJIT LOVES IT</p>
+                                        </div>
+                                        <div className="absolute bottom-0 right-0 w-64 h-80 bg-surface-variant rotate-[8deg] shadow-xl overflow-hidden border-8 border-white p-2 hover:rotate-0 hover:z-20 transition-all duration-300 cursor-pointer group">
+                                            <img alt="David Poha" className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" src="/david.jpg" />
+                                            <p className="absolute bottom-4 left-4 bg-primary text-white text-[10px] px-2 py-1 font-bold">STREET SIDE STORY</p>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
                             <div className="w-full md:w-1/2 space-y-6">
-                                <h2 className="text-5xl font-black font-headline text-on-surface leading-tight">
-                                    From the streets of Indore <span className="text-primary italic">to the world.</span>
+                                <h2 className="text-5xl font-black font-headline text-on-surface leading-[1.1] tracking-tighter uppercase md:normal-case">
+                                    From the streets of Indore <br className="hidden md:block"/><span className="text-primary italic">to the world.</span>
                                 </h2>
                                 <p className="text-xl text-on-surface-variant leading-relaxed font-medium">
                                     Whether it's the backstage of a global concert or the quiet halls of diplomacy, the taste of Malwa finds its way. Loved by everyone who seeks the warmth of a home-cooked morning.
