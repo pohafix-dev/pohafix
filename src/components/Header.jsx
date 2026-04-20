@@ -54,61 +54,79 @@ const Header = () => {
                 </div>
             </div>
 
-            {/* Mobile Navigation Drawer */}
+            {/* Mobile Navigation Overlay */}
             <AnimatePresence>
                 {isMenuOpen && (
-                    <>
-                        <motion.div 
-                            initial={{ opacity: 0 }}
-                            animate={{ opacity: 1 }}
-                            exit={{ opacity: 0 }}
-                            onClick={() => setIsMenuOpen(false)}
-                            className="fixed inset-0 bg-stone-900/60 backdrop-blur-sm z-[110] md:hidden"
-                        />
-                        <motion.div 
-                            initial={{ x: '100%' }}
-                            animate={{ x: 0 }}
-                            exit={{ x: '100%' }}
-                            transition={{ type: 'spring', damping: 25, stiffness: 200 }}
-                            className="fixed top-0 right-0 bottom-0 w-full bg-[#f9f5f0] z-[120] md:hidden flex flex-col shadow-2xl"
-                        >
-                            {/* Drawer Header - Matching Screenshot */}
-                            <div className="flex items-center justify-between px-6 py-4 border-b border-stone-200/50">
-                                <Link to="/" className="flex items-center bg-[#ca2221] px-5 py-2 rounded shadow-md">
-                                    <span className="text-[#ffdf00] font-black italic text-2xl tracking-tighter leading-none">Poha</span>
-                                    <span className="text-white font-black italic text-2xl tracking-tighter leading-none">fix</span>
-                                </Link>
-                                <button 
-                                    onClick={() => setIsMenuOpen(false)}
-                                    className="w-12 h-12 rounded-2xl bg-[#e7e2d9] flex items-center justify-center text-stone-900 border border-stone-300/30 shadow-sm transition-transform active:scale-90"
-                                >
-                                    <span className="material-symbols-outlined text-[28px] font-light">close</span>
-                                </button>
-                            </div>
+                    <motion.div 
+                        initial={{ opacity: 0 }}
+                        animate={{ opacity: 1 }}
+                        exit={{ opacity: 0 }}
+                        className="fixed inset-0 bg-[#f9f5f0]/90 backdrop-blur-xl z-[150] md:hidden flex flex-col"
+                    >
+                        {/* Overlay Header - Matching Screenshot */}
+                        <div className="flex items-center justify-between px-6 py-4 w-full">
+                            <Link to="/" className="flex items-center bg-[#ca2221] px-5 py-2 rounded shadow-md" onClick={() => setIsMenuOpen(false)}>
+                                <span className="text-[#ffdf00] font-black italic text-2xl tracking-tighter leading-none">Poha</span>
+                                <span className="text-white font-black italic text-2xl tracking-tighter leading-none">fix</span>
+                            </Link>
+                            <button 
+                                onClick={() => setIsMenuOpen(false)}
+                                className="w-12 h-12 rounded-2xl bg-[#e7e2d9] flex items-center justify-center text-stone-900 border border-stone-300/30 shadow-sm transition-transform active:scale-95"
+                            >
+                                <span className="material-symbols-outlined text-[28px] font-light">close</span>
+                            </button>
+                        </div>
 
-                            <div className="flex flex-col gap-8 p-10 mt-8">
-                                <Link className="text-5xl font-black font-headline text-stone-900 tracking-tighter hover:text-primary transition-colors block uppercase" to="/">Home</Link>
-                                <Link className="text-5xl font-black font-headline text-stone-900 tracking-tighter hover:text-primary transition-colors block uppercase" to="/shop">Shop</Link>
-                                <Link className="text-5xl font-black font-headline text-stone-900 tracking-tighter hover:text-primary transition-colors block uppercase" to="/about">About Us</Link>
-                                <Link className="text-5xl font-black font-headline text-stone-900 tracking-tighter hover:text-primary transition-colors block uppercase" to="/blog">Journal</Link>
-                                <Link className="text-5xl font-black font-headline text-stone-900 tracking-tighter hover:text-primary transition-colors block uppercase" to="/contact">Contact</Link>
-                            </div>
+                        {/* Centered Navigation Links */}
+                        <div className="flex-1 flex flex-col items-center justify-center gap-8 pb-12">
+                            <Link 
+                                className="text-5xl font-black font-headline text-stone-900 tracking-tighter hover:text-primary transition-all transform hover:scale-110 active:scale-95 uppercase" 
+                                to="/"
+                                onClick={() => setIsMenuOpen(false)}
+                            >
+                                Home
+                            </Link>
+                            <Link 
+                                className="text-5xl font-black font-headline text-stone-900 tracking-tighter hover:text-primary transition-all transform hover:scale-110 active:scale-95 uppercase" 
+                                to="/shop"
+                                onClick={() => setIsMenuOpen(false)}
+                            >
+                                Shop
+                            </Link>
+                            <Link 
+                                className="text-5xl font-black font-headline text-stone-900 tracking-tighter hover:text-primary transition-all transform hover:scale-110 active:scale-95 uppercase" 
+                                to="/about"
+                                onClick={() => setIsMenuOpen(false)}
+                            >
+                                About Us
+                            </Link>
+                            <Link 
+                                className="text-5xl font-black font-headline text-stone-900 tracking-tighter hover:text-primary transition-all transform hover:scale-110 active:scale-95 uppercase" 
+                                to="/blog"
+                                onClick={() => setIsMenuOpen(false)}
+                            >
+                                Journal
+                            </Link>
+                            <Link 
+                                className="text-5xl font-black font-headline text-stone-900 tracking-tighter hover:text-primary transition-all transform hover:scale-110 active:scale-95 uppercase" 
+                                to="/contact"
+                                onClick={() => setIsMenuOpen(false)}
+                            >
+                                Contact
+                            </Link>
+                        </div>
 
-                            <div className="mt-auto p-10 pb-12 space-y-8">
-                                <div className="h-0.5 w-full bg-stone-900/10" />
-                                <div>
-                                    <p className="text-[10px] font-black uppercase tracking-[0.3em] text-primary mb-2">INDORE'S MORNING SOUL</p>
-                                    <p className="text-sm text-stone-500 font-medium italic">Traditional Home-Kitchen Quality, Delivered.</p>
-                                </div>
-                                <Link 
-                                    to="/shop" 
-                                    className="block w-full bg-[#ca2221] text-white text-center py-5 rounded-xl font-black text-lg uppercase tracking-widest shadow-xl shadow-red-900/20 active:translate-y-1 transition-all"
-                                >
-                                    GET YOUR POHA NOW
-                                </Link>
-                            </div>
-                        </motion.div>
-                    </>
+                        {/* Bottom CTA */}
+                        <div className="p-8 pb-12 w-full max-w-sm mx-auto">
+                            <Link 
+                                to="/shop" 
+                                onClick={() => setIsMenuOpen(false)}
+                                className="block w-full bg-[#ca2221] text-white text-center py-5 rounded-xl font-black text-lg uppercase tracking-widest shadow-2xl shadow-red-900/40 active:translate-y-1 transition-all"
+                            >
+                                GET YOUR POHA NOW
+                            </Link>
+                        </div>
+                    </motion.div>
                 )}
             </AnimatePresence>
         </nav>
