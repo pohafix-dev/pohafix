@@ -323,10 +323,6 @@ const Home = () => {
                         </div>
                     </div>
                 </section>
-                    </div>
-                        </div>
-                    </div>
-                </section>
 
                 {/* Features & Why It Matters Section */}
                 <div className="bg-[#fcfaf5] py-12 md:py-8 font-body relative overflow-hidden" id="features">
