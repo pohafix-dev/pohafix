@@ -137,7 +137,7 @@ const Shop = () => {
                     {/* Action Block */}
                     <div className="space-y-6 pt-6 border-t border-outline-variant/10">
                         <Link 
-                            to="/order" 
+                            to={`/order?plan=${selectedPlan}`} 
                             className="w-full bg-primary text-on-primary py-6 rounded-2xl font-headline font-black text-xl uppercase tracking-tight flex items-center justify-center gap-3 hover:bg-primary-container transition-all shadow-[0_12px_24px_rgba(175,16,26,0.25)] active:scale-[0.98]"
                         >
                             Order Now
