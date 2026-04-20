@@ -1,11 +1,13 @@
 import React, { useState, useEffect } from 'react';
-import { Link, useNavigate } from 'react-router-dom';
+import { Link, useNavigate, useSearchParams } from 'react-router-dom';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
 
 const Order = () => {
     const navigate = useNavigate();
-    const [selectedOption, setSelectedOption] = useState(1);
+    const [searchParams] = useSearchParams();
+    const planId = parseInt(searchParams.get('plan'));
+    const [selectedOption, setSelectedOption] = useState(isNaN(planId) ? 1 : planId + 1); // +1 because options use 1-based IDs
     const [formData, setFormData] = useState({
         name: '',
         phone: '',
@@ -100,17 +102,17 @@ const Order = () => {
         <div className="bg-surface font-body text-on-surface min-h-screen">
             <Header />
 
-            <main className="max-w-7xl mx-auto px-6 py-12">
+            <main className="max-w-7xl mx-auto px-6 pt-24 lg:pt-32 pb-20">
                 <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
                     {/* Left Side: Shipping & Payment */}
                     <div className="lg:col-span-7 space-y-12">
                         {/* Delivery Section */}
                         <section>
-                            <div className="flex items-center justify-between mb-8">
+                            <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between mb-8 gap-4">
                                 <h2 className="font-headline text-3xl font-bold tracking-tight border-b-4 border-secondary pb-1">Shipping Details</h2>
-                                <div className="bg-tertiary-container text-on-tertiary-container px-3 py-1 rounded-full text-xs font-label font-bold flex items-center gap-1">
+                                <div className="bg-tertiary-container text-on-tertiary-container px-4 py-1.5 rounded-full text-xs font-label font-bold flex items-center gap-2 whitespace-nowrap shadow-sm">
                                     <span className="material-symbols-outlined text-sm">local_shipping</span>
-                                    GET IT IN 2-3 DAYS
+                                    GET IT IN 4-6 DAYS
                                 </div>
                             </div>
                             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
