@@ -19,6 +19,7 @@ const Home = () => {
         {
             title: "THE STARTER PACK",
             subtitle: "1 Full 300g Box (5 Individual Packs)",
+            description: "Ready in 5 mins. Authentically Indori.",
             price: 189,
             tag: "POPULAR",
             tagColor: "bg-[#716016]",
@@ -28,6 +29,7 @@ const Home = () => {
         {
             title: "THE REBEL BUNDLE",
             subtitle: "2 Full 300g Boxes (600g Total)",
+            description: "Bulk savings for the true Poha lover.",
             price: 290,
             originalPrice: 378,
             tag: "SAVE ₹88",
@@ -38,6 +40,7 @@ const Home = () => {
         {
             title: "THE MYSTERY COMBO",
             subtitle: "1 Box 300g Pohafix + 1 Secret Sev (150g)",
+            description: "Limited edition street-style combo.",
             price: 290,
             tag: "LIMITED",
             tagColor: "bg-[#716016]",
@@ -238,7 +241,7 @@ const Home = () => {
 
                         <div className="md:hidden grid grid-cols-1 gap-4">
                             {bundles.map((bundle, idx) => (
-                                <div key={idx} className="bg-white rounded-[1.5rem] overflow-hidden shadow-lg border border-stone-100 flex flex-col">
+                                <div key={idx} className="bg-white rounded-[1.5rem] overflow-hidden shadow-[0_12px_40px_-10px_rgba(0,0,0,0.08)] border border-stone-100 flex flex-col">
                                     {/* Product Visual Header - Zero Blank Space */}
                                     <div className="bg-[#fcf7ec] aspect-[5/4] relative flex items-center justify-center p-0">
                                         <img src={bundle.images[0]} alt={bundle.title} className="w-full h-full object-contain mix-blend-multiply scale-110 drop-shadow-2xl" />
@@ -250,6 +253,7 @@ const Home = () => {
                                     {/* Product Content Details - Tightened */}
                                     <div className="px-5 pt-4 pb-2 flex-1">
                                         <h3 className="text-lg font-bold text-stone-900 mb-0.5 leading-tight">{bundle.title.toLowerCase().includes('the ') ? bundle.title.split('THE ')[1] : bundle.title}</h3>
+                                        <p className="text-[10px] text-stone-500 font-medium mb-2 leading-tight">{bundle.description}</p>
                                         
                                         {/* Stars & Reviews */}
                                         <div className="flex items-center gap-1 mb-2">
