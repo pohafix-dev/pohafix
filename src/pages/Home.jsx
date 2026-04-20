@@ -282,10 +282,10 @@ const Home = () => {
                                     {/* Footer Button Strategy */}
                                     <div className="border-t border-stone-100 p-4">
                                         <Link 
-                                            to={`/shop?plan=${idx}`} 
+                                            to={`/order?plan=${idx}`} 
                                             className="block w-full text-center text-[#ce1d2a] font-black text-sm uppercase tracking-widest py-2 hover:opacity-80 transition-opacity"
                                         >
-                                            ADD TO CART
+                                            ORDER NOW
                                         </Link>
                                     </div>
                                 </div>
