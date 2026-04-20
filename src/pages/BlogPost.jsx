@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { useParams, Link } from 'react-router-dom';
 import { blogs } from '../data/blogs';
 import Header from '../components/Header';
+import Footer from '../components/Footer';
 
 const BlogPost = () => {
     const { slug } = useParams();
@@ -151,6 +152,8 @@ const BlogPost = () => {
                     <Link to="/blog" className="font-headline font-black uppercase tracking-widest text-primary border-b-2 border-primary pb-2 hover:text-secondary hover:border-secondary transition-all">Back to Issue No. 04</Link>
                 </div>
             </section>
+
+            <Footer />
 
             {/* Newspaper Texture Overlay */}
             <div className="fixed inset-0 pointer-events-none opacity-[0.03] bg-[url('https://www.transparenttextures.com/patterns/natural-paper.png')] mix-blend-multiply z-[60]"></div>

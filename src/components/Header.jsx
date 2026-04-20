@@ -27,6 +27,7 @@ const Header = () => {
                     <Link className="text-stone-900 dark:text-stone-100 font-bold tracking-tight hover:text-primary transition-colors text-sm" to="/shop">Shop</Link>
                     <Link className="text-stone-900 dark:text-stone-100 font-bold tracking-tight hover:text-primary transition-colors text-sm" to="/about">About Us</Link>
                     <Link className="text-stone-900 dark:text-stone-100 font-bold tracking-tight hover:text-primary transition-colors text-sm" to="/blog">Blogs</Link>
+                    <Link className="text-stone-900 dark:text-stone-100 font-bold tracking-tight hover:text-primary transition-colors text-sm" to="/contact">Contact</Link>
                 </div>
 
                 {/* Center: Logo Container */}

@@ -1,6 +1,7 @@
 import React, { useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import Header from '../components/Header';
+import Footer from '../components/Footer';
 
 const templateBlogs = [
     {
@@ -228,6 +229,8 @@ const Blog = () => {
                     </div>
                 </section>
             </main>
+
+            <Footer />
 
             {/* Newspaper Texture Overlay */}
             <div className="fixed inset-0 pointer-events-none opacity-[0.03] bg-[url('https://www.transparenttextures.com/patterns/natural-paper.png')] mix-blend-multiply z-[60]"></div>

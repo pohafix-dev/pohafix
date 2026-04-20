@@ -1,8 +1,13 @@
+import React from 'react';
 import { Link } from 'react-router-dom';
+import Header from '../components/Header';
+import Footer from '../components/Footer';
 
 const About = () => {
     return (
-        <main className="pt-24 lg:pt-32 pb-10 overflow-x-hidden">
+        <>
+        <Header />
+        <main className="pt-24 lg:pt-32 pb-10 overflow-x-hidden min-h-screen">
             {/* Hero Section */}
             <section className="max-w-4xl mx-auto px-6 text-center mb-16">
                 <span className="text-primary font-bold tracking-widest uppercase text-sm mb-6 block">Our Heritage</span>
@@ -113,6 +118,8 @@ const About = () => {
                 </div>
             </section>
         </main>
+        <Footer />
+        </>
     );
 };
 

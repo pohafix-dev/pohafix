@@ -2,6 +2,8 @@ import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import VideoCard from '../components/VideoCard';
 import { videoData } from '../data/videos';
+import Header from '../components/Header';
+import Footer from '../components/Footer';
 
 const Home = () => {
     const [currentSlide, setCurrentSlide] = useState(0);
@@ -54,23 +56,7 @@ const Home = () => {
 
     return (
         <div className="bg-background text-on-surface font-body selection:bg-secondary-container selection:text-on-secondary-container flex flex-col min-h-screen">
-            {/* TopAppBar Component */}
-            <nav className="bg-[#fef9f0] dark:bg-[#1d1c16] font-['Epilogue'] tracking-tight font-bold full-width top-0 sticky z-50 shadow-none">
-                <div className="flex justify-between items-center px-6 py-4 w-full max-w-screen-2xl mx-auto">
-                    <div className="text-3xl font-black text-[#af101a] dark:text-[#d32f2f] italic">
-                        <Link to="/">Pohafix</Link>
-                    </div>
-                    <div className="hidden md:flex gap-8 items-center">
-                        <Link className="text-[#af101a] dark:text-[#d32f2f] border-b-4 border-[#af101a] pb-1 hover:opacity-100 hover:text-[#af101a] transition-all duration-300" to="/">Home</Link>
-                        <Link className="text-[#1d1c16] dark:text-[#e7e2d9] opacity-80 hover:opacity-100 hover:text-[#af101a] transition-all duration-300" to="/shop">Shop</Link>
-                        <Link className="text-[#1d1c16] dark:text-[#e7e2d9] opacity-80 hover:opacity-100 hover:text-[#af101a] transition-all duration-300" to="/about">About Us</Link>
-                        <Link className="text-[#1d1c16] dark:text-[#e7e2d9] opacity-80 hover:opacity-100 hover:text-[#af101a] transition-all duration-300" to="/blog">Blogs</Link>
-                    </div>
-                    <Link to="/shop" className="bg-primary text-on-primary px-6 py-2 rounded-lg font-bold scale-95 active:scale-90 transition-transform shadow-lg shadow-primary/20 inline-block">
-                        Order Now
-                    </Link>
-                </div>
-            </nav>
+            <Header />
 
             <main className="flex-1">
                 {/* Hero Section */}
@@ -582,34 +568,10 @@ const Home = () => {
                         >
                             Order Now
                         </Link>
-                    </div>
                 </section>
             </main>
 
-            {/* Footer Component */}
-            <footer className="bg-[#e7e2d9] dark:bg-[#12110e] font-['Epilogue'] uppercase tracking-widest text-xs w-full mt-auto relative overflow-hidden border-t border-[#d32f2f]/10 shadow-inner">
-                <div className="flex flex-col md:flex-row justify-between items-center px-12 py-16 w-full gap-8">
-                    <div className="text-left space-y-4">
-                        <div className="text-xl font-bold text-[#1d1c16] dark:text-[#fef9f0]">Pohafix</div>
-                        <p className="normal-case text-on-surface-variant font-medium tracking-normal opacity-80">Indore ka asli breakfast — anywhere, anytime.</p>
-                    </div>
-                    <div className="flex flex-wrap gap-8 justify-center">
-                        <Link className="text-[#1d1c16] dark:text-[#e7e2d9] opacity-60 hover:text-[#af101a] dark:hover:text-[#fec330] transition-colors duration-200" to="/privacy">Privacy</Link>
-                        <Link className="text-[#1d1c16] dark:text-[#e7e2d9] opacity-60 hover:text-[#af101a] dark:hover:text-[#fec330] transition-colors duration-200" to="/privacy">Refund Policy</Link>
-                        <Link className="text-[#1d1c16] dark:text-[#e7e2d9] opacity-60 hover:text-[#af101a] dark:hover:text-[#fec330] transition-colors duration-200" to="/contact">Our Kitchens</Link>
-                        <Link className="text-[#1d1c16] dark:text-[#e7e2d9] opacity-60 hover:text-[#af101a] dark:hover:text-[#fec330] transition-colors duration-200" to="/contact">Franchise</Link>
-                    </div>
-                    <div className="text-center md:text-right">
-                        <p className="mb-4">© 2024 Pohafix - असली इन्दौरी ज़ायका</p>
-                        <div className="flex gap-4 justify-center md:justify-end border-none">
-                            <span className="material-symbols-outlined text-primary cursor-pointer hover:scale-110 transition-transform">share</span>
-                            <span className="material-symbols-outlined text-primary cursor-pointer hover:scale-110 transition-transform">person</span>
-                        </div>
-                    </div>
-                </div>
-                {/* Texture overlay for footer */}
-                <div className="absolute inset-0 bg-newsprint pointer-events-none opacity-40"></div>
-            </footer>
+            <Footer />
         </div>
     );
 };

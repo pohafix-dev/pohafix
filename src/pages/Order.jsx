@@ -1,5 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
+import Header from '../components/Header';
+import Footer from '../components/Footer';
 
 const Order = () => {
     const navigate = useNavigate();
@@ -96,21 +98,7 @@ const Order = () => {
 
     return (
         <div className="bg-surface font-body text-on-surface min-h-screen">
-            {/* TopAppBar */}
-            <header className="bg-[#f8f3ea] dark:bg-stone-900 transition-colors duration-300 shadow-sm dark:shadow-none w-full top-0 sticky z-50">
-                <div className="flex justify-between items-center w-full px-6 py-4 max-w-screen-2xl mx-auto">
-                    <div className="flex items-center gap-4">
-                        <button onClick={() => navigate(-1)} className="scale-95 active:opacity-80 transition-transform">
-                            <span className="material-symbols-outlined text-[#af101a] dark:text-[#d32f2f] text-2xl">arrow_back</span>
-                        </button>
-                        <h1 className="font-epilogue font-black italic tracking-tighter text-[#af101a] dark:text-[#d32f2f] text-3xl uppercase">Pohafix</h1>
-                    </div>
-                    <div className="flex items-center gap-6">
-                        <span className="material-symbols-outlined text-stone-600 dark:text-stone-400">shopping_cart</span>
-                        <span className="material-symbols-outlined text-stone-600 dark:text-stone-400">account_circle</span>
-                    </div>
-                </div>
-            </header>
+            <Header />
 
             <main className="max-w-7xl mx-auto px-6 py-12">
                 <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
@@ -334,6 +322,8 @@ const Order = () => {
                     <p className="font-body text-xs text-on-surface-variant">24 people ordered in last hour</p>
                 </div>
             </div>
+
+            <Footer />
         </div>
     );
 };

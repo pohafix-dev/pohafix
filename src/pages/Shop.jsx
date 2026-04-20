@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { motion, AnimatePresence } from 'framer-motion';
 import Header from '../components/Header';
+import Footer from '../components/Footer';
 
 const Shop = () => {
     const [selectedPlan, setSelectedPlan] = useState(0);
@@ -357,6 +358,7 @@ const Shop = () => {
                 </div>
             </section>
         </main>
+        <Footer />
         </>
     );
 };
