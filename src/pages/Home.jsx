@@ -20,6 +20,7 @@ const Home = () => {
             title: "THE STARTER PACK",
             subtitle: "1 Full 300g Box (5 Individual Packs)",
             description: "Ready in 5 mins. Authentically Indori.",
+            reviews: "6,358",
             price: 189,
             tag: "POPULAR",
             tagColor: "bg-[#716016]",
@@ -30,6 +31,7 @@ const Home = () => {
             title: "THE REBEL BUNDLE",
             subtitle: "2 Full 300g Boxes (600g Total)",
             description: "Bulk savings for the true Poha lover.",
+            reviews: "2,685",
             price: 290,
             originalPrice: 378,
             tag: "SAVE ₹88",
@@ -41,6 +43,7 @@ const Home = () => {
             title: "THE MYSTERY COMBO",
             subtitle: "1 Box 300g Pohafix + 1 Secret Sev (150g)",
             description: "Limited edition street-style combo.",
+            reviews: "1,842",
             price: 290,
             tag: "LIMITED",
             tagColor: "bg-[#716016]",
@@ -267,7 +270,7 @@ const Home = () => {
                                                 <span className="material-symbols-outlined text-[0.9rem]" style={{ fontVariationSettings: "'FILL' 1" }}>star</span>
                                                 <span className="material-symbols-outlined text-[0.9rem]" style={{ fontVariationSettings: "'FILL' 1" }}>star</span>
                                             </div>
-                                            <span className="text-stone-400 text-[10px] font-semibold">(1,248)</span>
+                                            <span className="text-stone-400 text-[10px] font-semibold">({bundle.reviews})</span>
                                         </div>
 
                                         <div className="mb-2">
