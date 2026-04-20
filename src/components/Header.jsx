@@ -18,8 +18,9 @@ const Header = () => {
                 {/* Left: Mobile Hamburger & Desktop Links */}
                 <div className="flex items-center justify-start gap-4">
                     <button 
+                        type="button"
                         onClick={(e) => {
-                            e.preventDefault();
+                            e.stopPropagation();
                             setIsMenuOpen(true);
                         }}
                         className="md:hidden text-stone-900 dark:text-stone-100 hover:text-primary transition-colors p-3 -ml-3 relative z-[110]"
