@@ -492,7 +492,7 @@ const Home = () => {
                                 {/* Asymmetric Card Layout */}
                                 <div className="absolute -top-12 -left-12 font-headline text-9xl text-primary/5 select-none rotate-[-15deg]">thela</div>
                                 <div className="bg-surface-container-lowest p-6 rounded-xl shadow-2xl relative z-10 transform rotate-2">
-                                    <img alt="Street Cart Poha" className="w-full aspect-video object-contain rounded-lg mb-6" src="/thela-v2.png" />
+                                    <img alt="Street Cart Poha" className="w-full aspect-video object-contain rounded-lg mb-6" src="/thela-v3.png" />
                                     <div className="flex justify-between items-center">
                                         <div>
                                             <h4 className="font-headline text-2xl font-bold text-on-surface">The Signature Cart</h4>
