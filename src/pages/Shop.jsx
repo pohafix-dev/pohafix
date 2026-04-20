@@ -81,12 +81,18 @@ const Shop = () => {
                              <span className="material-symbols-outlined text-secondary text-base" style={{ fontVariationSettings: "'FILL' 1" }}>verified</span>
                              <span className="text-secondary font-headline font-bold text-xs uppercase tracking-widest">Small Batch Produced Weekly</span>
                         </div>
-                        <h1 className="text-5xl md:text-6xl font-black font-headline text-on-surface leading-[1.1] tracking-tighter mb-6 uppercase">
-                            Authentic <br/><span className="text-primary italic">Indori Poha</span>
+                        <h1 className="text-4xl md:text-6xl font-black font-headline text-on-surface leading-[1.1] tracking-tighter mb-6 uppercase">
+                            Your Go-To <br/><span className="text-primary">Instant Indori Breakfast</span>
                         </h1>
-                        <p className="text-lg text-on-surface-variant font-medium leading-relaxed max-w-xl">
-                            The original Chhappan Dukaan ritual, captured in an instant. No laboratory shelf-extenders—just raw, natural ingredients and the soul of Malwa.
-                        </p>
+                        <div className="space-y-4 text-on-surface-variant font-medium leading-relaxed max-w-xl">
+                            <p className="text-lg font-bold text-on-surface">Pohafix – Fresh. Authentic. Indori.</p>
+                            <p>
+                                Enjoy the authentic taste of Indore in every bite! Made with premium quality poha and handpicked spices, Pohafix is completely free from chemicals and preservatives – just pure, wholesome taste.
+                            </p>
+                            <p>
+                                Make your plate even more delicious with chopped onions, jeeravan, and crunchy sev – the true Indori style. We always ensure you get the latest manufacturing lot, so the freshness and flavor are at their best every time.
+                            </p>
+                        </div>
                     </div>
 
                     {/* Plan Selection Grid */}
