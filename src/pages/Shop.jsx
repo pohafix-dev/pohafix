@@ -154,7 +154,6 @@ const Shop = () => {
                 </div>
             </section>
 
-            {/* Preparation ritual */}
             <section className="mt-32 border-y border-outline-variant/10">
                 <div className="max-w-7xl mx-auto grid md:grid-cols-4 divide-x divide-outline-variant/10">
                     <div className="p-12 text-center group bg-surface-container-low/30 hover:bg-background transition-colors">
@@ -176,6 +175,67 @@ const Shop = () => {
                         <div className="text-primary font-headline font-black text-5xl mb-6 group-hover:scale-110 transition-transform">04</div>
                         <h4 className="font-headline font-black text-lg mb-2">STIR</h4>
                         <p className="text-sm font-medium text-on-surface-variant">Stir well - your Poha is ready!</p>
+                    </div>
+                </div>
+            </section>
+
+            {/* Ingredient Composition Section */}
+            <section className="py-24 bg-[#ffdf00] overflow-hidden">
+                <div className="max-w-4xl mx-auto px-6">
+                    <div className="bg-white/10 backdrop-blur-sm p-8 md:p-12 rounded-[2rem] border border-black/5 shadow-2xl relative">
+                        {/* Decorative Flourish */}
+                        <div className="absolute -top-10 -right-10 text-9xl text-black/[0.03] font-headline font-black rotate-12 select-none pointer-events-none">PURE</div>
+                        
+                        <h2 className="text-2xl md:text-3xl font-black font-headline text-black mb-8 tracking-tight uppercase">
+                            Ingredient Composition <span className="text-black/50 text-sm block md:inline font-bold italic">(Approx. % by Weight)</span>
+                        </h2>
+                        
+                        <div className="grid grid-cols-1 md:grid-cols-12 gap-8">
+                            <div className="md:col-span-12">
+                                <div className="space-y-3 font-headline font-bold text-sm md:text-base">
+                                    <div className="flex justify-between items-center text-black/40 uppercase tracking-widest text-[10px] mb-4 border-b border-black/10 pb-4">
+                                        <span>Ingredient</span>
+                                        <span>% in Mix</span>
+                                    </div>
+                                    
+                                    {[
+                                        { name: "Flattened Rice", val: "51.95%" },
+                                        { name: "Sugar", val: "14.84%" },
+                                        { name: "Soya Oil", val: "10.89%" },
+                                        { name: "Peanuts", val: "8.41%" },
+                                        { name: "Green Chilli", val: "6.43%" },
+                                        { name: "Salt", val: "2.47%" },
+                                        { name: "Coriander Leaves", val: "0.99%" },
+                                        { name: "Curry Leaves", val: "0.74%" },
+                                        { name: "Fennel Seeds", val: "0.74%" },
+                                        { name: "Cumin Seeds", val: "0.74%" },
+                                        { name: "Coriander Powder", val: "0.74%" },
+                                        { name: "Mustard Seeds", val: "0.49%" },
+                                        { name: "Bay Leaf", val: "0.25%" },
+                                        { name: "Turmeric", val: "0.30%" },
+                                        { name: "Lemon Salt", val: "Trace (<0.3%)" },
+                                    ].map((item, idx) => (
+                                        <div key={idx} className={`flex justify-between items-center py-1.5 ${idx % 2 === 0 ? 'text-black' : 'text-black/70'}`}>
+                                            <span className="flex items-center gap-3">
+                                                <div className={`w-1.5 h-1.5 rounded-full ${idx === 0 ? 'bg-primary' : 'bg-black/20'}`}></div>
+                                                {item.name}
+                                            </span>
+                                            <span className="tabular-nums font-black">{item.val}</span>
+                                        </div>
+                                    ))}
+                                </div>
+                            </div>
+                        </div>
+
+                        <div className="mt-12 flex flex-col md:flex-row items-center gap-6 justify-between border-t border-black/10 pt-8">
+                            <div className="flex gap-4 items-center">
+                                <div className="p-3 bg-black text-[#ffdf00] rounded-xl font-headline font-black text-xs uppercase tracking-widest">
+                                    100% Clean
+                                </div>
+                                <p className="text-xs font-bold text-black/60 max-w-[200px]">No laboratory stabilizers or artificial preservatives.</p>
+                            </div>
+                            <span className="material-symbols-outlined text-black/20 text-6xl hidden md:block">nutrition</span>
+                        </div>
                     </div>
                 </div>
             </section>
