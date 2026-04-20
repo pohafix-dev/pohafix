@@ -253,7 +253,8 @@ const Home = () => {
                                     {/* Product Content Details - Tightened */}
                                     <div className="px-5 pt-4 pb-2 flex-1">
                                         <h3 className="text-lg font-bold text-stone-900 mb-0.5 leading-tight">{bundle.title.toLowerCase().includes('the ') ? bundle.title.split('THE ')[1] : bundle.title}</h3>
-                                        <p className="text-[10px] text-stone-500 font-medium mb-2 leading-tight">{bundle.description}</p>
+                                        <p className="text-[10px] text-stone-500 font-bold mb-0.5 leading-tight">{bundle.subtitle}</p>
+                                        <p className="text-[10px] text-stone-400 font-medium mb-2 leading-tight">{bundle.description}</p>
                                         
                                         {/* Stars & Reviews */}
                                         <div className="flex items-center gap-1 mb-2">
