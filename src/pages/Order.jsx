@@ -212,23 +212,12 @@ const Order = () => {
                                 <label className="flex items-center justify-between p-4 bg-surface-container-lowest rounded-lg cursor-pointer border-2 border-secondary group transition-all">
                                     <div className="flex items-center gap-4">
                                         <span className="material-symbols-outlined text-secondary" style={{ fontVariationSettings: "'FILL' 1" }}>qr_code_2</span>
-                                        <span className="font-body font-bold">UPI / QR (Recommended)</span>
+                                        <div className="flex flex-col">
+                                            <span className="font-body font-bold">Secure Digital Payment</span>
+                                            <span className="text-[10px] text-on-surface-variant font-medium">UPI, Cards & Netbanking via Razorpay</span>
+                                        </div>
                                     </div>
                                     <input checked readOnly className="text-secondary focus:ring-secondary border-secondary" name="payment" type="radio"/>
-                                </label>
-                                <label className="opacity-50 flex items-center justify-between p-4 bg-surface-container-lowest rounded-lg cursor-not-allowed border-2 border-transparent transition-all">
-                                    <div className="flex items-center gap-4">
-                                        <span className="material-symbols-outlined text-on-surface-variant">credit_card</span>
-                                        <span className="font-body font-bold">Credit / Debit Card</span>
-                                    </div>
-                                    <input disabled className="text-stone-300 focus:ring-stone-300" name="payment" type="radio"/>
-                                </label>
-                                <label className="opacity-50 flex items-center justify-between p-4 bg-surface-container-lowest rounded-lg cursor-not-allowed border-2 border-transparent transition-all">
-                                    <div className="flex items-center gap-4">
-                                        <span className="material-symbols-outlined text-on-surface-variant">payments</span>
-                                        <span className="font-body font-bold">Cash on Delivery (Disabled)</span>
-                                    </div>
-                                    <input disabled className="text-stone-300 focus:ring-stone-300" name="payment" type="radio"/>
                                 </label>
                             </div>
                         </section>
