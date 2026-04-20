@@ -243,11 +243,13 @@ const Home = () => {
                             {bundles.map((bundle, idx) => (
                                 <div key={idx} className="bg-white rounded-[1.5rem] overflow-hidden shadow-[0_12px_40px_-10px_rgba(0,0,0,0.08)] border border-stone-100 flex flex-col">
                                     {/* Product Visual Header - Zero Blank Space */}
-                                    <div className="bg-[#fcf7ec] aspect-[5/4] relative flex items-center justify-center p-0">
-                                        <img src={bundle.images[0]} alt={bundle.title} className="w-full h-full object-contain mix-blend-multiply scale-110 drop-shadow-2xl" />
+                                    <div className="bg-[#fcf7ec] aspect-[5/4] relative flex items-center justify-center p-0 overflow-hidden">
+                                        <img src={bundle.images[0]} alt={bundle.title} className="w-[90%] h-[90%] object-contain mix-blend-multiply transition-transform duration-500 scale-105 drop-shadow-[0_25px_25px_rgba(0,0,0,0.12)]" />
                                         <div className="absolute top-3 right-3 bg-primary text-white text-[8px] font-black px-2 py-0.5 rounded-full uppercase tracking-widest shadow-md z-10">
                                             {bundle.tag}
                                         </div>
+                                        {/* Bottom Fade Mask to blend with white content */}
+                                        <div className="absolute inset-x-0 bottom-0 h-16 bg-gradient-to-t from-white/40 to-transparent pointer-events-none"></div>
                                     </div>
 
                                     {/* Product Content Details - Tightened */}
