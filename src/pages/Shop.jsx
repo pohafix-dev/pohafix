@@ -123,17 +123,7 @@ const Shop = () => {
                         ))}
                     </div>
 
-                    {/* Features checklist */}
-                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-10">
-                        {plans[selectedPlan].features.map((feature, i) => (
-                            <div key={i} className="flex items-center gap-4 bg-white px-5 py-4 rounded-xl border border-secondaryContainer/20 shadow-sm hover:shadow-md transition-shadow">
-                                <div className="w-8 h-8 rounded-full bg-[#fcedea] text-primary flex items-center justify-center shrink-0">
-                                    <span className="material-symbols-outlined text-base" style={{ fontVariationSettings: "'FILL' 1" }}>check_circle</span>
-                                </div>
-                                <span className="text-sm font-bold text-gray-800 tracking-tight leading-snug">{feature}</span>
-                            </div>
-                        ))}
-                    </div>
+
 
                     {/* Action Block */}
                     <div className="space-y-6 pt-6 border-t border-outline-variant/10">
@@ -148,16 +138,16 @@ const Shop = () => {
                         {/* Trust Icons Grid */}
                         <div className="grid grid-cols-3 gap-2 mt-4 pt-4">
                             <div className="flex flex-col items-center text-center gap-2">
-                                <span className="material-symbols-outlined text-secondary text-2xl" style={{ fontVariationSettings: "'FILL' 1" }}>eco</span>
-                                <span className="text-[10px] font-bold text-on-surface-variant uppercase tracking-widest leading-tight">No<br/>Preservatives</span>
+                                <span className="material-symbols-outlined text-secondary text-2xl" style={{ fontVariationSettings: "'FILL' 1" }}>verified</span>
+                                <span className="text-[10px] font-bold text-on-surface-variant uppercase tracking-widest leading-tight">Premium<br/>Quality</span>
                             </div>
                             <div className="flex flex-col items-center text-center gap-2">
-                                <span className="material-symbols-outlined text-primary text-2xl" style={{ fontVariationSettings: "'FILL' 1" }}>restaurant</span>
-                                <span className="text-[10px] font-bold text-on-surface-variant uppercase tracking-widest leading-tight">Authentic<br/>Indori Taste</span>
+                                <span className="material-symbols-outlined text-primary text-2xl" style={{ fontVariationSettings: "'FILL' 1" }}>local_shipping</span>
+                                <span className="text-[10px] font-bold text-on-surface-variant uppercase tracking-widest leading-tight">Fast<br/>Delivery</span>
                             </div>
                             <div className="flex flex-col items-center text-center gap-2">
-                                <span className="material-symbols-outlined text-tertiary text-2xl" style={{ fontVariationSettings: "'FILL' 1" }}>inventory_2</span>
-                                <span className="text-[10px] font-bold text-on-surface-variant uppercase tracking-widest leading-tight">Fresh Batches<br/>Every Week</span>
+                                <span className="material-symbols-outlined text-tertiary text-2xl" style={{ fontVariationSettings: "'FILL' 1" }}>lock</span>
+                                <span className="text-[10px] font-bold text-on-surface-variant uppercase tracking-widest leading-tight">Safe<br/>Payment</span>
                             </div>
                         </div>
                     </div>
