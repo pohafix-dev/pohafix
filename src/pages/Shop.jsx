@@ -174,23 +174,19 @@ const Shop = () => {
                     </div>
 
                     <div className="relative">
-                        <div className="md:overflow-hidden p-4 -m-4">
-                            <div className="flex flex-col md:flex-row gap-6 md:gap-8">
-                                {[
-                                    { id: "01", title: "POUR", desc: "Empty 1 serving (60 g poha) into a bowl." },
-                                    { id: "02", title: "HOT WATER", desc: "Add 60 ml hot boiled water." },
-                                    { id: "03", title: "COVER", desc: "Cover & keep for 5 minutes." },
-                                    { id: "04", title: "STIR", desc: "Stir well - your Poha is ready!" }
-                                ].map((step) => (
-                                    <div key={step.id} className="w-full md:flex-1">
-                                        <div className="bg-white p-8 md:p-10 rounded-[2.5rem] shadow-[0_20px_50px_rgba(0,0,0,0.03)] border border-stone-100 flex flex-col h-full hover:shadow-[0_20px_50px_rgba(0,0,0,0.08)] transition-all group">
-                                            <div className="text-primary font-headline font-black text-5xl md:text-6xl mb-6 opacity-20 group-hover:opacity-40 transition-opacity">{step.id}</div>
-                                            <h4 className="font-headline font-black text-xl md:text-2xl mb-3 tracking-tighter uppercase">{step.title}</h4>
-                                            <p className="text-on-surface-variant font-medium leading-relaxed text-sm md:text-base">{step.desc}</p>
-                                        </div>
-                                    </div>
-                                ))}
-                            </div>
+                        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+                            {[
+                                { id: "01", title: "POUR", desc: "Empty 1 serving (60 g poha) into a bowl." },
+                                { id: "02", title: "HOT WATER", desc: "Add 60 ml hot boiled water." },
+                                { id: "03", title: "COVER", desc: "Cover & keep for 5 minutes." },
+                                { id: "04", title: "STIR", desc: "Stir well - your Poha is ready!" }
+                            ].map((step) => (
+                                <div key={step.id} className="bg-white p-6 md:p-8 rounded-[2rem] shadow-[0_15px_40px_rgba(0,0,0,0.03)] border border-stone-100 flex flex-col h-full hover:shadow-[0_20px_50px_rgba(0,0,0,0.06)] transition-all group">
+                                    <div className="text-primary font-headline font-black text-4xl md:text-5xl mb-6 opacity-20 group-hover:opacity-40 transition-opacity">{step.id}</div>
+                                    <h4 className="font-headline font-black text-lg md:text-xl mb-3 tracking-tighter uppercase">{step.title}</h4>
+                                    <p className="text-on-surface-variant font-medium leading-relaxed text-xs md:text-sm">{step.desc}</p>
+                                </div>
+                            ))}
                         </div>
                     </div>
                 </div>
