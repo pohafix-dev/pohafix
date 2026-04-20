@@ -6,6 +6,7 @@ import Footer from '../components/Footer';
 
 const Shop = () => {
     const [selectedPlan, setSelectedPlan] = useState(0);
+    const [currentStep, setCurrentStep] = useState(0);
 
     const plans = [
         {
@@ -161,27 +162,58 @@ const Shop = () => {
                 </div>
             </section>
 
-            <section className="mt-32 border-y border-outline-variant/10">
-                <div className="max-w-7xl mx-auto grid md:grid-cols-4 divide-x divide-outline-variant/10">
-                    <div className="p-12 text-center group bg-surface-container-low/30 hover:bg-background transition-colors">
-                        <div className="text-primary font-headline font-black text-5xl mb-6 group-hover:scale-110 transition-transform">01</div>
-                        <h4 className="font-headline font-black text-lg mb-2">POUR</h4>
-                        <p className="text-sm font-medium text-on-surface-variant">Empty 1 serving (60 g poha) into a bowl.</p>
+            {/* Preparation Steps Carousel */}
+            <section className="py-24 bg-surface border-y border-outline-variant/10 relative overflow-hidden">
+                <div className="max-w-7xl mx-auto px-6">
+                    <div className="flex flex-col md:flex-row justify-between items-end mb-16 gap-6">
+                        <div>
+                            <span className="text-primary font-headline font-black uppercase tracking-[0.2em] text-xs mb-4 block">The 5-Minute Ritual</span>
+                            <h2 className="text-4xl md:text-6xl font-black font-headline text-on-surface tracking-tighter uppercase leading-none">
+                                How to make <br/><span className="text-primary italic">Perfect Poha.</span>
+                            </h2>
+                        </div>
+                        <div className="flex gap-4">
+                            <button 
+                                onClick={() => setCurrentStep(prev => Math.max(0, prev - 1))}
+                                disabled={currentStep === 0}
+                                className="w-14 h-14 rounded-full border-2 border-outline-variant/20 flex items-center justify-center hover:bg-primary hover:text-white hover:border-primary disabled:opacity-30 disabled:hover:bg-transparent disabled:hover:text-current transition-all"
+                            >
+                                <span className="material-symbols-outlined">arrow_back</span>
+                            </button>
+                            <button 
+                                onClick={() => setCurrentStep(prev => Math.min(3, prev + 1))}
+                                disabled={currentStep === 3}
+                                className="w-14 h-14 rounded-full border-2 border-outline-variant/20 flex items-center justify-center hover:bg-primary hover:text-white hover:border-primary disabled:opacity-30 disabled:hover:bg-transparent disabled:hover:text-current transition-all"
+                            >
+                                <span className="material-symbols-outlined">arrow_forward</span>
+                            </button>
+                        </div>
                     </div>
-                    <div className="p-12 text-center group bg-surface-container-low/30 hover:bg-background transition-colors">
-                        <div className="text-primary font-headline font-black text-5xl mb-6 group-hover:scale-110 transition-transform">02</div>
-                        <h4 className="font-headline font-black text-lg mb-2">HOT WATER</h4>
-                        <p className="text-sm font-medium text-on-surface-variant">Add 60 ml hot boiled water.</p>
-                    </div>
-                    <div className="p-12 text-center group bg-surface-container-low/30 hover:bg-background transition-colors">
-                        <div className="text-primary font-headline font-black text-5xl mb-6 group-hover:scale-110 transition-transform">03</div>
-                        <h4 className="font-headline font-black text-lg mb-2">COVER</h4>
-                        <p className="text-sm font-medium text-on-surface-variant">Cover &amp; keep for 5 minutes.</p>
-                    </div>
-                    <div className="p-12 text-center group bg-surface-container-low/30 hover:bg-background transition-colors">
-                        <div className="text-primary font-headline font-black text-5xl mb-6 group-hover:scale-110 transition-transform">04</div>
-                        <h4 className="font-headline font-black text-lg mb-2">STIR</h4>
-                        <p className="text-sm font-medium text-on-surface-variant">Stir well - your Poha is ready!</p>
+
+                    <div className="relative">
+                        <div className="overflow-hidden p-4 -m-4">
+                            <motion.div 
+                                animate={{ x: `-${currentStep * (100 / (window.innerWidth >= 1024 ? 4 : 1))}%` }}
+                                transition={{ type: 'spring', damping: 25, stiffness: 120 }}
+                                className="flex gap-8"
+                                style={{ width: window.innerWidth >= 1024 ? '100%' : '400%' }}
+                            >
+                                {[
+                                    { id: "01", title: "POUR", desc: "Empty 1 serving (60 g poha) into a bowl." },
+                                    { id: "02", title: "HOT WATER", desc: "Add 60 ml hot boiled water." },
+                                    { id: "03", title: "COVER", desc: "Cover & keep for 5 minutes." },
+                                    { id: "04", title: "STIR", desc: "Stir well - your Poha is ready!" }
+                                ].map((step) => (
+                                    <div key={step.id} className="min-w-0 flex-[0_0_100%] md:flex-[0_0_calc(25%-1.5rem)]">
+                                        <div className="bg-white p-10 rounded-[3rem] shadow-[0_20px_50px_rgba(0,0,0,0.03)] border border-stone-100 flex flex-col h-full hover:shadow-[0_20px_50px_rgba(0,0,0,0.08)] transition-all">
+                                            <div className="text-primary font-headline font-black text-6xl mb-8 opacity-20">{step.id}</div>
+                                            <h4 className="font-headline font-black text-2xl mb-4 tracking-tighter uppercase">{step.title}</h4>
+                                            <p className="text-on-surface-variant font-medium leading-relaxed">{step.desc}</p>
+                                        </div>
+                                    </div>
+                                ))}
+                            </motion.div>
+                        </div>
                     </div>
                 </div>
             </section>
