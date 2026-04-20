@@ -1,11 +1,11 @@
 import React, { useEffect, useState } from 'react';
 import { useParams, Link } from 'react-router-dom';
 import { blogs } from '../data/blogs';
+import Header from '../components/Header';
 
 const BlogPost = () => {
     const { slug } = useParams();
     const [scrollProgress, setScrollProgress] = useState(0);
-    const [isMenuOpen, setIsMenuOpen] = useState(false);
     const post = blogs.find(b => b.slug === slug);
 
     useEffect(() => {
@@ -21,137 +21,142 @@ const BlogPost = () => {
 
     if (!post) {
         return (
-            <div className="bg-black min-h-screen text-white flex flex-col items-center justify-center p-6 text-center">
-                <h1 className="font-headline text-5xl md:text-6xl font-black mb-8 italic uppercase">STORY NOT FOUND</h1>
-                <Link to="/blog" className="bg-primary text-black font-black px-10 py-4 uppercase font-headline shadow-[8px_8px_0px_0px_#fff]">BACK TO STORIES</Link>
+            <div className="bg-surface min-h-screen text-on-surface flex flex-col items-center justify-center p-6 text-center">
+                <h1 className="font-headline text-5xl md:text-6xl font-black mb-8 tracking-tighter text-primary uppercase">JOURNAL NOT FOUND</h1>
+                <Link to="/blog" className="bg-primary text-white font-black px-10 py-4 uppercase font-headline rounded-md shadow-lg">BACK TO JOURNAL</Link>
             </div>
         );
     }
 
     return (
-        <div className="bg-black min-h-screen text-white font-body selection:bg-primary selection:text-black overflow-x-hidden">
+        <div className="bg-surface text-on-surface font-body selection:bg-secondary-container selection:text-on-secondary-container min-h-screen relative">
+            <Header />
+
             {/* Reading Progress Bar */}
-            <div className="fixed top-0 left-0 h-1.5 md:h-2 bg-primary z-[200] transition-all duration-100" style={{ width: `${scrollProgress}%` }}></div>
+            <div className="fixed top-0 left-0 h-1 bg-primary z-[200] transition-all duration-100" style={{ width: `${scrollProgress}%` }}></div>
 
-            {/* Mobile Menu Overlay */}
-            <div className={`fixed inset-0 z-[300] bg-primary transition-all duration-500 flex flex-col items-center justify-center p-10 ${isMenuOpen ? 'translate-y-0' : '-translate-y-full'}`}>
-                <button 
-                    onClick={() => setIsMenuOpen(false)}
-                    className="absolute top-10 right-10 text-black p-4 border-4 border-black"
-                >
-                    <span className="material-symbols-outlined text-4xl block">close</span>
-                </button>
-                <div className="flex flex-col gap-8 text-center">
-                    <Link onClick={() => setIsMenuOpen(false)} to="/" className="font-headline text-6xl font-black text-black uppercase italic hover:translate-x-4 transition-transform">HOME</Link>
-                    <Link onClick={() => setIsMenuOpen(false)} to="/blog" className="font-headline text-6xl font-black text-black uppercase italic hover:translate-x-4 transition-transform underline decoration-white">POHA STORY</Link>
-                    <Link onClick={() => setIsMenuOpen(false)} to="/order" className="bg-black text-white px-10 py-5 font-headline text-4xl font-black mt-10 shadow-[8px_8px_0px_0px_#fff]">ORDER NOW</Link>
-                </div>
-            </div>
-
-            {/* Nav */}
-            <header className="p-4 md:p-6 border-b-4 md:border-b-8 border-black bg-black flex justify-between items-center sticky top-0 z-[100]">
-                <Link to="/blog" className="flex items-center gap-2 font-headline font-black uppercase text-xs md:text-sm group">
-                    <span className="material-symbols-outlined group-hover:-translate-x-2 transition-transform text-primary text-xl md:text-2xl">arrow_back</span>
-                    <span className="hidden sm:inline">BACK TO STORY HUB</span>
-                    <span className="sm:hidden text-primary">STORY</span>
-                </Link>
-                <div className="flex items-center gap-4">
-                    <Link to="/order" className="hidden sm:block bg-primary text-black font-black px-6 py-2 border-4 border-black uppercase font-headline text-sm">ORDER</Link>
-                    <button 
-                        onClick={() => setIsMenuOpen(true)}
-                        className="md:hidden bg-secondary text-black p-2 border-2 border-black"
-                    >
-                        <span className="material-symbols-outlined block">menu</span>
-                    </button>
-                </div>
-            </header>
-
-            <main className="max-w-7xl mx-auto px-4 md:px-6 py-12 md:py-24">
-                <div className="max-w-4xl mx-auto mb-12 md:mb-16">
-                    <div className="flex flex-wrap gap-4 mb-8">
-                        <span className="bg-secondary text-black font-black px-4 py-1 uppercase text-[10px] md:text-xs">{post.category}</span>
-                        <span className="text-white/40 font-black uppercase text-[10px] md:text-xs border border-white/10 px-4 py-1">{post.readTime} DEEP READ</span>
+            <main className="max-w-screen-2xl mx-auto px-6 pt-24 md:pt-32 pb-24 relative z-10">
+                {/* Editorial Header */}
+                <div className="max-w-4xl mx-auto mb-16">
+                    <div className="flex items-center gap-4 mb-8">
+                        <Link to="/blog" className="text-primary font-label text-xs font-bold uppercase tracking-widest flex items-center gap-2 group">
+                            <span className="material-symbols-outlined text-sm group-hover:-translate-x-1 transition-transform">arrow_back</span>
+                            Back to Journal
+                        </Link>
+                        <span className="h-px flex-1 bg-outline-variant/30"></span>
+                        <span className="text-secondary font-headline font-bold text-xs uppercase tracking-widest whitespace-nowrap italic">{post.category}</span>
                     </div>
-                    <h1 className="font-headline text-4xl md:text-8xl font-black text-white uppercase leading-[0.9] md:leading-[0.8] tracking-tighter mb-8 md:mb-10 italic">{post.title}</h1>
-                    <div className="flex items-center gap-6 border-t-4 md:border-t-8 border-white/10 pt-8 md:pt-10">
-                        <div className="w-12 h-12 md:w-16 md:h-16 bg-primary rounded-full border-2 md:border-4 border-black flex items-center justify-center text-black font-black font-headline text-xl italic select-none">PF</div>
-                        <div>
-                            <p className="font-headline font-black uppercase text-lg md:text-xl leading-none">{post.author}</p>
-                            <p className="text-white/40 font-black uppercase text-[10px] md:text-xs tracking-widest mt-2">{post.date}</p>
+
+                    <h1 className="text-5xl md:text-8xl font-headline font-black text-on-surface tracking-tighter leading-[0.9] mb-12 uppercase">
+                        {post.title}
+                    </h1>
+
+                    <div className="flex items-center justify-between py-8 border-y border-outline-variant/20">
+                        <div className="flex items-center gap-4">
+                            <div className="w-12 h-12 rounded-full bg-primary flex items-center justify-center text-white font-headline font-black text-lg">
+                                {post.author.charAt(0)}
+                            </div>
+                            <div>
+                                <p className="font-headline font-bold text-sm uppercase tracking-tight">{post.author}</p>
+                                <p className="text-on-surface-variant text-[10px] uppercase font-bold tracking-widest">{post.date}</p>
+                            </div>
+                        </div>
+                        <div className="text-right">
+                            <p className="text-[10px] font-black uppercase tracking-widest text-secondary mb-1">Duration</p>
+                            <p className="font-headline font-bold text-sm uppercase">{post.readTime} Deep Read</p>
                         </div>
                     </div>
                 </div>
 
-                <div className="grid grid-cols-1 xl:grid-cols-12 gap-12">
-                    {/* Sticky Sidebar Column */}
-                    <aside className="hidden xl:block xl:col-span-3">
-                        <div className="sticky top-40 bg-white/5 border-l-4 border-primary p-6">
-                            <h4 className="font-headline font-black uppercase text-primary mb-6">INSIDE THIS STORY</h4>
-                            <ul className="space-y-4 text-xs font-black uppercase text-white/40">
-                                <li className="hover:text-white cursor-pointer transition-colors">• The Hidden Addiction</li>
-                                <li className="hover:text-white cursor-pointer transition-colors">• The Lab Report</li>
-                                <li className="hover:text-white cursor-pointer transition-colors">• Why PohaFix Says NO</li>
-                                <li className="hover:text-white cursor-pointer transition-colors">• The Revolution Path</li>
-                            </ul>
+                {/* Hero Asset */}
+                <div className="max-w-5xl mx-auto mb-16 relative group">
+                    <div className="aspect-video overflow-hidden rounded-2xl shadow-3xl bg-on-background relative">
+                        <img 
+                            src={post.image} 
+                            alt={post.title} 
+                            className="w-full h-full object-cover opacity-90 group-hover:opacity-100 transition-all duration-700 group-hover:scale-105" 
+                        />
+                        <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent"></div>
+                    </div>
+                    {/* Floating Accent */}
+                    <div className="absolute -bottom-6 -right-6 bg-secondary-container text-on-secondary-container px-6 py-4 rounded-xl font-headline font-black shadow-2xl border-2 border-white transform rotate-3 hidden md:block">
+                        ISSUE NO. 04 / EXCLUSIVE
+                    </div>
+                </div>
+
+                {/* Content Area */}
+                <div className="grid grid-cols-1 lg:grid-cols-12 gap-16 max-w-6xl mx-auto">
+                    {/* Left Rail / Metadata */}
+                    <aside className="lg:col-span-3 hidden lg:block sticky top-40 h-fit">
+                        <div className="space-y-12">
+                            <div>
+                                <h4 className="text-[10px] font-black uppercase tracking-[0.3em] text-primary mb-6">Dispatch Details</h4>
+                                <div className="space-y-4">
+                                    <div>
+                                        <p className="text-[10px] font-bold text-on-surface-variant uppercase tracking-widest mb-1">Region</p>
+                                        <p className="font-headline font-bold text-sm">Malwa Plateau</p>
+                                    </div>
+                                    <div>
+                                        <p className="text-[10px] font-bold text-on-surface-variant uppercase tracking-widest mb-1">Trust Score</p>
+                                        <p className="font-headline font-bold text-sm">Level: Verified Truth</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div className="p-6 bg-surface-container-high rounded-xl border border-outline-variant/10">
+                                <p className="text-xs font-medium leading-relaxed italic text-on-surface-variant">
+                                    "The steam is the first ingredient of authenticity. We trace the flavor back to the 4 AM street rituals."
+                                </p>
+                            </div>
                         </div>
                     </aside>
 
-                    {/* Article Column */}
-                    <div className="xl:col-span-9">
-                        {/* Mobile Table of Contents */}
-                        <div className="xl:hidden bg-white/5 border-l-4 border-primary p-6 mb-12">
-                             <h4 className="font-headline font-black uppercase text-primary mb-4 text-sm">SUMMARY GOSSIP</h4>
-                             <ul className="space-y-3 text-[10px] font-black uppercase text-white/40">
-                                 <li>• The Hidden Addiction</li>
-                                 <li>• The Lab Report</li>
-                                 <li>• Why PohaFix Says NO</li>
-                             </ul>
-                        </div>
+                    {/* Article Body */}
+                    <div className="lg:col-span-9">
+                        <article 
+                            className="prose prose-xl prose-stone max-w-none 
+                            prose-h2:text-4xl prose-h2:font-headline prose-h2:font-black prose-h2:uppercase prose-h2:tracking-tighter 
+                            prose-p:text-lg prose-p:font-medium prose-p:leading-relaxed prose-p:text-on-surface-variant
+                            prose-strong:text-primary prose-strong:font-black 
+                            prose-blockquote:border-l-primary prose-blockquote:text-2xl prose-blockquote:font-headline prose-blockquote:font-bold prose-blockquote:italic prose-blockquote:text-on-surface transition-all"
+                            dangerouslySetInnerHTML={{ __html: post.content }}
+                        />
 
-                        <article className="prose prose-invert prose-lg md:prose-2xl max-w-4xl 
-                            prose-headings:font-headline prose-headings:font-black prose-headings:uppercase prose-headings:italic prose-headings:tracking-tighter
-                            prose-p:text-white/70 prose-p:font-bold prose-p:uppercase prose-p:tracking-tight prose-p:leading-relaxed
-                            prose-strong:text-primary prose-strong:font-black
-                            prose-img:border-4 md:prose-img:border-8 prose-img:border-black prose-img:shadow-[8px_8px_0px_0px_rgba(255,209,108,1)] md:prose-img:shadow-[20px_20px_0px_0px_rgba(255,209,108,1)]">
+                        {/* End Note */}
+                        <div className="mt-20 pt-12 border-t-4 border-primary">
+                            <h3 className="text-3xl font-headline font-black uppercase tracking-tighter mb-6 underline decoration-secondary decoration-4 underline-offset-8">THE POHAFix VOW</h3>
+                            <p className="text-lg text-on-surface-variant mb-12 font-medium">
+                                We believe in a food revolution that starts with transparency. Every ingredient in our Poha kit is traced back to source, ensuring zero palm oil and zero medical short-cuts.
+                            </p>
                             
-                            {/* Dynamic Content Mapping */}
-                            <div dangerouslySetInnerHTML={{ __html: post.content }} />
-
-                            {/* Fallback Placeholder */}
-                            {!post.content && (
-                                <div className="space-y-12">
-                                    <p className="text-2xl md:text-3xl font-black italic text-primary">WRITING THE FULL STORY... THIS IS A 2000-WORD DEEP DIVE INTO THE TRUTH.</p>
-                                    <p>This article is currently being drafted by the PohaFix research crew. We are meticulously checking every claim to ensure you get nothing but the raw facts.</p>
-                                </div>
-                            )}
-                        </article>
-                    </div>
-                </div>
-
-                {/* Final Post CTA */}
-                <div className="max-w-4xl mx-auto mt-24 md:mt-32 p-8 md:p-12 bg-primary border-4 md:border-8 border-black shadow-[12px_12px_0px_0px_#ca2221] md:shadow-[20px_20px_0px_0px_#ca2221] text-center">
-                    <h3 className="font-headline text-3xl md:text-5xl font-black text-black uppercase leading-[0.9] md:leading-none tracking-tighter mb-8 italic">DON'T BE A SLAVE TO PROCESSED GARBAGE.</h3>
-                    <div className="flex flex-col md:flex-row justify-center gap-4 md:gap-6">
-                        <Link to="/order" className="bg-black text-white font-headline text-lg md:text-2xl font-black px-8 md:px-12 py-4 md:py-5 uppercase shadow-[8px_8px_0px_0px_#fff] md:shadow-[10px_10px_0px_0px_#fff] hover:shadow-none hover:translate-x-2 hover:translate-y-2 transition-all">ORDER NOW</Link>
-                        <Link to="/blog" className="bg-white text-black font-headline text-lg md:text-2xl font-black px-8 md:px-12 py-4 md:py-5 uppercase border-2 md:border-4 border-black hover:bg-black hover:text-white transition-all">ALL STORIES</Link>
+                            <div className="flex flex-col sm:flex-row gap-6">
+                                <Link to="/shop" className="inline-flex items-center justify-center px-10 py-5 bg-primary text-white font-headline font-black uppercase tracking-widest rounded-md hover:scale-105 transition-all shadow-xl">
+                                    Fuel Your Hustle
+                                </Link>
+                                <button className="inline-flex items-center justify-center px-10 py-5 bg-surface-container-highest text-on-surface font-headline font-bold uppercase tracking-widest rounded-md hover:bg-outline-variant/20 transition-all gap-2">
+                                    <span className="material-symbols-outlined text-[18px]">share</span>
+                                    Spread the Truth
+                                </button>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </main>
 
-            {/* Footer */}
-            <footer className="bg-black py-16 md:py-20 border-t-4 md:border-t-8 border-white/20 text-center px-6">
-                 <Link to="/">
-                    <img src="/logo.png" alt="Pohafix Logo" className="h-10 md:h-12 w-auto mx-auto mb-10" />
-                 </Link>
-                 <div className="flex flex-col md:flex-row justify-center items-center gap-6 md:gap-12 font-headline font-black text-white/40 uppercase tracking-widest text-xs md:text-sm">
-                     <Link to="/" className="hover:text-white">BACK TO HOME</Link>
-                     <Link to="/blog" className="hover:text-white">POHA STORY</Link>
-                     <Link to="/contact" className="hover:text-white">CONTACT</Link>
-                     <p>© SYNNNC FOODS 2024</p>
-                 </div>
-            </footer>
+            {/* Newsletter Section (Reused Design) */}
+            <section className="bg-primary/5 py-24 px-8 mt-20 relative overflow-hidden">
+                <div className="max-w-2xl mx-auto text-center relative z-10">
+                    <span className="text-primary font-label text-[10px] font-black uppercase tracking-[0.4em] mb-4 block">Continue the Journey</span>
+                    <h2 className="text-5xl font-headline font-black text-on-surface tracking-tighter mb-6 italic">Stay Connected</h2>
+                    <p className="text-on-surface-variant text-lg mb-10 font-medium">Get the latest Malwa field reports and bio-hacking secrets delivered to your inbox.</p>
+                    <Link to="/blog" className="font-headline font-black uppercase tracking-widest text-primary border-b-2 border-primary pb-2 hover:text-secondary hover:border-secondary transition-all">Back to Issue No. 04</Link>
+                </div>
+            </section>
+
+            {/* Newspaper Texture Overlay */}
+            <div className="fixed inset-0 pointer-events-none opacity-[0.03] bg-[url('https://www.transparenttextures.com/patterns/natural-paper.png')] mix-blend-multiply z-[60]"></div>
         </div>
     );
 };
 
 export default BlogPost;
+
