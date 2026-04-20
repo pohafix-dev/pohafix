@@ -267,7 +267,7 @@ const Home = () => {
                                                 <span className="material-symbols-outlined text-[0.9rem]" style={{ fontVariationSettings: "'FILL' 1" }}>star</span>
                                                 <span className="material-symbols-outlined text-[0.9rem]" style={{ fontVariationSettings: "'FILL' 1" }}>star</span>
                                             </div>
-                                            <span className="text-stone-400 text-[10px] font-semibold">(652)</span>
+                                            <span className="text-stone-400 text-[10px] font-semibold">(1,248)</span>
                                         </div>
 
                                         <div className="mb-2">
@@ -279,7 +279,7 @@ const Home = () => {
                                     {/* Footer Button Strategy */}
                                     <div className="border-t border-stone-100 p-4">
                                         <Link 
-                                            to="/shop" 
+                                            to={`/shop?plan=${idx}`} 
                                             className="block w-full text-center text-[#ce1d2a] font-black text-sm uppercase tracking-widest py-2 hover:opacity-80 transition-opacity"
                                         >
                                             ADD TO CART

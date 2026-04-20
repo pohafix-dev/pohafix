@@ -1,11 +1,13 @@
 import React, { useState, useEffect } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useSearchParams } from 'react-router-dom';
 import { motion, AnimatePresence } from 'framer-motion';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
 
 const Shop = () => {
-    const [selectedPlan, setSelectedPlan] = useState(0);
+    const [searchParams] = useSearchParams();
+    const planFromUrl = parseInt(searchParams.get('plan'));
+    const [selectedPlan, setSelectedPlan] = useState(isNaN(planFromUrl) ? 0 : planFromUrl);
 
     const plans = [
         {
