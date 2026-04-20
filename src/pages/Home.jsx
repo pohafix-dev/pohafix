@@ -61,10 +61,10 @@ const Home = () => {
                         <Link to="/">Pohafix</Link>
                     </div>
                     <div className="hidden md:flex gap-8 items-center">
-                        <Link className="text-[#af101a] dark:text-[#d32f2f] border-b-4 border-[#af101a] pb-1 hover:opacity-100 hover:text-[#af101a] transition-all duration-300" to="/blog">Our Story</Link>
-                        <a className="text-[#1d1c16] dark:text-[#e7e2d9] opacity-80 hover:opacity-100 hover:text-[#af101a] transition-all duration-300" href="#features">The Secret</a>
-                        <Link className="text-[#1d1c16] dark:text-[#e7e2d9] opacity-80 hover:opacity-100 hover:text-[#af101a] transition-all duration-300" to="/order">Bulk Orders</Link>
-                        <a className="text-[#1d1c16] dark:text-[#e7e2d9] opacity-80 hover:opacity-100 hover:text-[#af101a] transition-all duration-300" href="#street">Street View</a>
+                        <Link className="text-[#af101a] dark:text-[#d32f2f] border-b-4 border-[#af101a] pb-1 hover:opacity-100 hover:text-[#af101a] transition-all duration-300" to="/">Home</Link>
+                        <Link className="text-[#1d1c16] dark:text-[#e7e2d9] opacity-80 hover:opacity-100 hover:text-[#af101a] transition-all duration-300" to="/shop">Shop</Link>
+                        <Link className="text-[#1d1c16] dark:text-[#e7e2d9] opacity-80 hover:opacity-100 hover:text-[#af101a] transition-all duration-300" to="/about">About Us</Link>
+                        <Link className="text-[#1d1c16] dark:text-[#e7e2d9] opacity-80 hover:opacity-100 hover:text-[#af101a] transition-all duration-300" to="/blog">Blogs</Link>
                     </div>
                     <Link to="/shop" className="bg-primary text-on-primary px-6 py-2 rounded-lg font-bold scale-95 active:scale-90 transition-transform shadow-lg shadow-primary/20 inline-block">
                         Order Now
