@@ -77,22 +77,22 @@ const Home = () => {
                                 इंदौर का स्वाद, अब कहीं भी
                             </p>
 
-                            {/* Mobile Product Image (Visible only on mobile) */}
-                            <div className="md:hidden relative group my-8">
-                                <div className="absolute -top-6 -left-6 text-6xl font-hindi hindi-layer rotate-[-15deg] opacity-60">ताज़ा</div>
-                                <div className="absolute -bottom-6 -right-6 text-6xl font-hindi hindi-layer rotate-[15deg] opacity-60">ज़ायका</div>
-                                <div className="relative bg-surface-container-lowest rounded-[2rem] shadow-2xl overflow-hidden aspect-[4/5] flex items-center justify-center p-4">
+                            {/* Mobile Product Image - Max Impact */}
+                            <div className="md:hidden relative group my-2 -mx-2">
+                                <div className="absolute -top-4 -left-4 text-7xl font-hindi hindi-layer rotate-[-15deg] opacity-40 z-0">ताज़ा</div>
+                                <div className="absolute -bottom-4 -right-4 text-7xl font-hindi hindi-layer rotate-[15deg] opacity-40 z-0">ज़ायका</div>
+                                <div className="relative bg-surface/30 rounded-[2.5rem] shadow-none overflow-hidden aspect-square flex items-center justify-center p-0">
                                     {slides.map((slide, index) => (
                                         <img 
                                             key={slide + "-mobile"}
                                             src={slide}
                                             alt={`Pohafix Box ${index + 1}`}
-                                            className={`absolute inset-0 w-full h-full object-contain transition-opacity duration-1000 ${index === currentSlide ? 'opacity-100 z-10' : 'opacity-0 z-0'}`} 
+                                            className={`absolute inset-0 w-full h-full object-contain scale-110 transition-opacity duration-1000 ${index === currentSlide ? 'opacity-100 z-10' : 'opacity-0 z-0'}`} 
                                         />
                                     ))}
-                                    <div className="absolute bottom-4 flex gap-2 z-20">
+                                    <div className="absolute bottom-6 flex gap-2 z-20">
                                         {slides.map((_, i) => (
-                                            <div key={i} className={`w-1.5 h-1.5 rounded-full ${i === currentSlide ? 'bg-primary' : 'bg-outline-variant/30'}`} />
+                                            <div key={i} className={`w-2 h-0.5 rounded-full ${i === currentSlide ? 'bg-primary w-6' : 'bg-stone-300'}`} />
                                         ))}
                                     </div>
                                 </div>
