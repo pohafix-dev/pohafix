@@ -59,53 +59,78 @@ const Header = () => {
                 </div>
             </div>
 
-            {/* Mobile Navigation Overlay */}
+            {/* Mobile Navigation Drawer - Matching Screenshot Style */}
             <AnimatePresence>
                 {isMenuOpen && (
-                    <motion.div 
-                        initial={{ opacity: 0 }}
-                        animate={{ opacity: 1 }}
-                        exit={{ opacity: 0 }}
-                        className="fixed inset-0 z-[9999] md:hidden flex flex-col"
-                    >
-                        {/* Pure Opaque Background Layer */}
-                        <div 
-                            className="absolute inset-0 bg-[#fef9f0] opacity-100" 
-                            style={{ backgroundColor: '#fef9f0' }}
+                    <>
+                        {/* Backdrop */}
+                        <motion.div 
+                            initial={{ opacity: 0 }}
+                            animate={{ opacity: 1 }}
+                            exit={{ opacity: 0 }}
+                            onClick={() => setIsMenuOpen(false)}
+                            className="fixed inset-0 bg-black/40 z-[9998] md:hidden backdrop-blur-[2px]"
                         />
-                        
-                        {/* Overlay Content */}
-                        <div className="relative z-10 flex flex-col h-full justify-between pb-12">
-                            <div className="flex items-center justify-between px-6 py-4 w-full">
-                                <Logo onClick={() => setIsMenuOpen(false)} />
-                            <button 
-                                onClick={() => setIsMenuOpen(false)}
-                                className="w-12 h-12 rounded-2xl bg-[#e7e2d9] flex items-center justify-center text-stone-900 border border-stone-300/30 shadow-sm transition-transform active:scale-95"
-                            >
-                                <span className="material-symbols-outlined text-[28px] font-light">close</span>
-                            </button>
-                        </div>
 
-                        {/* Navigation Links - Matching Screenshot Style strictly */}
-                        <div className="flex-1 flex flex-col items-start justify-start gap-12 px-10 pt-32">
-                            {[
-                                { name: "Home", path: "/" },
-                                { name: "Shop Now", path: "/shop" },
-                                { name: "Our Story", path: "/about" },
-                                { name: "Journal", path: "/blog" },
-                                { name: "Contact Us", path: "/contact" }
-                            ].map((item) => (
-                                <Link 
-                                    key={item.name}
-                                    to={item.path}
+                        {/* Drawer */}
+                        <motion.div 
+                            initial={{ x: '-100%' }}
+                            animate={{ x: 0 }}
+                            exit={{ x: '-100%' }}
+                            transition={{ type: 'spring', damping: 25, stiffness: 200 }}
+                            className="fixed top-0 left-0 bottom-0 w-[85%] max-w-sm bg-white z-[9999] md:hidden shadow-2xl flex flex-col pt-4 overflow-y-auto"
+                        >
+                            {/* Drawer Header */}
+                            <div className="flex items-center justify-start px-6 mb-8">
+                                <button 
                                     onClick={() => setIsMenuOpen(false)}
-                                    className="text-4xl font-headline font-black text-stone-900 tracking-tighter transition-colors hover:text-primary active:opacity-70"
+                                    className="p-2 -ml-2 text-stone-900 transition-transform active:scale-90"
                                 >
-                                    {item.name}
-                                </Link>
-                            ))}
-                        </div>
-                    </motion.div>
+                                    <span className="material-symbols-outlined text-3xl font-light">close</span>
+                                </button>
+                            </div>
+
+                            {/* Drawer Links */}
+                            <div className="flex flex-col">
+                                {[
+                                    { name: "Home", path: "/" },
+                                    { name: "Shop", path: "/shop", hasSub: true, subItems: ["Combos", "Single Packs", "Jeeravan Spices"] },
+                                    { name: "About Us", path: "/about" },
+                                    { name: "Journal", path: "/blog" },
+                                    { name: "Contact Us", path: "/contact" }
+                                ].map((item, idx) => (
+                                    <div key={item.name} className="border-b border-stone-100 last:border-0">
+                                        <div className="px-6 py-5 flex items-center justify-between group cursor-pointer" onClick={() => !item.hasSub && setIsMenuOpen(false)}>
+                                            <Link 
+                                                to={item.path}
+                                                className="text-2xl font-bold text-stone-900 tracking-tight"
+                                            >
+                                                {item.name}
+                                            </Link>
+                                            {item.hasSub && (
+                                                <span className="material-symbols-outlined text-stone-900">remove</span>
+                                            )}
+                                        </div>
+                                        
+                                        {item.hasSub && (
+                                            <div className="px-10 pb-6 flex flex-col gap-6">
+                                                {item.subItems.map(sub => (
+                                                    <Link 
+                                                        key={sub}
+                                                        to={item.path}
+                                                        onClick={() => setIsMenuOpen(false)}
+                                                        className="text-lg font-medium text-stone-600 hover:text-primary transition-colors"
+                                                    >
+                                                        {sub}
+                                                    </Link>
+                                                ))}
+                                            </div>
+                                        )}
+                                    </div>
+                                ))}
+                            </div>
+                        </motion.div>
+                    </>
                 )}
             </AnimatePresence>
         </nav>
