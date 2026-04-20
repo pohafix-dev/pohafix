@@ -569,19 +569,29 @@ const Home = () => {
                     </div>
                 </section>
 
-                {/* Newspaper Snip (Testimonial) */}
-                <section className="py-12 md:py-20 bg-surface">
-                    <div className="max-w-4xl mx-auto px-8">
-                        <div className="bg-surface-variant p-12 relative" style={{ WebkitMaskImage: "url('data:image/svg+xml;utf8,<svg viewBox=\"0 0 100 10\" preserveAspectRatio=\"none\" xmlns=\"http://www.w3.org/2000/svg\"><path d=\"M0 10 L5 8 L10 10 L15 7 L20 10 L25 8 L30 10 L35 7 L40 10 L45 8 L50 10 L55 7 L60 10 L65 8 L70 10 L75 7 L80 10 L85 8 L90 10 L95 7 L100 10 V0 H0 Z\" fill=\"black\"/></svg>')", maskImage: "url('data:image/svg+xml;utf8,<svg viewBox=\"0 0 100 10\" preserveAspectRatio=\"none\" xmlns=\"http://www.w3.org/2000/svg\"><path d=\"M0 10 L5 8 L10 10 L15 7 L20 10 L25 8 L30 10 L35 7 L40 10 L45 8 L50 10 L55 7 L60 10 L65 8 L70 10 L75 7 L80 10 L85 8 L90 10 L95 7 L100 10 V0 H0 Z\" fill=\"black\"/></svg>')" }}>
-                            <div className="absolute -top-6 left-12 bg-primary text-on-primary px-4 py-1 font-headline font-bold uppercase tracking-widest text-sm">Special Dispatch</div>
-                            <blockquote className="font-headline text-3xl font-black text-on-surface-variant italic leading-tight mb-8">
+                {/* Testimonial Section - Clean Premium Card */}
+                <section className="py-16 md:py-24 bg-[#fcfaf5]">
+                    <div className="max-w-4xl mx-auto px-6">
+                        <div className="bg-white p-8 md:p-16 rounded-[2.5rem] shadow-[0_20px_50px_rgba(0,0,0,0.05)] border border-stone-100 relative overflow-hidden">
+                            <div className="absolute top-0 right-0 p-8 opacity-[0.03] rotate-12 pointer-events-none">
+                                <span className="material-symbols-outlined text-[12rem]">format_quote</span>
+                            </div>
+                            
+                            <div className="inline-block bg-primary/10 text-primary px-4 py-1.5 rounded-full font-headline font-black uppercase tracking-widest text-xs mb-8">
+                                Member Spotlight
+                            </div>
+                            
+                            <blockquote className="font-headline text-2xl md:text-4xl font-black text-on-surface italic leading-tight mb-10 relative z-10">
                                 "I used to skip breakfast because Indore was 800 miles away. Now, Pohafix brings the Galiyan of my childhood right to my dining table in London."
                             </blockquote>
-                            <div className="flex items-center gap-4">
-                                <div className="w-12 h-12 rounded-full bg-outline-variant"></div>
-                                <div>
-                                    <p className="font-headline font-bold uppercase">Aryan Sharma</p>
-                                    <p className="text-sm font-label text-on-surface-variant/70">Ex-Indori, Software Lead</p>
+
+                            <div className="flex items-center gap-5 relative z-10">
+                                <div className="w-14 h-14 rounded-full bg-stone-100 flex items-center justify-center border-2 border-white shadow-sm">
+                                    <span className="material-symbols-outlined text-stone-400 text-3xl">person</span>
+                                </div>
+                                <div className="flex flex-col">
+                                    <p className="font-headline font-black text-lg uppercase tracking-tight text-on-surface">Aryan Sharma</p>
+                                    <p className="text-sm font-medium text-stone-500 uppercase tracking-wider">Ex-Indori, Software Lead</p>
                                 </div>
                             </div>
                         </div>
