@@ -86,35 +86,24 @@ const Header = () => {
                             </button>
                         </div>
 
-                        {/* Navigation Links - Matching Screenshot Style */}
-                        <div className="flex-1 flex flex-col items-start justify-start gap-10 px-10 pt-20">
+                        {/* Navigation Links - Matching Screenshot Style strictly */}
+                        <div className="flex-1 flex flex-col items-start justify-start gap-12 px-10 pt-32">
                             {[
                                 { name: "Home", path: "/" },
-                                { name: "Shop", path: "/shop" },
-                                { name: "About Us", path: "/about" },
+                                { name: "Shop Now", path: "/shop" },
+                                { name: "Our Story", path: "/about" },
                                 { name: "Journal", path: "/blog" },
-                                { name: "Contact", path: "/contact" }
+                                { name: "Contact Us", path: "/contact" }
                             ].map((item) => (
                                 <Link 
                                     key={item.name}
                                     to={item.path}
                                     onClick={() => setIsMenuOpen(false)}
-                                    className="text-3xl font-bold text-stone-900 tracking-tight transition-colors hover:text-primary active:opacity-70"
+                                    className="text-4xl font-headline font-black text-stone-900 tracking-tighter transition-colors hover:text-primary active:opacity-70"
                                 >
                                     {item.name}
                                 </Link>
                             ))}
-                        </div>
-
-                        {/* Bottom CTA */}
-                        <div className="p-8 pb-12 w-full max-w-sm mx-auto">
-                            <Link 
-                                to="/shop" 
-                                onClick={() => setIsMenuOpen(false)}
-                                className="block w-full bg-[#ca2221] text-white text-center py-5 rounded-xl font-black text-lg uppercase tracking-widest shadow-2xl shadow-red-900/40 active:translate-y-1 transition-all"
-                            >
-                                GET YOUR POHA NOW
-                            </Link>
                         </div>
                     </motion.div>
                 )}
