@@ -188,6 +188,114 @@ const Shop = () => {
                     Most instant foods rely on laboratory-synthesized stabilizers and hidden sugars to extend shelf life. At Pohafix, we believe in the power of raw, natural ingredients. No MSG, no artificial fillers—just the purest Malwa rice flakes and hand-ground spices, batched weekly for maximum vibrancy.
                 </p>
             </section>
+
+            {/* Testimonials */}
+            <section className="py-24 bg-[#e9e6dd] border-t border-outline-variant/10">
+                <div className="max-w-7xl mx-auto px-6">
+                    <div className="flex flex-col md:flex-row justify-between items-end mb-12 gap-6">
+                        <div>
+                            <h2 className="text-4xl md:text-5xl font-black font-headline text-on-surface mb-2 tracking-tighter">
+                                Trusted by <span className="text-[#ce1d2a]">Indoris</span> Worldwide
+                            </h2>
+                            <p className="text-on-surface-variant font-medium text-sm md:text-base">
+                                Hear it from our community of poha lovers.
+                            </p>
+                        </div>
+                        <Link to="/shop" className="text-[#ce1d2a] font-bold text-sm tracking-widest uppercase hover:underline flex items-center gap-1">
+                            VIEW ALL 1,200 REVIEWS <span className="material-symbols-outlined text-sm font-bold">arrow_forward</span>
+                        </Link>
+                    </div>
+
+                    <div className="grid grid-cols-1 md:grid-cols-12 gap-6">
+                        {/* Card 1 */}
+                        <div className="md:col-span-6 bg-white p-8 md:p-10 rounded-xl shadow-sm border border-outline-variant/10">
+                            <div className="text-[#8c7423] mb-6 flex gap-1">
+                                <span className="material-symbols-outlined text-xl" style={{ fontVariationSettings: "'FILL' 1" }}>star</span>
+                                <span className="material-symbols-outlined text-xl" style={{ fontVariationSettings: "'FILL' 1" }}>star</span>
+                                <span className="material-symbols-outlined text-xl" style={{ fontVariationSettings: "'FILL' 1" }}>star</span>
+                                <span className="material-symbols-outlined text-xl" style={{ fontVariationSettings: "'FILL' 1" }}>star</span>
+                                <span className="material-symbols-outlined text-xl" style={{ fontVariationSettings: "'FILL' 1" }}>star</span>
+                            </div>
+                            <p className="font-headline font-bold text-xl md:text-2xl text-on-surface leading-snug italic mb-8">
+                                "Bilkul Indore jaisa taste 😍. I live in London and I missed this so much. Pohafix saved my mornings!"
+                            </p>
+                            <div className="flex items-center gap-4">
+                                <div className="w-12 h-12 bg-[#fbc62f] rounded-[10px]"></div>
+                                <div>
+                                    <p className="font-bold text-sm text-on-surface leading-tight mb-1">Rahul Sharma</p>
+                                    <p className="text-[10px] text-on-surface-variant uppercase tracking-widest">Verified Buyer</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        {/* Card 2 */}
+                        <div className="md:col-span-6 bg-[#dedad0] p-8 md:p-10 rounded-xl shadow-sm border border-outline-variant/5 text-center flex flex-col justify-center">
+                            <h3 className="font-headline font-black text-[#ce1d2a] text-xl md:text-2xl mb-4 tracking-tight uppercase">"THE BEST INSTANT POHA EVER!"</h3>
+                            <p className="text-sm font-medium text-on-surface-variant mb-6 leading-relaxed max-w-sm mx-auto">
+                                "Better than most street stalls. The Jeeravan spice is exactly right. 10/10 would recommend."
+                            </p>
+                            <p className="text-xs font-bold text-on-surface">— Priya M., Food Critic</p>
+                        </div>
+
+                        {/* Card 3 */}
+                        <div className="md:col-span-3 bg-white p-8 rounded-xl shadow-sm border border-outline-variant/5">
+                            <div className="text-[#8c7423] mb-4 flex gap-1">
+                                <span className="material-symbols-outlined text-sm" style={{ fontVariationSettings: "'FILL' 1" }}>star</span>
+                                <span className="material-symbols-outlined text-sm" style={{ fontVariationSettings: "'FILL' 1" }}>star</span>
+                                <span className="material-symbols-outlined text-sm" style={{ fontVariationSettings: "'FILL' 1" }}>star</span>
+                                <span className="material-symbols-outlined text-sm" style={{ fontVariationSettings: "'FILL' 1" }}>star</span>
+                                <span className="material-symbols-outlined text-sm" style={{ fontVariationSettings: "'FILL' 1" }}>star</span>
+                            </div>
+                            <p className="text-sm font-medium text-on-surface mb-6 leading-relaxed">
+                                "The pomegranate crunch is the game changer. So fresh!"
+                            </p>
+                            <p className="text-[10px] font-bold text-on-surface uppercase tracking-widest">Asiah K.</p>
+                        </div>
+
+                        {/* Card 4 */}
+                        <div className="md:col-span-3 bg-[#116e2b] p-8 rounded-xl shadow-sm flex flex-col justify-between">
+                            <span className="material-symbols-outlined text-[#72ae7e] text-3xl mb-4 rotate-180" style={{ fontVariationSettings: "'FILL' 1" }}>format_quote</span>
+                            <p className="text-sm font-bold text-white mb-6 leading-relaxed">
+                                "Perfect for my office breakfast. Healthy and super tasty."
+                            </p>
+                            <p className="text-[10px] font-bold text-[#b4d6ba] uppercase tracking-widest">ADITI VERMA</p>
+                        </div>
+
+                        {/* Card 5 */}
+                        <div className="md:col-span-6 bg-[#f7bc25] p-8 rounded-xl shadow-sm flex items-center lg:items-start gap-6 border border-yellow-500/20">
+                            <div className="w-20 h-20 rounded-xl bg-black/30 shrink-0 border-2 border-white/20 overflow-hidden mix-blend-multiply flex items-center justify-center">
+                               <span className="material-symbols-outlined text-5xl text-white opacity-80" style={{ fontVariationSettings: "'FILL' 1" }}>person</span>
+                            </div>
+                            <div className="flex flex-col justify-center h-full">
+                                <h4 className="font-headline font-black text-[#604300] text-xl mb-2">"Authenticity Delivered."</h4>
+                                <p className="text-sm font-medium text-[#7a5900] leading-relaxed max-w-sm">
+                                    Finally a brand that doesn't compromise on the real Malwa flavor.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            {/* CTA Section */}
+            <section className="py-24 px-6 max-w-7xl mx-auto bg-[#fef9f0]">
+                <div className="bg-gradient-to-br from-[#9b151a] to-[#6d0006] rounded-[2rem] p-12 md:p-24 text-center shadow-2xl relative overflow-hidden">
+                    <div className="relative z-10">
+                        <h2 className="text-5xl md:text-7xl font-black font-headline text-white mb-8 tracking-tighter leading-[1.1] drop-shadow-md">
+                            Ready for the Indori <br className="hidden md:block" /> Morning Ritual?
+                        </h2>
+                        <p className="text-white/90 text-sm md:text-lg font-medium mb-12 max-w-2xl mx-auto leading-relaxed">
+                            Join over 50,000+ satisfied poha lovers and get your authentic Malwa fix today.
+                        </p>
+                        <Link 
+                            to="/shop" 
+                            className="inline-block bg-[#fcc92f] text-black px-12 py-5 rounded font-headline font-black text-xl hover:bg-[#f6bb12] transition-colors shadow-[0_8px_0_0_#b78401] active:translate-y-2 active:shadow-[0_0px_0_0_#b78401]"
+                        >
+                            Order Your Pack Now
+                        </Link>
+                    </div>
+                </div>
+            </section>
         </main>
         </>
     );
