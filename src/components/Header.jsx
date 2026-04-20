@@ -1,26 +1,15 @@
 import { useState, useEffect } from 'react';
-import { Link, useNavigate, useLocation } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 import { motion, AnimatePresence } from 'framer-motion';
 
 const Header = () => {
-    const [isSearchOpen, setIsSearchOpen] = useState(false);
     const [isMenuOpen, setIsMenuOpen] = useState(false);
-    const [searchQuery, setSearchQuery] = useState('');
-    const navigate = useNavigate();
     const location = useLocation();
 
     // Close menu when route changes
     useEffect(() => {
         setIsMenuOpen(false);
     }, [location]);
-
-    const handleSearch = (e) => {
-        e.preventDefault();
-        if (!searchQuery.trim()) return;
-        navigate('/shop');
-        setIsSearchOpen(false);
-        setSearchQuery('');
-    };
 
     return (
         <nav className="fixed top-0 w-full z-[100] bg-[#faf9f6]/95 dark:bg-[#12110e]/95 backdrop-blur-xl border-b border-outline-variant/10 shadow-sm transition-all duration-300">
@@ -29,13 +18,11 @@ const Header = () => {
                 {/* Left: Mobile Hamburger & Desktop Links */}
                 <div className="flex items-center justify-start gap-4">
                     <button 
-                        onClick={() => setIsMenuOpen(!isMenuOpen)}
-                        className="md:hidden text-stone-900 dark:text-stone-100 hover:text-primary transition-colors"
-                        aria-label="Toggle Menu"
+                        onClick={() => setIsMenuOpen(true)}
+                        className="md:hidden text-stone-900 dark:text-stone-100 hover:text-primary transition-colors p-2"
+                        aria-label="Open Menu"
                     >
-                        <span className="material-symbols-outlined text-[30px]" style={{ fontVariationSettings: `'wght' 300, 'FILL' ${isMenuOpen ? 1 : 0}` }}>
-                            {isMenuOpen ? 'close' : 'menu'}
-                        </span>
+                        <span className="material-symbols-outlined text-[32px]" style={{ fontVariationSettings: "'wght' 300" }}>menu</span>
                     </button>
                     
                     <div className="hidden md:flex items-center gap-8">
@@ -54,29 +41,12 @@ const Header = () => {
                     </Link>
                 </div>
 
-                {/* Right: Search & Desktop Contact */}
-                <div className="flex items-center gap-6 justify-end relative">
-                    <Link className="hidden lg:block text-stone-900 dark:text-stone-100 font-bold tracking-tight hover:text-primary transition-colors text-sm uppercase" to="/contact">Contact</Link>
-                    
-                    {isSearchOpen ? (
-                        <form onSubmit={handleSearch} className="flex items-center absolute right-0 bg-[#f4f3f1] dark:bg-stone-800 border border-outline-variant/30 rounded-full overflow-hidden shadow-lg animate-fade-in origin-right z-50">
-                            <input 
-                                type="text" 
-                                autoFocus
-                                value={searchQuery}
-                                onChange={(e) => setSearchQuery(e.target.value)}
-                                placeholder="Search..."
-                                className="px-5 py-2.5 bg-transparent outline-none text-sm w-40 md:w-64 text-on-surface"
-                            />
-                            <button type="button" onClick={() => setIsSearchOpen(false)} className="pr-4 text-stone-500 hover:text-error transition-colors">
-                                <span className="material-symbols-outlined text-[20px]">close</span>
-                            </button>
-                        </form>
-                    ) : (
-                        <button onClick={() => setIsSearchOpen(true)} className="hover:text-primary transition-colors text-stone-900 dark:text-stone-100" aria-label="Search">
-                            <span className="material-symbols-outlined text-[26px]" style={{ fontVariationSettings: "'wght' 300" }}>search</span>
-                        </button>
-                    )}
+                {/* Right: Desktop Contact */}
+                <div className="flex items-center gap-6 justify-end">
+                    <Link className="hidden md:block text-stone-900 dark:text-stone-100 font-bold tracking-tight hover:text-primary transition-colors text-sm uppercase" to="/contact">Contact</Link>
+                    <Link to="/order" className="bg-primary text-white px-4 md:px-6 py-2 rounded font-black text-xs md:text-sm uppercase tracking-widest shadow-md hover:bg-primary-container transition-colors">
+                        Order
+                    </Link>
                 </div>
             </div>
 
@@ -89,29 +59,64 @@ const Header = () => {
                             animate={{ opacity: 1 }}
                             exit={{ opacity: 0 }}
                             onClick={() => setIsMenuOpen(false)}
-                            className="fixed inset-0 bg-black/40 backdrop-blur-sm z-[90] md:hidden"
+                            className="fixed inset-0 bg-black/60 backdrop-blur-md z-[110] md:hidden"
                         />
                         <motion.div 
                             initial={{ x: '-100%' }}
                             animate={{ x: 0 }}
                             exit={{ x: '-100%' }}
                             transition={{ type: 'spring', damping: 25, stiffness: 200 }}
-                            className="fixed top-0 left-0 bottom-0 w-[80%] max-w-sm bg-[#faf9f6] dark:bg-[#12110e] z-[100] md:hidden shadow-2xl flex flex-col p-8 pt-24"
+                            className="fixed top-0 left-0 bottom-0 w-[85%] max-w-sm bg-[#faf9f6] dark:bg-[#12110e] z-[120] md:hidden shadow-3xl flex flex-col overflow-hidden"
                         >
-                            <div className="flex flex-col gap-8">
-                                <Link className="text-3xl font-black font-headline text-on-surface tracking-tighter hover:text-primary transition-colors" to="/">HOME</Link>
-                                <Link className="text-3xl font-black font-headline text-on-surface tracking-tighter hover:text-primary transition-colors" to="/shop">SHOP</Link>
-                                <Link className="text-3xl font-black font-headline text-on-surface tracking-tighter hover:text-primary transition-colors" to="/about">ABOUT US</Link>
-                                <Link className="text-3xl font-black font-headline text-on-surface tracking-tighter hover:text-primary transition-colors" to="/blog">THE JOURNAL</Link>
-                                <Link className="text-3xl font-black font-headline text-on-surface tracking-tighter hover:text-primary transition-colors" to="/contact">CONTACT</Link>
+                            {/* Texture Overlay for Drawer */}
+                            <div className="absolute inset-0 pointer-events-none opacity-5 mix-blend-multiply bg-[url('https://www.transparenttextures.com/patterns/natural-paper.png')]"></div>
+                            
+                            {/* Drawer Header */}
+                            <div className="flex items-center justify-between p-6 border-b border-outline-variant/10 relative z-10">
+                                <Link to="/" className="flex items-center bg-[#ca2221] px-3 py-1.5 rounded shadow-sm scale-90">
+                                    <span className="text-[#ffdf00] font-black italic text-lg tracking-tighter">Poha</span>
+                                    <span className="text-white font-black italic text-lg tracking-tighter">fix</span>
+                                </Link>
+                                <button 
+                                    onClick={() => setIsMenuOpen(false)}
+                                    className="w-10 h-10 rounded-full bg-surface-container-highest flex items-center justify-center text-on-surface hover:text-primary transition-colors"
+                                >
+                                    <span className="material-symbols-outlined text-[24px]">close</span>
+                                </button>
                             </div>
 
-                            <div className="mt-auto space-y-6">
+                            <div className="flex flex-col gap-6 p-8 relative z-10">
+                                <Link className="text-4xl font-black font-headline text-on-surface tracking-tighter hover:text-primary transition-colors flex items-center justify-between group" to="/">
+                                    HOME
+                                    <span className="material-symbols-outlined opacity-0 group-hover:opacity-100 -translate-x-4 group-hover:translate-x-0 transition-all font-black">arrow_forward</span>
+                                </Link>
+                                <Link className="text-4xl font-black font-headline text-on-surface tracking-tighter hover:text-primary transition-colors flex items-center justify-between group" to="/shop">
+                                    SHOP
+                                    <span className="material-symbols-outlined opacity-0 group-hover:opacity-100 -translate-x-4 group-hover:translate-x-0 transition-all font-black">arrow_forward</span>
+                                </Link>
+                                <Link className="text-4xl font-black font-headline text-on-surface tracking-tighter hover:text-primary transition-colors flex items-center justify-between group" to="/about">
+                                    ABOUT
+                                    <span className="material-symbols-outlined opacity-0 group-hover:opacity-100 -translate-x-4 group-hover:translate-x-0 transition-all font-black">arrow_forward</span>
+                                </Link>
+                                <Link className="text-4xl font-black font-headline text-on-surface tracking-tighter hover:text-primary transition-colors flex items-center justify-between group" to="/blog">
+                                    JOURNAL
+                                    <span className="material-symbols-outlined opacity-0 group-hover:opacity-100 -translate-x-4 group-hover:translate-x-0 transition-all font-black">arrow_forward</span>
+                                </Link>
+                                <Link className="text-4xl font-black font-headline text-on-surface tracking-tighter hover:text-primary transition-colors flex items-center justify-between group" to="/contact">
+                                    CONTACT
+                                    <span className="material-symbols-outlined opacity-0 group-hover:opacity-100 -translate-x-4 group-hover:translate-x-0 transition-all font-black">arrow_forward</span>
+                                </Link>
+                            </div>
+
+                            <div className="mt-auto p-8 pt-0 space-y-6 relative z-10">
                                 <div className="h-px w-full bg-outline-variant/20" />
-                                <p className="text-xs font-black uppercase tracking-[0.2em] text-primary">Indore ka asli breakfast</p>
-                                <div className="flex gap-4">
-                                    <Link to="/shop" className="flex-1 bg-primary text-white text-center py-4 font-black rounded-lg shadow-lg">ORDER NOW</Link>
+                                <div className="space-y-1">
+                                    <p className="text-[10px] font-black uppercase tracking-[0.2em] text-primary">Made with Malwa Soul</p>
+                                    <p className="text-xs text-on-surface-variant italic">Indore's Breakfast Tradition, Delivered.</p>
                                 </div>
+                                <Link to="/shop" className="w-full bg-primary text-white text-center py-4 font-black rounded-lg shadow-xl block uppercase tracking-widest text-sm">
+                                    ORDER YOUR PACK
+                                </Link>
                             </div>
                         </motion.div>
                     </>
