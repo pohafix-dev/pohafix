@@ -339,4 +339,3 @@ const Order = () => {
 };
 
 export default Order;
-der;
