@@ -86,8 +86,8 @@ const Header = () => {
                             </button>
                         </div>
 
-                        {/* Centered Navigation Links as Buttons */}
-                        <div className="flex-1 flex flex-col items-center justify-center gap-6 px-8">
+                        {/* Navigation Links - Matching Screenshot Style */}
+                        <div className="flex-1 flex flex-col items-start justify-start gap-10 px-10 pt-20">
                             {[
                                 { name: "Home", path: "/" },
                                 { name: "Shop", path: "/shop" },
@@ -99,7 +99,7 @@ const Header = () => {
                                     key={item.name}
                                     to={item.path}
                                     onClick={() => setIsMenuOpen(false)}
-                                    className="w-full max-w-sm py-4 bg-stone-900/5 hover:bg-stone-900/10 border border-stone-900/10 rounded-2xl text-2xl font-black font-headline text-stone-900 tracking-tight text-center transition-all active:scale-95 uppercase"
+                                    className="text-3xl font-bold text-stone-900 tracking-tight transition-colors hover:text-primary active:opacity-70"
                                 >
                                     {item.name}
                                 </Link>
