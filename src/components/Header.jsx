@@ -18,11 +18,14 @@ const Header = () => {
                 {/* Left: Mobile Hamburger & Desktop Links */}
                 <div className="flex items-center justify-start gap-4">
                     <button 
-                        onClick={() => setIsMenuOpen(true)}
-                        className="md:hidden text-stone-900 dark:text-stone-100 hover:text-primary transition-colors p-2"
+                        onClick={(e) => {
+                            e.preventDefault();
+                            setIsMenuOpen(true);
+                        }}
+                        className="md:hidden text-stone-900 dark:text-stone-100 hover:text-primary transition-colors p-3 -ml-3 relative z-[110]"
                         aria-label="Open Menu"
                     >
-                        <span className="material-symbols-outlined text-[32px]" style={{ fontVariationSettings: "'wght' 300" }}>menu</span>
+                        <span className="material-symbols-outlined text-[34px]" style={{ fontVariationSettings: "'wght' 300" }}>menu</span>
                     </button>
                     
                     <div className="hidden md:flex items-center gap-8">
