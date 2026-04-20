@@ -57,14 +57,15 @@ const Blog = () => {
         <div className="bg-surface text-on-surface font-body selection:bg-secondary-container selection:text-on-secondary-container min-h-screen">
             <Header />
 
-            <main className="max-w-screen-2xl mx-auto px-6 pt-12 pb-24">
+            <main className="max-w-screen-2xl mx-auto px-6 pt-24 md:pt-32 pb-24">
                 {/* Page Header */}
                 <header className="mb-12 relative overflow-hidden pb-4">
-                    <div className="flex flex-col md:flex-row md:items-baseline gap-4 relative z-10">
+                    <div className="flex flex-col md:flex-row md:items-end gap-2 md:gap-6 relative z-10">
                         <h1 className="text-5xl md:text-8xl font-headline font-black tracking-tighter text-primary uppercase leading-none">The Malwa Journal</h1>
-                        <span className="text-secondary font-headline font-bold text-lg md:text-xl uppercase tracking-widest">Issue No. 04</span>
+                        <div className="h-px flex-1 bg-outline-variant/30 mb-2 md:mb-4 hidden md:block"></div>
+                        <span className="text-secondary font-headline font-bold text-lg md:text-xl uppercase tracking-widest whitespace-nowrap mb-1 md:mb-3">Issue No. 04</span>
                     </div>
-                    <div className="h-px w-full bg-outline-variant/30 mt-6 relative z-10"></div>
+                    <div className="h-px w-full bg-outline-variant/30 mt-2 md:mt-0 md:hidden relative z-10"></div>
                     <div className="absolute top-0 right-0 opacity-[0.07] pointer-events-none select-none -translate-y-4">
                         <span className="text-9xl md:text-[14rem] font-headline font-black tracking-tighter">सत्य</span>
                     </div>
