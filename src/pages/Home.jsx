@@ -568,6 +568,7 @@ const Home = () => {
                         >
                             Order Now
                         </Link>
+                    </div>
                 </section>
             </main>
 
