@@ -492,7 +492,7 @@ const Home = () => {
                                 {/* Asymmetric Card Layout */}
                                 <div className="absolute -top-12 -left-12 font-headline text-9xl text-primary/5 select-none rotate-[-15deg]">thela</div>
                                 <div className="bg-surface-container-lowest p-6 rounded-xl shadow-2xl relative z-10 transform rotate-2">
-                                    <img alt="Street Cart Poha" className="w-full aspect-video object-cover rounded-lg mb-6" data-alt="A stylized, premium Indian street cart decorated with brass details, featuring a large heap of yellow poha and bowls of sev and lemon." src="https://lh3.googleusercontent.com/aida-public/AB6AXuC8_ksPOcAWXxBSKHYO9Kh6gW9b5_1DcltbPse_S2f5onONNs7UzRlJT8FJx4_JZ7o3AvzUC5MynwWIkJn2zCkwDnS10NwPngGbeV3i88SYuON0rCk5XMHgym7hDxuAQpvxZbw-t7MsifA8XcSpE70vWQhOPqCZRyDOtHIec_3P-dGwzpX99Gg5sOl7SiLBnbdlopyjpZvk8BhzjIekceVlE-yWHLnJG9Ijvz0HRksIfzZjAvK7vp33wlnUHMBKB4WhsD3voS_aV7c" />
+                                    <img alt="Street Cart Poha" className="w-full aspect-video object-contain rounded-lg mb-6" src="/thela-v2.png" />
                                     <div className="flex justify-between items-center">
                                         <div>
                                             <h4 className="font-headline text-2xl font-bold text-on-surface">The Signature Cart</h4>
