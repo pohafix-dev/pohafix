@@ -50,7 +50,7 @@ const Shop = () => {
             <section className="max-w-7xl mx-auto px-6 grid grid-cols-1 lg:grid-cols-2 gap-16 items-start">
                 
                 {/* Visual Showcase */}
-                <div className="relative lg:sticky lg:top-32 mb-8 lg:mb-0">
+                <div className="relative lg:sticky lg:top-32 mb-4 lg:mb-0">
                     <AnimatePresence mode="wait">
                         <motion.div 
                             key={selectedPlan}
@@ -69,13 +69,13 @@ const Shop = () => {
                     </AnimatePresence>
                     
                     {/* Floating Badges */}
-                    <div className="absolute -top-6 -left-6 bg-primary text-on-primary px-6 py-2 rounded-full font-headline font-black text-xs uppercase tracking-[0.2em] shadow-xl rotate-[-4deg]">
+                    <div className="absolute top-4 left-4 bg-primary text-on-primary px-6 py-2 rounded-full font-headline font-black text-xs uppercase tracking-[0.2em] shadow-xl rotate-[-4deg]">
                         Indore Certified
                     </div>
                 </div>
 
                 {/* Configuration details */}
-                <div className="flex flex-col">
+                <div className="flex flex-col -mt-4 lg:mt-0">
                     <div className="mb-10">
                         <div className="flex items-center gap-3 mb-4">
                              <span className="material-symbols-outlined text-secondary text-base" style={{ fontVariationSettings: "'FILL' 1" }}>verified</span>
