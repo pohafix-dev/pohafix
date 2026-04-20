@@ -66,7 +66,7 @@ const Home = () => {
                         <div className="absolute inset-0 bg-gradient-to-t from-background via-transparent to-transparent"></div>
                     </div>
                     <div className="container mx-auto px-6 grid md:grid-cols-2 gap-12 items-center relative z-10 py-12 md:py-0">
-                        <div className="space-y-6 order-2 md:order-1">
+                        <div className="space-y-6">
                             <div className="inline-block px-3 py-1 bg-secondary-container text-on-secondary-container rounded-sm text-xs font-bold tracking-widest uppercase mb-4">
                                 Breakfast Revolution
                             </div>
@@ -76,6 +76,28 @@ const Home = () => {
                             <p className="text-xl md:text-4xl font-hindi text-primary-container font-medium opacity-90">
                                 इंदौर का स्वाद, अब कहीं भी
                             </p>
+
+                            {/* Mobile Product Image (Visible only on mobile) */}
+                            <div className="md:hidden relative group my-8">
+                                <div className="absolute -top-6 -left-6 text-6xl font-hindi hindi-layer rotate-[-15deg] opacity-60">ताज़ा</div>
+                                <div className="absolute -bottom-6 -right-6 text-6xl font-hindi hindi-layer rotate-[15deg] opacity-60">ज़ायका</div>
+                                <div className="relative bg-surface-container-lowest rounded-[2rem] shadow-2xl overflow-hidden aspect-[4/5] flex items-center justify-center p-4">
+                                    {slides.map((slide, index) => (
+                                        <img 
+                                            key={slide + "-mobile"}
+                                            src={slide}
+                                            alt={`Pohafix Box ${index + 1}`}
+                                            className={`absolute inset-0 w-full h-full object-contain transition-opacity duration-1000 ${index === currentSlide ? 'opacity-100 z-10' : 'opacity-0 z-0'}`} 
+                                        />
+                                    ))}
+                                    <div className="absolute bottom-4 flex gap-2 z-20">
+                                        {slides.map((_, i) => (
+                                            <div key={i} className={`w-1.5 h-1.5 rounded-full ${i === currentSlide ? 'bg-primary' : 'bg-outline-variant/30'}`} />
+                                        ))}
+                                    </div>
+                                </div>
+                            </div>
+
                             <div className="flex items-center gap-6 pt-4">
                                 <Link to="/shop" className="bg-primary text-on-primary px-6 md:px-10 py-3 md:py-4 rounded-md font-bold text-base md:text-lg hover:bg-primary-container transition-all shadow-xl shadow-primary/30 flex items-center gap-2 group whitespace-nowrap">
                                     Order Now
@@ -94,35 +116,32 @@ const Home = () => {
                                 </div>
                             </div>
                         </div>
-                        <div className="relative group mt-8 md:mt-0 order-1 md:order-2">
-                            <div className="absolute -top-6 -left-6 md:-top-10 md:-left-10 text-6xl md:text-9xl font-hindi hindi-layer rotate-[-15deg] opacity-60 md:opacity-100">ताज़ा</div>
-                            <div className="absolute -bottom-6 -right-6 md:-bottom-10 md:-right-10 text-6xl md:text-9xl font-hindi hindi-layer rotate-[15deg] opacity-60 md:opacity-100">ज़ायका</div>
-                            {/* Main Product Carousel */}
-                            <div className="relative transform hover:scale-105 transition-transform duration-500 bg-surface-container-lowest rounded-[2rem] shadow-2xl overflow-hidden aspect-[4/5] flex items-center justify-center">
+
+                        {/* Desktop Product Content (Hidden on Mobile) */}
+                        <div className="hidden md:block relative group">
+                            <div className="absolute -top-10 -left-10 text-9xl font-hindi hindi-layer rotate-[-15deg]">ताज़ा</div>
+                            <div className="absolute -bottom-10 -right-10 text-9xl font-hindi hindi-layer rotate-[15deg]">ज़ायका</div>
+                            <div className="relative transform hover:scale-105 transition-transform duration-500 bg-surface-container-lowest rounded-[2rem] shadow-2xl overflow-hidden aspect-[4/5] flex items-center justify-center p-8">
                                 {slides.map((slide, index) => (
                                     <img 
-                                        key={slide}
+                                        key={slide + "-desktop"}
                                         src={slide}
-                                        alt={`Pohafix Box Design ${index + 1}`}
+                                        alt={`Pohafix Box ${index + 1}`}
                                         className={`absolute inset-0 w-full h-full object-contain transition-opacity duration-1000 ${index === currentSlide ? 'opacity-100 z-10' : 'opacity-0 z-0'}`} 
                                     />
                                 ))}
-                                
-                                {/* Carousel Indicators */}
-                                <div className="absolute bottom-6 flex gap-2 z-20">
-                                    {slides.map((_, idx) => (
-                                        <button 
-                                            key={idx}
-                                            onClick={() => setCurrentSlide(idx)}
-                                            className={`w-3 h-3 rounded-full transition-colors duration-300 ${idx === currentSlide ? 'bg-primary' : 'bg-surface-variant hover:bg-surface-dim'}`}
-                                            aria-label={`Go to slide ${idx + 1}`}
-                                        />
-                                    ))}
-                                </div>
-
                                 <div className="absolute top-12 -right-4 bg-surface-container-lowest p-3 rounded-xl shadow-lg rotate-12 max-w-[140px] z-20">
                                     <p className="font-headline font-bold text-xs">Authentic Retained</p>
                                     <p className="font-headline font-bold text-[10px] mt-1 text-on-surface-variant">Extra Sev &amp; Pomegranate Included</p>
+                                </div>
+                                <div className="absolute bottom-8 flex gap-3 z-20">
+                                    {slides.map((_, i) => (
+                                        <button 
+                                            key={i} 
+                                            onClick={() => setCurrentSlide(i)}
+                                            className={`w-2 h-2 rounded-full transition-all ${i === currentSlide ? 'bg-primary w-8' : 'bg-outline-variant/30'}`} 
+                                        />
+                                    ))}
                                 </div>
                             </div>
                         </div>
