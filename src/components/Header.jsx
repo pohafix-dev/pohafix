@@ -56,7 +56,8 @@ const Header = () => {
                         initial={{ opacity: 0 }}
                         animate={{ opacity: 1 }}
                         exit={{ opacity: 0 }}
-                        className="fixed inset-0 bg-[#fef9f0] z-[150] md:hidden flex flex-col"
+                        className="fixed inset-0 z-[9999] md:hidden flex flex-col items-center justify-between"
+                        style={{ backgroundColor: '#fef9f0' }}
                     >
                         {/* Overlay Header - Matching Screenshot */}
                         <div className="flex items-center justify-between px-6 py-4 w-full">
