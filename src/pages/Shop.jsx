@@ -2,7 +2,6 @@ import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { motion, AnimatePresence } from 'framer-motion';
 import Header from '../components/Header';
-import { blogs } from '../data/blogs';
 
 const Shop = () => {
     const [selectedPlan, setSelectedPlan] = useState(0);
@@ -188,44 +187,6 @@ const Shop = () => {
                 <p className="text-xl text-on-surface-variant leading-relaxed font-medium">
                     Most instant foods rely on laboratory-synthesized stabilizers and hidden sugars to extend shelf life. At Pohafix, we believe in the power of raw, natural ingredients. No MSG, no artificial fillers—just the purest Malwa rice flakes and hand-ground spices, batched weekly for maximum vibrancy.
                 </p>
-            </section>
-
-            {/* Blog Section */}
-            <section className="py-24 bg-background border-t border-outline-variant/10">
-                <div className="max-w-7xl mx-auto px-6">
-                    <div className="flex flex-col md:flex-row justify-between items-end mb-16 gap-6">
-                        <div>
-                            <h2 className="text-4xl md:text-5xl font-black font-headline text-on-surface mb-2 tracking-tighter uppercase">From the <span className="text-primary italic">Lab</span></h2>
-                            <p className="text-on-surface-variant font-medium text-lg">Exposing the industrial food complex.</p>
-                        </div>
-                        <Link to="/blog" className="bg-surface-container-high px-6 py-3 rounded-lg font-bold text-sm tracking-widest uppercase hover:bg-primary hover:text-white transition-all">Read All Stories</Link>
-                    </div>
-
-                    <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-                        {blogs.slice(0, 3).map((blog) => (
-                            <Link key={blog.id} to={`/blog/${blog.slug}`} className="group flex flex-col bg-surface-container-low rounded-3xl overflow-hidden border border-outline-variant/5 hover:border-primary/20 transition-all hover:shadow-2xl">
-                                <div className="aspect-[16/10] overflow-hidden bg-outline-variant/10">
-                                    <img src={blog.image} alt={blog.title} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
-                                </div>
-                                <div className="p-8 flex flex-col flex-1">
-                                    <div className="flex items-center gap-3 mb-4">
-                                        <span className="text-[10px] font-black uppercase tracking-[0.2em] text-primary px-3 py-1 bg-primary/5 rounded-full">{blog.category}</span>
-                                        <span className="text-[10px] font-bold text-on-surface-variant uppercase tracking-widest">{blog.readTime} Read</span>
-                                    </div>
-                                    <h3 className="text-2xl font-black font-headline text-on-surface group-hover:text-primary transition-colors leading-tight mb-4">
-                                        {blog.title}
-                                    </h3>
-                                    <p className="text-on-surface-variant text-sm font-medium leading-relaxed mb-6 line-clamp-3">
-                                        {blog.summary}
-                                    </p>
-                                    <div className="mt-auto flex items-center gap-2 text-primary font-bold text-sm uppercase tracking-widest">
-                                        Read Deep Dive <span className="material-symbols-outlined text-sm">arrow_forward</span>
-                                    </div>
-                                </div>
-                            </Link>
-                        ))}
-                    </div>
-                </div>
             </section>
 
             {/* Testimonials */}
