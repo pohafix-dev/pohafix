@@ -7,6 +7,7 @@ import Blog from './pages/Blog';
 import BlogPost from './pages/BlogPost';
 import Shop from './pages/Shop';
 import About from './pages/About';
+import ThankYou from './pages/ThankYou';
 
 function App() {
   return (
@@ -19,6 +20,7 @@ function App() {
       <Route path="/privacy" element={<Privacy />} />
       <Route path="/blog" element={<Blog />} />
       <Route path="/blog/:slug" element={<BlogPost />} />
+      <Route path="/thank-you" element={<ThankYou />} />
       <Route path="*" element={<Home />} />
     </Routes>
   );
