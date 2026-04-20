@@ -48,9 +48,6 @@ const Header = () => {
                 {/* Right: Desktop Contact */}
                 <div className="flex items-center gap-6 justify-end">
                     <Link className="hidden md:block text-stone-900 dark:text-stone-100 font-bold tracking-tight hover:text-primary transition-colors text-sm uppercase" to="/contact">Contact</Link>
-                    <Link to="/order" className="bg-primary text-white px-4 md:px-6 py-2 rounded font-black text-xs md:text-sm uppercase tracking-widest shadow-md hover:bg-primary-container transition-colors">
-                        Order
-                    </Link>
                 </div>
             </div>
 
