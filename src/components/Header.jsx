@@ -70,43 +70,24 @@ const Header = () => {
                             </button>
                         </div>
 
-                        {/* Centered Navigation Links */}
-                        <div className="flex-1 flex flex-col items-center justify-center gap-8 pb-12">
-                            <Link 
-                                className="text-5xl font-black font-headline text-stone-900 tracking-tighter hover:text-primary transition-all transform hover:scale-110 active:scale-95 uppercase" 
-                                to="/"
-                                onClick={() => setIsMenuOpen(false)}
-                            >
-                                Home
-                            </Link>
-                            <Link 
-                                className="text-5xl font-black font-headline text-stone-900 tracking-tighter hover:text-primary transition-all transform hover:scale-110 active:scale-95 uppercase" 
-                                to="/shop"
-                                onClick={() => setIsMenuOpen(false)}
-                            >
-                                Shop
-                            </Link>
-                            <Link 
-                                className="text-5xl font-black font-headline text-stone-900 tracking-tighter hover:text-primary transition-all transform hover:scale-110 active:scale-95 uppercase" 
-                                to="/about"
-                                onClick={() => setIsMenuOpen(false)}
-                            >
-                                About Us
-                            </Link>
-                            <Link 
-                                className="text-5xl font-black font-headline text-stone-900 tracking-tighter hover:text-primary transition-all transform hover:scale-110 active:scale-95 uppercase" 
-                                to="/blog"
-                                onClick={() => setIsMenuOpen(false)}
-                            >
-                                Journal
-                            </Link>
-                            <Link 
-                                className="text-5xl font-black font-headline text-stone-900 tracking-tighter hover:text-primary transition-all transform hover:scale-110 active:scale-95 uppercase" 
-                                to="/contact"
-                                onClick={() => setIsMenuOpen(false)}
-                            >
-                                Contact
-                            </Link>
+                        {/* Centered Navigation Links as Buttons */}
+                        <div className="flex-1 flex flex-col items-center justify-center gap-6 px-8">
+                            {[
+                                { name: "Home", path: "/" },
+                                { name: "Shop", path: "/shop" },
+                                { name: "About Us", path: "/about" },
+                                { name: "Journal", path: "/blog" },
+                                { name: "Contact", path: "/contact" }
+                            ].map((item) => (
+                                <Link 
+                                    key={item.name}
+                                    to={item.path}
+                                    onClick={() => setIsMenuOpen(false)}
+                                    className="w-full max-w-sm py-4 bg-stone-900/5 hover:bg-stone-900/10 border border-stone-900/10 rounded-2xl text-2xl font-black font-headline text-stone-900 tracking-tight text-center transition-all active:scale-95 uppercase"
+                                >
+                                    {item.name}
+                                </Link>
+                            ))}
                         </div>
 
                         {/* Bottom CTA */}
