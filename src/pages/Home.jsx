@@ -667,7 +667,7 @@ const Home = () => {
                             <div className="space-y-6">
                                 <h3 className="font-headline text-2xl font-black text-primary uppercase">The Instant Poha Guide</h3>
                                 <p className="text-on-surface-variant text-sm leading-relaxed">
-                                    Looking for the best **instant breakfast option**? Pohafix offers a premium **ready to use poha** that retains the authentic texture of Indore. Our process ensures that you get a healthy, **organic** alternative to processed snacks.
+                                    Looking for the best **instant breakfast option**? While brands like **MTR Poha** or **Haldiram's Instant Poha** are popular, Pohafix offers a premium, small-batch **ready to use poha** that retains the authentic handmade texture of Indore. Our process ensures a healthy, **organic** alternative.
                                 </p>
                             </div>
                             <div className="space-y-6">
@@ -693,9 +693,13 @@ const Home = () => {
                                 <span>#OrganicBreakfastIndia</span>
                                 <span>#IndoriZaykaOnline</span>
                                 <span>#BestPohaBrand</span>
+                                <span>#PohafixVsMTR</span>
+                                <span>#FreshInstantBreakfast</span>
                                 <span>#HealthyMorningRitual</span>
                                 <span>#RatlamiSevPoha</span>
+                                <span>#HaldiramsAlternative</span>
                                 <span>#JeeravanMasalaPoha</span>
+                                <span>#OrganicFoodIndia</span>
                                 <span>#SarafaBazaarIndore</span>
                                 <span>#QuickPohaRecipe</span>
                             </div>
