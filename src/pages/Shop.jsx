@@ -48,9 +48,33 @@ const Shop = () => {
     return (
         <>
             <Helmet>
-                <title>Buy Organic Instant Poha | Ready to Use Indori Poha - Pohafix Shop</title>
-                <meta name="description" content="Shop organic, preservative-free ready to use Indori Poha. Best quick breakfast option for health-conscious people. Order your Pohafix bundle today." />
-                <meta name="keywords" content="buy organic poha, organic instant poha, ready to use indori breakfast, order pohafix online, preservative free poha" />
+                <title>Buy Organic Instant Poha | Ready to Eat Indori Poha | Travel Food India</title>
+                <meta name="description" content="Shop organic, preservative-free ready to use Indori Poha. The ultimate travel food for Indians abroad and best quick breakfast for bachelors. Order Pohafix now." />
+                <meta name="keywords" content="buy organic poha, travel food india, instant meals for students abroad, bachelors breakfast ideas, ready to eat indori breakfast, pohafix price india" />
+                
+                {/* Product Schema for Shop */}
+                <script type="application/ld+json">
+                    {`
+                    {
+                      "@context": "https://schema.org/",
+                      "@type": "ItemList",
+                      "itemListElement": [
+                        {
+                          "@type": "ListItem",
+                          "position": 1,
+                          "name": "The Starter Pack",
+                          "url": "https://pohafix.com/shop?plan=0"
+                        },
+                        {
+                          "@type": "ListItem",
+                          "position": 2,
+                          "name": "The Rebel Bundle",
+                          "url": "https://pohafix.com/shop?plan=1"
+                        }
+                      ]
+                    }
+                    `}
+                </script>
             </Helmet>
             <Header />
             <main className="pt-24 lg:pt-32 pb-20 bg-background selection:bg-primary/10">

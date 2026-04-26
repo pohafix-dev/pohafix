@@ -64,9 +64,17 @@ const Home = () => {
     return (
         <div className="bg-background text-on-surface font-body selection:bg-secondary-container selection:text-on-secondary-container flex flex-col min-h-screen">
             <Helmet>
-                <title>Pohafix | Authentic Indori Poha | Best Instant Breakfast Option</title>
-                <meta name="description" content="Get the authentic taste of Indore in 5 minutes. Organic, ready-to-use Indori Poha with Ratlami Sev and Jeeravan. The best healthy breakfast option for busy mornings." />
-                <meta name="keywords" content="instant poha, ready to use poha, indori poha, breakfast option, organic poha, sarafa bazaar poha, healthy breakfast india" />
+                <title>Pohafix | Authentic Indori Poha | Best Ready to Eat Instant Breakfast</title>
+                <meta name="description" content="Authentic Indori Poha in 5 mins. Organic, preservative-free ready to use poha mix. The best healthy breakfast option for travel, bachelors, and busy mornings. Experience Indore's Sarafa Bazaar taste." />
+                <meta name="keywords" content="instant poha mix, ready to eat poha, best instant breakfast india, travel food instant meals, healthy instant breakfast, quick indian breakfast, preservative free poha, indori poha online, mtr poha alternative, haldirams poha alternative, organic poha mix" />
+                
+                {/* Social Sharing Metadata */}
+                <meta property="og:title" content="Pohafix | Authentic Indori Poha in 5 Minutes" />
+                <meta property="og:description" content="Fresh, organic, and authentic Indori Poha delivered to your doorstep. Ready in just 5 minutes!" />
+                <meta property="og:image" content="https://pohafix.com/synnc-pohafix-box.png" />
+                <meta property="og:url" content="https://pohafix.com" />
+                <meta name="twitter:card" content="summary_large_image" />
+
                 <script type="application/ld+json">
                     {`
                     {
@@ -74,7 +82,7 @@ const Home = () => {
                       "@type": "Product",
                       "name": "Pohafix Authentic Indori Poha",
                       "image": ["https://pohafix.com/box-front.png"],
-                      "description": "Premium ready-to-use Indori Poha with authentic spices and Ratlami Sev.",
+                      "description": "Premium ready-to-use Indori Poha with authentic spices and Ratlami Sev. No preservatives.",
                       "brand": {
                         "@type": "Brand",
                         "name": "Pohafix"
@@ -84,6 +92,7 @@ const Home = () => {
                         "url": "https://pohafix.com/shop",
                         "priceCurrency": "INR",
                         "price": "189",
+                        "priceValidUntil": "2026-12-31",
                         "availability": "https://schema.org/InStock"
                       },
                       "aggregateRating": {
@@ -91,6 +100,65 @@ const Home = () => {
                         "ratingValue": "4.9",
                         "reviewCount": "6358"
                       }
+                    }
+                    `}
+                </script>
+                
+                {/* Organization Schema */}
+                <script type="application/ld+json">
+                    {`
+                    {
+                      "@context": "https://schema.org",
+                      "@type": "Organization",
+                      "name": "Pohafix",
+                      "url": "https://pohafix.com",
+                      "logo": "https://pohafix.com/logo.png",
+                      "contactPoint": {
+                        "@type": "ContactPoint",
+                        "telephone": "+91-9754684978",
+                        "contactType": "customer service",
+                        "areaServed": "IN",
+                        "availableLanguage": ["Hindi", "English"]
+                      },
+                      "sameAs": [
+                        "https://www.instagram.com/pohafix"
+                      ]
+                    }
+                    `}
+                </script>
+
+                {/* FAQ Schema - The Secret Sauce for Google "People Also Ask" */}
+                <script type="application/ld+json">
+                    {`
+                    {
+                      "@context": "https://schema.org",
+                      "@type": "FAQPage",
+                      "mainEntity": [
+                        {
+                          "@type": "Question",
+                          "name": "Which is the best instant poha brand in India?",
+                          "acceptedAnswer": {
+                            "@type": "Answer",
+                            "text": "Pohafix is considered the best instant poha brand for authentic Indori taste. It uses no preservatives and is ready in just 5 minutes with hot water."
+                          }
+                        },
+                        {
+                          "@type": "Question",
+                          "name": "Is instant poha healthy for weight loss?",
+                          "acceptedAnswer": {
+                            "@type": "Answer",
+                            "text": "Yes, Pohafix instant poha is a healthy breakfast option as it is made from organic flattened rice, is light on the stomach, and contains no artificial chemicals."
+                          }
+                        },
+                        {
+                          "@type": "Question",
+                          "name": "How to make Indori Poha in 5 minutes?",
+                          "acceptedAnswer": {
+                            "@type": "Answer",
+                            "text": "Just add 60ml of hot boiling water to one pack of Pohafix, cover for 5 minutes, and stir. Your authentic Indori breakfast is ready!"
+                          }
+                        }
+                      ]
                     }
                     `}
                 </script>
