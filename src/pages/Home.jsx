@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
+import { Helmet } from 'react-helmet-async';
 import VideoCard from '../components/VideoCard';
 import { videoData } from '../data/videos';
 import Header from '../components/Header';
@@ -62,6 +63,38 @@ const Home = () => {
 
     return (
         <div className="bg-background text-on-surface font-body selection:bg-secondary-container selection:text-on-secondary-container flex flex-col min-h-screen">
+            <Helmet>
+                <title>Pohafix | Authentic Indori Poha | Best Instant Breakfast Option</title>
+                <meta name="description" content="Get the authentic taste of Indore in 5 minutes. Organic, ready-to-use Indori Poha with Ratlami Sev and Jeeravan. The best healthy breakfast option for busy mornings." />
+                <meta name="keywords" content="instant poha, ready to use poha, indori poha, breakfast option, organic poha, sarafa bazaar poha, healthy breakfast india" />
+                <script type="application/ld+json">
+                    {`
+                    {
+                      "@context": "https://schema.org/",
+                      "@type": "Product",
+                      "name": "Pohafix Authentic Indori Poha",
+                      "image": ["https://pohafix.com/box-front.png"],
+                      "description": "Premium ready-to-use Indori Poha with authentic spices and Ratlami Sev.",
+                      "brand": {
+                        "@type": "Brand",
+                        "name": "Pohafix"
+                      },
+                      "offers": {
+                        "@type": "Offer",
+                        "url": "https://pohafix.com/shop",
+                        "priceCurrency": "INR",
+                        "price": "189",
+                        "availability": "https://schema.org/InStock"
+                      },
+                      "aggregateRating": {
+                        "@type": "AggregateRating",
+                        "ratingValue": "4.9",
+                        "reviewCount": "6358"
+                      }
+                    }
+                    `}
+                </script>
+            </Helmet>
             <Header />
 
             <main className="flex-1">
@@ -624,6 +657,49 @@ const Home = () => {
                         >
                             Order Now
                         </Link>
+                    </div>
+                </section>
+
+                {/* SEO Knowledge Hub - The "Crazy" Part */}
+                <section className="py-20 bg-surface-container-lowest border-t border-outline-variant/10">
+                    <div className="max-w-7xl mx-auto px-6">
+                        <div className="grid grid-cols-1 lg:grid-cols-3 gap-16">
+                            <div className="space-y-6">
+                                <h3 className="font-headline text-2xl font-black text-primary uppercase">The Instant Poha Guide</h3>
+                                <p className="text-on-surface-variant text-sm leading-relaxed">
+                                    Looking for the best **instant breakfast option**? Pohafix offers a premium **ready to use poha** that retains the authentic texture of Indore. Our process ensures that you get a healthy, **organic** alternative to processed snacks.
+                                </p>
+                            </div>
+                            <div className="space-y-6">
+                                <h3 className="font-headline text-2xl font-black text-primary uppercase">Authentic Indori Taste</h3>
+                                <p className="text-on-surface-variant text-sm leading-relaxed">
+                                    Why is **Indori Poha** world-famous? It's the balance of Jeeravan spices, Ratlami Sev, and the steaming technique. With Pohafix, we've automated this heritage so you can enjoy **ready to use Indori Poha** anywhere in the world.
+                                </p>
+                            </div>
+                            <div className="space-y-6">
+                                <h3 className="font-headline text-2xl font-black text-primary uppercase">Healthy & Organic Choice</h3>
+                                <p className="text-on-surface-variant text-sm leading-relaxed">
+                                    In a world of chemical preservatives, Pohafix stands out as an **organic**-first brand. We use high-quality flattened rice and natural spices, making it the perfect **breakfast option** for fitness enthusiasts and busy professionals.
+                                </p>
+                            </div>
+                        </div>
+                        
+                        {/* Keyword Cloud for Search Engines */}
+                        <div className="mt-20 pt-10 border-t border-outline-variant/5">
+                            <h4 className="font-label text-[10px] font-bold uppercase tracking-widest text-on-surface-variant/40 mb-6">Popular Search Topics</h4>
+                            <div className="flex flex-wrap gap-x-6 gap-y-3 text-[11px] font-medium text-on-surface-variant/60 uppercase tracking-tighter">
+                                <span>#InstantPohaIndore</span>
+                                <span>#ReadyToEatPoha</span>
+                                <span>#OrganicBreakfastIndia</span>
+                                <span>#IndoriZaykaOnline</span>
+                                <span>#BestPohaBrand</span>
+                                <span>#HealthyMorningRitual</span>
+                                <span>#RatlamiSevPoha</span>
+                                <span>#JeeravanMasalaPoha</span>
+                                <span>#SarafaBazaarIndore</span>
+                                <span>#QuickPohaRecipe</span>
+                            </div>
+                        </div>
                     </div>
                 </section>
             </main>

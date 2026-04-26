@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Link, useSearchParams } from 'react-router-dom';
 import { motion, AnimatePresence } from 'framer-motion';
+import { Helmet } from 'react-helmet-async';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
 
@@ -46,6 +47,11 @@ const Shop = () => {
 
     return (
         <>
+            <Helmet>
+                <title>Buy Organic Instant Poha | Ready to Use Indori Poha - Pohafix Shop</title>
+                <meta name="description" content="Shop organic, preservative-free ready to use Indori Poha. Best quick breakfast option for health-conscious people. Order your Pohafix bundle today." />
+                <meta name="keywords" content="buy organic poha, organic instant poha, ready to use indori breakfast, order pohafix online, preservative free poha" />
+            </Helmet>
             <Header />
             <main className="pt-24 lg:pt-32 pb-20 bg-background selection:bg-primary/10">
                 {/* Main Product Stage */}

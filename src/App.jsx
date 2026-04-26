@@ -8,6 +8,7 @@ import BlogPost from './pages/BlogPost';
 import Shop from './pages/Shop';
 import About from './pages/About';
 import ThankYou from './pages/ThankYou';
+import Admin from './pages/Admin';
 
 function App() {
   return (
@@ -21,6 +22,7 @@ function App() {
       <Route path="/blog" element={<Blog />} />
       <Route path="/blog/:slug" element={<BlogPost />} />
       <Route path="/thank-you" element={<ThankYou />} />
+      <Route path="/admin" element={<Admin />} />
       <Route path="*" element={<Home />} />
     </Routes>
   );

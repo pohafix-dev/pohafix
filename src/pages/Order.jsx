@@ -79,7 +79,26 @@ const Order = () => {
             description: `Order for ${currentPack.title}`,
             image: "/logo.png",
             handler: function (response) {
-                alert(`SUCCESS! Payment ID: ${response.razorpay_payment_id}. Your PohaFix is starting its journey.`);
+                const orderDetails = {
+                    orderId: response.razorpay_payment_id,
+                    date: new Date().toLocaleString(),
+                    product: currentPack.title,
+                    amount: currentPack.price,
+                    customer: formData
+                };
+
+                // Send to Google Sheet
+                fetch('https://script.google.com/macros/s/AKfycby54TL10GgbBF7BNTmxazYfGuHvCMjrEeUwA5qk0Nk1uOCj5NBQnPvv8amqtK0zm3DK/exec', {
+                    method: 'POST',
+                    mode: 'no-cors',
+                    cache: 'no-cache',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify(orderDetails)
+                });
+
+                navigate('/thank-you', { state: { order: orderDetails } });
             },
             prefill: {
                 name: formData.name,

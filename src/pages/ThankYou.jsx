@@ -1,9 +1,11 @@
 import React, { useEffect } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
 
 const ThankYou = () => {
+    const location = useLocation();
+    const order = location.state?.order;
     useEffect(() => {
         window.scrollTo(0, 0);
     }, []);
@@ -68,7 +70,7 @@ const ThankYou = () => {
                             <div className="grid grid-cols-2 gap-6">
                                 <div>
                                     <p className="text-[10px] font-label font-bold uppercase tracking-tighter text-on-surface-variant/60 mb-1">Receipt ID</p>
-                                    <p className="font-headline font-bold text-xl text-on-surface">#PFX-{Math.floor(100000 + Math.random() * 900000)}</p>
+                                    <p className="font-headline font-bold text-xl text-on-surface">{order ? `#${order.orderId}` : `#PFX-${Math.floor(100000 + Math.random() * 900000)}`}</p>
                                 </div>
                                 <div>
                                     <p className="text-[10px] font-label font-bold uppercase tracking-tighter text-on-surface-variant/60 mb-1">Estimated Arrival</p>
