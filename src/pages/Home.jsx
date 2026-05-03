@@ -229,92 +229,18 @@ const Home = () => {
 
             <main className="flex-1">
                 {/* Hero Section */}
-                <section className="relative min-h-[921px] flex items-center overflow-hidden bg-surface">
-                    <div className="absolute inset-0 z-0">
-                        <img alt="Indore Street" className="w-full h-full object-cover opacity-20 grayscale brightness-50" data-alt="Blurred, atmospheric night view of Sarafa Bazaar Indore with warm street lights and historic architecture bokeh" src="https://lh3.googleusercontent.com/aida-public/AB6AXuASSLwDz51eJkm7d0B6sAIZZ80lu-apFrOBDhI6cNVzeXZYuOvGDi6uBaJ5z-lc9G9ucsaAx-P6JfMjfCbO0H9kH0MRWOp2CD9oPVrJNS8k4IjpQycKW0hxScNZvUTa6wkEn5U6TIGnk8GkBZ7j9I3hha1rbLkxyfTh8FTCA4GJ__-CfBGi6f7iJigwN_Rj5ZXAdHDmNYS60RqgowG8uCohCk0-du38KgcSBdqsUICVlISqh7pkyTUvkH-hg1Xjvbpx8TnNsEkbmEE" />
-                        <div className="absolute inset-0 bg-gradient-to-t from-background via-transparent to-transparent"></div>
-                    </div>
-                    <div className="container mx-auto px-6 grid md:grid-cols-2 gap-12 items-center relative z-10 py-12 md:py-0">
-                        <div className="space-y-6">
-                            <div className="inline-block px-3 py-1 bg-secondary-container text-on-secondary-container rounded-sm text-xs font-bold tracking-widest uppercase mb-4">
-                                Breakfast Revolution
-                            </div>
-                            <h1 className="text-4xl md:text-8xl font-black font-headline text-on-background leading-tight">
-                                Authentic Indori Poha in <span className="text-primary italic">5 Minutes</span>
-                            </h1>
-                            <p className="text-xl md:text-4xl font-hindi text-primary-container font-medium opacity-90">
-                                इंदौर का स्वाद, अब कहीं भी
-                            </p>
-
-                            {/* Mobile Product Image - Max Impact */}
-                            <div className="md:hidden relative group my-2 -mx-2">
-                                <div className="absolute -top-4 -left-4 text-7xl font-hindi hindi-layer rotate-[-15deg] opacity-40 z-0">ताज़ा</div>
-                                <div className="absolute -bottom-4 -right-4 text-7xl font-hindi hindi-layer rotate-[15deg] opacity-40 z-0">ज़ायका</div>
-                                <div className="relative bg-surface/30 rounded-[2.5rem] shadow-none overflow-hidden aspect-square flex items-center justify-center p-0">
-                                    {slides.map((slide, index) => (
-                                        <img 
-                                            key={slide + "-mobile"}
-                                            src={slide}
-                                            alt={`Pohafix Box ${index + 1}`}
-                                            className={`absolute inset-0 w-full h-full object-contain scale-110 transition-opacity duration-1000 ${index === currentSlide ? 'opacity-100 z-10' : 'opacity-0 z-0'}`} 
-                                        />
-                                    ))}
-                                    <div className="absolute bottom-6 flex gap-2 z-20">
-                                        {slides.map((_, i) => (
-                                            <div key={i} className={`w-2 h-0.5 rounded-full ${i === currentSlide ? 'bg-primary w-6' : 'bg-stone-300'}`} />
-                                        ))}
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div className="flex items-center gap-6 pt-4">
-                                <Link to="/shop" className="bg-primary text-on-primary px-6 md:px-10 py-3 md:py-4 rounded-md font-bold text-base md:text-lg hover:bg-primary-container transition-all shadow-xl shadow-primary/30 flex items-center gap-2 group whitespace-nowrap">
-                                    Order Now
-                                    <span className="material-symbols-outlined group-hover:translate-x-1 transition-transform text-sm md:text-base">arrow_forward</span>
-                                </Link>
-                                <div className="flex -space-x-3 flex-shrink-0">
-                                    <div className="w-8 h-8 md:w-10 md:h-10 rounded-full border-2 border-surface bg-gray-200 overflow-hidden">
-                                        <img alt="User" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDZMaD6NT3vB_C-xOnrq1ryqINMVeb6wn3HYk5ThDJxt-JGh62pDrANAzOpMMk5RVmPxOkdRFaRWYXY7cPvowij1L0ic-p6OELBNR69a3K3jF-4j019-5X7traThh-8Du_0bOn1BX8kKv-4nj-wK7TS_P_A7r2N-OHVEHif7tAd2VUAELbDIL8tGPd9eCI4pQD59D3fwXU4ec0pWQqNhwhuOMhdl0DX1P3AM-l36nFV6TpN3n7Lgbln2FHQxObWMlEAoHPCuhSAY9Y" />
-                                    </div>
-                                    <div className="w-8 h-8 md:w-10 md:h-10 rounded-full border-2 border-surface bg-gray-200 overflow-hidden">
-                                        <img alt="User" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBy8kUtbzsBmwIUTAO7fyxffDumGLIoJNV29LC8wixog09vBBgzG6uVlv6oC5pIAzof5Sd2jBhJfdOoUFRrZhGCAptFgWgPgiTijl_UFVIog1d0F1LOZV7NreMZCoWBhuLAaIrMUt3NtwQYQDE40VD54dHg7cOilkFJ1Z6xjstpgTpyLkINEyU0C9rPz3nHUTX-TYbUzMwgJjG8ajSm4lxGOl5hQD6kdFh_nGsx7fwnF7ZtZrlgAAKxBQCawJHG8DrKwFf6dHAcnc0" />
-                                    </div>
-                                    <div className="w-8 h-8 md:w-10 md:h-10 rounded-full border-2 border-surface bg-primary flex items-center justify-center text-[8px] md:text-[10px] text-white font-bold">
-                                        10k+
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                        {/* Desktop Product Content (Hidden on Mobile) */}
-                        <div className="hidden md:block relative group">
-                            <div className="absolute -top-10 -left-10 text-9xl font-hindi hindi-layer rotate-[-15deg]">ताज़ा</div>
-                            <div className="absolute -bottom-10 -right-10 text-9xl font-hindi hindi-layer rotate-[15deg]">ज़ायका</div>
-                            <div className="relative transform hover:scale-105 transition-transform duration-500 bg-surface-container-lowest rounded-[2rem] shadow-2xl overflow-hidden aspect-[4/5] flex items-center justify-center p-8">
-                                {slides.map((slide, index) => (
-                                    <img 
-                                        key={slide + "-desktop"}
-                                        src={slide}
-                                        alt={`Pohafix Box ${index + 1}`}
-                                        className={`absolute inset-0 w-full h-full object-contain transition-opacity duration-1000 ${index === currentSlide ? 'opacity-100 z-10' : 'opacity-0 z-0'}`} 
-                                    />
-                                ))}
-                                <div className="absolute top-12 -right-4 bg-surface-container-lowest p-3 rounded-xl shadow-lg rotate-12 max-w-[140px] z-20">
-                                    <p className="font-headline font-bold text-xs">Authentic Retained</p>
-                                    <p className="font-headline font-bold text-[10px] mt-1 text-on-surface-variant">Extra Sev &amp; Pomegranate Included</p>
-                                </div>
-                                <div className="absolute bottom-8 flex gap-3 z-20">
-                                    {slides.map((_, i) => (
-                                        <button 
-                                            key={i} 
-                                            onClick={() => setCurrentSlide(i)}
-                                            className={`w-2 h-2 rounded-full transition-all ${i === currentSlide ? 'bg-primary w-8' : 'bg-outline-variant/30'}`} 
-                                        />
-                                    ))}
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+                <section className="relative w-full overflow-hidden bg-[#a30f14]">
+                    <Link to="/shop" className="block w-full">
+                        <img 
+                            src="/new-hero-banner.jpg" 
+                            alt="Authentic Indori Poha - Ready in 5 Minutes" 
+                            className="w-full h-auto object-cover min-h-[40vh] md:min-h-0" 
+                            onError={(e) => {
+                                e.target.onerror = null;
+                                e.target.src = "/hero.png"; // Fallback to old hero if new one isn't uploaded yet
+                            }}
+                        />
+                    </Link>
                 </section>
 
                 {/* Global Appeal Section */}
