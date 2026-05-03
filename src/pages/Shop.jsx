@@ -11,6 +11,7 @@ const Shop = () => {
     const planFromUrl = parseInt(searchParams.get('plan'));
     const [selectedPlan, setSelectedPlan] = useState(isNaN(planFromUrl) ? 0 : planFromUrl);
     const [qty, setQty] = useState(1);
+    const [openFaq, setOpenFaq] = useState(null);
 
     const plans = [
         {
@@ -371,6 +372,71 @@ const Shop = () => {
                             </div>
                             <span className="material-symbols-outlined text-black/20 text-6xl hidden md:block">nutrition</span>
                         </div>
+                    </div>
+                </div>
+            </section>
+
+            {/* FAQ Section */}
+            <section className="py-24 max-w-4xl mx-auto px-6">
+                <h2 className="text-3xl md:text-4xl font-black font-headline text-center mb-12 tracking-tight">
+                    Frequently Asked <span className="text-primary">Questions</span>
+                </h2>
+                <div className="space-y-4">
+                    {[
+                        { q: "What makes PohaFix Instant Poha unique?", a: "PohaFix is crafted with authentic Malwa rice flakes and our signature Jeeravan spice mix. Unlike others, we use absolutely zero laboratory stabilizers, artificial flavors, or MSG—just pure, traditional ingredients." },
+                        { q: "How should I store the poha for maximum freshness?", a: "Since our product is 100% natural, please store it in a cool, dry place away from direct sunlight. Once opened, ensure the inner packs remain sealed." },
+                        { q: "How many plates of poha can I make from a 300g pack?", a: "A single 300g box contains 5 individual sachets (60g each), which yields 5 generous single-serving plates of delicious Indori poha." },
+                        { q: "Is this poha blend 100% natural?", a: "Yes! We pride ourselves on a 100% clean ingredient profile. We use high-quality flattened rice, natural spices, and premium soy oil. No chemicals involved." }
+                    ].map((faq, idx) => (
+                        <div key={idx} className="border-b border-black/10 pb-4">
+                            <button 
+                                onClick={() => setOpenFaq(openFaq === idx ? null : idx)}
+                                className="w-full flex justify-between items-center text-left font-headline font-bold text-lg text-black hover:text-primary transition-colors py-2"
+                            >
+                                <span>{faq.q}</span>
+                                <span className={`material-symbols-outlined transform transition-transform ${openFaq === idx ? 'rotate-180 text-primary' : 'text-primary'}`}>
+                                    expand_more
+                                </span>
+                            </button>
+                            <AnimatePresence>
+                                {openFaq === idx && (
+                                    <motion.div 
+                                        initial={{ height: 0, opacity: 0 }}
+                                        animate={{ height: "auto", opacity: 1 }}
+                                        exit={{ height: 0, opacity: 0 }}
+                                        className="overflow-hidden"
+                                    >
+                                        <p className="pt-3 text-black/70 font-medium leading-relaxed pb-2">
+                                            {faq.a}
+                                        </p>
+                                    </motion.div>
+                                )}
+                            </AnimatePresence>
+                        </div>
+                    ))}
+                </div>
+            </section>
+
+            {/* Loved By Millions */}
+            <section className="py-24 bg-[#fef9f0]">
+                <div className="max-w-7xl mx-auto px-6 text-center">
+                    <div className="mb-16">
+                        <h3 className="text-4xl text-primary -mb-4 relative z-10" style={{fontFamily: "'Brush Script MT', 'Comic Sans MS', cursive"}}>Loved By</h3>
+                        <h2 className="text-6xl md:text-8xl font-black font-headline text-black tracking-tighter uppercase leading-none">MILLIONS</h2>
+                        <p className="text-black/60 font-medium mt-4">India's fastest growing instant breakfast brand!</p>
+                    </div>
+                    
+                    <div className="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-6">
+                        {[
+                            "/hero.png",
+                            "/thela-v2.png",
+                            "/box-front.png",
+                            "/box-group.png"
+                        ].map((img, idx) => (
+                            <div key={idx} className="aspect-square rounded-3xl overflow-hidden bg-white shadow-xl hover:scale-105 transition-transform duration-300">
+                                <img src={img} alt="PohaFix Fan" className="w-full h-full object-cover" />
+                            </div>
+                        ))}
                     </div>
                 </div>
             </section>
