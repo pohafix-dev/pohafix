@@ -422,17 +422,17 @@ const Shop = () => {
             <section className="py-24 bg-[#fef9f0]">
                 <div className="max-w-7xl mx-auto px-6 text-center">
                     <div className="mb-16">
-                        <h3 className="text-4xl text-primary -mb-4 relative z-10" style={{fontFamily: "'Brush Script MT', 'Comic Sans MS', cursive"}}>Loved By</h3>
-                        <h2 className="text-6xl md:text-8xl font-black font-headline text-black tracking-tighter uppercase leading-none">MILLIONS</h2>
+                        <h3 className="text-4xl text-primary -mb-4 relative z-10" style={{fontFamily: "'Brush Script MT', 'Comic Sans MS', cursive"}}>Indori Poha</h3>
+                        <h2 className="text-6xl md:text-8xl font-black font-headline text-black tracking-tighter uppercase leading-none">Loved By MILLIONS</h2>
                         <p className="text-black/60 font-medium mt-4">India's fastest growing instant breakfast brand!</p>
                     </div>
                     
                     <div className="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-6">
                         {[
-                            "/hero.webp",
-                            "/thela-v2.webp",
-                            "/box-front.webp",
-                            "/box-group.webp"
+                            "/loved-1.webp",
+                            "/diljit.webp",
+                            "/loved-2.webp",
+                            "/david.webp"
                         ].map((img, idx) => (
                             <div key={idx} className="aspect-square rounded-3xl overflow-hidden bg-white shadow-xl hover:scale-105 transition-transform duration-300">
                                 <img src={img} alt="PohaFix Fan" className="w-full h-full object-cover" />
