@@ -207,8 +207,8 @@ const Shop = () => {
                       },
                       "aggregateRating": {
                         "@type": "AggregateRating",
-                        "ratingValue": "4.9",
-                        "reviewCount": "1200"
+                        "ratingValue": "4.4",
+                        "reviewCount": "858"
                       }
                     }
                     `}
@@ -269,14 +269,14 @@ const Shop = () => {
                                     {currentPlan.subtitle}
                                 </p>
                                 <div className="flex items-center gap-2">
-                                    <div className="flex text-[#fcc92f]">
+                                    <div className="flex text-primary">
                                         <span className="material-symbols-outlined" style={{ fontVariationSettings: "'FILL' 1" }}>star</span>
                                         <span className="material-symbols-outlined" style={{ fontVariationSettings: "'FILL' 1" }}>star</span>
                                         <span className="material-symbols-outlined" style={{ fontVariationSettings: "'FILL' 1" }}>star</span>
                                         <span className="material-symbols-outlined" style={{ fontVariationSettings: "'FILL' 1" }}>star</span>
-                                        <span className="material-symbols-outlined" style={{ fontVariationSettings: "'FILL' 1" }}>star_half</span>
+                                        <span className="material-symbols-outlined" style={{ fontVariationSettings: "'FILL' 0.4" }}>star</span>
                                     </div>
-                                    <span className="text-sm font-medium text-black/60">4.9 (1,240 reviews)</span>
+                                    <span className="text-sm font-medium text-black/60">4.4 (858 reviews)</span>
                                 </div>
                             </div>
 
