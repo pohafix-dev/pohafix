@@ -533,11 +533,11 @@ const Shop = () => {
                     
                     <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-7 gap-4 md:gap-6">
                         {[
-                            "/loved-1.webp",
-                            "/loved-2.webp",
-                            "/loved-3.webp",
-                            "/loved-4.webp",
-                            "/loved-5.webp",
+                            "/customer-1.webp",
+                            "/customer-2.webp",
+                            "/customer-3.webp",
+                            "/customer-4.webp",
+                            "/customer-5.webp",
                             "/diljit.webp",
                             "/david.webp"
                         ].map((img, idx) => (
