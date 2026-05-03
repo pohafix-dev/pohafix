@@ -64,7 +64,7 @@ const Home = () => {
     return (
         <div className="bg-background text-on-surface font-body selection:bg-secondary-container selection:text-on-secondary-container flex flex-col min-h-screen">
             <Helmet>
-                <title>PohaFix | Buy Instant Poha Online | Ready in 5 Minutes</title>
+                <title>Buy Instant Poha | Ready to Eat Indori Poha | PohaFix</title>
                 <meta name="description" content="Buy instant poha online. PohaFix is the best healthy instant breakfast in India. Ready to eat poha without cooking—just add hot water. Perfect office snack poha, 100% natural." />
                 <meta name="keywords" content="instant poha online, ready to eat poha, poha in 5 minutes, healthy instant breakfast india, poha without cooking, office snack poha, पोहा ऑनलाइन खरीदें, इंस्टेंट पोहा" />
                 
@@ -97,8 +97,8 @@ const Home = () => {
                       },
                       "aggregateRating": {
                         "@type": "AggregateRating",
-                        "ratingValue": "4.9",
-                        "reviewCount": "6358"
+                        "ratingValue": "4.4",
+                        "reviewCount": "858"
                       }
                     }
                     `}

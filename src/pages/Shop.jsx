@@ -707,9 +707,9 @@ const Shop = () => {
     return (
         <>
             <Helmet>
-                <title>Buy Jain Instant Poha | No Onion No Garlic Indori Poha | Jain's Ultimate Choice</title>
-                <meta name="description" content="Shop 100% Onion-Free and Garlic-Free ready to eat Indori Poha. The ultimate Jain choice—preservative-free and naturally sourced. Perfect for travel and daily breakfast." />
-                <meta name="keywords" content="Jain Poha, No Onion No Garlic Indori Poha, buy organic poha, travel food india, instant meals for students abroad, Jain friendly breakfast, ready to eat indori breakfast, Jains ultimate choice" />
+                <title>Buy Instant Poha | Ready to Eat Indori Poha | PohaFix</title>
+                <meta name="description" content="Shop 100% Onion-Free and Garlic-Free ready to eat Indori Poha. Premium Indori taste—preservative-free and naturally sourced. Perfect for travel and daily breakfast." />
+                <meta name="keywords" content="Instant Poha, buy organic poha, travel food india, No Onion No Garlic Indori Poha, instant meals for students abroad, Jain friendly breakfast, ready to eat indori breakfast, Jains ultimate choice" />
                 
                 {/* Product Schema for Shop */}
                 <script type="application/ld+json">
