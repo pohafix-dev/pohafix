@@ -243,85 +243,6 @@ const Home = () => {
                     </div>
                 </section>
 
-                {/* Global Appeal Section */}
-                <section className="py-12 md:py-24 bg-surface-container-low overflow-hidden">
-                    <div className="container mx-auto px-6">
-                        <div className="flex flex-col md:flex-row items-center gap-16">
-                            <div className="w-full md:w-1/2 relative">
-                                {/* Mobile: Swippable Carousel | Desktop: Layered Stack */}
-                                <div className="block md:hidden">
-                                    <div className="flex overflow-x-auto snap-x snap-mandatory gap-6 no-scrollbar pb-8 px-4">
-                                        {[
-                                            { id: 1, img: "/diljit.jpg", caption: "DILJIT LOVES IT", rotate: "-rotate-2" },
-                                            { id: 2, img: "/david.jpg", caption: "STREET SIDE STORY", rotate: "rotate-2" }
-                                        ].map((p) => (
-                                            <div key={p.id} className="min-w-[85%] snap-center">
-                                                <div className={`bg-white shadow-2xl border-8 border-white p-2 aspect-[4/5] relative ${p.rotate}`}>
-                                                    <img src={p.img} alt={p.caption} className="w-full h-full object-cover" />
-                                                    <p className="absolute bottom-4 left-4 bg-primary text-white text-[10px] px-3 py-1 font-black uppercase tracking-widest">{p.caption}</p>
-                                                </div>
-                                            </div>
-                                        ))}
-                                    </div>
-                                    <div className="flex justify-center gap-2 mt-4">
-                                        <div className="w-8 h-1 bg-primary rounded-full"></div>
-                                        <div className="w-4 h-1 bg-gray-300 rounded-full"></div>
-                                    </div>
-                                </div>
-
-                                {/* Desktop Stacked View */}
-                                <div className="hidden md:flex justify-center">
-                                    <div className="relative w-full max-w-md aspect-square lg:scale-110">
-                                        <div className="absolute top-0 left-0 w-64 h-80 bg-surface-variant rotate-[-6deg] shadow-lg overflow-hidden border-8 border-white p-2 hover:rotate-0 hover:z-20 transition-all duration-300 cursor-pointer group">
-                                            <img alt="Diljit Poha" className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" src="/diljit.jpg" />
-                                            <p className="absolute bottom-4 left-4 bg-primary text-white text-[10px] px-2 py-1 font-bold">DILJIT LOVES IT</p>
-                                        </div>
-                                        <div className="absolute bottom-0 right-0 w-64 h-80 bg-surface-variant rotate-[8deg] shadow-xl overflow-hidden border-8 border-white p-2 hover:rotate-0 hover:z-20 transition-all duration-300 cursor-pointer group">
-                                            <img alt="David Poha" className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" src="/david.jpg" />
-                                            <p className="absolute bottom-4 left-4 bg-primary text-white text-[10px] px-2 py-1 font-bold">STREET SIDE STORY</p>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div className="w-full md:w-1/2 space-y-6">
-                                <h2 className="text-5xl font-black font-headline text-on-surface leading-[1.1] tracking-tighter uppercase md:normal-case">
-                                    From the streets of Indore <br className="hidden md:block"/><span className="text-primary italic">to the world.</span>
-                                </h2>
-                                <p className="text-xl text-on-surface-variant leading-relaxed font-medium">
-                                    Whether it's the backstage of a global concert or the quiet halls of diplomacy, the taste of Malwa finds its way. Loved by everyone who seeks the warmth of a home-cooked morning.
-                                </p>
-                                <div className="pt-4 flex gap-4">
-                                    <span className="material-symbols-outlined text-primary text-4xl" style={{ fontVariationSettings: "'FILL' 1" }}>stars</span>
-                                    <span className="material-symbols-outlined text-primary text-4xl" style={{ fontVariationSettings: "'FILL' 1" }}>stars</span>
-                                    <span className="material-symbols-outlined text-primary text-4xl" style={{ fontVariationSettings: "'FILL' 1" }}>stars</span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </section>
-
-                {/* Nostalgia Section */}
-                <section className="relative py-20 lg:py-48 overflow-hidden flex items-center bg-[#1d1c16]">
-                    <div className="absolute inset-0 z-0">
-                        <img alt="Sarafa Bazaar Indore" className="w-full h-full object-cover opacity-40 grayscale" src="/sarafa-bg.jpg" />
-                        <div className="absolute inset-0 bg-black/60"></div>
-                        <div className="absolute inset-0 bg-gradient-to-r from-black/80 via-black/50 to-transparent"></div>
-                    </div>
-                    <div className="container mx-auto px-6 relative z-10">
-                        <div className="max-w-3xl border-l-[6px] border-[#af101a] pl-8 md:pl-12 py-2">
-                            <h2 className="text-5xl md:text-7xl font-black font-headline text-white leading-tight mb-6 tracking-tight">
-                                Indore ki galiyon se <br/> inspired.
-                            </h2>
-                            <p className="text-xl md:text-2xl text-gray-300 font-medium leading-relaxed mb-8 max-w-xl">
-                                Same taste, same feeling. We didn't just bottle<br className="hidden md:block" /> the recipe, we bottled the nostalgia of 7:00 AM<br className="hidden md:block" /> at the street corner.
-                            </p>
-                            <p className="text-7xl md:text-9xl font-hindi text-white/10 font-bold tracking-wider mt-4">
-                                सराफ़ा बाज़ार
-                            </p>
-                        </div>
-                    </div>
-                </section>
-
                 {/* Product Combos - Mobile Grid / Desktop Carousel */}
                 <section className="py-12 md:py-24 bg-[#fef9f0] relative overflow-hidden">
                     <div className="container mx-auto px-4 md:px-6">
@@ -422,6 +343,87 @@ const Home = () => {
                         </div>
                     </div>
                 </section>
+
+                {/* Global Appeal Section */}
+                <section className="py-12 md:py-24 bg-surface-container-low overflow-hidden">
+                    <div className="container mx-auto px-6">
+                        <div className="flex flex-col md:flex-row items-center gap-16">
+                            <div className="w-full md:w-1/2 relative">
+                                {/* Mobile: Swippable Carousel | Desktop: Layered Stack */}
+                                <div className="block md:hidden">
+                                    <div className="flex overflow-x-auto snap-x snap-mandatory gap-6 no-scrollbar pb-8 px-4">
+                                        {[
+                                            { id: 1, img: "/diljit.jpg", caption: "DILJIT LOVES IT", rotate: "-rotate-2" },
+                                            { id: 2, img: "/david.jpg", caption: "STREET SIDE STORY", rotate: "rotate-2" }
+                                        ].map((p) => (
+                                            <div key={p.id} className="min-w-[85%] snap-center">
+                                                <div className={`bg-white shadow-2xl border-8 border-white p-2 aspect-[4/5] relative ${p.rotate}`}>
+                                                    <img src={p.img} alt={p.caption} className="w-full h-full object-cover" />
+                                                    <p className="absolute bottom-4 left-4 bg-primary text-white text-[10px] px-3 py-1 font-black uppercase tracking-widest">{p.caption}</p>
+                                                </div>
+                                            </div>
+                                        ))}
+                                    </div>
+                                    <div className="flex justify-center gap-2 mt-4">
+                                        <div className="w-8 h-1 bg-primary rounded-full"></div>
+                                        <div className="w-4 h-1 bg-gray-300 rounded-full"></div>
+                                    </div>
+                                </div>
+
+                                {/* Desktop Stacked View */}
+                                <div className="hidden md:flex justify-center">
+                                    <div className="relative w-full max-w-md aspect-square lg:scale-110">
+                                        <div className="absolute top-0 left-0 w-64 h-80 bg-surface-variant rotate-[-6deg] shadow-lg overflow-hidden border-8 border-white p-2 hover:rotate-0 hover:z-20 transition-all duration-300 cursor-pointer group">
+                                            <img alt="Diljit Poha" className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" src="/diljit.jpg" />
+                                            <p className="absolute bottom-4 left-4 bg-primary text-white text-[10px] px-2 py-1 font-bold">DILJIT LOVES IT</p>
+                                        </div>
+                                        <div className="absolute bottom-0 right-0 w-64 h-80 bg-surface-variant rotate-[8deg] shadow-xl overflow-hidden border-8 border-white p-2 hover:rotate-0 hover:z-20 transition-all duration-300 cursor-pointer group">
+                                            <img alt="David Poha" className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" src="/david.jpg" />
+                                            <p className="absolute bottom-4 left-4 bg-primary text-white text-[10px] px-2 py-1 font-bold">STREET SIDE STORY</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div className="w-full md:w-1/2 space-y-6">
+                                <h2 className="text-5xl font-black font-headline text-on-surface leading-[1.1] tracking-tighter uppercase md:normal-case">
+                                    From the streets of Indore <br className="hidden md:block"/><span className="text-primary italic">to the world.</span>
+                                </h2>
+                                <p className="text-xl text-on-surface-variant leading-relaxed font-medium">
+                                    Whether it's the backstage of a global concert or the quiet halls of diplomacy, the taste of Malwa finds its way. Loved by everyone who seeks the warmth of a home-cooked morning.
+                                </p>
+                                <div className="pt-4 flex gap-4">
+                                    <span className="material-symbols-outlined text-primary text-4xl" style={{ fontVariationSettings: "'FILL' 1" }}>stars</span>
+                                    <span className="material-symbols-outlined text-primary text-4xl" style={{ fontVariationSettings: "'FILL' 1" }}>stars</span>
+                                    <span className="material-symbols-outlined text-primary text-4xl" style={{ fontVariationSettings: "'FILL' 1" }}>stars</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                {/* Nostalgia Section */}
+                <section className="relative py-20 lg:py-48 overflow-hidden flex items-center bg-[#1d1c16]">
+                    <div className="absolute inset-0 z-0">
+                        <img alt="Sarafa Bazaar Indore" className="w-full h-full object-cover opacity-40 grayscale" src="/sarafa-bg.jpg" />
+                        <div className="absolute inset-0 bg-black/60"></div>
+                        <div className="absolute inset-0 bg-gradient-to-r from-black/80 via-black/50 to-transparent"></div>
+                    </div>
+                    <div className="container mx-auto px-6 relative z-10">
+                        <div className="max-w-3xl border-l-[6px] border-[#af101a] pl-8 md:pl-12 py-2">
+                            <h2 className="text-5xl md:text-7xl font-black font-headline text-white leading-tight mb-6 tracking-tight">
+                                Indore ki galiyon se <br/> inspired.
+                            </h2>
+                            <p className="text-xl md:text-2xl text-gray-300 font-medium leading-relaxed mb-8 max-w-xl">
+                                Same taste, same feeling. We didn't just bottle<br className="hidden md:block" /> the recipe, we bottled the nostalgia of 7:00 AM<br className="hidden md:block" /> at the street corner.
+                            </p>
+                            <p className="text-7xl md:text-9xl font-hindi text-white/10 font-bold tracking-wider mt-4">
+                                सराफ़ा बाज़ार
+                            </p>
+                        </div>
+                    </div>
+                </section>
+
+
 
                 {/* Features & Why It Matters Section */}
                 <div className="bg-[#fcfaf5] py-12 md:py-8 font-body relative overflow-hidden" id="features">
