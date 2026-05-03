@@ -15,7 +15,7 @@ const Shop = () => {
     const plans = [
         {
             id: 0,
-            name: "THE STARTER PACK",
+            name: "Pohafix instant poha 300 Gram Pack",
             subtitle: "Premium Ready-to-Eat Indori Poha",
             description: "1 Full 300g Box (5 Individual Packs)",
             price: 189,
@@ -28,7 +28,7 @@ const Shop = () => {
         },
         {
             id: 1,
-            name: "THE REBEL BUNDLE",
+            name: "Pohafix instant poha 300 gram *2 - 600 gram pack",
             subtitle: "Double the Poha, Double the Fun",
             description: "2 Full 300g Boxes (600g Total)",
             price: 290,
@@ -41,7 +41,7 @@ const Shop = () => {
         },
         {
             id: 2,
-            name: "THE MYSTERY COMBO",
+            name: "Pohafix Instant poha 300 gram + Pure Home Made Testy Sev",
             subtitle: "Poha + Secret Authentic Sev",
             description: "1 Box 300g Pohafix + 1 Secret Sev (150g)",
             price: 290,

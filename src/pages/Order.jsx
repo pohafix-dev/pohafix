@@ -21,7 +21,7 @@ const Order = () => {
     const options = [
         {
             id: 1,
-            title: "THE STARTER PACK",
+            title: "Pohafix instant poha 300 Gram Pack",
             description: "1 Full 300g Box (5 Individual Packs)",
             price: 189,
             saving: "SAVE 0%",
@@ -30,7 +30,7 @@ const Order = () => {
         },
         {
             id: 2,
-            title: "THE REBEL BUNDLE",
+            title: "Pohafix instant poha 300 gram *2 - 600 gram pack",
             description: "2 Full 300g Boxes (600g Total)",
             price: 290,
             saving: "SAVE ₹88",
@@ -39,7 +39,7 @@ const Order = () => {
         },
         {
             id: 3,
-            title: "THE MYSTERY COMBO",
+            title: "Pohafix Instant poha 300 gram + Pure Home Made Testy Sev",
             description: "1 Box 300g Pohafix + 1 Secret Sev (150g)",
             price: 290,
             saving: "LIMITED",
