@@ -565,19 +565,19 @@ const Shop = () => {
                         <div className="text-center md:text-left">
                             <div className="flex items-center justify-center md:justify-start gap-1 mb-2">
                                 {[1,2,3,4].map(i => <span key={i} className="material-symbols-outlined text-primary" style={{fontVariationSettings: "'FILL' 1"}}>star</span>)}
-                                <span className="material-symbols-outlined text-primary" style={{fontVariationSettings: "'FILL' 0.1"}}>star</span>
+                                <span className="material-symbols-outlined text-primary" style={{fontVariationSettings: "'FILL' 0.4"}}>star</span>
                             </div>
-                            <div className="text-3xl font-black font-headline">4.10 out of 5</div>
-                            <div className="text-sm text-black/50 font-medium">Based on 330 reviews</div>
+                            <div className="text-3xl font-black font-headline">4.4 out of 5</div>
+                            <div className="text-sm text-black/50 font-medium">Based on 858 reviews</div>
                         </div>
                         
                         <div className="space-y-2">
                             {[
-                                {stars: 5, pct: 62, count: 204},
-                                {stars: 4, pct: 17, count: 57},
-                                {stars: 3, pct: 14, count: 45},
-                                {stars: 2, pct: 4, count: 14},
-                                {stars: 1, pct: 3, count: 10}
+                                {stars: 5, pct: 64, count: 549},
+                                {stars: 4, pct: 23, count: 198},
+                                {stars: 3, pct: 8, count: 69},
+                                {stars: 2, pct: 3, count: 26},
+                                {stars: 1, pct: 2, count: 16}
                             ].map((row) => (
                                 <div key={row.stars} className="flex items-center gap-4">
                                     <div className="flex gap-0.5 w-20">
@@ -670,7 +670,7 @@ const Shop = () => {
                                 <span className="text-black/40 font-black text-sm uppercase tracking-widest group-hover:text-primary transition-colors">View More Reviews</span>
                                 <span className="material-symbols-outlined text-black/20 group-hover:text-primary animate-bounce">expand_more</span>
                             </button>
-                            <p className="text-[10px] text-black/20 font-bold mt-4 uppercase tracking-widest">Showing {visibleReviews} of 330 Verified Reviews</p>
+                            <p className="text-[10px] text-black/20 font-bold mt-4 uppercase tracking-widest">Showing {visibleReviews} of 858 Verified Reviews</p>
                         </div>
                     )}
                 </div>
