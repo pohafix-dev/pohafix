@@ -23,8 +23,8 @@ const Shop = () => {
             originalPrice: 220,
             discount: "14% OFF",
             tag: "POPULAR",
-            image: "/box-front.png",
-            thumbnails: ["/box-front.png", "/box-left.png", "/box-right.png", "/ingredients-report.png"],
+            image: "/box-front.webp",
+            thumbnails: ["/box-front.webp", "/box-left.webp", "/box-right.webp", "/ingredients-report.webp"],
             features: ["5 Single Servings", "Jeeravan Spice Mix", "Ratlam Sev Included"]
         },
         {
@@ -36,8 +36,8 @@ const Shop = () => {
             originalPrice: 378,
             discount: "23% OFF",
             tag: "BEST VALUE",
-            image: "/combo-2box.png",
-            thumbnails: ["/combo-2box.png", "/box-group.png", "/box-front.png"],
+            image: "/combo-2box.webp",
+            thumbnails: ["/combo-2box.webp", "/box-group.webp", "/box-front.webp"],
             features: ["10 Single Servings", "2x Sev Packs", "Free Shipping"]
         },
         {
@@ -49,8 +49,8 @@ const Shop = () => {
             originalPrice: 350,
             discount: "17% OFF",
             tag: "LIMITED",
-            image: "/combo-sev.png",
-            thumbnails: ["/combo-sev.png", "/combo-single.png", "/box-front.png"],
+            image: "/combo-sev.webp",
+            thumbnails: ["/combo-sev.webp", "/combo-single.webp", "/box-front.webp"],
             features: ["5 Single Servings", "150g Extra Sev", "Premium Pomegranate"]
         }
     ];
@@ -85,7 +85,7 @@ const Shop = () => {
                       "@context": "https://schema.org/",
                       "@type": "Product",
                       "name": "Pohafix Instant Poha",
-                      "image": ["https://pohafix.com/box-front.png"],
+                      "image": ["https://pohafix.com/box-front.webp"],
                       "description": "Premium ready-to-use Indori Poha with authentic spices and Ratlami Sev. No preservatives. Ready in 5 minutes.",
                       "sku": "PF-ORIG-300",
                       "brand": {
@@ -127,6 +127,7 @@ const Shop = () => {
                                         transition={{ duration: 0.2 }}
                                         src={mainImage}
                                         alt={currentPlan.name}
+                                        fetchpriority="high"
                                         className="w-full h-full object-contain mix-blend-multiply drop-shadow-2xl transition-transform duration-500 group-hover:scale-105"
                                     />
                                 </AnimatePresence>

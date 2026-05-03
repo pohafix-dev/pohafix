@@ -26,7 +26,7 @@ const Order = () => {
             price: 189,
             saving: "SAVE 0%",
             badge: "POPULAR",
-            image: "/box-front.png"
+            image: "/box-front.webp"
         },
         {
             id: 2,
@@ -35,7 +35,7 @@ const Order = () => {
             price: 290,
             saving: "SAVE ₹88",
             badge: "BEST VALUE",
-            image: "/combo-2box.png"
+            image: "/combo-2box.webp"
         },
         {
             id: 3,
@@ -44,7 +44,7 @@ const Order = () => {
             price: 290,
             saving: "LIMITED",
             badge: "TASTE TEST",
-            image: "/combo-sev.png"
+            image: "/combo-sev.webp"
         }
     ];
 
@@ -79,7 +79,7 @@ const Order = () => {
             currency: "INR",
             name: "PohaFix | Synnc Foods",
             description: `Order for ${qty}x ${currentPack.title}`,
-            image: "/logo.png",
+            image: "/logo.webp",
             handler: function (response) {
                 const orderDetails = {
                     orderId: response.razorpay_payment_id,
@@ -274,7 +274,7 @@ const Order = () => {
                                     <div className="space-y-6 mb-8">
                                         <div className="flex gap-4 items-center">
                                             <div className="relative w-24 h-24 flex-shrink-0 bg-surface-container-low rounded-md overflow-hidden flex items-center justify-center p-2">
-                                                <img src={currentPack.image} alt="Indori Poha" className="w-full h-full object-contain" />
+                                                <img src={currentPack.image.replace(/\.(png|jpg)$/, '.webp')} alt="Selected Pack" className="w-full h-full object-contain mix-blend-multiply" loading="lazy" />
                                                 <div className="absolute top-1 right-1 bg-primary text-white text-[10px] font-bold px-1.5 py-0.5 rounded">x {qty}</div>
                                             </div>
                                             <div className="flex-grow">

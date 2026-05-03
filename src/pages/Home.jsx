@@ -10,10 +10,10 @@ const Home = () => {
     const [currentSlide, setCurrentSlide] = useState(0);
     const [bundleSlide, setBundleSlide] = useState(0);
     const slides = [
-        "/box-front.png",
-        "/box-right.png",
-        "/box-left.png",
-        "/box-group.png"
+        "/box-front.webp",
+        "/box-right.webp",
+        "/box-left.webp",
+        "/box-group.webp"
     ];
 
     const bundles = [
@@ -25,7 +25,7 @@ const Home = () => {
             price: 189,
             tag: "POPULAR",
             tagColor: "bg-[#716016]",
-            images: ["/combo-single.png"],
+            images: ["/combo-single.webp"],
             theme: "light"
         },
         {
@@ -37,7 +37,7 @@ const Home = () => {
             originalPrice: 378,
             tag: "SAVE ₹88",
             tagColor: "bg-[#af101a]",
-            images: ["/combo-2box.png"],
+            images: ["/combo-2box.webp"],
             theme: "dark"
         },
         {
@@ -48,7 +48,7 @@ const Home = () => {
             price: 290,
             tag: "LIMITED",
             tagColor: "bg-[#716016]",
-            images: ["/combo-sev.png"],
+            images: ["/combo-sev.webp"],
             theme: "dark"
         }
     ];
@@ -232,9 +232,11 @@ const Home = () => {
                 <section className="relative w-full overflow-hidden bg-[#a30f14]">
                     <Link to="/shop" className="block w-full">
                         <img 
-                            src="/new-hero-banner.png" 
+                            src="/new-hero-banner.webp" 
                             alt="Authentic Indori Poha" 
                             className="w-full h-auto object-contain block" 
+                            fetchpriority="high"
+                            loading="eager"
                         />
                     </Link>
                 </section>
@@ -332,7 +334,7 @@ const Home = () => {
                                 <div key={idx} className="bg-white rounded-[1.5rem] overflow-hidden shadow-[0_12px_40px_-10px_rgba(0,0,0,0.08)] border border-stone-100 flex flex-col">
                                     {/* Product Visual Header - Zero Blank Space */}
                                     <div className="bg-[#fcf7ec] aspect-[5/4] relative flex items-center justify-center p-0 overflow-hidden">
-                                        <img src={bundle.images[0]} alt={bundle.title} className="w-[90%] h-[90%] object-contain mix-blend-multiply transition-transform duration-500 scale-105 drop-shadow-[0_25px_25px_rgba(0,0,0,0.12)]" />
+                                        <img src={bundle.images[0]} alt={bundle.title} className="w-[90%] h-[90%] object-contain mix-blend-multiply transition-transform duration-500 scale-105 drop-shadow-[0_25px_25px_rgba(0,0,0,0.12)]" loading="lazy" />
                                         <div className="absolute top-3 right-3 bg-primary text-white text-[8px] font-black px-2 py-0.5 rounded-full uppercase tracking-widest shadow-md z-10">
                                             {bundle.tag}
                                         </div>
@@ -389,7 +391,7 @@ const Home = () => {
                                             <div key={idx} className="w-full flex-shrink-0 px-6">
                                                 <div className="bg-white rounded-[2rem] shadow-[0_8px_30px_rgb(0,0,0,0.04)] overflow-hidden flex flex-col md:flex-row min-h-[450px]">
                                                     <div className="md:w-1/2 p-12 bg-[#fdfaf2] flex items-center justify-center relative border-r border-gray-100">
-                                                        <img src={bundle.images[0]} alt="Product" className="w-[85%] h-auto object-contain mix-blend-multiply transition-transform duration-500 hover:scale-105" />
+                                                        <img src={bundle.images[0]} alt="Product" className="w-[85%] h-auto object-contain mix-blend-multiply transition-transform duration-500 hover:scale-105" loading="lazy" />
                                                     </div>
                                                     <div className="md:w-1/2 p-12 flex flex-col justify-center">
                                                         <span className="bg-[#eaf4e5] text-[#347b4e] text-[10px] font-black uppercase tracking-widest px-3 py-1 rounded-full w-fit mb-6">
