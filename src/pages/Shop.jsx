@@ -229,9 +229,9 @@ const Shop = () => {
     return (
         <>
             <Helmet>
-                <title>Buy Organic Instant Poha | Ready to Eat Indori Poha | Travel Food India</title>
-                <meta name="description" content="Shop organic, preservative-free ready to use Indori Poha. The ultimate travel food for Indians abroad and best quick breakfast for bachelors. Order Pohafix now." />
-                <meta name="keywords" content="buy organic poha, travel food india, instant meals for students abroad, bachelors breakfast ideas, ready to eat indori breakfast, pohafix price india" />
+                <title>Buy Jain Instant Poha | No Onion No Garlic Indori Poha | Jain's Ultimate Choice</title>
+                <meta name="description" content="Shop 100% Onion-Free and Garlic-Free ready to eat Indori Poha. The ultimate Jain choice—preservative-free and naturally sourced. Perfect for travel and daily breakfast." />
+                <meta name="keywords" content="Jain Poha, No Onion No Garlic Indori Poha, buy organic poha, travel food india, instant meals for students abroad, Jain friendly breakfast, ready to eat indori breakfast, Jains ultimate choice" />
                 
                 {/* Product Schema for Shop */}
                 <script type="application/ld+json">
@@ -543,7 +543,8 @@ const Shop = () => {
                         { q: "How should I store the poha for maximum freshness?", a: "Since our product is 100% natural, please store it in a cool, dry place away from direct sunlight. Once opened, ensure the inner packs remain sealed." },
                         { q: "How many plates of poha can I make from a 300g pack?", a: "A single 300g box contains 5 individual sachets (60g each), which yields 5 generous single-serving plates of delicious Indori poha." },
                         { q: "Is this poha blend 100% natural?", a: "Yes! We pride ourselves on a 100% clean ingredient profile. We use high-quality flattened rice, natural spices, and premium soy oil. No chemicals involved." },
-                        { q: "Does it contain onions and garlic?", a: "Yes, our traditional Indori recipe includes onions and garlic to give it that authentic 'Sarafa Bazaar' flavor profile." },
+                        { q: "Does it contain onions and garlic?", a: "No! PohaFix is 100% Onion and Garlic free. We use a special blend of traditional spices to ensure that authentic Indori taste without any root vegetables, making it the Jain's ultimate choice." },
+                        { q: "Is PohaFix suitable for a Jain diet?", a: "Yes, absolutely! Since our recipe is completely free from Onion and Garlic (No Onion No Garlic), it is the perfect, sacred meal for those following a strict Jain diet." },
                         { q: "What is the shelf life of the product?", a: "PohaFix has a shelf life of 6 months from the date of manufacture. Each sachet is nitrogen-flushed and individually sealed to lock in freshness." },
                         { q: "Is it suitable for children?", a: "Absolutely! Since we use zero MSG and zero artificial colors, it's a healthy, energy-packed breakfast or snack for children." },
                         { q: "Can I customize the spice level?", a: "Our signature Jeeravan mix is medium-spiced. You can easily adjust it by adding chopped coriander, fresh pomegranate, or extra sev to suit your taste buds!" },
