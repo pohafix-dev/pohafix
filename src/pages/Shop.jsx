@@ -491,7 +491,13 @@ const Shop = () => {
                         { q: "What makes PohaFix Instant Poha unique?", a: "PohaFix is crafted with authentic Malwa rice flakes and our signature Jeeravan spice mix. Unlike others, we use absolutely zero laboratory stabilizers, artificial flavors, or MSG—just pure, traditional ingredients." },
                         { q: "How should I store the poha for maximum freshness?", a: "Since our product is 100% natural, please store it in a cool, dry place away from direct sunlight. Once opened, ensure the inner packs remain sealed." },
                         { q: "How many plates of poha can I make from a 300g pack?", a: "A single 300g box contains 5 individual sachets (60g each), which yields 5 generous single-serving plates of delicious Indori poha." },
-                        { q: "Is this poha blend 100% natural?", a: "Yes! We pride ourselves on a 100% clean ingredient profile. We use high-quality flattened rice, natural spices, and premium soy oil. No chemicals involved." }
+                        { q: "Is this poha blend 100% natural?", a: "Yes! We pride ourselves on a 100% clean ingredient profile. We use high-quality flattened rice, natural spices, and premium soy oil. No chemicals involved." },
+                        { q: "Does it contain onions and garlic?", a: "Yes, our traditional Indori recipe includes onions and garlic to give it that authentic 'Sarafa Bazaar' flavor profile." },
+                        { q: "What is the shelf life of the product?", a: "PohaFix has a shelf life of 6 months from the date of manufacture. Each sachet is nitrogen-flushed and individually sealed to lock in freshness." },
+                        { q: "Is it suitable for children?", a: "Absolutely! Since we use zero MSG and zero artificial colors, it's a healthy, energy-packed breakfast or snack for children." },
+                        { q: "Can I customize the spice level?", a: "Our signature Jeeravan mix is medium-spiced. You can easily adjust it by adding chopped coriander, fresh pomegranate, or extra sev to suit your taste buds!" },
+                        { q: "Where do you deliver?", a: "We deliver PAN India! Being based in Manawar, Dhar, we have a robust logistics network that ensures your Poha reaches you fresh and fast anywhere in the country." },
+                        { q: "Do you offer bulk pricing for offices or cafes?", a: "Yes, we do! For bulk orders or B2B inquiries, please reach out to our team at support@pohafix.in for exclusive partnership pricing." }
                     ].map((faq, idx) => (
                         <div key={idx} className="border-b border-black/10 pb-4">
                             <button 
