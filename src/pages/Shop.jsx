@@ -430,9 +430,12 @@ const Shop = () => {
                     <div className="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-6">
                         {[
                             "/loved-1.webp",
+                            "/loved-3.webp",
                             "/diljit.webp",
                             "/loved-2.webp",
-                            "/david.webp"
+                            "/loved-4.webp",
+                            "/david.webp",
+                            "/loved-5.webp"
                         ].map((img, idx) => (
                             <div key={idx} className="aspect-square rounded-3xl overflow-hidden bg-white shadow-xl hover:scale-105 transition-transform duration-300">
                                 <img src={img} alt="PohaFix Fan" className="w-full h-full object-cover" />
