@@ -427,7 +427,7 @@ const Shop = () => {
                         <p className="text-black/60 font-medium mt-4">India's fastest growing instant breakfast brand!</p>
                     </div>
                     
-                    <div className="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-6">
+                    <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-7 gap-4 md:gap-6">
                         {[
                             "/loved-1.webp",
                             "/loved-3.webp",
@@ -439,6 +439,154 @@ const Shop = () => {
                         ].map((img, idx) => (
                             <div key={idx} className="aspect-square rounded-3xl overflow-hidden bg-white shadow-xl hover:scale-105 transition-transform duration-300">
                                 <img src={img} alt="PohaFix Fan" className="w-full h-full object-cover" />
+                            </div>
+                        ))}
+                    </div>
+                </div>
+            </section>
+
+            {/* Authentic Review System */}
+            <section className="py-24 bg-white border-t border-black/5">
+                <div className="max-w-5xl mx-auto px-6">
+                    <h2 className="text-3xl font-black font-headline text-center mb-16 tracking-tight uppercase">Customer Reviews</h2>
+                    
+                    {/* Review Summary Header */}
+                    <div className="grid md:grid-cols-3 gap-12 items-center pb-16 border-b border-black/5 mb-16">
+                        <div className="text-center md:text-left">
+                            <div className="flex items-center justify-center md:justify-start gap-1 mb-2">
+                                {[1,2,3,4].map(i => <span key={i} className="material-symbols-outlined text-primary" style={{fontVariationSettings: "'FILL' 1"}}>star</span>)}
+                                <span className="material-symbols-outlined text-primary" style={{fontVariationSettings: "'FILL' 0.5"}}>star</span>
+                            </div>
+                            <div className="text-3xl font-black font-headline">4.85 out of 5</div>
+                            <div className="text-sm text-black/50 font-medium">Based on 1,420 reviews</div>
+                        </div>
+                        
+                        <div className="space-y-2">
+                            {[
+                                {stars: 5, pct: 85, count: 1207},
+                                {stars: 4, pct: 10, count: 142},
+                                {stars: 3, pct: 3, count: 42},
+                                {stars: 2, pct: 1, count: 14},
+                                {stars: 1, pct: 1, count: 15}
+                            ].map((row) => (
+                                <div key={row.stars} className="flex items-center gap-4">
+                                    <div className="flex gap-0.5 w-20">
+                                        {[...Array(5)].map((_, i) => (
+                                            <span key={i} className={`material-symbols-outlined text-[12px] ${i < row.stars ? 'text-primary' : 'text-black/10'}`} style={{fontVariationSettings: "'FILL' 1"}}>star</span>
+                                        ))}
+                                    </div>
+                                    <div className="flex-1 h-2 bg-black/5 rounded-full overflow-hidden">
+                                        <div className="h-full bg-primary" style={{width: `${row.pct}%`}}></div>
+                                    </div>
+                                    <div className="text-[10px] font-bold text-black/40 w-8">{row.count}</div>
+                                </div>
+                            ))}
+                        </div>
+
+                        <div className="flex justify-center md:justify-end">
+                            <button className="bg-[#014c3e] text-white px-8 py-3 rounded-full font-bold text-sm tracking-wide shadow-lg hover:scale-105 transition-transform">
+                                Write a review
+                            </button>
+                        </div>
+                    </div>
+
+                    {/* Review Feed */}
+                    <div className="space-y-16">
+                        {[
+                            {
+                                name: "Anish Sharma",
+                                verified: true,
+                                date: "12/04/2024",
+                                stars: 5,
+                                title: "Exactly like Sarafa Bazaar!",
+                                body: "I was skeptical about 'instant' poha but this blew my mind. The rice flakes don't get mushy and the Jeeravan taste is spot on. It's like having a breakfast stall in my kitchen. Highly recommended for students abroad!",
+                                helpful: 42,
+                                reply: "Dear Anish, we are thrilled to hear that PohaFix brought back memories of Sarafa! Our goal was to preserve that exact Indori soul. Thank you for your trust. - Team PohaFix"
+                            },
+                            {
+                                name: "Priya V.",
+                                verified: true,
+                                date: "05/04/2024",
+                                stars: 5,
+                                title: "Clean ingredients, great taste",
+                                body: "Love that there's no palm oil or MSG. Most instant foods feel heavy, but this one is light and authentic. The Ratlami Sev included is a nice touch. Perfect for my office lunch.",
+                                helpful: 18,
+                                reply: null
+                            },
+                            {
+                                name: "Rahul Gupta",
+                                verified: true,
+                                date: "28/03/2024",
+                                stars: 4,
+                                title: "Best travel companion",
+                                body: "Carried 10 packs for my Europe trip. Saved me from expensive, bland food. Only giving 4 stars because I wish the pomegranate flavor was even stronger, but overall a lifesaver!",
+                                helpful: 56,
+                                reply: "Hi Rahul, thank you for taking us on your trip! We hear you on the pomegranate flavor—we are currently tweaking our mix for more vibrancy. Safe travels! - PohaFix Support"
+                            },
+                            {
+                                name: "Megha Jain",
+                                verified: false,
+                                date: "15/03/2024",
+                                stars: 5,
+                                title: "Bachpan ki yaad aa gayi",
+                                body: "The ritual of adding hot water and waiting for 5 mins is so simple. My kids love it too. No more morning breakfast stress. Authentic Indori Zayka at its best.",
+                                helpful: 12,
+                                reply: null
+                            }
+                        ].map((rev, idx) => (
+                            <div key={idx} className="border-b border-black/5 pb-16 last:border-0">
+                                <div className="flex items-start gap-4 mb-6">
+                                    <div className="w-10 h-10 rounded-full bg-stone-100 flex items-center justify-center text-stone-400">
+                                        <span className="material-symbols-outlined text-2xl">person</span>
+                                    </div>
+                                    <div>
+                                        <div className="flex items-center gap-2 mb-1">
+                                            <span className="font-bold text-black">{rev.name}</span>
+                                            {rev.verified && (
+                                                <span className="bg-[#014c3e] text-white text-[8px] font-black px-1.5 py-0.5 rounded flex items-center gap-0.5 uppercase tracking-widest">
+                                                    <span className="material-symbols-outlined text-[10px]" style={{fontVariationSettings: "'wght' 700"}}>check</span>
+                                                    Verified
+                                                </span>
+                                            )}
+                                        </div>
+                                        <div className="flex items-center gap-4">
+                                            <div className="flex">
+                                                {[...Array(5)].map((_, i) => (
+                                                    <span key={i} className={`material-symbols-outlined text-[14px] ${i < rev.stars ? 'text-primary' : 'text-black/10'}`} style={{fontVariationSettings: "'FILL' 1"}}>star</span>
+                                                ))}
+                                            </div>
+                                            <span className="text-[10px] font-bold text-black/30">{rev.date}</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <div className="pl-14">
+                                    <h4 className="font-black text-lg text-black mb-2 uppercase tracking-tight">{rev.title}</h4>
+                                    <p className="text-black/70 font-medium leading-relaxed mb-6">
+                                        {rev.body}
+                                    </p>
+                                    
+                                    <div className="flex items-center gap-6 mb-8 text-black/30">
+                                        <button className="flex items-center gap-2 hover:text-primary transition-colors">
+                                            <span className="material-symbols-outlined text-lg">thumb_up</span>
+                                            <span className="text-[10px] font-bold">{rev.helpful}</span>
+                                        </button>
+                                        <button className="flex items-center gap-2 hover:text-primary transition-colors">
+                                            <span className="material-symbols-outlined text-lg">thumb_down</span>
+                                            <span className="text-[10px] font-bold">0</span>
+                                        </button>
+                                    </div>
+
+                                    {rev.reply && (
+                                        <div className="bg-stone-50 rounded-2xl p-8 border border-black/5 relative">
+                                            <div className="absolute top-4 right-6 text-[10px] font-black text-primary uppercase tracking-widest opacity-30">Official Reply</div>
+                                            <p className="text-black font-bold mb-2 text-sm">PohaFix Team replied:</p>
+                                            <p className="text-black/60 text-sm leading-relaxed italic">
+                                                {rev.reply}
+                                            </p>
+                                        </div>
+                                    )}
+                                </div>
                             </div>
                         ))}
                     </div>
