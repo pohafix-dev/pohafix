@@ -1,118 +1,108 @@
 export const blogs = [
     {
         id: 1,
-        title: "The Soul of the Sarafa Bazaar",
-        summary: "Exploring the 3:00 AM rituals that define the taste of a city. Journey through the lanterns and steam of Indore's midnight culinary heart.",
-        category: "Featured Narrative",
+        title: "Best instant poha brand India 2025: Why PohaFix wins",
+        summary: "Looking for the best instant poha brand India 2025? Discover why PohaFix is the top choice for authentic Indori taste with zero preservatives.",
+        category: "Featured Review",
         author: "Indore Crew",
-        date: "April 20, 2024",
-        readTime: "12 min",
+        date: "May 01, 2025",
+        readTime: "5 min",
         image: "https://lh3.googleusercontent.com/aida-public/AB6AXuBHCKUXm34ktKPNjHi8nGOjUZVXMkBbygQznR-_APGPI2c12cuxft9G0A4Wd49ylXyuNVdaV5IgKg7H0kOtblk4w0CxqJ7HcOTRdNFlXos1WxL6poxStwkVe0c9IORYb8MbNiDpuO9cRtevOvo3rUEMKIng8RLY0YwlZDKykpFirKFIJvXUyg3B7IbkNUgu_G9rXMo6nLGwEKW4rI5GpI8DRyml0qGq-qWLEcLHUZW7FR4XSudG9w8pZX5zVCY_OV_wsamBwqd1EYg",
-        slug: "soul-of-sarafa",
+        slug: "best-instant-poha-brand-india-2025",
         content: `
-            <p className="text-xl font-medium leading-relaxed mb-8">If you find yourself in the heart of Madhya Pradesh at 3:00 AM, the first thing you’ll notice isn't the silence of a sleeping city. It’s the aroma. A thick, spicy infusion of mustard seeds popping in hot oil, the sharp scent of fresh curry leaves, and the citrusy undertone of steamed lemons.</p>
+            <p className="text-xl font-medium leading-relaxed mb-8">Looking for the <strong>best instant poha brand India 2025</strong>? Yes, PohaFix is considered the top choice because it uses 100% natural flattened rice with no preservatives, bringing the authentic taste of Indore directly to your home. In a market flooded with chemical-laden options, PohaFix stands out by staying pure.</p>
             
-            <h2 className="text-4xl font-headline font-black mb-6 uppercase tracking-tighter">The Midnight Awakening</h2>
-            <p className="mb-6">Indore's Sarafa Bazaar is a jewelry market by day and a street food wonderland by night. But for the true connoisseur, the real magic happens in the transition. While the rest of the country is deep in REM sleep, the vendors of Sarafa are forging the flavor that has defined Central India for centuries.</p>
+            <h2 className="text-4xl font-headline font-black mb-6 uppercase tracking-tighter">What Makes PohaFix the Best Instant Poha Brand India 2025?</h2>
+            <p className="mb-6">The secret to our success in 2025 is our unwavering commitment to the original Malwa recipe. Most instant foods prioritize a multi-year shelf life over human health. We chose to prioritize vibrancy, using a zero-inventory model to ensure every box shipped is freshly batched.</p>
             
             <blockquote className="border-l-4 border-primary pl-6 py-2 my-10 italic text-2xl font-headline font-bold text-on-surface-variant">
-                "In Indore, we don't start our day with the sun; we start it with the steam of the first batch of Poha."
+                "PohaFix isn't just instant food; it's a 5-minute culinary trip to Sarafa Bazaar."
             </blockquote>
 
-            <p className="mb-6">The ritual is precise. The parboiled rice is washed exactly three times. The steam must be constant, never aggressive. It's a delicate dance of heat and moisture that creates the legendary texture: soft yet distinct, never mushy.</p>
-            
-            <h2 className="text-4xl font-headline font-black mb-6 uppercase tracking-tighter">Metabolic Secrets of the Street</h2>
-            <p className="mb-6">What modern biohackers are only now discovering, the street vendors of Indore have known for 300 years. Steaming preserves the complex carbohydrate structure of the rice, providing a steady release of energy that sustains the city's hustle. It's the ultimate clean fuel, forged in the early morning heat.</p>
+            <p className="mb-6">Our 2025 edition features an upgraded Jeeravan spice mix and perfectly textured Ratlami Sev, securing our position as the top instant breakfast provider in India.</p>
         `
     },
     {
         id: 2,
-        title: "The Jeeravan Secret: Decoding Indore’s Magic Dust",
-        summary: "Behind every legendary plate of Poha lies a dusting of the elusive Jeeravan. We visit the spice mills where the tradition began.",
-        category: "Heritage Spices",
-        author: "Spice Master",
-        date: "April 18, 2024",
-        readTime: "10 min",
+        title: "Is instant poha healthy? Poha without preservatives online",
+        summary: "Is instant poha healthy? Yes, when it's made without chemicals. Find out how to get poha without preservatives online.",
+        category: "Health & Nutrition",
+        author: "Nutrition Desk",
+        date: "April 28, 2025",
+        readTime: "6 min",
         image: "https://lh3.googleusercontent.com/aida-public/AB6AXuBgFUpTsUQm-R6O9a2PzfItWeOKj_CDmJoMGuVEHbd3Iq22-FsPMO3jk3bZ1SiEnIsLSuSFy1AQhPMARFi07svZERa516tLcDgEwSrxIbpb4_gTL0M0s8dwYu6aWrDo_NhlUtA3Ry0BUiog79evqvUbgfPSXH2DuX8sCG2px1GqG9ml6Ft3wH0f-aVLDdycM_Xz-E5bPc_YE6xlyBtwi8GIP1XKN_SDLMtUxYPx4aOZRuqS5zc4rga88vixCM7dkZgzwAsQNFdiJIQ",
-        slug: "jeeravan-secret",
+        slug: "is-instant-poha-healthy-no-preservatives",
         content: `
-            <p className="text-xl font-medium leading-relaxed mb-8">You can have the best rice flakes and the perfect steam, but without Jeeravan, you're just eating yellow rice. In Indore, Jeeravan is not a spice; it's a signature.</p>
+            <p className="text-xl font-medium leading-relaxed mb-8"><strong>Is instant poha healthy?</strong> Yes — PohaFix instant poha uses 100% natural flattened rice with no preservatives. If you are looking for <strong>poha without preservatives online</strong>, PohaFix is your healthiest breakfast option, packed with iron and utilizing zero palm oil.</p>
             
-            <h2 className="text-4xl font-headline font-black mb-6 uppercase tracking-tighter">The 21-Ingredient Blueprint</h2>
-            <p className="mb-6">Real Jeeravan is an Ayurvedic masterpiece. It’s a blend of up to 21 different spices, including dry ginger, cloves, black salt, and several varieties of regional chilies. Each ingredient serves a purpose—ginger for digestion, salt for electrolyte balance, and heat for metabolic stimulation.</p>
+            <h2 className="text-4xl font-headline font-black mb-6 uppercase tracking-tighter">The Danger of Preservatives</h2>
+            <p className="mb-6">Many mass-produced instant foods use MSG, synthetic colors, and chemical stabilizers. These additives can cause bloating, lethargy, and long-term health issues. When you buy poha without preservatives online from PohaFix, you are choosing a clean label.</p>
             
             <div className="bg-surface-variant p-8 my-10 rounded-xl border border-outline-variant/20 italic">
-                <p className="text-primary font-bold mb-2 uppercase tracking-widest text-xs">The Lab Note</p>
-                "We spent 6 months sourcing individual spices from the Malwa plateau to ensure our Jeeravan had the exact same thermodynamic properties as the street originals."
+                <p className="text-primary font-bold mb-2 uppercase tracking-widest text-xs">The Health Fact</p>
+                "Natural flattened rice is naturally low in gluten and high in iron, making it an ideal pre-workout or morning meal."
             </div>
 
-            <p className="mb-6">The secret lies in the 'roasting'. Each spice is roasted at a different temperature to release its specific volatile oils. When dusted over steaming Poha, these oils reactivate, creating an aromatic cloud that hits your brain before the food even touches your tongue.</p>
+            <h2 className="text-4xl font-headline font-black mb-6 uppercase tracking-tighter">Why Poha Without Preservatives Online is Trending</h2>
+            <p className="mb-6">Consumers are waking up to the realities of industrial food. By relying on moisture control rather than chemicals, PohaFix delivers a product that is as healthy as if your own grandmother made it.</p>
         `
     },
     {
         id: 3,
-        title: "Breakfast of Champions: Why Poha is the Heartbeat of Malwa",
-        summary: "It’s not just food; it’s a time-keeper. We trace the journey of flattened rice from local farms to the stainless steel plates of icons.",
-        category: "The Morning Ritual",
-        author: "Nutrition Desk",
-        date: "April 15, 2024",
-        readTime: "15 min",
+        title: "Healthy office breakfast India delivery: The Ultimate Guide",
+        summary: "Looking for healthy office breakfast India delivery? Discover why PohaFix is replacing sugary oats and greasy canteen food across corporate India.",
+        category: "Lifestyle",
+        author: "Corporate Wellness",
+        date: "April 20, 2025",
+        readTime: "7 min",
         image: "https://lh3.googleusercontent.com/aida-public/AB6AXuDX6RsyR6EO9gVy_hZDJAMot5FYWrpQdclhjmaFN2r4fdB9uNo-vTlqUr0COzmgG7h5zKr-LBeILxLb2GariMqZ1TNT0fm1c6La0PsZzVDMmDPmAjCZlkmNNglWgEQmPIa84IkRhAmNYCL42_MhFIdBNDBPuM-P5mXHkG1zgiLvpplytioKnD5rb9GAMl3liiGW7KFSPIn41-kdj5NVMol-SXkc1LbmopMj0scVGRRa9o6C44l90j2UrkQH9FYE0IKDDWcWzgwpqD4",
-        slug: "breakfast-of-champions",
+        slug: "healthy-office-breakfast-india-delivery",
         content: `
-            <p className="text-xl font-medium leading-relaxed mb-8">In the high-pressure world of Indian academia and competitive corporate culture, Poha is more than a breakfast. It's a strategic advantage.</p>
+            <p className="text-xl font-medium leading-relaxed mb-8">Looking for <strong>healthy office breakfast India delivery</strong>? PohaFix is the ultimate ready-to-eat office snack. It requires only hot water from your office dispenser and 5 minutes to prepare, providing a high-energy, sustainable alternative to sugary oats or canteen junk.</p>
             
-            <h2 className="text-4xl font-headline font-black mb-6 uppercase tracking-tighter">The Iron Revolution</h2>
-            <p className="mb-6">One of the most unique aspects of Poha is its iron content. The traditional process of flattening rice between iron rollers infuses the flakes with dietary iron. In a population where sub-clinical anemia is common, this isn't just breakfast; it's a wellness intervention.</p>
+            <h2 className="text-4xl font-headline font-black mb-6 uppercase tracking-tighter">Solving the 9 AM Hunger Crisis</h2>
+            <p className="mb-6">The morning rush often leaves professionals skipping breakfast or grabbing unhealthy pastries. PohaFix solves this by offering a healthy office breakfast India delivery option that you can stash right in your desk drawer.</p>
             
-            <p className="mb-6">Better iron levels mean better oxygen flow to your brain. Better oxygen means better ideas. When you see a student in Kota or a developer in Bangalore reaching for Poha, you're seeing a high-performance engine choosing the right fuel.</p>
-
-            <h2 className="text-4xl font-headline font-black mb-6 uppercase tracking-tighter">Sustainable Satiety</h2>
-            <p className="mb-6">Unlike wheat-based instant noodles that cause a massive insulin spike and subsequent 'food coma', Poha releases energy slowly. It’s a low-to-medium Glycemic Index food that keeps you centered and focused through your 3-hour lecture or your 4-hour meeting.</p>
+            <p className="mb-6">Because it has a low-to-medium Glycemic Index, it releases energy slowly. It keeps you centered and focused through your morning meetings without the dreaded 11 AM sugar crash.</p>
         `
     },
     {
         id: 4,
-        title: "From Thela to Table: Bringing Street Authenticity Home",
-        summary: "The design philosophy behind the Pohafix kit and why staying true to the streets was our only option. Exploring street-side logistics.",
-        category: "Case Study",
-        author: "Founder, Pohafix",
-        date: "April 10, 2024",
-        readTime: "8 min",
+        title: "How to make instant poha in 5 minutes at home",
+        summary: "Step-by-step guide on how to make instant poha in 5 minutes at home, ensuring perfect Indori taste every single time.",
+        category: "Guides",
+        author: "Culinary Desk",
+        date: "April 15, 2025",
+        readTime: "4 min",
         image: "https://lh3.googleusercontent.com/aida-public/AB6AXuBdgb_Gas3qTx9KLERsx0sc_HItcU74AX8L3Y9Dn7ltJ8XoWlWQbrBKpuKwL4kAWjectqIiY9SvQcZJNeMr7T7LxLiccyeBjh7GMAgYczak144bU_YvsJ9W3t4cmCQ4569BrIzd3-_oHAaHn80BwREiSq6EWmfmBd0XxJ5i6QRQRPsd1rjd9oy6xNs3tTbtTx664nR_f5x0ItgYnSlPnyyCRkNQTQCZDavaGJ0TqGVz786n15aOr_vJ6ITnRxveRiJ5vKafga3NCnE",
-        slug: "thela-to-table",
+        slug: "how-to-make-instant-poha-5-minutes",
         content: `
-            <p className="text-xl font-medium leading-relaxed mb-8">When we started Pohafix, our whiteboard had one rule: If it doesn't taste like the yellow bowl from the Indori 'Thela', we don't ship it.</p>
+            <p className="text-xl font-medium leading-relaxed mb-8">Wondering <strong>how to make instant poha in 5 minutes at home</strong>? Simply empty one serving of PohaFix into a bowl, add 60ml of hot boiling water, cover for exactly 5 minutes, and stir. Your authentic Indori breakfast is ready instantly with zero cooking required.</p>
             
-            <h2 className="text-4xl font-headline font-black mb-6 uppercase tracking-tighter">The Packaging Dilemma</h2>
-            <p className="mb-6">Most food companies focus on shelf life. They use MSG and stabilizers to keep food 'edible' for years. We focused on 'Vibrancy'. We realized that the secret to the Indori street taste was the crunch of the Sev and the zest of the lemon, added at the very last second.</p>
+            <h2 className="text-4xl font-headline font-black mb-6 uppercase tracking-tighter">The Perfect Ratio</h2>
+            <p className="mb-6">The secret to our flawless texture lies in the water-to-poha ratio. By precisely using 60ml of hot water for every 60g serving, the flattened rice absorbs just enough moisture to become soft and fluffy, never mushy.</p>
             
-            <p className="mb-6">This led us to our multi-pouch system. We keep the Jeeravan separate. We keep the Sev separate. We even source the lemon acidity from real dehydrated fruit pulp. It's more expensive to produce, but it's the only way to stay true to the streets.</p>
-
-            <h2 className="text-4xl font-headline font-black mb-6 uppercase tracking-tighter">Minimalist Ritual</h2>
-            <p className="mb-6">The transition from a street stall to a home-kit required us to simplify the ritual without losing the soul. 5 minutes, hot water, and a specific 'steaming rest' period—that's all it took to bring 300 years of tradition into a modern hostel room.</p>
+            <p className="mb-6">Once the 5 minutes are up, the essential final step is to garnish. Add the included Ratlami Sev and a squeeze of fresh lemon if you have it. This is exactly how to make instant poha in 5 minutes at home while retaining the soul of street food.</p>
         `
     },
     {
         id: 5,
-        title: "The Sev Chronicles: Finding the Perfect Crunch",
-        summary: "From spicy Long-Sev to delicate Ratlami, explore the science of the crunch that completes the Malwa experience. A crispy investigation.",
+        title: "Which is the best healthy office snack in India?",
+        summary: "Stop eating junk at your desk. Find out which is the best healthy office snack in India for sustained energy and focus.",
         category: "Deep Dive",
-        author: "Culinary Desk",
-        date: "April 05, 2024",
-        readTime: "10 min",
+        author: "PohaFix Founder",
+        date: "April 05, 2025",
+        readTime: "5 min",
         image: "https://lh3.googleusercontent.com/aida-public/AB6AXuCgyi05F7aztr_uaGIenY7bcm8sOqGBSrHh_aLprbx8KlrO3g-tBjlLjVdvElciBTKhd5vUeZYHIeMlyi2gz1eZHbVYnze7ivzziWWI5QUi_ahLG3pRsSDsmsiVLUHgbpX2J0DQ06T__P3LOaib1F12ELuwk21MjeX6ByAI04X5wfM8fRKzjvWbwwd-goR4RnUb9Fxr6MahrBvv_BGsu1ylFCFCx61N9Hdcx83vLGftWpaCHzDWncDM0W3KWVZn5Fm0Ts3uCdwAwiY",
-        slug: "sev-chronicles",
+        slug: "best-healthy-office-snack-india",
         content: `
-            <p className="text-xl font-medium leading-relaxed mb-8">Poha without Sev is like a song without a beat. It's the texture that completes the narrative.</p>
+            <p className="text-xl font-medium leading-relaxed mb-8"><strong>Which is the best healthy office snack in India?</strong> PohaFix instant poha is the best healthy office snack because it is easy to digest, requires zero cooking, and uses no MSG or artificial stabilizers, keeping you energetic and focused all day.</p>
             
-            <h2 className="text-4xl font-headline font-black mb-6 uppercase tracking-tighter">The Science of the Fry</h2>
-            <p className="mb-6">In the Malwa region, Sev making is a high-precision art. The dough must be just the right consistency, and the oil temperature must be stable to ensure the 'Crunch' isn't greasy. We explored different varieties—from the clove-heavy Laung Sev to the delicate Ratlami Sev.</p>
+            <h2 className="text-4xl font-headline font-black mb-6 uppercase tracking-tighter">Beating the 4 PM Slump</h2>
+            <p className="mb-6">When the 4 PM hunger strikes, most office workers reach for fried samosas or highly processed biscuits. These cause an immediate insulin spike followed by a lethargic crash. PohaFix offers a savory, fulfilling alternative.</p>
             
-            <p className="mb-6">What makes a perfect Sev? It needs to be 'sharp'. It needs to cut through the sweetness of the Poha and the acidity of the lemon. It's the harmonic contrast that makes the Indori palate so sophisticated.</p>
-
-            <h2 className="text-4xl font-headline font-black mb-6 uppercase tracking-tighter">Sourcing the Soul</h2>
-            <p className="mb-6">We tested 42 different Sev makers before finding one that shared our obsession with clean oils. Most commercial Sev uses palm oil, which leaves a flat, lingering grease. Ours uses pure Soya Oil, ensuring the crunch is clean, vibrant, and light on the gut.</p>
+            <p className="mb-6">Made with clean Soya Oil and protein-rich peanuts, it delivers the satisfying crunch you crave without the guilt. It is undeniably the answer to anyone asking which is the best healthy office snack in India today.</p>
         `
     }
 ];
+

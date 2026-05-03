@@ -10,6 +10,12 @@ const Footer = () => {
                     <p className="normal-case text-on-surface-variant font-medium tracking-normal opacity-80 leading-relaxed">
                         The original Chhappan Dukaan ritual, captured in an instant. Traditional Malwa soul delivered to your doorstep. No laboratory shelf-extenders—just raw, natural ingredients.
                     </p>
+                    <div className="normal-case text-on-surface-variant font-medium tracking-normal opacity-80 leading-relaxed mt-4">
+                        <p><strong>PohaFix HQ</strong></p>
+                        <p>123 Sarafa Bazaar Road, Indore</p>
+                        <p>Madhya Pradesh, India 452001</p>
+                        <p>Email: pohafix@gmail.com</p>
+                    </div>
                 </div>
                 
                 <div className="grid grid-cols-2 lg:grid-cols-3 gap-x-16 gap-y-10">
@@ -26,10 +32,12 @@ const Footer = () => {
                         <Link className="text-[#1d1c16] dark:text-[#e7e2d9] hover:text-[#af101a] font-bold transition-all hover:translate-x-1" to="/contact">Bulk Orders</Link>
                     </div>
                     <div className="flex flex-col gap-4">
-                        <span className="text-[10px] font-black text-primary tracking-[0.2em]">CUSTODIAN</span>
+                        <span className="text-[10px] font-black text-primary tracking-[0.2em]">LEGAL & SUPPORT</span>
+                        <Link className="text-[#1d1c16] dark:text-[#e7e2d9] hover:text-[#af101a] font-bold transition-all hover:translate-x-1" to="/terms">Terms of Service</Link>
+                        <Link className="text-[#1d1c16] dark:text-[#e7e2d9] hover:text-[#af101a] font-bold transition-all hover:translate-x-1" to="/shipping">Shipping Policy</Link>
+                        <Link className="text-[#1d1c16] dark:text-[#e7e2d9] hover:text-[#af101a] font-bold transition-all hover:translate-x-1" to="/returns">Refund Policy</Link>
+                        <Link className="text-[#1d1c16] dark:text-[#e7e2d9] hover:text-[#af101a] font-bold transition-all hover:translate-x-1" to="/privacy">Privacy Policy</Link>
                         <Link className="text-[#1d1c16] dark:text-[#e7e2d9] hover:text-[#af101a] font-bold transition-all hover:translate-x-1" to="/contact">Contact Us</Link>
-                        <Link className="text-[#1d1c16] dark:text-[#e7e2d9] hover:text-[#af101a] font-bold transition-all hover:translate-x-1" to="/privacy">Returns</Link>
-                        <Link className="text-[#1d1c16] dark:text-[#e7e2d9] hover:text-[#af101a] font-bold transition-all hover:translate-x-1" to="/privacy">Privacy</Link>
                     </div>
                 </div>
 

@@ -8,7 +8,9 @@ import BlogPost from './pages/BlogPost';
 import Shop from './pages/Shop';
 import About from './pages/About';
 import ThankYou from './pages/ThankYou';
-import Admin from './pages/Admin';
+import ShippingPolicy from './pages/ShippingPolicy';
+import RefundPolicy from './pages/RefundPolicy';
+import TermsOfService from './pages/TermsOfService';
 
 function App() {
   return (
@@ -22,7 +24,9 @@ function App() {
       <Route path="/blog" element={<Blog />} />
       <Route path="/blog/:slug" element={<BlogPost />} />
       <Route path="/thank-you" element={<ThankYou />} />
-      <Route path="/admin" element={<Admin />} />
+      <Route path="/shipping" element={<ShippingPolicy />} />
+      <Route path="/returns" element={<RefundPolicy />} />
+      <Route path="/terms" element={<TermsOfService />} />
       <Route path="*" element={<Home />} />
     </Routes>
   );

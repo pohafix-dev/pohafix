@@ -64,9 +64,9 @@ const Home = () => {
     return (
         <div className="bg-background text-on-surface font-body selection:bg-secondary-container selection:text-on-secondary-container flex flex-col min-h-screen">
             <Helmet>
-                <title>Pohafix | Authentic Indori Poha | Best Ready to Eat Instant Breakfast</title>
-                <meta name="description" content="Authentic Indori Poha in 5 mins. Organic, preservative-free ready to use poha mix. The best healthy breakfast option for travel, bachelors, and busy mornings. Experience Indore's Sarafa Bazaar taste." />
-                <meta name="keywords" content="instant poha mix, ready to eat poha, best instant breakfast india, travel food instant meals, healthy instant breakfast, quick indian breakfast, preservative free poha, indori poha online, mtr poha alternative, haldirams poha alternative, organic poha mix" />
+                <title>PohaFix | Buy Instant Poha Online | Ready in 5 Minutes</title>
+                <meta name="description" content="Buy instant poha online. PohaFix is the best healthy instant breakfast in India. Ready to eat poha without cooking—just add hot water. Perfect office snack poha, 100% natural." />
+                <meta name="keywords" content="instant poha online, ready to eat poha, poha in 5 minutes, healthy instant breakfast india, poha without cooking, office snack poha, पोहा ऑनलाइन खरीदें, इंस्टेंट पोहा" />
                 
                 {/* Social Sharing Metadata */}
                 <meta property="og:title" content="Pohafix | Authentic Indori Poha in 5 Minutes" />
@@ -159,6 +159,68 @@ const Home = () => {
                           }
                         }
                       ]
+                    }
+                    `}
+                </script>
+
+                {/* Recipe Schema */}
+                <script type="application/ld+json">
+                    {`
+                    {
+                      "@context": "https://schema.org/",
+                      "@type": "Recipe",
+                      "name": "Pohafix Instant Indori Poha",
+                      "image": [
+                        "https://pohafix.com/box-front.png"
+                      ],
+                      "author": {
+                        "@type": "Organization",
+                        "name": "Pohafix"
+                      },
+                      "datePublished": "2026-05-01",
+                      "description": "Authentic Indori Poha ready in 5 minutes. No cooking required, just add hot water.",
+                      "prepTime": "PT1M",
+                      "cookTime": "PT5M",
+                      "totalTime": "PT6M",
+                      "keywords": "instant poha, indori poha recipe, no cook breakfast",
+                      "recipeYield": "1 serving",
+                      "recipeCategory": "Breakfast",
+                      "recipeCuisine": "Indian",
+                      "nutrition": {
+                        "@type": "NutritionInformation",
+                        "calories": "250 calories"
+                      },
+                      "recipeIngredient": [
+                        "1 serving (60g) Pohafix Instant Poha Mix",
+                        "60 ml hot boiling water"
+                      ],
+                      "recipeInstructions": [
+                        {
+                          "@type": "HowToStep",
+                          "name": "Pour",
+                          "text": "Empty 1 serving (60 g poha) into a bowl."
+                        },
+                        {
+                          "@type": "HowToStep",
+                          "name": "Add Water",
+                          "text": "Add 60 ml hot boiled water."
+                        },
+                        {
+                          "@type": "HowToStep",
+                          "name": "Cover",
+                          "text": "Cover and keep for 5 minutes."
+                        },
+                        {
+                          "@type": "HowToStep",
+                          "name": "Stir",
+                          "text": "Stir well and serve hot. Garnish with chopped onions if desired."
+                        }
+                      ],
+                      "aggregateRating": {
+                        "@type": "AggregateRating",
+                        "ratingValue": "5.0",
+                        "reviewCount": "240"
+                      }
                     }
                     `}
                 </script>

@@ -57,21 +57,95 @@ const Shop = () => {
                     {`
                     {
                       "@context": "https://schema.org/",
-                      "@type": "ItemList",
-                      "itemListElement": [
+                      "@type": "Product",
+                      "name": "Pohafix Instant Poha",
+                      "image": ["https://pohafix.com/box-front.png"],
+                      "description": "Premium ready-to-use Indori Poha with authentic spices and Ratlami Sev. No preservatives. Ready in 5 minutes.",
+                      "sku": "PF-ORIG-300",
+                      "brand": {
+                        "@type": "Brand",
+                        "name": "Pohafix"
+                      },
+                      "offers": {
+                        "@type": "AggregateOffer",
+                        "url": "https://pohafix.com/shop",
+                        "priceCurrency": "INR",
+                        "lowPrice": "189",
+                        "highPrice": "290",
+                        "offerCount": "3",
+                        "availability": "https://schema.org/InStock"
+                      },
+                      "aggregateRating": {
+                        "@type": "AggregateRating",
+                        "ratingValue": "4.9",
+                        "reviewCount": "1200"
+                      }
+                    }
+                    `}
+                </script>
+                
+                {/* Recipe Schema */}
+                <script type="application/ld+json">
+                    {`
+                    {
+                      "@context": "https://schema.org/",
+                      "@type": "Recipe",
+                      "name": "Pohafix Instant Indori Poha",
+                      "image": [
+                        "https://pohafix.com/box-front.png"
+                      ],
+                      "author": {
+                        "@type": "Organization",
+                        "name": "Pohafix"
+                      },
+                      "datePublished": "2026-05-01",
+                      "description": "Authentic Indori Poha ready in 5 minutes. No cooking required, just add hot water.",
+                      "prepTime": "PT1M",
+                      "cookTime": "PT5M",
+                      "totalTime": "PT6M",
+                      "keywords": "instant poha, indori poha recipe, no cook breakfast",
+                      "recipeYield": "1 serving",
+                      "recipeCategory": "Breakfast",
+                      "recipeCuisine": "Indian",
+                      "nutrition": {
+                        "@type": "NutritionInformation",
+                        "calories": "250 calories"
+                      },
+                      "recipeIngredient": [
+                        "1 serving (60g) Pohafix Instant Poha Mix",
+                        "60 ml hot boiling water"
+                      ],
+                      "recipeInstructions": [
                         {
-                          "@type": "ListItem",
-                          "position": 1,
-                          "name": "The Starter Pack",
-                          "url": "https://pohafix.com/shop?plan=0"
+                          "@type": "HowToStep",
+                          "name": "Pour",
+                          "text": "Empty 1 serving (60 g poha) into a bowl.",
+                          "url": "https://pohafix.com/shop#step1"
                         },
                         {
-                          "@type": "ListItem",
-                          "position": 2,
-                          "name": "The Rebel Bundle",
-                          "url": "https://pohafix.com/shop?plan=1"
+                          "@type": "HowToStep",
+                          "name": "Add Water",
+                          "text": "Add 60 ml hot boiled water.",
+                          "url": "https://pohafix.com/shop#step2"
+                        },
+                        {
+                          "@type": "HowToStep",
+                          "name": "Cover",
+                          "text": "Cover and keep for 5 minutes.",
+                          "url": "https://pohafix.com/shop#step3"
+                        },
+                        {
+                          "@type": "HowToStep",
+                          "name": "Stir",
+                          "text": "Stir well and serve hot. Garnish with chopped onions if desired.",
+                          "url": "https://pohafix.com/shop#step4"
                         }
-                      ]
+                      ],
+                      "aggregateRating": {
+                        "@type": "AggregateRating",
+                        "ratingValue": "5.0",
+                        "reviewCount": "240"
+                      }
                     }
                     `}
                 </script>
