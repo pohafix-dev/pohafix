@@ -233,12 +233,8 @@ const Home = () => {
                     <Link to="/shop" className="block w-full">
                         <img 
                             src="/new-hero-banner.png" 
-                            alt="Authentic Indori Poha - Ready in 5 Minutes" 
-                            className="w-full h-auto object-cover min-h-[40vh] md:min-h-0" 
-                            onError={(e) => {
-                                e.target.onerror = null;
-                                e.target.src = "/hero.png"; // Fallback to old hero if new one isn't uploaded yet
-                            }}
+                            alt="Authentic Indori Poha" 
+                            className="w-full h-auto object-contain block" 
                         />
                     </Link>
                 </section>
