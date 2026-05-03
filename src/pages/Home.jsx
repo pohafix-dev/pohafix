@@ -229,16 +229,18 @@ const Home = () => {
 
             <main className="flex-1">
                 {/* Hero Section */}
-                <section className="relative w-full overflow-hidden bg-[#a30f14]">
-                    <Link to="/shop" className="block w-full">
-                        <img 
-                            src="/new-hero-banner.webp" 
-                            alt="Authentic Indori Poha" 
-                            className="w-full h-auto object-contain block" 
-                            fetchpriority="high"
-                            loading="eager"
-                        />
-                    </Link>
+                <section className="relative w-full overflow-hidden bg-surface pt-20 md:pt-24 pb-6">
+                    <div className="container mx-auto px-4 md:px-6">
+                        <Link to="/shop" className="block w-full rounded-xl md:rounded-3xl overflow-hidden shadow-xl hover:shadow-2xl transition-shadow duration-500">
+                            <img 
+                                src="/new-hero-banner.webp" 
+                                alt="Authentic Indori Poha" 
+                                className="w-full h-auto object-contain block" 
+                                fetchpriority="high"
+                                loading="eager"
+                            />
+                        </Link>
+                    </div>
                 </section>
 
                 {/* Global Appeal Section */}
