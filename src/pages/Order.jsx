@@ -7,6 +7,8 @@ const Order = () => {
     const navigate = useNavigate();
     const [searchParams] = useSearchParams();
     const planId = parseInt(searchParams.get('plan'));
+    const qtyParams = parseInt(searchParams.get('qty'));
+    const qty = isNaN(qtyParams) ? 1 : Math.max(1, qtyParams);
     const [selectedOption, setSelectedOption] = useState(isNaN(planId) ? 1 : planId + 1); // +1 because options use 1-based IDs
     const [formData, setFormData] = useState({
         name: '',
@@ -73,17 +75,17 @@ const Order = () => {
 
         const options_rzp = {
             key: "rzp_live_ScdhUpGns0TDZA", // Your Live Key ID
-            amount: currentPack.price * 100, // Amount in paise
+            amount: (currentPack.price * qty) * 100, // Amount in paise
             currency: "INR",
             name: "PohaFix | Synnc Foods",
-            description: `Order for ${currentPack.title}`,
+            description: `Order for ${qty}x ${currentPack.title}`,
             image: "/logo.png",
             handler: function (response) {
                 const orderDetails = {
                     orderId: response.razorpay_payment_id,
                     date: new Date().toLocaleString(),
-                    product: currentPack.title,
-                    amount: currentPack.price,
+                    product: `${qty}x ${currentPack.title}`,
+                    amount: currentPack.price * qty,
                     customer: formData
                 };
 
@@ -273,12 +275,12 @@ const Order = () => {
                                         <div className="flex gap-4 items-center">
                                             <div className="relative w-24 h-24 flex-shrink-0 bg-surface-container-low rounded-md overflow-hidden flex items-center justify-center p-2">
                                                 <img src={currentPack.image} alt="Indori Poha" className="w-full h-full object-contain" />
-                                                <div className="absolute top-1 right-1 bg-primary text-white text-[10px] font-bold px-1.5 py-0.5 rounded">x 1</div>
+                                                <div className="absolute top-1 right-1 bg-primary text-white text-[10px] font-bold px-1.5 py-0.5 rounded">x {qty}</div>
                                             </div>
                                             <div className="flex-grow">
                                                 <h4 className="font-headline font-bold text-lg leading-tight uppercase">{currentPack.title}</h4>
                                                 <p className="font-label text-sm text-on-surface-variant uppercase tracking-widest">{currentPack.description}</p>
-                                                <p className="font-body font-black text-primary mt-1">₹{currentPack.price}.00</p>
+                                                <p className="font-body font-black text-primary mt-1">₹{currentPack.price * qty}.00</p>
                                             </div>
                                         </div>
                                     </div>
@@ -286,7 +288,7 @@ const Order = () => {
                                     <div className="space-y-3 pt-6 border-t border-outline-variant/30">
                                         <div className="flex justify-between text-sm font-label font-semibold text-on-surface-variant">
                                             <span>Subtotal</span>
-                                            <span>₹{currentPack.price}.00</span>
+                                            <span>₹{currentPack.price * qty}.00</span>
                                         </div>
                                         <div className="flex justify-between text-sm font-label font-semibold text-tertiary">
                                             <span>Shipping</span>
@@ -298,7 +300,7 @@ const Order = () => {
                                         </div>
                                         <div className="flex justify-between items-end pt-4 border-t border-secondary">
                                             <span className="font-headline font-black text-2xl uppercase italic text-on-surface">Total</span>
-                                            <span className="font-headline font-black text-4xl text-primary leading-none tracking-tighter">₹{currentPack.price}.00</span>
+                                            <span className="font-headline font-black text-4xl text-primary leading-none tracking-tighter">₹{currentPack.price * qty}.00</span>
                                         </div>
                                     </div>
                                     {/* CTA */}
