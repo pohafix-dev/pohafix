@@ -14,8 +14,9 @@ const Shop = () => {
     const [openFaq, setOpenFaq] = useState(null);
     const [visibleReviews, setVisibleReviews] = useState(5);
 
-    const reviews = [
+    const [reviews, setReviews] = useState([
         {
+            id: 1,
             name: "Anish Sharma",
             verified: true,
             date: "May 03, 2026",
@@ -23,9 +24,11 @@ const Shop = () => {
             title: "Exactly like Sarafa Bazaar!",
             body: "I was skeptical about 'instant' poha but this blew my mind. The rice flakes don't get mushy and the Jeeravan taste is spot on. It's like having a breakfast stall in my kitchen. Highly recommended for students abroad!",
             helpful: 42,
+            unhelpful: 0,
             reply: "Dear Anish, we are thrilled to hear that PohaFix brought back memories of Sarafa! Our goal was to preserve that exact Indori soul. Thank you for your trust. - Team PohaFix"
         },
         {
+            id: 2,
             name: "Priya V.",
             verified: true,
             date: "May 03, 2026",
@@ -33,9 +36,11 @@ const Shop = () => {
             title: "Clean ingredients, great taste",
             body: "Love that there's no palm oil or MSG. Most instant foods feel heavy, but this one is light and authentic. The Ratlami Sev included is a nice touch. Perfect for my office lunch.",
             helpful: 18,
+            unhelpful: 2,
             reply: null
         },
         {
+            id: 3,
             name: "Rahul Gupta",
             verified: true,
             date: "May 02, 2026",
@@ -43,9 +48,11 @@ const Shop = () => {
             title: "Best travel companion",
             body: "Carried 10 packs for my Europe trip. Saved me from expensive, bland food. Only giving 4 stars because I wish the pomegranate flavor was even stronger, but overall a lifesaver!",
             helpful: 56,
+            unhelpful: 1,
             reply: "Hi Rahul, thank you for taking us on your trip! We hear you on the pomegranate flavor—we are currently tweaking our mix for more vibrancy. Safe travels! - PohaFix Support"
         },
         {
+            id: 4,
             name: "Megha Jain",
             verified: false,
             date: "May 01, 2026",
@@ -53,9 +60,11 @@ const Shop = () => {
             title: "Bachpan ki yaad aa gayi",
             body: "The ritual of adding hot water and waiting for 5 mins is so simple. My kids love it too. No more morning breakfast stress. Authentic Indori Zayka at its best.",
             helpful: 12,
+            unhelpful: 0,
             reply: null
         },
         {
+            id: 5,
             name: "Sandeep Patidar",
             verified: true,
             date: "April 29, 2026",
@@ -63,9 +72,11 @@ const Shop = () => {
             title: "Best Indori Poha Online",
             body: "Being from Indore and living in Bangalore, I missed the morning poha ritual. This is the only brand that gets the texture right. The masala is perfectly balanced.",
             helpful: 34,
+            unhelpful: 3,
             reply: "Shukriya Sandeep! Being compared to the original Indore taste is the biggest compliment for us."
         },
         {
+            id: 6,
             name: "Kavita R.",
             verified: true,
             date: "April 25, 2026",
@@ -73,9 +84,11 @@ const Shop = () => {
             title: "Super Convenient",
             body: "Tastes fresh even after 5 mins of soaking. I use it for my early morning shifts. Saved me so much time!",
             helpful: 9,
+            unhelpful: 0,
             reply: null
         },
         {
+            id: 7,
             name: "Vikram Singh",
             verified: true,
             date: "April 22, 2026",
@@ -83,39 +96,77 @@ const Shop = () => {
             title: "Good but need more Sev",
             body: "Taste is 5/5. Just wish the sev pack was a bit bigger because it's so tasty! Will order the combo next time.",
             helpful: 21,
+            unhelpful: 12,
             reply: "Point noted Vikram! Check out our 'Mystery Combo' for extra Sev lovers."
         },
         {
-            name: "Neha M.",
+            id: 8,
+            name: "Sunil K.",
             verified: true,
-            date: "April 18, 2026",
+            date: "April 20, 2026",
             stars: 5,
-            title: "Healthy & Quick",
-            body: "No chemicals, just real food. Finally an instant brand I can trust for my family. Highly recommended.",
-            helpful: 15,
+            title: "Authentic spices!",
+            body: "The jeeravan is exactly how it should be. Not too salty, just perfectly tangy and spicy. Best for a quick office breakfast.",
+            helpful: 7,
+            unhelpful: 0,
             reply: null
         },
         {
-            name: "Arjun K.",
+            id: 9,
+            name: "Aditi G.",
             verified: true,
             date: "April 15, 2026",
             stars: 5,
-            title: "Great value for money",
-            body: "The 300g pack lasts me a week. Cheaper and better than ordering from restaurants. Quality is top notch.",
-            helpful: 28,
-            reply: null
+            title: "Lifesaver for students",
+            body: "I live in Canada and missing home food is real. This poha is the only thing that tastes like home. Thank you PohaFix!",
+            helpful: 112,
+            unhelpful: 4,
+            reply: "So glad we could help, Aditi! Canada is a long way from home, stay warm!"
         },
         {
-            name: "Deepak Choudhary",
+            id: 10,
+            name: "Rajesh Khanna",
             verified: true,
             date: "April 10, 2026",
             stars: 5,
-            title: "Simply the best",
-            body: "I've tried 4 different brands, but PohaFix is the winner. The spice mix is what makes the difference.",
-            helpful: 41,
-            reply: "Thank you Deepak! It's our secret family recipe spice mix!"
+            title: "Quick and Healthy",
+            body: "I've replaced my oily street poha with this. Much cleaner and I don't feel sleepy after breakfast. Great quality.",
+            helpful: 19,
+            unhelpful: 1,
+            reply: null
         }
-    ];
+    ]);
+
+    const [showReviewForm, setShowReviewForm] = useState(false);
+    const [newReview, setNewReview] = useState({ name: '', title: '', body: '', stars: 5 });
+
+    const handleVote = (id, type) => {
+        setReviews(prev => prev.map(rev => {
+            if (rev.id === id) {
+                return {
+                    ...rev,
+                    [type]: rev[type] + 1
+                };
+            }
+            return rev;
+        }));
+    };
+
+    const submitReview = (e) => {
+        e.preventDefault();
+        const reviewToAdd = {
+            ...newReview,
+            id: Date.now(),
+            verified: false,
+            date: new Date().toLocaleDateString('en-US', { month: 'short', day: '2-digit', year: 'numeric' }),
+            helpful: 0,
+            unhelpful: 0,
+            reply: null
+        };
+        setReviews([reviewToAdd, ...reviews]);
+        setShowReviewForm(false);
+        setNewReview({ name: '', title: '', body: '', stars: 5 });
+    };
 
     const plans = [
         {
@@ -594,16 +645,91 @@ const Shop = () => {
                         </div>
 
                         <div className="flex justify-center md:justify-end">
-                            <button className="bg-[#014c3e] text-white px-8 py-3 rounded-full font-bold text-sm tracking-wide shadow-lg hover:scale-105 transition-transform">
-                                Write a review
+                            <button 
+                                onClick={() => setShowReviewForm(!showReviewForm)}
+                                className="bg-[#014c3e] text-white px-8 py-3 rounded-full font-bold text-sm tracking-wide shadow-lg hover:scale-105 transition-transform"
+                            >
+                                {showReviewForm ? 'Cancel' : 'Write a review'}
                             </button>
                         </div>
                     </div>
 
+                    {/* Review Submission Form */}
+                    <AnimatePresence>
+                        {showReviewForm && (
+                            <motion.div 
+                                initial={{ opacity: 0, height: 0 }}
+                                animate={{ opacity: 1, height: 'auto' }}
+                                exit={{ opacity: 0, height: 0 }}
+                                className="overflow-hidden mb-16 bg-stone-50 rounded-3xl p-8 border border-black/5"
+                            >
+                                <form onSubmit={submitReview} className="max-w-2xl mx-auto space-y-6">
+                                    <h3 className="text-2xl font-black font-headline uppercase text-center mb-8">Share Your Experience</h3>
+                                    
+                                    <div className="grid md:grid-cols-2 gap-6">
+                                        <div>
+                                            <label className="block text-xs font-black uppercase tracking-widest text-black/40 mb-2">Your Name</label>
+                                            <input 
+                                                required
+                                                value={newReview.name}
+                                                onChange={e => setNewReview({...newReview, name: e.target.value})}
+                                                className="w-full bg-white border border-black/5 rounded-xl px-4 py-3 focus:ring-2 focus:ring-primary focus:border-transparent transition-all outline-none"
+                                                placeholder="e.g. Rahul Sharma"
+                                            />
+                                        </div>
+                                        <div>
+                                            <label className="block text-xs font-black uppercase tracking-widest text-black/40 mb-2">Rating</label>
+                                            <div className="flex gap-1 h-12 items-center bg-white border border-black/5 rounded-xl px-4">
+                                                {[1,2,3,4,5].map(s => (
+                                                    <button 
+                                                        key={s}
+                                                        type="button"
+                                                        onClick={() => setNewReview({...newReview, stars: s})}
+                                                        className={`material-symbols-outlined transition-colors ${s <= newReview.stars ? 'text-primary' : 'text-black/10'}`}
+                                                        style={{fontVariationSettings: `'FILL' ${s <= newReview.stars ? 1 : 0}`}}
+                                                    >
+                                                        star
+                                                    </button>
+                                                ))}
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div>
+                                        <label className="block text-xs font-black uppercase tracking-widest text-black/40 mb-2">Review Title</label>
+                                        <input 
+                                            required
+                                            value={newReview.title}
+                                            onChange={e => setNewReview({...newReview, title: e.target.value})}
+                                            className="w-full bg-white border border-black/5 rounded-xl px-4 py-3 focus:ring-2 focus:ring-primary focus:border-transparent transition-all outline-none"
+                                            placeholder="Sum up your experience"
+                                        />
+                                    </div>
+
+                                    <div>
+                                        <label className="block text-xs font-black uppercase tracking-widest text-black/40 mb-2">Honest Review</label>
+                                        <textarea 
+                                            required
+                                            rows="4"
+                                            value={newReview.body}
+                                            onChange={e => setNewReview({...newReview, body: e.target.value})}
+                                            className="w-full bg-white border border-black/5 rounded-xl px-4 py-3 focus:ring-2 focus:ring-primary focus:border-transparent transition-all outline-none resize-none"
+                                            placeholder="What did you like about PohaFix?"
+                                        ></textarea>
+                                    </div>
+
+                                    <button type="submit" className="w-full bg-primary text-white py-4 rounded-xl font-black uppercase tracking-widest shadow-xl hover:shadow-2xl active:scale-[0.98] transition-all">
+                                        Post My Review
+                                    </button>
+                                </form>
+                            </motion.div>
+                        )}
+                    </AnimatePresence>
+
                     {/* Review Feed */}
                     <div className="space-y-16">
-                        {reviews.slice(0, visibleReviews).map((rev, idx) => (
-                            <div key={idx} className="border-b border-black/5 pb-16 last:border-0">
+                        {reviews.slice(0, visibleReviews).map((rev) => (
+                            <div key={rev.id} className="border-b border-black/5 pb-16 last:border-0">
                                 <div className="flex items-start gap-4 mb-6">
                                     <div className="w-10 h-10 rounded-full bg-stone-100 flex items-center justify-center text-stone-400">
                                         <span className="material-symbols-outlined text-2xl">person</span>
@@ -636,13 +762,19 @@ const Shop = () => {
                                     </p>
                                     
                                     <div className="flex items-center gap-6 mb-8 text-black/30">
-                                        <button className="flex items-center gap-2 hover:text-primary transition-colors">
+                                        <button 
+                                            onClick={() => handleVote(rev.id, 'helpful')}
+                                            className="flex items-center gap-2 hover:text-primary transition-colors"
+                                        >
                                             <span className="material-symbols-outlined text-lg">thumb_up</span>
                                             <span className="text-[10px] font-bold">{rev.helpful}</span>
                                         </button>
-                                        <button className="flex items-center gap-2 hover:text-primary transition-colors">
+                                        <button 
+                                            onClick={() => handleVote(rev.id, 'unhelpful')}
+                                            className="flex items-center gap-2 hover:text-primary transition-colors"
+                                        >
                                             <span className="material-symbols-outlined text-lg">thumb_down</span>
-                                            <span className="text-[10px] font-bold">0</span>
+                                            <span className="text-[10px] font-bold">{rev.unhelpful}</span>
                                         </button>
                                     </div>
 
