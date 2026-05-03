@@ -232,7 +232,7 @@ const Home = () => {
                 <section className="relative w-full overflow-hidden bg-[#a30f14]">
                     <Link to="/shop" className="block w-full">
                         <img 
-                            src="/new-hero-banner.jpg" 
+                            src="/new-hero-banner.png" 
                             alt="Authentic Indori Poha - Ready in 5 Minutes" 
                             className="w-full h-auto object-cover min-h-[40vh] md:min-h-0" 
                             onError={(e) => {
