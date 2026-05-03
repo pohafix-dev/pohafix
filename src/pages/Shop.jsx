@@ -429,13 +429,13 @@ const Shop = () => {
                     
                     <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-7 gap-4 md:gap-6">
                         {[
-                            "/loved-1.webp",
-                            "/loved-3.webp",
-                            "/diljit.webp",
-                            "/loved-2.webp",
-                            "/loved-4.webp",
-                            "/david.webp",
-                            "/loved-5.webp"
+                            "/loved-1.webp?v=1",
+                            "/loved-2.webp?v=1",
+                            "/loved-3.webp?v=1",
+                            "/loved-4.webp?v=1",
+                            "/loved-5.webp?v=1",
+                            "/diljit.webp?v=1",
+                            "/david.webp?v=1"
                         ].map((img, idx) => (
                             <div key={idx} className="aspect-square rounded-3xl overflow-hidden bg-white shadow-xl hover:scale-105 transition-transform duration-300">
                                 <img src={img} alt="PohaFix Fan" className="w-full h-full object-cover" />
@@ -455,19 +455,19 @@ const Shop = () => {
                         <div className="text-center md:text-left">
                             <div className="flex items-center justify-center md:justify-start gap-1 mb-2">
                                 {[1,2,3,4].map(i => <span key={i} className="material-symbols-outlined text-primary" style={{fontVariationSettings: "'FILL' 1"}}>star</span>)}
-                                <span className="material-symbols-outlined text-primary" style={{fontVariationSettings: "'FILL' 0.5"}}>star</span>
+                                <span className="material-symbols-outlined text-primary" style={{fontVariationSettings: "'FILL' 0.1"}}>star</span>
                             </div>
-                            <div className="text-3xl font-black font-headline">4.85 out of 5</div>
-                            <div className="text-sm text-black/50 font-medium">Based on 1,420 reviews</div>
+                            <div className="text-3xl font-black font-headline">4.10 out of 5</div>
+                            <div className="text-sm text-black/50 font-medium">Based on 330 reviews</div>
                         </div>
                         
                         <div className="space-y-2">
                             {[
-                                {stars: 5, pct: 85, count: 1207},
-                                {stars: 4, pct: 10, count: 142},
-                                {stars: 3, pct: 3, count: 42},
-                                {stars: 2, pct: 1, count: 14},
-                                {stars: 1, pct: 1, count: 15}
+                                {stars: 5, pct: 62, count: 204},
+                                {stars: 4, pct: 17, count: 57},
+                                {stars: 3, pct: 14, count: 45},
+                                {stars: 2, pct: 4, count: 14},
+                                {stars: 1, pct: 3, count: 10}
                             ].map((row) => (
                                 <div key={row.stars} className="flex items-center gap-4">
                                     <div className="flex gap-0.5 w-20">
