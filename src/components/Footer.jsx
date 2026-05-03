@@ -11,9 +11,9 @@ const Footer = () => {
                         The original Chhappan Dukaan ritual, captured in an instant. Traditional Malwa soul delivered to your doorstep. No laboratory shelf-extenders—just raw, natural ingredients.
                     </p>
                     <div className="normal-case text-on-surface-variant font-medium tracking-normal opacity-80 leading-relaxed mt-4">
-                        <p><strong>PohaFix HQ</strong></p>
-                        <p>123 Sarafa Bazaar Road, Indore</p>
-                        <p>Madhya Pradesh, India 452001</p>
+                        <p><strong>SYNNC FOODS</strong></p>
+                        <p>Near Hanuman Mandir, Dongargaon</p>
+                        <p>Manawar, Dhar, MP - 454335</p>
                         <p>Email: pohafix@gmail.com</p>
                     </div>
                 </div>
