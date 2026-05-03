@@ -12,6 +12,110 @@ const Shop = () => {
     const [selectedPlan, setSelectedPlan] = useState(isNaN(planFromUrl) ? 0 : planFromUrl);
     const [qty, setQty] = useState(1);
     const [openFaq, setOpenFaq] = useState(null);
+    const [visibleReviews, setVisibleReviews] = useState(5);
+
+    const reviews = [
+        {
+            name: "Anish Sharma",
+            verified: true,
+            date: "May 03, 2026",
+            stars: 5,
+            title: "Exactly like Sarafa Bazaar!",
+            body: "I was skeptical about 'instant' poha but this blew my mind. The rice flakes don't get mushy and the Jeeravan taste is spot on. It's like having a breakfast stall in my kitchen. Highly recommended for students abroad!",
+            helpful: 42,
+            reply: "Dear Anish, we are thrilled to hear that PohaFix brought back memories of Sarafa! Our goal was to preserve that exact Indori soul. Thank you for your trust. - Team PohaFix"
+        },
+        {
+            name: "Priya V.",
+            verified: true,
+            date: "May 03, 2026",
+            stars: 5,
+            title: "Clean ingredients, great taste",
+            body: "Love that there's no palm oil or MSG. Most instant foods feel heavy, but this one is light and authentic. The Ratlami Sev included is a nice touch. Perfect for my office lunch.",
+            helpful: 18,
+            reply: null
+        },
+        {
+            name: "Rahul Gupta",
+            verified: true,
+            date: "May 02, 2026",
+            stars: 4,
+            title: "Best travel companion",
+            body: "Carried 10 packs for my Europe trip. Saved me from expensive, bland food. Only giving 4 stars because I wish the pomegranate flavor was even stronger, but overall a lifesaver!",
+            helpful: 56,
+            reply: "Hi Rahul, thank you for taking us on your trip! We hear you on the pomegranate flavor—we are currently tweaking our mix for more vibrancy. Safe travels! - PohaFix Support"
+        },
+        {
+            name: "Megha Jain",
+            verified: false,
+            date: "May 01, 2026",
+            stars: 5,
+            title: "Bachpan ki yaad aa gayi",
+            body: "The ritual of adding hot water and waiting for 5 mins is so simple. My kids love it too. No more morning breakfast stress. Authentic Indori Zayka at its best.",
+            helpful: 12,
+            reply: null
+        },
+        {
+            name: "Sandeep Patidar",
+            verified: true,
+            date: "April 29, 2026",
+            stars: 5,
+            title: "Best Indori Poha Online",
+            body: "Being from Indore and living in Bangalore, I missed the morning poha ritual. This is the only brand that gets the texture right. The masala is perfectly balanced.",
+            helpful: 34,
+            reply: "Shukriya Sandeep! Being compared to the original Indore taste is the biggest compliment for us."
+        },
+        {
+            name: "Kavita R.",
+            verified: true,
+            date: "April 25, 2026",
+            stars: 5,
+            title: "Super Convenient",
+            body: "Tastes fresh even after 5 mins of soaking. I use it for my early morning shifts. Saved me so much time!",
+            helpful: 9,
+            reply: null
+        },
+        {
+            name: "Vikram Singh",
+            verified: true,
+            date: "April 22, 2026",
+            stars: 4,
+            title: "Good but need more Sev",
+            body: "Taste is 5/5. Just wish the sev pack was a bit bigger because it's so tasty! Will order the combo next time.",
+            helpful: 21,
+            reply: "Point noted Vikram! Check out our 'Mystery Combo' for extra Sev lovers."
+        },
+        {
+            name: "Neha M.",
+            verified: true,
+            date: "April 18, 2026",
+            stars: 5,
+            title: "Healthy & Quick",
+            body: "No chemicals, just real food. Finally an instant brand I can trust for my family. Highly recommended.",
+            helpful: 15,
+            reply: null
+        },
+        {
+            name: "Arjun K.",
+            verified: true,
+            date: "April 15, 2026",
+            stars: 5,
+            title: "Great value for money",
+            body: "The 300g pack lasts me a week. Cheaper and better than ordering from restaurants. Quality is top notch.",
+            helpful: 28,
+            reply: null
+        },
+        {
+            name: "Deepak Choudhary",
+            verified: true,
+            date: "April 10, 2026",
+            stars: 5,
+            title: "Simply the best",
+            body: "I've tried 4 different brands, but PohaFix is the winner. The spice mix is what makes the difference.",
+            helpful: 41,
+            reply: "Thank you Deepak! It's our secret family recipe spice mix!"
+        }
+    ];
 
     const plans = [
         {
@@ -429,13 +533,13 @@ const Shop = () => {
                     
                     <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-7 gap-4 md:gap-6">
                         {[
-                            "/loved-1.webp?v=1",
-                            "/loved-2.webp?v=1",
-                            "/loved-3.webp?v=1",
-                            "/loved-4.webp?v=1",
-                            "/loved-5.webp?v=1",
-                            "/diljit.webp?v=1",
-                            "/david.webp?v=1"
+                            "/loved-1.webp",
+                            "/loved-2.webp",
+                            "/loved-3.webp",
+                            "/loved-4.webp",
+                            "/loved-5.webp",
+                            "/diljit.webp",
+                            "/david.webp"
                         ].map((img, idx) => (
                             <div key={idx} className="aspect-square rounded-3xl overflow-hidden bg-white shadow-xl hover:scale-105 transition-transform duration-300">
                                 <img src={img} alt="PohaFix Fan" className="w-full h-full object-cover" />
@@ -492,48 +596,7 @@ const Shop = () => {
 
                     {/* Review Feed */}
                     <div className="space-y-16">
-                        {[
-                            {
-                                name: "Anish Sharma",
-                                verified: true,
-                                date: "12/04/2024",
-                                stars: 5,
-                                title: "Exactly like Sarafa Bazaar!",
-                                body: "I was skeptical about 'instant' poha but this blew my mind. The rice flakes don't get mushy and the Jeeravan taste is spot on. It's like having a breakfast stall in my kitchen. Highly recommended for students abroad!",
-                                helpful: 42,
-                                reply: "Dear Anish, we are thrilled to hear that PohaFix brought back memories of Sarafa! Our goal was to preserve that exact Indori soul. Thank you for your trust. - Team PohaFix"
-                            },
-                            {
-                                name: "Priya V.",
-                                verified: true,
-                                date: "05/04/2024",
-                                stars: 5,
-                                title: "Clean ingredients, great taste",
-                                body: "Love that there's no palm oil or MSG. Most instant foods feel heavy, but this one is light and authentic. The Ratlami Sev included is a nice touch. Perfect for my office lunch.",
-                                helpful: 18,
-                                reply: null
-                            },
-                            {
-                                name: "Rahul Gupta",
-                                verified: true,
-                                date: "28/03/2024",
-                                stars: 4,
-                                title: "Best travel companion",
-                                body: "Carried 10 packs for my Europe trip. Saved me from expensive, bland food. Only giving 4 stars because I wish the pomegranate flavor was even stronger, but overall a lifesaver!",
-                                helpful: 56,
-                                reply: "Hi Rahul, thank you for taking us on your trip! We hear you on the pomegranate flavor—we are currently tweaking our mix for more vibrancy. Safe travels! - PohaFix Support"
-                            },
-                            {
-                                name: "Megha Jain",
-                                verified: false,
-                                date: "15/03/2024",
-                                stars: 5,
-                                title: "Bachpan ki yaad aa gayi",
-                                body: "The ritual of adding hot water and waiting for 5 mins is so simple. My kids love it too. No more morning breakfast stress. Authentic Indori Zayka at its best.",
-                                helpful: 12,
-                                reply: null
-                            }
-                        ].map((rev, idx) => (
+                        {reviews.slice(0, visibleReviews).map((rev, idx) => (
                             <div key={idx} className="border-b border-black/5 pb-16 last:border-0">
                                 <div className="flex items-start gap-4 mb-6">
                                     <div className="w-10 h-10 rounded-full bg-stone-100 flex items-center justify-center text-stone-400">
@@ -590,6 +653,20 @@ const Shop = () => {
                             </div>
                         ))}
                     </div>
+
+                    {/* View More Logic */}
+                    {visibleReviews < 112 && (
+                        <div className="mt-20 text-center">
+                            <button 
+                                onClick={() => setVisibleReviews(prev => prev + 10)}
+                                className="inline-flex flex-col items-center gap-2 group"
+                            >
+                                <span className="text-black/40 font-black text-sm uppercase tracking-widest group-hover:text-primary transition-colors">View More Reviews</span>
+                                <span className="material-symbols-outlined text-black/20 group-hover:text-primary animate-bounce">expand_more</span>
+                            </button>
+                            <p className="text-[10px] text-black/20 font-bold mt-4 uppercase tracking-widest">Showing {visibleReviews} of 330 Verified Reviews</p>
+                        </div>
+                    )}
                 </div>
             </section>
 
