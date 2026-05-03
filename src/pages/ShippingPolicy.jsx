@@ -22,16 +22,16 @@ const ShippingPolicy = () => {
 
                     <section>
                         <h2 className="text-on-surface text-3xl font-black mb-4 font-headline uppercase">2. Domestic Shipping Rates and Estimates</h2>
-                        <p>We offer flat-rate shipping across India. Shipping charges for your order will be calculated and displayed at checkout.</p>
+                        <p>We are currently offering <strong>FREE Standard Shipping</strong> on all orders across India for a limited time.</p>
                         <ul className="list-disc pl-6 mt-4 space-y-2 font-medium">
-                            <li><strong>Standard Shipping:</strong> ₹50 (Estimated delivery 3-5 business days)</li>
-                            <li><strong>Free Shipping:</strong> On orders over ₹500 (Estimated delivery 3-5 business days)</li>
+                            <li><strong>Standard Shipping:</strong> ₹0 (Estimated delivery 4-6 business days)</li>
+                            <li><strong>Processing Time:</strong> 1-2 business days</li>
                         </ul>
                     </section>
 
                     <section>
                         <h2 className="text-on-surface text-3xl font-black mb-4 font-headline uppercase">3. Local Delivery</h2>
-                        <p>Local delivery is available for addresses within Bhopal, Madhya Pradesh. Deliveries are typically made within 24-48 hours of order placement.</p>
+                        <p>Local delivery is available for addresses within Manawar, Dhar, Madhya Pradesh. Deliveries are typically made within 24-48 hours of order placement.</p>
                     </section>
 
                     <section>
