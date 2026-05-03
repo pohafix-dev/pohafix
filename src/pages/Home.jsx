@@ -254,49 +254,42 @@ const Home = () => {
 
                         <div className="md:hidden grid grid-cols-1 gap-4">
                             {bundles.map((bundle, idx) => (
-                                <div key={idx} className="bg-white rounded-[1.5rem] overflow-hidden shadow-[0_12px_40px_-10px_rgba(0,0,0,0.08)] border border-stone-100 flex flex-col">
-                                    {/* Product Visual Header - Zero Blank Space */}
-                                    <div className="bg-[#fcf7ec] aspect-[5/4] relative flex items-center justify-center p-0 overflow-hidden">
-                                        <img src={bundle.images[0]} alt={bundle.title} className="w-[90%] h-[90%] object-contain mix-blend-multiply transition-transform duration-500 scale-105 drop-shadow-[0_25px_25px_rgba(0,0,0,0.12)]" loading="lazy" />
-                                        <div className="absolute top-3 right-3 bg-primary text-white text-[8px] font-black px-2 py-0.5 rounded-full uppercase tracking-widest shadow-md z-10">
+                                <div key={idx} className="bg-white rounded-[2.5rem] overflow-hidden shadow-2xl border border-black/5 flex flex-col">
+                                    {/* Top Section: Light Cream Background */}
+                                    <div className="bg-[#fcf7ec] aspect-square relative flex items-center justify-center p-8 overflow-hidden">
+                                        {/* Bestseller Tag */}
+                                        <div className="absolute top-0 left-6 bg-primary text-white text-[10px] font-black px-3 py-1.5 rounded-b-md uppercase tracking-widest shadow-md z-10">
                                             {bundle.tag}
                                         </div>
-                                        {/* Bottom Fade Mask to blend with white content */}
-                                        <div className="absolute inset-x-0 bottom-0 h-16 bg-gradient-to-t from-white/40 to-transparent pointer-events-none"></div>
-                                    </div>
-
-                                    {/* Product Content Details - Tightened */}
-                                    <div className="px-5 pt-4 pb-2 flex-1">
-                                        <h3 className="text-lg font-bold text-stone-900 mb-0.5 leading-tight">{bundle.title.toLowerCase().includes('the ') ? bundle.title.split('THE ')[1] : bundle.title}</h3>
-                                        <p className="text-[10px] text-stone-500 font-bold mb-0.5 leading-tight">{bundle.subtitle}</p>
-                                        <p className="text-[10px] text-stone-400 font-medium mb-2 leading-tight">{bundle.description}</p>
                                         
-                                        {/* Stars & Reviews */}
-                                        <div className="flex items-center gap-1 mb-2">
-                                            <div className="flex text-[#ce1d2a]">
-                                                <span className="material-symbols-outlined text-[0.9rem]" style={{ fontVariationSettings: "'FILL' 1" }}>star</span>
-                                                <span className="material-symbols-outlined text-[0.9rem]" style={{ fontVariationSettings: "'FILL' 1" }}>star</span>
-                                                <span className="material-symbols-outlined text-[0.9rem]" style={{ fontVariationSettings: "'FILL' 1" }}>star</span>
-                                                <span className="material-symbols-outlined text-[0.9rem]" style={{ fontVariationSettings: "'FILL' 1" }}>star</span>
-                                                <span className="material-symbols-outlined text-[0.9rem]" style={{ fontVariationSettings: "'FILL' 1" }}>star</span>
-                                            </div>
-                                            <span className="text-stone-400 text-[10px] font-semibold">({bundle.reviews})</span>
-                                        </div>
-
-                                        <div className="mb-2">
-                                            <div className="text-xl font-black text-stone-900 leading-none">₹{bundle.price}</div>
-                                            <div className="text-[9px] text-stone-400 font-medium">(Inclusive of all taxes)</div>
+                                        <img src={bundle.images[0]} alt={bundle.title} className="w-[90%] h-[90%] object-contain mix-blend-multiply drop-shadow-2xl" loading="lazy" />
+                                        
+                                        {/* Rating Pill */}
+                                        <div className="absolute bottom-6 bg-white/90 backdrop-blur-sm px-3 py-1.5 rounded-full shadow-lg flex items-center gap-2 border border-black/5">
+                                            <span className="text-primary font-black text-[10px]">★ 4.9</span>
+                                            <div className="w-px h-3 bg-black/10"></div>
+                                            <span className="text-black/60 font-bold text-[9px] uppercase tracking-tighter">{bundle.subtitle.split('(')[0]}</span>
                                         </div>
                                     </div>
 
-                                    {/* Footer Button Strategy */}
-                                    <div className="border-t border-stone-100 p-4">
-                                        <Link 
-                                            to={`/order?plan=${idx}`} 
-                                            className="block w-full text-center text-[#ce1d2a] font-black text-sm uppercase tracking-widest py-2 hover:opacity-80 transition-opacity"
-                                        >
-                                            ORDER NOW
-                                        </Link>
+                                    {/* Bottom Section: Brand Red */}
+                                    <div className="p-8 bg-primary text-white flex-1">
+                                        <h3 className="text-2xl font-black font-headline mb-2 leading-tight uppercase tracking-tight">{bundle.title}</h3>
+                                        <p className="text-[12px] text-white/80 font-medium mb-6 leading-relaxed">{bundle.description}</p>
+                                        
+                                        <div className="mb-8">
+                                            <div className="text-4xl font-black font-headline leading-none mb-1">₹{bundle.price}</div>
+                                            <div className="text-[9px] text-white/50 font-bold tracking-widest uppercase">MRP Inclusive of all taxes</div>
+                                        </div>
+
+                                        <div className="flex flex-col gap-3">
+                                            <Link to="/shop" className="w-full bg-white text-primary py-3.5 rounded-xl font-black text-xs uppercase tracking-widest text-center shadow-lg active:scale-95 transition-transform">
+                                                View Details
+                                            </Link>
+                                            <Link to={`/order?plan=${idx}`} className="w-full bg-white text-primary py-3.5 rounded-xl font-black text-xs uppercase tracking-widest text-center shadow-lg active:scale-95 transition-transform">
+                                                Buy Now
+                                            </Link>
+                                        </div>
                                     </div>
                                 </div>
                             ))}
@@ -312,29 +305,48 @@ const Home = () => {
                                     >
                                         {bundles.map((bundle, idx) => (
                                             <div key={idx} className="w-full flex-shrink-0 px-6">
-                                                <div className="bg-white rounded-[2rem] shadow-[0_8px_30px_rgb(0,0,0,0.04)] overflow-hidden flex flex-col md:flex-row min-h-[450px]">
-                                                    <div className="md:w-1/2 p-12 bg-[#fdfaf2] flex items-center justify-center relative border-r border-gray-100">
-                                                        <img src={bundle.images[0]} alt="Product" className="w-[85%] h-auto object-contain mix-blend-multiply transition-transform duration-500 hover:scale-105" loading="lazy" />
-                                                    </div>
-                                                    <div className="md:w-1/2 p-12 flex flex-col justify-center">
-                                                        <span className="bg-[#eaf4e5] text-[#347b4e] text-[10px] font-black uppercase tracking-widest px-3 py-1 rounded-full w-fit mb-6">
-                                                            {bundle.tag}
-                                                        </span>
-                                                        <h3 className="text-5xl font-black font-headline text-gray-900 mb-4 leading-[1.1] tracking-tight uppercase">
-                                                            Pohafix {bundle.title.split('THE ')[1]}
-                                                        </h3>
-                                                        <p className="text-gray-500 font-medium leading-relaxed mb-8 pr-4 italic">
-                                                            {bundle.subtitle}.
-                                                        </p>
-                                                        <div className="bg-[#f6f4ed] rounded-xl p-6 mb-6 flex justify-between items-center border border-[#ece9df]">
-                                                            <span className="text-4xl font-black font-headline text-[#af101a]">₹{bundle.price}</span>
-                                                            <span className="text-[#8b7921] font-bold text-xs uppercase tracking-widest">SAVE ₹{bundle.originalPrice ? bundle.originalPrice - bundle.price : '0'}</span>
-                                                        </div>
-                                                        <Link to="/shop" className="w-full bg-[#ae1925] text-white py-4 rounded-xl font-bold text-lg hover:bg-[#8f121d] transition-colors text-center shadow-lg active:scale-[0.98]">
-                                                            Order Now
-                                                        </Link>
-                                                    </div>
-                                                </div>
+                                    <div className="bg-white rounded-[2rem] shadow-2xl overflow-hidden flex flex-col md:flex-row min-h-[500px] border border-black/5">
+                                        {/* Top/Left Section: Product Visual */}
+                                        <div className="md:w-1/2 bg-[#fcf7ec] relative flex items-center justify-center p-12 overflow-hidden border-b md:border-b-0 md:border-r border-black/5">
+                                            {/* Bestseller Ribbon */}
+                                            <div className="absolute top-0 left-8 bg-primary text-white text-[10px] font-black px-4 py-2 rounded-b-lg uppercase tracking-widest shadow-lg z-20">
+                                                {bundle.tag}
+                                            </div>
+                                            
+                                            <img src={bundle.images[0]} alt={bundle.title} className="w-[85%] h-auto object-contain mix-blend-multiply transition-transform duration-700 hover:scale-110 drop-shadow-2xl" loading="lazy" />
+                                            
+                                            {/* Rating Badge */}
+                                            <div className="absolute bottom-8 left-1/2 -translate-x-1/2 bg-white/90 backdrop-blur-md px-4 py-2 rounded-full shadow-xl flex items-center gap-2 border border-black/5 z-20">
+                                                <span className="text-primary font-black text-xs">★ 4.9</span>
+                                                <div className="w-px h-3 bg-black/10"></div>
+                                                <span className="text-black/60 font-bold text-[10px] uppercase tracking-wider">{bundle.subtitle.split('(')[0]}</span>
+                                            </div>
+                                        </div>
+
+                                        {/* Bottom/Right Section: Content (Red) */}
+                                        <div className="md:w-1/2 p-10 md:p-14 bg-primary flex flex-col justify-center text-white">
+                                            <h3 className="text-3xl md:text-5xl font-black font-headline mb-4 leading-tight tracking-tight uppercase">
+                                                {bundle.title}
+                                            </h3>
+                                            <p className="text-white/80 font-medium leading-relaxed mb-8 text-sm md:text-base">
+                                                {bundle.description}. Freshly batched and delivered to your doorstep.
+                                            </p>
+                                            
+                                            <div className="mb-10">
+                                                <div className="text-5xl md:text-6xl font-black font-headline leading-none mb-2">₹{bundle.price}</div>
+                                                <div className="text-[10px] text-white/60 font-bold uppercase tracking-widest">MRP Inclusive of all taxes</div>
+                                            </div>
+
+                                            <div className="flex flex-col gap-4">
+                                                <Link to="/shop" className="w-full bg-white text-primary py-4 rounded-xl font-black text-sm uppercase tracking-widest hover:bg-stone-100 transition-colors text-center shadow-lg active:scale-[0.98]">
+                                                    View Details
+                                                </Link>
+                                                <Link to={`/order?plan=${idx}`} className="w-full bg-white text-primary py-4 rounded-xl font-black text-sm uppercase tracking-widest hover:bg-stone-100 transition-colors text-center shadow-lg active:scale-[0.98]">
+                                                    Buy Now
+                                                </Link>
+                                            </div>
+                                        </div>
+                                    </div>
                                             </div>
                                         ))}
                                     </div>
