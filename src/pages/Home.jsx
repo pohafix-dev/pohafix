@@ -18,9 +18,9 @@ const Home = () => {
 
     const bundles = [
         {
-            title: "THE STARTER PACK",
-            subtitle: "1 Full 300g Box (5 Individual Packs)",
-            description: "Ready in 5 mins. Authentically Indori.",
+            title: "Pohafix instant poha 300 Gram Pack",
+            subtitle: "5 Individual Packs",
+            description: "Authentic Indori Poha ready in 5 minutes. No preservatives.",
             reviews: "6,358",
             price: 189,
             tag: "POPULAR",
@@ -29,21 +29,21 @@ const Home = () => {
             theme: "light"
         },
         {
-            title: "THE REBEL BUNDLE",
-            subtitle: "2 Full 300g Boxes (600g Total)",
-            description: "Bulk savings for the true Poha lover.",
+            title: "Pohafix instant poha 300 gram *2 - 600 gram pack",
+            subtitle: "10 Individual Packs",
+            description: "Double the taste, double the savings. Best for families.",
             reviews: "2,685",
             price: 290,
             originalPrice: 378,
-            tag: "SAVE ₹88",
+            tag: "BEST VALUE",
             tagColor: "bg-[#af101a]",
             images: ["/combo-2box.webp"],
             theme: "dark"
         },
         {
-            title: "THE MYSTERY COMBO",
-            subtitle: "1 Box 300g Pohafix + 1 Secret Sev (150g)",
-            description: "Limited edition street-style combo.",
+            title: "Pohafix Instant poha 300 gram + Pure Home Made Testy Sev",
+            subtitle: "Poha + Secret Sev",
+            description: "Traditional Poha paired with our signature crispy Ratlami Sev.",
             reviews: "1,842",
             price: 290,
             tag: "LIMITED",
@@ -255,8 +255,8 @@ const Home = () => {
                         <div className="md:hidden grid grid-cols-1 gap-4">
                             {bundles.map((bundle, idx) => (
                                 <div key={idx} className="bg-white rounded-[2.5rem] overflow-hidden shadow-2xl border border-black/5 flex flex-col">
-                                    {/* Top Section: Light Cream Background */}
-                                    <div className="bg-[#fcf7ec] aspect-square relative flex items-center justify-center p-8 overflow-hidden">
+                                    {/* Top Section: Plain White for Background Removal look */}
+                                    <div className="bg-white aspect-square relative flex items-center justify-center p-8 overflow-hidden">
                                         {/* Bestseller Tag */}
                                         <div className="absolute top-0 left-6 bg-primary text-white text-[10px] font-black px-3 py-1.5 rounded-b-md uppercase tracking-widest shadow-md z-10">
                                             {bundle.tag}
@@ -268,7 +268,7 @@ const Home = () => {
                                         <div className="absolute bottom-6 bg-white/90 backdrop-blur-sm px-3 py-1.5 rounded-full shadow-lg flex items-center gap-2 border border-black/5">
                                             <span className="text-primary font-black text-[10px]">★ 4.9</span>
                                             <div className="w-px h-3 bg-black/10"></div>
-                                            <span className="text-black/60 font-bold text-[9px] uppercase tracking-tighter">{bundle.subtitle.split('(')[0]}</span>
+                                            <span className="text-black/60 font-bold text-[9px] uppercase tracking-tighter">{bundle.subtitle}</span>
                                         </div>
                                     </div>
 
@@ -307,7 +307,7 @@ const Home = () => {
                                             <div key={idx} className="w-full flex-shrink-0 px-6">
                                     <div className="bg-white rounded-[2rem] shadow-2xl overflow-hidden flex flex-col md:flex-row min-h-[500px] border border-black/5">
                                         {/* Top/Left Section: Product Visual */}
-                                        <div className="md:w-1/2 bg-[#fcf7ec] relative flex items-center justify-center p-12 overflow-hidden border-b md:border-b-0 md:border-r border-black/5">
+                                        <div className="md:w-1/2 bg-white relative flex items-center justify-center p-12 overflow-hidden border-b md:border-b-0 md:border-r border-black/5">
                                             {/* Bestseller Ribbon */}
                                             <div className="absolute top-0 left-8 bg-primary text-white text-[10px] font-black px-4 py-2 rounded-b-lg uppercase tracking-widest shadow-lg z-20">
                                                 {bundle.tag}
@@ -319,7 +319,7 @@ const Home = () => {
                                             <div className="absolute bottom-8 left-1/2 -translate-x-1/2 bg-white/90 backdrop-blur-md px-4 py-2 rounded-full shadow-xl flex items-center gap-2 border border-black/5 z-20">
                                                 <span className="text-primary font-black text-xs">★ 4.9</span>
                                                 <div className="w-px h-3 bg-black/10"></div>
-                                                <span className="text-black/60 font-bold text-[10px] uppercase tracking-wider">{bundle.subtitle.split('(')[0]}</span>
+                                                <span className="text-black/60 font-bold text-[10px] uppercase tracking-wider">{bundle.subtitle}</span>
                                             </div>
                                         </div>
 
