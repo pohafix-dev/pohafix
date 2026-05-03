@@ -184,24 +184,7 @@ const Shop = () => {
                                 <p className="text-xs font-medium text-black/50">MRP Inclusive of all taxes</p>
                             </div>
 
-                            {/* Promotional Banners */}
-                            <div className="space-y-3 mb-8">
-                                <div className="bg-[#e6f4ea] border border-[#a8dab5] border-dashed rounded-lg p-3 flex items-start gap-3">
-                                    <span className="material-symbols-outlined text-[#137333]">local_activity</span>
-                                    <p className="text-sm font-medium text-[#137333]">Buy now and Get a <strong>Scratch Card</strong> inside the box to win exciting prizes!</p>
-                                </div>
 
-                                <div className="border border-[#f29900]/40 rounded-lg p-4 relative flex items-center gap-4 bg-[#fff9f0]">
-                                    <div className="absolute -top-3 left-4 bg-[#116e2b] text-white text-[9px] font-black uppercase tracking-widest px-2 py-0.5 rounded-sm">
-                                        Exclusive Offer
-                                    </div>
-                                    <img src="/combo-single.png" alt="Free gift" className="w-12 h-12 object-contain mix-blend-multiply" />
-                                    <div>
-                                        <p className="font-bold text-black text-sm">Get FREE Authentic Ratlami Sev Packet</p>
-                                        <p className="font-bold text-black/60 text-xs">Worth ₹45</p>
-                                    </div>
-                                </div>
-                            </div>
 
                             {/* Variant Selector */}
                             <div className="mb-8">
