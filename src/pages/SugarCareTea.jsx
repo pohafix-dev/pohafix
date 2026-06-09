@@ -57,7 +57,7 @@ const SugarCareTea = () => {
         {
             title: "Naturally Sweet Taste",
             description: "Enjoy a pleasant sweetness without adding sugar.",
-            icon: "nest_eco_glove"
+            icon: "eco"
         },
         {
             title: "Premium Assam CTC Blend",
@@ -235,7 +235,7 @@ const SugarCareTea = () => {
                             </div>
 
                             {/* Multi Thumbnails */}
-                            <div className="flex gap-3 overflow-x-auto pb-2 snap-x hide-scrollbar justify-center">
+                            <div className="flex gap-3 overflow-x-auto pb-2 snap-x hide-scrollbar justify-start">
                                 {thumbnails.map((thumb, idx) => (
                                     <button 
                                         key={idx}
