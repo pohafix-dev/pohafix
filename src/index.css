@@ -1,0 +1,14 @@
+/* 
+  All complex styling and theme configurations have been migrated to the 
+  Tailwind CDN configuration script inside index.html.
+*/
+
+:root {
+  color-scheme: light dark;
+}
+
+body {
+  margin: 0;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}

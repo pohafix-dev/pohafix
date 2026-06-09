@@ -1,0 +1,746 @@
+import React, { useEffect, useState } from 'react';
+import { Link } from 'react-router-dom';
+import { Helmet } from 'react-helmet-async';
+import VideoCard from '../components/VideoCard';
+import { videoData } from '../data/videos';
+import Header from '../components/Header';
+import Footer from '../components/Footer';
+
+const Home = () => {
+    const [currentSlide, setCurrentSlide] = useState(0);
+    const [bundleSlide, setBundleSlide] = useState(0);
+    const slides = [
+        "/box-front.webp",
+        "/box-right.webp",
+        "/box-left.webp",
+        "/box-group.webp"
+    ];
+
+    const bundles = [
+        {
+            title: "Pohafix - Khatta Mitha Indori Poha, 300 Gram Pack of 5 / Real Taste of Indore / No Preservative",
+            subtitle: "5 Individual Packs",
+            description: "1 Full 300g Box (5 Individual Quick-Prep Servings). 100% natural, trans-fat-free, healthy instant meals. No chemical additives.",
+            reviews: "858",
+            price: 189,
+            tag: "POPULAR",
+            tagColor: "bg-[#716016]",
+            images: ["/combo-single.webp"],
+            theme: "light"
+        },
+        {
+            title: "Pohafix - Khatta Mitha Indori Poha, 600 Gram Pack of 10 / Double Joy / Healthy Office Breakfast",
+            subtitle: "10 Individual Packs",
+            description: "2 Full 300g Boxes (10 Individual Quick-Prep Servings). Perfect instant breakfast option for weight loss, travel, and active families.",
+            reviews: "858",
+            price: 290,
+            originalPrice: 378,
+            tag: "BEST VALUE",
+            tagColor: "bg-[#af101a]",
+            images: ["/combo-2box.webp"],
+            theme: "dark"
+        },
+        {
+            title: "Pohafix - Khatta Mitha Indori Poha + Pure Homemade Tasty Ratlami Sev / Double Treat / Real Indori Taste",
+            subtitle: "Poha + Secret Sev",
+            description: "1 Full 300g Box (5 Servings) paired with 150g of crispy Homemade Ratlami Sev. Experience authentic Indore street food instantly.",
+            reviews: "858",
+            price: 290,
+            tag: "LIMITED",
+            tagColor: "bg-[#716016]",
+            images: ["/combo-sev.webp"],
+            theme: "dark"
+        }
+    ];
+
+    useEffect(() => {
+        window.scrollTo(0, 0);
+        const timer = setInterval(() => {
+            setCurrentSlide((prev) => (prev + 1) % slides.length);
+        }, 3000);
+        return () => clearInterval(timer);
+    }, []);
+
+    return (
+        <div className="bg-background text-on-surface font-body selection:bg-secondary-container selection:text-on-secondary-container flex flex-col min-h-screen">
+            <Helmet>
+                <title>Pohafix – Instant Poha Ready in 5 Minutes | Buy Online India</title>
+                <meta name="description" content="Order Pohafix instant poha – ready in 5 minutes, no cooking. Free delivery India. Healthier & tastier than MTR. Shop now." />
+                <meta name="keywords" content="instant poha online, ready to eat poha, poha in 5 minutes, healthy instant breakfast india, poha without cooking, office snack poha, पोहा ऑनलाइन खरीदें, इंस्टेंट पोहा" />
+                
+                {/* Social Sharing Metadata */}
+                <meta property="og:title" content="Pohafix | Authentic Indori Poha in 5 Minutes" />
+                <meta property="og:description" content="Fresh, organic, and authentic Indori Poha delivered to your doorstep. Ready in just 5 minutes!" />
+                <meta property="og:image" content="https://pohafix.com/synnc-pohafix-box.webp" />
+                <meta property="og:url" content="https://pohafix.com" />
+                <meta name="twitter:card" content="summary_large_image" />
+
+                <script type="application/ld+json">
+                    {`
+                    {
+                      "@context": "https://schema.org/",
+                      "@type": "Product",
+                      "name": "Pohafix Authentic Indori Poha",
+                      "image": ["https://pohafix.com/box-front.webp"],
+                      "description": "Premium ready-to-use Indori Poha with authentic spices and Ratlami Sev. No preservatives.",
+                      "brand": {
+                        "@type": "Brand",
+                        "name": "Pohafix"
+                      },
+                      "offers": {
+                        "@type": "Offer",
+                        "url": "https://pohafix.com/shop",
+                        "priceCurrency": "INR",
+                        "price": "189",
+                        "priceValidUntil": "2026-12-31",
+                        "availability": "https://schema.org/InStock"
+                      },
+                      "aggregateRating": {
+                        "@type": "AggregateRating",
+                        "ratingValue": "4.4",
+                        "reviewCount": "858"
+                      }
+                    }
+                    `}
+                </script>
+                
+                {/* Organization Schema */}
+                <script type="application/ld+json">
+                    {`
+                    {
+                      "@context": "https://schema.org",
+                      "@type": "Organization",
+                      "name": "Pohafix",
+                      "url": "https://pohafix.com",
+                      "logo": "https://pohafix.com/logo.webp",
+                      "contactPoint": {
+                        "@type": "ContactPoint",
+                        "telephone": "+91-9754684978",
+                        "contactType": "customer service",
+                        "areaServed": "IN",
+                        "availableLanguage": ["Hindi", "English"]
+                      },
+                      "sameAs": [
+                        "https://www.instagram.com/pohafix"
+                      ]
+                    }
+                    `}
+                </script>
+
+                {/* FAQ Schema - The Secret Sauce for Google "People Also Ask" */}
+                <script type="application/ld+json">
+                    {`
+                    {
+                      "@context": "https://schema.org",
+                      "@type": "FAQPage",
+                      "mainEntity": [
+                        {
+                          "@type": "Question",
+                          "name": "Which is the best instant poha brand in India?",
+                          "acceptedAnswer": {
+                            "@type": "Answer",
+                            "text": "Pohafix is considered the best instant poha brand for authentic Indori taste. It uses no preservatives and is ready in just 5 minutes with hot water."
+                          }
+                        },
+                        {
+                          "@type": "Question",
+                          "name": "Is instant poha healthy for weight loss?",
+                          "acceptedAnswer": {
+                            "@type": "Answer",
+                            "text": "Yes, Pohafix instant poha is a healthy breakfast option as it is made from organic flattened rice, is light on the stomach, and contains no artificial chemicals."
+                          }
+                        },
+                        {
+                          "@type": "Question",
+                          "name": "How to make Indori Poha in 5 minutes?",
+                          "acceptedAnswer": {
+                            "@type": "Answer",
+                            "text": "Just add 60ml of hot boiling water to one pack of Pohafix, cover for 5 minutes, and stir. Your authentic Indori breakfast is ready!"
+                          }
+                        }
+                      ]
+                    }
+                    `}
+                </script>
+
+                {/* Recipe Schema */}
+                <script type="application/ld+json">
+                    {`
+                    {
+                      "@context": "https://schema.org/",
+                      "@type": "Recipe",
+                      "name": "Pohafix Instant Indori Poha",
+                      "image": [
+                        "https://pohafix.com/box-front.webp"
+                      ],
+                      "author": {
+                        "@type": "Organization",
+                        "name": "Pohafix"
+                      },
+                      "datePublished": "2026-05-01",
+                      "description": "Authentic Indori Poha ready in 5 minutes. No cooking required, just add hot water.",
+                      "prepTime": "PT1M",
+                      "cookTime": "PT5M",
+                      "totalTime": "PT6M",
+                      "keywords": "instant poha, indori poha recipe, no cook breakfast",
+                      "recipeYield": "1 serving",
+                      "recipeCategory": "Breakfast",
+                      "recipeCuisine": "Indian",
+                      "nutrition": {
+                        "@type": "NutritionInformation",
+                        "calories": "250 calories"
+                      },
+                      "recipeIngredient": [
+                        "1 serving (60g) Pohafix Instant Poha Mix",
+                        "60 ml hot boiling water"
+                      ],
+                      "recipeInstructions": [
+                        {
+                          "@type": "HowToStep",
+                          "name": "Pour",
+                          "text": "Empty 1 serving (60 g poha) into a bowl."
+                        },
+                        {
+                          "@type": "HowToStep",
+                          "name": "Add Water",
+                          "text": "Add 60 ml hot boiled water."
+                        },
+                        {
+                          "@type": "HowToStep",
+                          "name": "Cover",
+                          "text": "Cover and keep for 5 minutes."
+                        },
+                        {
+                          "@type": "HowToStep",
+                          "name": "Stir",
+                          "text": "Stir well and serve hot. Garnish with chopped onions if desired."
+                        }
+                      ],
+                      "aggregateRating": {
+                        "@type": "AggregateRating",
+                        "ratingValue": "5.0",
+                        "reviewCount": "240"
+                      }
+                    }
+                    `}
+                </script>
+            </Helmet>
+            <Header />
+
+            <main className="flex-1">
+                {/* Hero Section */}
+                <section className="relative w-full overflow-hidden bg-surface pt-28 md:pt-32 pb-6">
+                    <div className="container mx-auto px-4 md:px-6">
+                        <h1 className="text-center font-headline text-2xl md:text-5xl font-black text-primary uppercase tracking-tight mb-8 mt-2 max-w-4xl mx-auto px-4 leading-tight">
+                            Instant Poha Ready in 5 Minutes – Order Pohafix Online
+                        </h1>
+                        <Link to="/shop" className="block w-full rounded-xl md:rounded-3xl overflow-hidden shadow-xl hover:shadow-2xl transition-shadow duration-500">
+                            <img 
+                                src="/new-hero-banner.webp" 
+                                alt="Pohafix 80g instant poha ready-to-eat pack" 
+                                className="w-full h-auto object-contain block" 
+                                fetchpriority="high"
+                                loading="eager"
+                            />
+                        </Link>
+                    </div>
+                </section>
+
+                {/* Product Combos - Mobile Grid / Desktop Carousel */}
+                <section className="py-12 md:py-24 bg-[#fef9f0] relative overflow-hidden">
+                    <div className="container mx-auto px-4 md:px-6">
+                        <div className="flex flex-col md:flex-row justify-between items-end mb-8 md:mb-12 gap-4">
+                            <div>
+                                <h2 className="text-3xl md:text-6xl font-black font-headline text-on-surface tracking-tighter uppercase">Pick Your <span className="text-primary italic">Poha Fix.</span></h2>
+                            </div>
+                        </div>
+
+                        <div className="md:hidden grid grid-cols-1 gap-4">
+                            {bundles.map((bundle, idx) => (
+                                <div key={idx} className="bg-white rounded-[2.5rem] overflow-hidden shadow-2xl border border-black/5 flex flex-col">
+                                    {/* Top Section: Plain White for Background Removal look */}
+                                    <div className="bg-white aspect-square relative flex items-center justify-center p-8 overflow-hidden">
+                                        {/* Bestseller Tag */}
+                                        <div className="absolute top-0 left-6 bg-primary text-white text-[10px] font-black px-3 py-1.5 rounded-b-md uppercase tracking-widest shadow-md z-10">
+                                            {bundle.tag}
+                                        </div>
+                                        
+                                        <img src={bundle.images[0]} alt={bundle.title} className="w-[90%] h-[90%] object-contain mix-blend-multiply drop-shadow-2xl" loading="lazy" />
+                                        
+                                        {/* Rating Pill */}
+                                        <div className="absolute bottom-6 bg-white/90 backdrop-blur-sm px-3 py-1.5 rounded-full shadow-lg flex items-center gap-2 border border-black/5">
+                                            <span className="text-primary font-black text-[10px]">★ 4.9</span>
+                                            <div className="w-px h-3 bg-black/10"></div>
+                                            <span className="text-black/60 font-bold text-[9px] uppercase tracking-tighter">{bundle.subtitle}</span>
+                                        </div>
+                                    </div>
+
+                                    {/* Bottom Section: Brand Red */}
+                                    <div className="p-8 bg-primary text-white flex-1">
+                                        <h3 className="text-2xl font-black font-headline mb-2 leading-tight uppercase tracking-tight">{bundle.title}</h3>
+                                        <p className="text-[12px] text-white/80 font-medium mb-6 leading-relaxed">{bundle.description}</p>
+                                        
+                                        <div className="mb-8">
+                                            <div className="text-4xl font-black font-headline leading-none mb-1">₹{bundle.price}</div>
+                                            <div className="text-[9px] text-white/50 font-bold tracking-widest uppercase">MRP Inclusive of all taxes</div>
+                                        </div>
+
+                                        <div className="flex flex-col gap-3">
+                                            <Link to="/shop" className="w-full bg-white text-primary py-3.5 rounded-xl font-black text-xs uppercase tracking-widest text-center shadow-lg active:scale-95 transition-transform">
+                                                View Details
+                                            </Link>
+                                            <Link to={`/order?plan=${idx}`} className="w-full bg-white text-primary py-3.5 rounded-xl font-black text-xs uppercase tracking-widest text-center shadow-lg active:scale-95 transition-transform">
+                                                Buy Now
+                                            </Link>
+                                        </div>
+                                    </div>
+                                </div>
+                            ))}
+                        </div>
+
+                        <div className="hidden md:block max-w-5xl mx-auto">
+                            <div className="relative group p-8">
+                                {/* Products Carousel (Scrollable on mobile, Grid on desktop) */}
+                                <div className="flex overflow-x-auto snap-x snap-mandatory no-scrollbar gap-6 pb-8 md:grid md:grid-cols-3 md:overflow-visible md:pb-0">
+                                    {bundles.map((bundle, idx) => (
+                                        <div key={idx} className="min-w-[85%] snap-center md:min-w-0 h-full">
+                                            <div className="bg-[#fef9f0] rounded-[2rem] shadow-none overflow-hidden flex flex-col h-full border-none transition-all duration-500 hover:scale-[1.02] group">
+                                                {/* Top Section: Product Visual */}
+                                                <div className="bg-[#fef9f0] relative flex items-center justify-center p-6 aspect-square overflow-hidden">
+                                                    {/* Bestseller Ribbon */}
+                                                    <div className="absolute top-0 left-6 bg-primary text-white text-[9px] font-black px-3 py-1.5 rounded-b-lg uppercase tracking-widest z-20">
+                                                        {bundle.tag}
+                                                    </div>
+                                                    
+                                                    <img 
+                                                        src={bundle.images[0]} 
+                                                        alt={bundle.title} 
+                                                        className="w-[85%] h-auto object-contain mix-blend-multiply transition-transform duration-700 group-hover:scale-110 will-change-transform" 
+                                                        loading="lazy" 
+                                                    />
+                                                    
+                                                    {/* Rating Badge */}
+                                                    <div className="absolute bottom-4 left-1/2 -translate-x-1/2 bg-white/90 backdrop-blur-md px-3 py-1 rounded-full shadow-lg flex items-center gap-1.5 border border-black/5 z-20">
+                                                        <span className="text-primary font-black text-[10px]">★ 4.9</span>
+                                                        <div className="w-px h-2 bg-black/10"></div>
+                                                        <span className="text-black/60 font-bold text-[9px] uppercase tracking-wider">{bundle.subtitle}</span>
+                                                    </div>
+                                                </div>
+
+                                                {/* Bottom Section: Content */}
+                                                <div className="p-6 bg-primary flex flex-col flex-1 text-white">
+                                                    <h3 className="text-xl font-black font-headline mb-4 leading-tight tracking-tight uppercase line-clamp-2">
+                                                        {bundle.title}
+                                                    </h3>
+                                                    
+                                                    <div className="mb-6 mt-auto">
+                                                        <div className="flex items-baseline gap-2">
+                                                            <div className="text-3xl font-black font-headline">₹{bundle.price}</div>
+                                                            {bundle.originalPrice && <div className="text-white/40 line-through text-xs font-bold">₹{bundle.originalPrice}</div>}
+                                                        </div>
+                                                        <div className="text-[9px] text-white/60 font-bold uppercase tracking-widest">Inclusive of all taxes</div>
+                                                    </div>
+
+                                                    <div className="flex flex-col gap-2">
+                                                        <Link to={`/order?plan=${idx}`} className="w-full bg-[#fdbd30] text-black py-3 rounded-xl font-black text-[11px] uppercase tracking-widest hover:bg-[#ffcf4d] transition-colors text-center active:scale-[0.95]">
+                                                            Buy Now
+                                                        </Link>
+                                                        <Link to="/shop" className="w-full text-white/40 py-1 rounded-xl font-bold text-[10px] uppercase tracking-widest hover:text-white transition-colors text-center">
+                                                            View Full Details
+                                                        </Link>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    ))}
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                {/* Sugar Care Tea Promo Section */}
+                <section className="py-16 md:py-24 bg-[#0b3a24] text-white relative overflow-hidden">
+                    {/* newsprint texture overlay */}
+                    <div className="absolute inset-0 bg-newsprint pointer-events-none opacity-5 mix-blend-overlay"></div>
+                    <div className="container mx-auto px-6 relative z-10">
+                        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+                            <div className="lg:col-span-7 space-y-6 text-left">
+                                <span className="bg-[#fdbd30] text-[#0b3a24] px-4 py-1.5 rounded-full text-xs font-black uppercase tracking-widest inline-block">
+                                    NEW LAUNCH
+                                </span>
+                                <h2 className="text-4xl md:text-6xl font-black font-headline tracking-tighter uppercase leading-none">
+                                    SUGAR CARE TEA
+                                </h2>
+                                <h3 className="text-xl md:text-2xl font-bold text-[#fdbd30] italic">
+                                    Wahi Chai Ka Maza. Ab Healthy Mode Mein.
+                                </h3>
+                                <p className="text-white/80 text-base md:text-lg leading-relaxed max-w-2xl">
+                                    Enjoy the rich taste of premium chai without compromising on your lifestyle choices. Sugar Care Tea is a carefully crafted blend of Premium Assam CTC Tea, Stevia, Cinnamon, Tulsi and Ginger that delivers a naturally sweet and satisfying tea experience.
+                                </p>
+                                <div className="pt-4 flex flex-col sm:flex-row gap-4">
+                                    <Link to="/sugar-care-tea" className="bg-[#fdbd30] text-[#0b3a24] px-8 py-4 font-headline font-black text-base uppercase tracking-wider rounded-lg hover:bg-[#ffcf4d] transition-colors text-center">
+                                        Explore Sugar Care Tea
+                                    </Link>
+                                    <Link to="/order?plan=3" className="border-2 border-white/20 hover:border-white text-white px-8 py-4 font-headline font-black text-base uppercase tracking-wider rounded-lg transition-colors text-center">
+                                        Buy Now — ₹349 (200g)
+                                    </Link>
+                                </div>
+                            </div>
+                            <div className="lg:col-span-5 flex justify-center">
+                                <div className="w-72 md:w-96 aspect-square bg-white/5 border border-white/10 rounded-3xl p-6 backdrop-blur-md relative overflow-hidden shadow-2xl">
+                                    <img src="/sugar-care-tea.webp" alt="Sugar Care Tea packaging" className="w-full h-full object-contain hover:scale-105 transition-transform duration-300" />
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                <section className="py-12 md:py-24 bg-surface-container-low overflow-hidden">
+                    <div className="container mx-auto px-6">
+                        <div className="flex flex-col md:flex-row items-center gap-16">
+                            <div className="w-full md:w-1/2 relative">
+                                {/* Mobile: Swippable Carousel | Desktop: Layered Stack */}
+                                <div className="block md:hidden">
+                                    <div className="flex overflow-x-auto snap-x snap-mandatory gap-6 no-scrollbar pb-8 px-4">
+                                        {[
+                                            { id: 1, img: "/diljit.webp", caption: "DILJIT LOVES IT", rotate: "-rotate-2" },
+                                            { id: 2, img: "/david.webp", caption: "STREET SIDE STORY", rotate: "rotate-2" }
+                                        ].map((p) => (
+                                            <div key={p.id} className="min-w-[85%] snap-center">
+                                                <div className={`bg-white shadow-2xl border-8 border-white p-2 aspect-[4/5] relative ${p.rotate}`}>
+                                                    <img src={p.img} alt={p.caption} className="w-full h-full object-cover" />
+                                                    <p className="absolute bottom-4 left-4 bg-primary text-white text-[10px] px-3 py-1 font-black uppercase tracking-widest">{p.caption}</p>
+                                                </div>
+                                            </div>
+                                        ))}
+                                    </div>
+                                    <div className="flex justify-center gap-2 mt-4">
+                                        <div className="w-8 h-1 bg-primary rounded-full"></div>
+                                        <div className="w-4 h-1 bg-gray-300 rounded-full"></div>
+                                    </div>
+                                </div>
+
+                                {/* Desktop Stacked View */}
+                                <div className="hidden md:flex justify-center">
+                                    <div className="relative w-full max-w-md aspect-square lg:scale-110">
+                                        <div className="absolute top-0 left-0 w-64 h-80 bg-surface-variant rotate-[-6deg] shadow-lg overflow-hidden border-8 border-white p-2 hover:rotate-0 hover:z-20 transition-all duration-300 cursor-pointer group">
+                                            <img alt="Diljit Poha" className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" src="/diljit.webp" />
+                                            <p className="absolute bottom-4 left-4 bg-primary text-white text-[10px] px-2 py-1 font-bold">DILJIT LOVES IT</p>
+                                        </div>
+                                        <div className="absolute bottom-0 right-0 w-64 h-80 bg-surface-variant rotate-[8deg] shadow-xl overflow-hidden border-8 border-white p-2 hover:rotate-0 hover:z-20 transition-all duration-300 cursor-pointer group">
+                                            <img alt="David Poha" className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" src="/david.webp" />
+                                            <p className="absolute bottom-4 left-4 bg-primary text-white text-[10px] px-2 py-1 font-bold">STREET SIDE STORY</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div className="w-full md:w-1/2 space-y-6">
+                                <h2 className="text-5xl font-black font-headline text-on-surface leading-[1.1] tracking-tighter uppercase md:normal-case">
+                                    From the streets of Indore <br className="hidden md:block"/><span className="text-primary italic">to the world.</span>
+                                </h2>
+                                <p className="text-xl text-on-surface-variant leading-relaxed font-medium">
+                                    Whether it's the backstage of a global concert or the quiet halls of diplomacy, the taste of Malwa finds its way. Loved by everyone who seeks the warmth of a home-cooked morning.
+                                </p>
+                                <div className="pt-4 flex gap-4">
+                                    <span className="material-symbols-outlined text-primary text-4xl" style={{ fontVariationSettings: "'FILL' 1" }}>stars</span>
+                                    <span className="material-symbols-outlined text-primary text-4xl" style={{ fontVariationSettings: "'FILL' 1" }}>stars</span>
+                                    <span className="material-symbols-outlined text-primary text-4xl" style={{ fontVariationSettings: "'FILL' 1" }}>stars</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                {/* Nostalgia Section */}
+                <section className="relative py-20 lg:py-48 overflow-hidden flex items-center bg-[#1d1c16]">
+                    <div className="absolute inset-0 z-0">
+                        <img alt="Sarafa Bazaar Indore" className="w-full h-full object-cover opacity-40 grayscale" src="/sarafa-bg.webp" />
+                        <div className="absolute inset-0 bg-black/60"></div>
+                        <div className="absolute inset-0 bg-gradient-to-r from-black/80 via-black/50 to-transparent"></div>
+                    </div>
+                    <div className="container mx-auto px-6 relative z-10">
+                        <div className="max-w-3xl border-l-[6px] border-[#af101a] pl-8 md:pl-12 py-2">
+                            <h2 className="text-5xl md:text-7xl font-black font-headline text-white leading-tight mb-6 tracking-tight">
+                                Indore ki galiyon se <br/> inspired.
+                            </h2>
+                            <p className="text-xl md:text-2xl text-gray-300 font-medium leading-relaxed mb-8 max-w-xl">
+                                Same taste, same feeling. We didn't just bottle<br className="hidden md:block" /> the recipe, we bottled the nostalgia of 7:00 AM<br className="hidden md:block" /> at the street corner.
+                            </p>
+                            <p className="text-7xl md:text-9xl font-hindi text-white/10 font-bold tracking-wider mt-4">
+                                सराफ़ा बाज़ार
+                            </p>
+                        </div>
+                    </div>
+                </section>
+
+                <section className="bg-[#1e201b]">
+                    <div className="max-w-6xl mx-auto flex flex-col md:flex-row">
+                            {/* Left: Other Instant Foods */}
+                            <div className="w-full md:w-1/2 p-12 lg:p-20 border-b md:border-b-0 md:border-r border-[#2d2e29]">
+                                <h4 className="text-[#db3838] font-black font-headline text-2xl mb-10 tracking-tight">Other instant foods</h4>
+                                <ul className="space-y-8 text-gray-400 font-medium text-sm md:text-base">
+                                    <li className="flex items-center gap-4">
+                                        <span className="material-symbols-outlined text-[#db3838] text-xl font-bold">close</span>
+                                        Chemicals & Preservatives
+                                    </li>
+                                    <li className="flex items-center gap-4">
+                                        <span className="material-symbols-outlined text-[#db3838] text-xl font-bold">close</span>
+                                        Heavy, bloated feeling
+                                    </li>
+                                    <li className="flex items-center gap-4">
+                                        <span className="material-symbols-outlined text-[#db3838] text-xl font-bold">close</span>
+                                        Artificial, flat taste
+                                    </li>
+                                </ul>
+                            </div>
+                            {/* Right: Pohafix Heritage */}
+                            <div className="w-full md:w-1/2 p-12 lg:p-20 bg-[#1c1d18]">
+                                <h4 className="text-[#dbb771] font-black font-headline text-2xl mb-10 tracking-tight">Pohafix Heritage</h4>
+                                <ul className="space-y-8 text-gray-300 font-medium text-sm md:text-base">
+                                    <li className="flex items-center gap-4">
+                                        <span className="material-symbols-outlined text-[#dbb771] text-xl font-bold" style={{ fontVariationSettings: "'FILL' 1" }}>check_circle</span>
+                                        Natural, raw ingredients only
+                                    </li>
+                                    <li className="flex items-center gap-4">
+                                        <span className="material-symbols-outlined text-[#dbb771] text-xl font-bold" style={{ fontVariationSettings: "'FILL' 1" }}>check_circle</span>
+                                        Light, filling & energetic
+                                    </li>
+                                    <li className="flex items-center gap-4">
+                                        <span className="material-symbols-outlined text-[#dbb771] text-xl font-bold" style={{ fontVariationSettings: "'FILL' 1" }}>check_circle</span>
+                                        Real, homemade Indori taste
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                        {/* Bottom Banner Tags */}
+                        <div className="bg-[#f0ece1] py-6 w-full border-t-[12px] border-[#ede8db]">
+                            <div className="max-w-5xl mx-auto px-6 flex flex-wrap justify-center md:justify-between items-center text-xs md:text-sm font-black tracking-[0.2em] text-gray-500 uppercase gap-8">
+                                <span className="flex items-center gap-2">
+                                    <span className="material-symbols-outlined text-[#b96b6b] text-xl">verified</span>
+                                    Made in Hygienic Facility
+                                </span>
+                                <span className="flex items-center gap-2">
+                                    <span className="material-symbols-outlined text-[#b96b6b] text-xl">task_alt</span>
+                                    FSSAI Approved
+                                </span>
+                                <span className="flex items-center gap-2">
+                                    <span className="material-symbols-outlined text-[#b96b6b] text-xl">science</span>
+                                    Quality Checked Batches
+                                </span>
+                            </div>
+                        </div>
+                    </section>
+
+                    {/* Bottom Try Now Callout */}
+                    <div className="bg-[#fcedea] py-16 md:py-24 lg:py-32 px-6 text-center shadow-inner">
+                        <h2 className="text-5xl md:text-7xl font-black font-headline text-[#be1e2d] tracking-tight leading-[1.1] mb-12 max-w-4xl mx-auto">
+                            Healthy bhi, tasty bhi –<br className="hidden md:block" /> ab try karo.
+                        </h2>
+                        <div className="flex justify-center items-center gap-6 relative inline-flex">
+                            <Link to="/shop" className="bg-[#be1e2d] text-white px-12 py-5 font-black text-2xl tracking-wide hover:bg-[#a11825] transition-colors shadow-[0_6px_0_0_#8f121b] active:translate-y-1 active:shadow-[0_2px_0_0_#8f121b] min-w-[240px] rounded-sm relative z-10">
+                                Order Now
+                            </Link>
+                            <span className="material-symbols-outlined text-[#fdbd30] text-6xl transform -rotate-[20deg] absolute -right-16 top-4 animate-[bounce_2s_infinite] hidden md:block" style={{ fontVariationSettings: "'FILL' 1" }}>near_me</span>
+                        </div>
+                    </div>
+
+
+
+                {/* The World is Poha-Fixated: Celebrity Reels */}
+                <section className="py-12 md:py-24 bg-surface">
+                    <div className="max-w-screen-2xl mx-auto px-8">
+                        <div className="flex flex-col md:flex-row justify-between items-end mb-16 gap-4">
+                            <h2 className="font-headline text-5xl md:text-6xl font-black text-primary tracking-tighter uppercase max-w-xl">
+                                The World is <span className="text-secondary">Poha-Fixated</span>
+                            </h2>
+                            <p className="font-label font-semibold text-tertiary uppercase tracking-widest bg-tertiary-container/10 px-4 py-1">Global Endorsements</p>
+                        </div>
+                        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+                            {videoData.map((video) => (
+                                <VideoCard key={video.id} video={video} />
+                            ))}
+                        </div>
+                    </div>
+                </section>
+
+                {/* Powerful Street View: Sarafa Bazaar */}
+                <section className="relative h-[819px] w-full flex items-center justify-center overflow-hidden">
+                    <div className="absolute inset-0 bg-black/40 z-10"></div>
+                    <img alt="Sarafa Bazaar at Dawn" className="absolute inset-0 w-full h-full object-cover grayscale-[20%] brightness-[70%]" data-alt="Cinematic wide shot of a bustling Indian street food market at dawn with thick steam rising from large copper pots and warm glowing lights." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAZ9XlFqJx7nDJ3BqSEVAnFf6nQI2b4SJ2MHnattAg45Vx6HNOFZku9m5PFYRxqbGrNmWmpdAMhR_KeeAInZZnsWLlZM1jCEJj9gcrVFdHDhXuHkAh67iAAYa7upgiLp650-EAvCDm8sXOYJS4hF9489d53Ft-QGgqis0Gd8gChLyu8wbkXdGfjaHeYtUwtHE6RnGOf0-e17RYXHk-aAM9G8CGxmcSAaXRfdsoe4UeulyGoG2Mxu_waEUeAnAgCE4QSQ2iN8ZOswVQ" />
+                    <div className="relative z-20 text-center px-8">
+                        <h3 className="font-headline text-white text-6xl md:text-9xl font-black uppercase tracking-tighter leading-none mb-4">
+                            Born in the <br/><span className="text-secondary-fixed">Galiyan</span> of Indore
+                        </h3>
+                        <p className="text-white/80 font-label tracking-widest text-lg uppercase mb-8">Sarafa Bazaar • Chhappan Dukaan • Every Corner</p>
+                        <div className="h-1 w-32 bg-primary mx-auto"></div>
+                    </div>
+                </section>
+
+                {/* Thelagadi Experience */}
+                <section className="py-12 md:py-24 bg-surface-container-low overflow-hidden">
+                    <div className="max-w-screen-2xl mx-auto px-8 relative">
+                        <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+                            <div className="relative">
+                                {/* Asymmetric Card Layout */}
+                                <div className="absolute -top-12 -left-12 font-headline text-9xl text-primary/5 select-none rotate-[-15deg]">thela</div>
+                                <div className="bg-surface-container-lowest p-4 md:p-6 rounded-xl shadow-2xl relative z-10 transform rotate-2">
+                                    <img alt="Street Cart Poha" className="w-full aspect-video object-contain rounded-lg mb-4 md:mb-6" src="/thela-v3.webp" />
+                                    <div className="flex justify-between items-center">
+                                        <div>
+                                            <h4 className="font-headline text-2xl font-bold text-on-surface">The Signature Cart</h4>
+                                            <p className="text-on-surface-variant italic">Served with Jeeravan &amp; Love</p>
+                                        </div>
+                                        <span className="bg-tertiary-container text-on-tertiary-container font-headline font-black px-4 py-2 text-xl">₹49/-</span>
+                                    </div>
+                                </div>
+                                <div className="absolute -bottom-6 -right-4 md:-bottom-8 md:-right-8 bg-secondary-container p-4 md:p-8 rounded-xl shadow-xl z-20 max-w-[200px] md:max-w-xs transform -rotate-3 border-4 border-surface-container-lowest">
+                                    <p className="font-headline text-xl md:text-3xl font-black text-secondary leading-tight mb-1 md:mb-2 uppercase">Thela-waala swad</p>
+                                    <p className="text-on-secondary-container font-medium text-xs md:text-base">That unmistakable smoky aroma of the street, captured in every bite.</p>
+                                </div>
+                            </div>
+                            <div className="lg:pl-12">
+                                <span className="text-primary font-headline font-extrabold uppercase tracking-widest block mb-4">Indori Heritage</span>
+                                <h2 className="font-headline text-5xl md:text-7xl font-black text-on-surface tracking-tighter leading-[0.9] mb-8 uppercase">
+                                    The Authentic <span className="text-primary">Thela Experience</span>, Delivered.
+                                </h2>
+                                <div className="space-y-6 mb-12">
+                                    <div className="flex items-start gap-4">
+                                        <div className="bg-primary-container p-2 rounded-lg">
+                                            <span className="material-symbols-outlined text-on-primary-container">done_all</span>
+                                        </div>
+                                        <div>
+                                            <h5 className="font-headline font-bold text-xl uppercase">Steamy Texture</h5>
+                                            <p className="text-on-surface-variant">Soft, flattened rice steamed over a double boiler just like the vendors.</p>
+                                        </div>
+                                    </div>
+                                    <div className="flex items-start gap-4">
+                                        <div className="bg-secondary-container p-2 rounded-lg">
+                                            <span className="material-symbols-outlined text-on-secondary-container">restaurant_menu</span>
+                                        </div>
+                                        <div>
+                                            <h5 className="font-headline font-bold text-xl uppercase">The Fixings Cluster</h5>
+                                            <p className="text-on-surface-variant">Ratlam-grade Sev, Indori Jeeravan, freshly chopped onions, and lemon.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <Link 
+                                    to="/shop" 
+                                    className="group bg-primary text-on-primary px-8 md:px-10 py-4 md:py-5 font-headline font-black text-lg md:text-xl tracking-tight uppercase rounded-md shadow-xl flex items-center justify-center md:justify-start gap-4 hover:bg-primary-container transition-all"
+                                >
+                                    Experience the Ritual
+                                    <span className="material-symbols-outlined group-hover:translate-x-1 transition-transform">arrow_forward</span>
+                                </Link>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                {/* Testimonial Section - Clean Premium Card */}
+                <section className="py-16 md:py-24 bg-[#fcfaf5]">
+                    <div className="max-w-4xl mx-auto px-6">
+                        <div className="bg-white p-8 md:p-16 rounded-[2.5rem] shadow-[0_20px_50px_rgba(0,0,0,0.05)] border border-stone-100 relative overflow-hidden">
+                            <div className="absolute top-0 right-0 p-8 opacity-[0.03] rotate-12 pointer-events-none">
+                                <span className="material-symbols-outlined text-[12rem]">format_quote</span>
+                            </div>
+                            
+                            <div className="inline-block bg-primary/10 text-primary px-4 py-1.5 rounded-full font-headline font-black uppercase tracking-widest text-xs mb-8">
+                                Member Spotlight
+                            </div>
+                            
+                            <blockquote className="font-headline text-2xl md:text-4xl font-black text-on-surface italic leading-tight mb-10 relative z-10">
+                                "I used to skip breakfast because Indore was 800 miles away. Now, Pohafix brings the Galiyan of my childhood right to my dining table in London."
+                            </blockquote>
+
+                            <div className="flex items-center gap-5 relative z-10">
+                                <div className="w-14 h-14 rounded-full bg-stone-100 flex items-center justify-center border-2 border-white shadow-sm">
+                                    <span className="material-symbols-outlined text-stone-400 text-3xl">person</span>
+                                </div>
+                                <div className="flex flex-col">
+                                    <p className="font-headline font-black text-lg uppercase tracking-tight text-on-surface">Aryan Sharma</p>
+                                    <p className="text-sm font-medium text-stone-500 uppercase tracking-wider">Ex-Indori, Software Lead</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                {/* Final Call to Action - Red Section */}
+                <section className="bg-[#be1e2d] py-16 md:py-24 relative overflow-hidden">
+                    {/* Hindi Watermarks */}
+                    <div className="absolute top-10 right-10 text-8xl md:text-[12rem] font-hindi text-white/5 select-none rotate-12 pointer-events-none">
+                        इंदौर
+                    </div>
+                    <div className="absolute bottom-10 left-10 text-8xl md:text-[10rem] font-hindi text-white/5 select-none -rotate-12 pointer-events-none">
+                        स्वादिष्ट
+                    </div>
+
+                    <div className="container mx-auto px-6 text-center relative z-10">
+                        <h2 className="text-4xl md:text-7xl font-black font-headline text-white mb-6 tracking-tighter leading-tight drop-shadow-lg">
+                            Kal se breakfast skip <br className="hidden md:block" /> mat karo.
+                        </h2>
+                        <p className="text-lg md:text-xl text-white/90 font-medium mb-10 max-w-2xl mx-auto">
+                            Pohafix ke saath har subah easy banao. Real Indori taste is just a click away.
+                        </p>
+                        <Link 
+                            to="/shop" 
+                            className="inline-block bg-[#fdbd30] text-[#1d1c16] px-12 py-5 rounded-xl font-black text-xl md:text-2xl hover:bg-[#ffcf5c] transition-all shadow-[0_10px_25px_-5px_rgba(0,0,0,0.3)] hover:scale-105 active:scale-95"
+                        >
+                            Order Now
+                        </Link>
+                    </div>
+                </section>
+
+                {/* SEO Knowledge Hub - The "Crazy" Part */}
+                <section className="py-20 bg-surface-container-lowest border-t border-outline-variant/10">
+                    <div className="max-w-7xl mx-auto px-6">
+                        <div className="grid grid-cols-1 lg:grid-cols-3 gap-16">
+                            <div className="space-y-6">
+                                <h3 className="font-headline text-2xl font-black text-primary uppercase">The Instant Poha Guide</h3>
+                                <p className="text-on-surface-variant text-sm leading-relaxed">
+                                    Looking for the best **instant breakfast option**? While brands like **MTR Poha** or **Haldiram's Instant Poha** are popular, Pohafix offers a premium, small-batch **ready to use poha** that retains the authentic handmade texture of Indore. Our process ensures a healthy, **organic** alternative.
+                                </p>
+                            </div>
+                            <div className="space-y-6">
+                                <h3 className="font-headline text-2xl font-black text-primary uppercase">Authentic Indori Taste</h3>
+                                <p className="text-on-surface-variant text-sm leading-relaxed">
+                                    Why is **Indori Poha** world-famous? It's the balance of Jeeravan spices, Ratlami Sev, and the steaming technique. With Pohafix, we've automated this heritage so you can enjoy **ready to use Indori Poha** anywhere in the world.
+                                </p>
+                            </div>
+                            <div className="space-y-6">
+                                <h3 className="font-headline text-2xl font-black text-primary uppercase">Healthy & Organic Choice</h3>
+                                <p className="text-on-surface-variant text-sm leading-relaxed">
+                                    In a world of chemical preservatives, Pohafix stands out as an **organic**-first brand. We use high-quality flattened rice and natural spices, making it the perfect **breakfast option** for fitness enthusiasts and busy professionals.
+                                </p>
+                            </div>
+                        </div>
+                        
+                        {/* Keyword Cloud for Search Engines */}
+                        <div className="mt-20 pt-10 border-t border-outline-variant/5">
+                            <h4 className="font-label text-[10px] font-bold uppercase tracking-widest text-on-surface-variant/40 mb-6">Popular Search Topics</h4>
+                            <div className="flex flex-wrap gap-x-6 gap-y-3 text-[11px] font-medium text-on-surface-variant/60 uppercase tracking-tighter">
+                                <span>#InstantPohaIndore</span>
+                                <span>#ReadyToEatPoha</span>
+                                <span>#OrganicBreakfastIndia</span>
+                                <span>#IndoriZaykaOnline</span>
+                                <span>#BestPohaBrand</span>
+                                <span>#PohafixVsMTR</span>
+                                <span>#FreshInstantBreakfast</span>
+                                <span>#HealthyMorningRitual</span>
+                                <span>#RatlamiSevPoha</span>
+                                <span>#HaldiramsAlternative</span>
+                                <span>#JeeravanMasalaPoha</span>
+                                <span>#OrganicFoodIndia</span>
+                                <span>#SarafaBazaarIndore</span>
+                                <span>#QuickPohaRecipe</span>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </main>
+
+            <Footer />
+        </div>
+    );
+};
+
+export default Home;
