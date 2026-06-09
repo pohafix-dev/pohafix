@@ -183,9 +183,9 @@ const Order = () => {
                         <section>
                             <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between mb-8 gap-4">
                                 <h2 className="font-headline text-3xl font-bold tracking-tight border-b-4 border-secondary pb-1">Shipping Details</h2>
-                                <div className="bg-tertiary-container text-on-tertiary-container px-4 py-1.5 rounded-full text-xs font-label font-bold flex items-center gap-2 whitespace-nowrap shadow-sm">
+                                <div className="bg-tertiary-container text-on-tertiary-container px-4 py-1.5 rounded-full text-xs font-label font-bold flex items-center gap-2 whitespace-nowrap shadow-sm animate-pulse">
                                     <span className="material-symbols-outlined text-sm">local_shipping</span>
-                                    GET IT IN 4-6 DAYS
+                                    {selectedOption === 4 ? "DELIVERY TAKES 10 DAYS" : "GET IT IN 4-6 DAYS"}
                                 </div>
                             </div>
                             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
@@ -344,7 +344,7 @@ const Order = () => {
                                         </div>
                                         <div className="flex justify-between text-sm font-label font-semibold text-tertiary">
                                             <span>Shipping</span>
-                                            <span>FREE</span>
+                                            <span>{selectedOption === 4 ? "FREE (10 Days Delivery)" : "FREE"}</span>
                                         </div>
                                         <div className="flex justify-between text-sm font-label font-semibold text-on-surface-variant">
                                             <span>Taxes (GST Included)</span>
