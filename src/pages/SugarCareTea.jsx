@@ -12,7 +12,17 @@ const SugarCareTea = () => {
 
     // Image Zoom & Lightbox States
     const teaImage = "/sugar-care-tea.webp";
-    const thumbnails = [teaImage, "/tea-brewed.webp", "/tea-leaves.webp"];
+    const thumbnails = [
+        teaImage,
+        "/sugar-care-spices.webp",
+        "/sugar-care-pour.webp",
+        "/sugar-care-table.webp",
+        "/sugar-care-marble.webp",
+        "/sugar-care-sweetest.webp",
+        "/sugar-care-man.webp",
+        "/sugar-care-family.webp",
+        "/sugar-care-spoon.webp"
+    ];
     const [mainImage, setMainImage] = useState(teaImage);
     
     const [isLightboxOpen, setIsLightboxOpen] = useState(false);
@@ -372,21 +382,39 @@ const SugarCareTea = () => {
                 })()}
 
                 {/* Why Sugar Care Tea Section */}
-                <section className="max-w-4xl mx-auto px-6 mb-24 text-center">
-                    <span className="text-[#0b3a24] font-headline font-extrabold uppercase tracking-widest text-xs block mb-4">The Compromise is Over</span>
-                    <h2 className="text-3xl md:text-5xl font-black font-headline text-black leading-tight mb-8 uppercase tracking-tight">
-                        Because Tea Lovers Shouldn't Have To Compromise.
-                    </h2>
-                    <div className="space-y-6 text-black/80 text-lg leading-relaxed text-left max-w-3xl mx-auto border-l-4 border-[#0b3a24] pl-6 md:pl-10">
-                        <p>
-                            For many people, reducing sugar often means sacrificing the joy of a great cup of chai.
-                        </p>
-                        <p>
-                            <strong>Sugar Care Tea</strong> is specially crafted to deliver the same rich, kadak chai experience you love while offering a naturally sweet taste from carefully selected ingredients.
-                        </p>
-                        <p>
-                            Every sip combines the strength of Premium Assam CTC Tea with the goodness of Stevia, Cinnamon, Tulsi and Ginger.
-                        </p>
+                <section className="max-w-7xl mx-auto px-6 mb-24">
+                    <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+                        <div className="order-2 lg:order-1">
+                            <span className="text-[#0b3a24] font-headline font-extrabold uppercase tracking-widest text-xs block mb-4">The Compromise is Over</span>
+                            <h2 className="text-3xl md:text-5xl font-black font-headline text-black leading-tight mb-8 uppercase tracking-tight">
+                                Because Tea Lovers Shouldn't Have To Compromise.
+                            </h2>
+                            <div className="space-y-6 text-black/80 text-base md:text-lg leading-relaxed border-l-4 border-[#0b3a24] pl-6">
+                                <p>
+                                    For many people, reducing sugar often means sacrificing the joy of a great cup of chai.
+                                </p>
+                                <p>
+                                    <strong>Sugar Care Tea</strong> is specially crafted to deliver the same rich, kadak chai experience you love while offering a naturally sweet taste from carefully selected ingredients.
+                                </p>
+                                <p>
+                                    Every sip combines the strength of Premium Assam CTC Tea with the goodness of Stevia, Cinnamon, Tulsi, Cardamom, and Ginger.
+                                </p>
+                            </div>
+                        </div>
+                        <div className="order-1 lg:order-2">
+                            <div className="relative rounded-2xl overflow-hidden shadow-lg border border-black/5 aspect-[4/3] group">
+                                <img 
+                                    src="/sugar-care-man.webp" 
+                                    alt="Enjoying Sugar Care Tea in the morning" 
+                                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                                />
+                                <div className="absolute inset-0 bg-gradient-to-t from-black/55 to-transparent flex items-end p-6">
+                                    <p className="text-white text-xs font-bold uppercase tracking-widest">
+                                        Wahi Chai Ka Maza. Ab Healthy Mode Mein.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </section>
 
@@ -428,6 +456,10 @@ const SugarCareTea = () => {
                             <p className="text-black/70 text-base md:text-lg leading-relaxed mb-6">
                                 Every ingredient is sourced with absolute care. We don't use chemical sweeteners, synthetic flavors, or stabilizers. Just real ingredients for real tea lovers.
                             </p>
+
+                            <div className="mb-6 rounded-2xl overflow-hidden border border-black/5 shadow-md aspect-[4/3] bg-[#f4f7f5] p-2 flex items-center justify-center">
+                                <img src="/sugar-care-spices.webp" alt="Raw spices and tea blend composition" className="w-full h-full object-contain rounded-xl" />
+                            </div>
 
                             {/* FSSAI & Safety Warning Block */}
                             <div className="p-6 bg-amber-50/60 border border-amber-300/60 rounded-2xl flex flex-col gap-3 shadow-inner">
@@ -640,44 +672,72 @@ const SugarCareTea = () => {
                             HOW TO PREPARE
                         </h2>
                     </div>
-                    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-                        {prepSteps.map((step, idx) => (
-                            <div key={idx} className="bg-white p-8 rounded-3xl border border-black/5 shadow-sm hover:shadow-md transition-all flex flex-col h-full group">
-                                <div className="text-4xl md:text-5xl font-headline font-black text-[#0b3a24] opacity-20 mb-6 group-hover:opacity-40 transition-opacity">
-                                    {step.step}
+                    
+                    <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-stretch">
+                        <div className="lg:col-span-8 grid grid-cols-1 sm:grid-cols-2 gap-6">
+                            {prepSteps.map((step, idx) => (
+                                <div key={idx} className="bg-white p-8 rounded-3xl border border-black/5 shadow-sm hover:shadow-md transition-all flex flex-col justify-between group">
+                                    <div>
+                                        <div className="text-4xl md:text-5xl font-headline font-black text-[#0b3a24] opacity-20 mb-6 group-hover:opacity-40 transition-opacity">
+                                            {step.step}
+                                        </div>
+                                        <h4 className="font-headline font-black text-xl mb-3 uppercase tracking-tight text-black">{step.title}</h4>
+                                        <p className="text-black/60 text-sm leading-relaxed">{step.desc}</p>
+                                    </div>
                                 </div>
-                                <h4 className="font-headline font-black text-xl mb-3 uppercase tracking-tight text-black">{step.title}</h4>
-                                <p className="text-black/60 text-sm leading-relaxed">{step.desc}</p>
+                            ))}
+                        </div>
+                        <div className="lg:col-span-4">
+                            <div className="h-full rounded-3xl overflow-hidden border border-black/5 shadow-md relative min-h-[320px]">
+                                <img src="/sugar-care-pour.webp" alt="Pouring hot brewed tea" className="w-full h-full object-cover" />
+                                <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent flex items-end p-6">
+                                    <p className="text-white text-xs font-bold uppercase tracking-widest leading-relaxed">
+                                        Kadak and aromatic, brewed to order.
+                                    </p>
+                                </div>
                             </div>
-                        ))}
+                        </div>
                     </div>
                 </section>
 
                 {/* Customer Experience (Reviews) */}
                 <section className="bg-[#f4f7f5] py-20 mb-24 border-y border-[#0b3a24]/10">
-                    <div className="max-w-4xl mx-auto px-6">
+                    <div className="max-w-7xl mx-auto px-6">
                         <div className="text-center mb-16">
                             <span className="text-[#0b3a24] font-headline font-black uppercase tracking-widest text-xs mb-3 block">Tea Lovers Speak</span>
                             <h2 className="text-3xl md:text-5xl font-black font-headline text-black uppercase tracking-tight">
                                 CUSTOMER EXPERIENCE
                             </h2>
                         </div>
-                        <div className="space-y-6">
-                            {reviews.map((rev, idx) => (
-                                <div key={idx} className="bg-white p-8 rounded-2xl shadow-sm border border-black/5">
-                                    <div className="flex text-amber-500 mb-4">
-                                        {[...Array(rev.stars)].map((_, i) => (
-                                            <span key={i} className="material-symbols-outlined" style={{ fontVariationSettings: "'FILL' 1" }}>star</span>
-                                        ))}
+                        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+                            <div className="lg:col-span-6 space-y-6">
+                                {reviews.map((rev, idx) => (
+                                    <div key={idx} className="bg-white p-8 rounded-2xl shadow-sm border border-black/5">
+                                        <div className="flex text-amber-500 mb-4">
+                                            {[...Array(rev.stars)].map((_, i) => (
+                                                <span key={i} className="material-symbols-outlined" style={{ fontVariationSettings: "'FILL' 1" }}>star</span>
+                                            ))}
+                                        </div>
+                                        <blockquote className="text-lg font-medium text-black/80 italic mb-4 leading-relaxed">
+                                            "{rev.text}"
+                                        </blockquote>
+                                        <cite className="font-headline font-black text-xs text-[#0b3a24] not-italic uppercase tracking-widest">
+                                            — {rev.author}
+                                        </cite>
                                     </div>
-                                    <blockquote className="text-lg md:text-xl font-medium text-black/80 italic mb-4 leading-relaxed">
-                                        "{rev.text}"
-                                    </blockquote>
-                                    <cite className="font-headline font-black text-sm text-[#0b3a24] not-italic uppercase tracking-widest">
-                                        — {rev.author}
-                                    </cite>
+                                ))}
+                            </div>
+                            <div className="lg:col-span-6">
+                                <div className="rounded-3xl overflow-hidden border border-black/5 shadow-lg relative aspect-[4/3] group bg-white">
+                                    <img src="/sugar-care-family.webp" alt="Family drinking Sugar Care Tea" className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
+                                    <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent flex flex-col justify-end p-8">
+                                        <span className="text-[#fdbd30] font-headline font-black uppercase tracking-widest text-xs mb-2 block">Loved By All Generations</span>
+                                        <p className="text-white text-lg font-headline font-bold leading-tight">
+                                            "A single cup that binds the family together. Healthy for parents, sweet enough for kids."
+                                        </p>
+                                    </div>
                                 </div>
-                            ))}
+                            </div>
                         </div>
                     </div>
                 </section>
