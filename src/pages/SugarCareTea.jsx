@@ -30,6 +30,14 @@ const SugarCareTea = () => {
     const [lightboxIndex, setLightboxIndex] = useState(0);
     const [zoomPos, setZoomPos] = useState({ x: 50, y: 50 });
     const [isHovered, setIsHovered] = useState(false);
+    const [copied, setCopied] = useState(false);
+    const aiPromptText = "Analyze the glycemic safety, weight ratios, and flavor profile of this diabetic-friendly tea blend: 84% Assam CTC Tea, 6% Cinnamon, 4% Tulsi, 2% Ginger, 2% Cardamom, and 2% Stevia Extract. Is this blend effective for healthy sugar care without adding calories?";
+
+    const copyPromptToClipboard = () => {
+        navigator.clipboard.writeText(aiPromptText);
+        setCopied(true);
+        setTimeout(() => setCopied(false), 2000);
+    };
 
     const handleMouseMove = (e) => {
         const { left, top, width, height } = e.currentTarget.getBoundingClientRect();
@@ -620,6 +628,44 @@ const SugarCareTea = () => {
                                     <div className="absolute -right-6 -bottom-6 opacity-5 pointer-events-none">
                                         <span className="material-symbols-outlined text-9xl">menu_book</span>
                                     </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        {/* Verify with AI (ChatGPT, Gemini, etc.) Widget */}
+                        <div className="mt-12 bg-white rounded-3xl p-6 md:p-8 border border-[#0b3a24]/10 shadow-sm flex flex-col md:flex-row items-center gap-6 justify-between">
+                            <div className="flex-1">
+                                <div className="flex items-center gap-2 mb-3">
+                                    <span className="material-symbols-outlined text-[#0b3a24] text-xl">smart_toy</span>
+                                    <h4 className="font-headline font-black text-sm md:text-base text-[#0b3a24] uppercase tracking-wider">Verify Our Formulation with AI</h4>
+                                </div>
+                                <p className="text-xs text-black/60 leading-relaxed mb-4">
+                                    Transparency is our core value. You can copy the expert prompt below and paste it into any conversational AI (like <strong>ChatGPT</strong>, <strong>Gemini</strong>, or <strong>Claude</strong>) to independently evaluate the health benefits, safety profile, and taste balance of our tea recipe.
+                                </p>
+                                <div className="bg-[#f4f7f5] p-4 rounded-xl border border-black/5 relative font-mono text-[11px] text-black/80 leading-relaxed max-h-[120px] overflow-y-auto select-all cursor-pointer" title="Click to select all">
+                                    {aiPromptText}
+                                </div>
+                            </div>
+                            <div className="flex flex-col gap-3 shrink-0 w-full md:w-auto">
+                                <button
+                                    onClick={copyPromptToClipboard}
+                                    className="bg-[#0b3a24] text-white font-headline font-black text-xs uppercase tracking-widest px-6 py-4 rounded-xl hover:bg-[#0c4a2e] transition-all flex items-center justify-center gap-2 shadow-md hover:shadow-lg active:scale-95 w-full md:w-auto"
+                                >
+                                    <span className="material-symbols-outlined text-sm">{copied ? "done" : "content_copy"}</span>
+                                    {copied ? "Copied Prompt!" : "Copy AI Prompt"}
+                                </button>
+                                <div className="flex justify-center gap-3 mt-2">
+                                    <a href="https://chatgpt.com/" target="_blank" rel="noopener noreferrer" className="text-[10px] font-bold text-[#0b3a24]/60 hover:text-[#0b3a24] transition-colors flex items-center gap-1">
+                                        ChatGPT <span className="material-symbols-outlined text-[10px]">open_in_new</span>
+                                    </a>
+                                    <span className="text-[#0b3a24]/20">•</span>
+                                    <a href="https://gemini.google.com/" target="_blank" rel="noopener noreferrer" className="text-[10px] font-bold text-[#0b3a24]/60 hover:text-[#0b3a24] transition-colors flex items-center gap-1">
+                                        Gemini <span className="material-symbols-outlined text-[10px]">open_in_new</span>
+                                    </a>
+                                    <span className="text-[#0b3a24]/20">•</span>
+                                    <a href="https://claude.ai/" target="_blank" rel="noopener noreferrer" className="text-[10px] font-bold text-[#0b3a24]/60 hover:text-[#0b3a24] transition-colors flex items-center gap-1">
+                                        Claude <span className="material-symbols-outlined text-[10px]">open_in_new</span>
+                                    </a>
                                 </div>
                             </div>
                         </div>
