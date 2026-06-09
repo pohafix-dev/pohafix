@@ -82,15 +82,32 @@ const SugarCareTea = () => {
     ];
 
     const ingredients = [
-        { name: "Premium Assam CTC Tea (80.0%)", desc: "Sourced from high-altitude estates for a bold, malty flavor and robust red-brown liquor." },
+        { name: "Premium Assam CTC Tea (84.0%)", desc: "Sourced from high-altitude estates for a bold, malty flavor and robust red-brown liquor." },
         { name: "Cinnamon (Dalchini) (6.0%)", desc: "Adds sweet-spicy warmth and helps trigger insulin-like glycemic responses." },
-        { name: "Tulsi (Holy Basil) (4.0%)", desc: "Rich in antioxidants that protect pancreatic beta cells and soothe taste profile." },
-        { name: "Fenugreek (Methi) (2.5%)", desc: "Roasted seeds to minimize bitterness while maintaining glycemic and HbA1c benefits." },
+        { name: "Tulsi (Holy Basil) (4.0%)", desc: "Rich in antioxidants that protect pancreatic cells and soothe taste profile." },
         { name: "Ginger (Adrak) (2.0%)", desc: "Dry ginger powder for that familiar spicy kick and GLUT4 transporter activation." },
         { name: "Cardamom (Elaichi) (2.0%)", desc: "Ground cardamom pods that enrich the blend with a fragrant, authentic chai aroma." },
-        { name: "Licorice (Mulethi) (1.0%)", desc: "Natural root sweetener that smooths bitterness and amplifies stevia's sweet notes." },
         { name: "Stevia Extract (2.0%)", desc: "Highly purified zero-calorie steviol glycosides that sweeten without blood sugar spikes." }
     ];
+
+    const animFadeUp = {
+        initial: { opacity: 0, y: 50 },
+        whileInView: { opacity: 1, y: 0 },
+        viewport: { once: true, margin: "-100px" },
+        transition: { duration: 0.8, ease: [0.16, 1, 0.3, 1] }
+    };
+
+    const animStaggerContainer = {
+        initial: {},
+        whileInView: { transition: { staggerChildren: 0.08 } },
+        viewport: { once: true, margin: "-100px" }
+    };
+
+    const animStaggerItem = {
+        initial: { opacity: 0, y: 40 },
+        whileInView: { opacity: 1, y: 0 },
+        transition: { duration: 0.8, ease: [0.16, 1, 0.3, 1] }
+    };
 
 
     const specialPoints = [
@@ -180,7 +197,7 @@ const SugarCareTea = () => {
                     <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-start">
                         
                         {/* Interactive Image Showcase with Zoom & Multi-thumbnails */}
-                        <div className="flex flex-col gap-4 lg:sticky lg:top-28">
+                        <motion.div initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }} className="flex flex-col gap-4 lg:sticky lg:top-28">
                             <div 
                                 onMouseMove={handleMouseMove}
                                 onMouseEnter={() => setIsHovered(true)}
@@ -231,10 +248,10 @@ const SugarCareTea = () => {
                                     </button>
                                 ))}
                             </div>
-                        </div>
+                        </motion.div>
 
                         {/* Product Details Column */}
-                        <div className="flex flex-col">
+                        <motion.div initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1], delay: 0.15 }} className="flex flex-col">
                             <div>
                                 <span className="text-[#0b3a24] font-headline font-black uppercase tracking-[0.2em] text-xs mb-3 block">Chai Reimagined</span>
                                 <h1 className="text-4xl md:text-5xl lg:text-6xl font-black font-headline text-black uppercase tracking-tight mb-2 leading-tight">
@@ -311,12 +328,12 @@ const SugarCareTea = () => {
                                     Guaranteed Delivery in 10 Days
                                 </span>
                             </div>
-                        </div>
+                        </motion.div>
                     </div>
                 </section>
 
                 {/* Trust Section */}
-                <section className="bg-[#0b3a24] text-white py-12 mb-20 relative overflow-hidden">
+                <motion.section {...animFadeUp} className="bg-[#0b3a24] text-white py-12 mb-20 relative overflow-hidden">
                     <div className="max-w-7xl mx-auto px-6 flex flex-wrap justify-around items-center gap-6 md:gap-8">
                         {trustPoints.map((point, idx) => (
                             <div key={idx} className="flex items-center gap-2.5 font-headline font-black uppercase text-sm md:text-base tracking-widest py-2">
@@ -326,7 +343,7 @@ const SugarCareTea = () => {
                         ))}
                     </div>
                     <div className="absolute inset-0 bg-newsprint pointer-events-none opacity-10 mix-blend-overlay"></div>
-                </section>
+                </motion.section>
 
                 {/* Dynamic Tea Sourcing & Batch Section */}
                 {(() => {
@@ -348,7 +365,7 @@ const SugarCareTea = () => {
                     const spotsLeft = 100 - percentFilled;
                     
                     return (
-                        <section className="py-16 bg-[#fcfaf5] border-y border-black/5 mb-24">
+                        <motion.section {...animFadeUp} className="py-16 bg-[#fcfaf5] border-y border-black/5 mb-24">
                             <div className="max-w-4xl mx-auto px-6">
                                 <div className="mb-6 text-center md:text-left">
                                     <h2 className="text-2xl font-black font-headline text-black mb-1 tracking-tight">Weekly Harvest Blend — Batch {batchNumber}</h2>
@@ -377,12 +394,12 @@ const SugarCareTea = () => {
                                     *Due to our small-batch, hand-blended ritual, delivery takes 10 days.
                                 </p>
                             </div>
-                        </section>
+                        </motion.section>
                     );
                 })()}
 
                 {/* Why Sugar Care Tea Section */}
-                <section className="max-w-7xl mx-auto px-6 mb-24">
+                <motion.section {...animFadeUp} className="max-w-7xl mx-auto px-6 mb-24">
                     <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
                         <div className="order-2 lg:order-1">
                             <span className="text-[#0b3a24] font-headline font-extrabold uppercase tracking-widest text-xs block mb-4">The Compromise is Over</span>
@@ -416,10 +433,10 @@ const SugarCareTea = () => {
                             </div>
                         </div>
                     </div>
-                </section>
+                </motion.section>
 
                 {/* Key Benefits Grid */}
-                <section className="bg-[#f4f7f5] py-20 mb-24 relative overflow-hidden border-y border-[#0b3a24]/10">
+                <motion.section {...animFadeUp} className="bg-[#f4f7f5] py-20 mb-24 relative overflow-hidden border-y border-[#0b3a24]/10">
                     <div className="max-w-7xl mx-auto px-6">
                         <div className="text-center mb-16">
                             <span className="text-[#0b3a24] font-headline font-black uppercase tracking-widest text-xs mb-3 block">Wellness & Taste</span>
@@ -427,9 +444,9 @@ const SugarCareTea = () => {
                                 KEY BENEFITS
                             </h2>
                         </div>
-                        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                        <motion.div variants={animStaggerContainer} initial="initial" whileInView="whileInView" viewport={{ once: true, margin: "-100px" }} className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                             {benefits.map((benefit, idx) => (
-                                <div key={idx} className="bg-white p-8 rounded-2xl shadow-sm hover:shadow-md transition-shadow flex flex-col items-start border border-black/5">
+                                <motion.div variants={animStaggerItem} key={idx} className="bg-white p-8 rounded-2xl shadow-sm hover:shadow-md transition-shadow flex flex-col items-start border border-black/5">
                                     <div className="bg-[#0b3a24]/10 p-3 rounded-xl mb-6 text-[#0b3a24]">
                                         <span className="material-symbols-outlined text-3xl">{benefit.icon}</span>
                                     </div>
@@ -439,14 +456,14 @@ const SugarCareTea = () => {
                                     <p className="text-black/70 text-sm leading-relaxed">
                                         {benefit.description}
                                     </p>
-                                </div>
+                                </motion.div>
                             ))}
-                        </div>
+                        </motion.div>
                     </div>
-                </section>
+                </motion.section>
 
                 {/* Ingredients Section */}
-                <section className="max-w-7xl mx-auto px-6 mb-24">
+                <motion.section {...animFadeUp} className="max-w-7xl mx-auto px-6 mb-24">
                     <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
                         <div className="lg:col-span-5">
                             <span className="text-[#0b3a24] font-headline font-black uppercase tracking-widest text-xs mb-3 block">100% Natural Recipe</span>
@@ -470,26 +487,26 @@ const SugarCareTea = () => {
                                 <div className="space-y-2 text-[11px] text-stone-600 font-semibold leading-relaxed">
                                     <p>• <span className="font-bold text-[#0b3a24] uppercase">Contains Non-Caloric Sweetener</span> (Purified Steviol Glycosides).</p>
                                     <p>• <span className="font-bold text-[#0b3a24] uppercase">Not For Medicinal Use.</span> This tea blend is a dietary food product for wellness, not a drug or cure for diabetes. It is designed to support healthy lifestyles.</p>
-                                    <p>• <span className="font-bold text-amber-900 uppercase">Consult Your Physician</span> if you are on glycemic control medications (e.g., insulin or metformin), as active herbs like Fenugreek and Cinnamon may lower blood glucose levels.</p>
+                                    <p>• <span className="font-bold text-amber-900 uppercase">Consult Your Physician</span> if you are on glycemic control medications (e.g., insulin or metformin), as active herbs like Cinnamon may influence glycemic responses.</p>
                                 </div>
                             </div>
                         </div>
-                        <div className="lg:col-span-7 space-y-4">
+                        <motion.div variants={animStaggerContainer} initial="initial" whileInView="whileInView" viewport={{ once: true, margin: "-100px" }} className="lg:col-span-7 space-y-4">
                             {ingredients.map((ing, idx) => (
-                                <div key={idx} className="bg-[#f4f7f5] p-6 rounded-xl border border-black/5 flex items-start gap-4">
+                                <motion.div variants={animStaggerItem} key={idx} className="bg-[#f4f7f5] p-6 rounded-xl border border-black/5 flex items-start gap-4">
                                     <div className="text-2xl font-headline font-black text-[#0b3a24] opacity-40">0{idx + 1}</div>
                                     <div>
                                         <h4 className="font-body font-black text-lg text-black uppercase tracking-tight">{ing.name}</h4>
                                         <p className="text-sm text-black/60 mt-1 leading-relaxed">{ing.desc}</p>
                                     </div>
-                                </div>
+                                </motion.div>
                             ))}
-                        </div>
+                        </motion.div>
                     </div>
-                </section>
+                </motion.section>
 
                 {/* Science & Formulation Recipe Study Section */}
-                <section className="bg-[#fcfaf5] py-20 border-y border-black/5 mb-24 relative overflow-hidden">
+                <motion.section {...animFadeUp} className="bg-[#fcfaf5] py-20 border-y border-black/5 mb-24 relative overflow-hidden">
                     <div className="max-w-7xl mx-auto px-6">
                         <div className="text-center mb-16">
                             <span className="text-[#0b3a24] font-headline font-black uppercase tracking-widest text-xs mb-3 block">R&D Formulation Study</span>
@@ -517,10 +534,10 @@ const SugarCareTea = () => {
                                     <tbody className="divide-y divide-black/5 font-semibold text-black/80">
                                         <tr>
                                             <td className="p-3 font-bold text-black text-xs md:text-sm">Assam CTC Tea</td>
+                                            <td className="p-3 text-center text-black/60 text-xs md:text-sm">89.0%</td>
+                                            <td className="p-3 text-center text-[#0b3a24] font-black bg-[#e6f4ea]/40 text-xs md:text-sm">84.0%</td>
                                             <td className="p-3 text-center text-black/60 text-xs md:text-sm">85.0%</td>
-                                            <td className="p-3 text-center text-[#0b3a24] font-black bg-[#e6f4ea]/40 text-xs md:text-sm">80.0%</td>
-                                            <td className="p-3 text-center text-black/60 text-xs md:text-sm">80.0%</td>
-                                            <td className="p-3 text-center text-black/60 text-xs md:text-sm">70.0%</td>
+                                            <td className="p-3 text-center text-black/60 text-xs md:text-sm">78.0%</td>
                                         </tr>
                                         <tr>
                                             <td className="p-3 font-bold text-black text-xs md:text-sm">Cinnamon</td>
@@ -537,13 +554,6 @@ const SugarCareTea = () => {
                                             <td className="p-3 text-center text-black/60 text-xs md:text-sm">3.0%</td>
                                         </tr>
                                         <tr>
-                                            <td className="p-3 font-bold text-black text-xs md:text-sm">Fenugreek</td>
-                                            <td className="p-3 text-center text-black/60 text-xs md:text-sm">3.0%</td>
-                                            <td className="p-3 text-center text-[#0b3a24] font-black bg-[#e6f4ea]/40 text-xs md:text-sm">2.5%</td>
-                                            <td className="p-3 text-center text-black/60 text-xs md:text-sm">4.0%</td>
-                                            <td className="p-3 text-center text-black/60 text-xs md:text-sm">1.0%</td>
-                                        </tr>
-                                        <tr>
                                             <td className="p-3 font-bold text-black text-xs md:text-sm">Ginger</td>
                                             <td className="p-3 text-center text-black/60 text-xs md:text-sm">2.0%</td>
                                             <td className="p-3 text-center text-[#0b3a24] font-black bg-[#e6f4ea]/40 text-xs md:text-sm">2.0%</td>
@@ -554,22 +564,15 @@ const SugarCareTea = () => {
                                             <td className="p-3 font-bold text-black text-xs md:text-sm">Cardamom</td>
                                             <td className="p-3 text-center text-black/60 text-xs md:text-sm">0.0%</td>
                                             <td className="p-3 text-center text-[#0b3a24] font-black bg-[#e6f4ea]/40 text-xs md:text-sm">2.0%</td>
-                                            <td className="p-3 text-center text-black/60 text-xs md:text-sm">2.0%</td>
-                                            <td className="p-3 text-center text-black/60 text-xs md:text-sm">2.0%</td>
-                                        </tr>
-                                        <tr>
-                                            <td className="p-3 font-bold text-black text-xs md:text-sm">Licorice</td>
                                             <td className="p-3 text-center text-black/60 text-xs md:text-sm">1.0%</td>
-                                            <td className="p-3 text-center text-[#0b3a24] font-black bg-[#e6f4ea]/40 text-xs md:text-sm">1.0%</td>
-                                            <td className="p-3 text-center text-black/60 text-xs md:text-sm">2.0%</td>
-                                            <td className="p-3 text-center text-black/60 text-xs md:text-sm">3.0%</td>
+                                            <td className="p-3 text-center text-black/60 text-xs md:text-sm">4.0%</td>
                                         </tr>
                                         <tr className="border-b border-black/10">
                                             <td className="p-3 font-bold text-black text-xs md:text-sm">Stevia Extract</td>
-                                            <td className="p-3 text-center text-black/60 text-xs md:text-sm">2.0%</td>
+                                            <td className="p-3 text-center text-black/60 text-xs md:text-sm">1.0%</td>
                                             <td className="p-3 text-center text-[#0b3a24] font-black bg-[#e6f4ea]/40 rounded-b-lg text-xs md:text-sm">2.0%</td>
                                             <td className="p-3 text-center text-black/60 text-xs md:text-sm">1.0%</td>
-                                            <td className="p-3 text-center text-black/60 text-xs md:text-sm">4.0%</td>
+                                            <td className="p-3 text-center text-black/60 text-xs md:text-sm">8.0%</td>
                                         </tr>
                                     </tbody>
                                 </table>
@@ -589,15 +592,15 @@ const SugarCareTea = () => {
                                     <ul className="space-y-3 text-xs font-bold text-black/80">
                                         <li className="flex items-start gap-2">
                                             <span className="material-symbols-outlined text-[#0b3a24] text-base shrink-0">check_circle</span>
-                                            <span>Authentic Body: 80% Premium Assam CTC preserves the strong, comforting malty chai flavor.</span>
+                                            <span>Authentic Body: 84% Premium Assam CTC preserves the strong, comforting malty chai flavor.</span>
                                         </li>
                                         <li className="flex items-start gap-2">
                                             <span className="material-symbols-outlined text-[#0b3a24] text-base shrink-0">check_circle</span>
-                                            <span>Sweetness Synergy: 2% Stevia and 1% Licorice provide a smooth, sugar-like sweetness with zero metallic aftertaste.</span>
+                                            <span>Smooth Sweetness: 2% Stevia provides a clean, sugar-like sweetness with zero metallic aftertaste.</span>
                                         </li>
                                         <li className="flex items-start gap-2">
                                             <span className="material-symbols-outlined text-[#0b3a24] text-base shrink-0">check_circle</span>
-                                            <span>Muted Bitterness: Fenugreek is kept at exactly 2.5% to yield glucose management benefits without spoiling flavor.</span>
+                                            <span>Optimal Sourcing: 4% Tulsi and 2% Ginger for robust antioxidant and metabolic synergy.</span>
                                         </li>
                                         <li className="flex items-start gap-2">
                                             <span className="material-symbols-outlined text-[#0b3a24] text-base shrink-0">check_circle</span>
@@ -609,7 +612,7 @@ const SugarCareTea = () => {
                                 <div className="bg-[#0b3a24] text-white p-6 rounded-2xl shadow-lg relative overflow-hidden">
                                     <h4 className="font-headline font-black text-sm text-[#fdbd30] uppercase tracking-wider mb-2">Read The Formulation Papers</h4>
                                     <p className="text-xs text-white/80 leading-relaxed mb-6">
-                                        Explore our deep dives on clinical trials for cinnamon, fenugreek, and the safety profiles of natural sweeteners.
+                                        Explore our deep dives on clinical trials for cinnamon, tulsi, ginger, and the safety profiles of natural sweeteners.
                                     </p>
                                     <a href="/blog/science-and-research-behind-sugar-care-tea" className="inline-block bg-[#fdbd30] text-[#0b3a24] font-headline font-black text-xs uppercase tracking-widest px-6 py-3 rounded hover:bg-[#ffcf4d] transition-colors">
                                         View Science Blogs
@@ -621,11 +624,11 @@ const SugarCareTea = () => {
                             </div>
                         </div>
                     </div>
-                </section>
+                </motion.section>
 
 
                 {/* What Makes It Special Section */}
-                <section className="bg-[#0b3a24] text-white py-24 mb-24 relative overflow-hidden">
+                <motion.section {...animFadeUp} className="bg-[#0b3a24] text-white py-24 mb-24 relative overflow-hidden">
                     <div className="max-w-5xl mx-auto px-6">
                         <div className="text-center mb-16">
                             <span className="text-[#fdbd30] font-headline font-black uppercase tracking-[0.2em] text-xs mb-3 block">Best of Both Worlds</span>
@@ -662,10 +665,10 @@ const SugarCareTea = () => {
                         </div>
                     </div>
                     <div className="absolute inset-0 bg-newsprint pointer-events-none opacity-5 mix-blend-overlay"></div>
-                </section>
+                </motion.section>
 
                 {/* How To Prepare Section */}
-                <section className="max-w-7xl mx-auto px-6 mb-24">
+                <motion.section {...animFadeUp} className="max-w-7xl mx-auto px-6 mb-24">
                     <div className="text-center mb-16">
                         <span className="text-[#0b3a24] font-headline font-black uppercase tracking-widest text-xs mb-3 block">Simple Ritual</span>
                         <h2 className="text-3xl md:text-5xl font-black font-headline text-black uppercase tracking-tight">
@@ -674,9 +677,9 @@ const SugarCareTea = () => {
                     </div>
                     
                     <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-stretch">
-                        <div className="lg:col-span-8 grid grid-cols-1 sm:grid-cols-2 gap-6">
+                        <motion.div variants={animStaggerContainer} initial="initial" whileInView="whileInView" viewport={{ once: true, margin: "-100px" }} className="lg:col-span-8 grid grid-cols-1 sm:grid-cols-2 gap-6">
                             {prepSteps.map((step, idx) => (
-                                <div key={idx} className="bg-white p-8 rounded-3xl border border-black/5 shadow-sm hover:shadow-md transition-all flex flex-col justify-between group">
+                                <motion.div variants={animStaggerItem} key={idx} className="bg-white p-8 rounded-3xl border border-black/5 shadow-sm hover:shadow-md transition-all flex flex-col justify-between group">
                                     <div>
                                         <div className="text-4xl md:text-5xl font-headline font-black text-[#0b3a24] opacity-20 mb-6 group-hover:opacity-40 transition-opacity">
                                             {step.step}
@@ -684,9 +687,9 @@ const SugarCareTea = () => {
                                         <h4 className="font-headline font-black text-xl mb-3 uppercase tracking-tight text-black">{step.title}</h4>
                                         <p className="text-black/60 text-sm leading-relaxed">{step.desc}</p>
                                     </div>
-                                </div>
+                                </motion.div>
                             ))}
-                        </div>
+                        </motion.div>
                         <div className="lg:col-span-4">
                             <div className="h-full rounded-3xl overflow-hidden border border-black/5 shadow-md relative min-h-[320px]">
                                 <img src="/sugar-care-pour.webp" alt="Pouring hot brewed tea" className="w-full h-full object-cover" />
@@ -698,10 +701,10 @@ const SugarCareTea = () => {
                             </div>
                         </div>
                     </div>
-                </section>
+                </motion.section>
 
                 {/* Customer Experience (Reviews) */}
-                <section className="bg-[#f4f7f5] py-20 mb-24 border-y border-[#0b3a24]/10">
+                <motion.section {...animFadeUp} className="bg-[#f4f7f5] py-20 mb-24 border-y border-[#0b3a24]/10">
                     <div className="max-w-7xl mx-auto px-6">
                         <div className="text-center mb-16">
                             <span className="text-[#0b3a24] font-headline font-black uppercase tracking-widest text-xs mb-3 block">Tea Lovers Speak</span>
@@ -740,10 +743,10 @@ const SugarCareTea = () => {
                             </div>
                         </div>
                     </div>
-                </section>
+                </motion.section>
 
                 {/* Product Details Section */}
-                <section className="max-w-3xl mx-auto px-6 mb-24">
+                <motion.section {...animFadeUp} className="max-w-3xl mx-auto px-6 mb-24">
                     <div className="text-center mb-12">
                         <span className="text-[#0b3a24] font-headline font-black uppercase tracking-widest text-xs mb-3 block">Specifications</span>
                         <h2 className="text-3xl md:text-5xl font-black font-headline text-black uppercase tracking-tight">
@@ -767,10 +770,10 @@ const SugarCareTea = () => {
                             ))}
                         </div>
                     </div>
-                </section>
+                </motion.section>
 
                 {/* FAQ Section */}
-                <section className="max-w-3xl mx-auto px-6 mb-24">
+                <motion.section {...animFadeUp} className="max-w-3xl mx-auto px-6 mb-24">
                     <div className="text-center mb-16">
                         <span className="text-[#0b3a24] font-headline font-black uppercase tracking-widest text-xs mb-3 block">Clear Doubts</span>
                         <h2 className="text-3xl md:text-5xl font-black font-headline text-black uppercase tracking-tight">
@@ -806,10 +809,10 @@ const SugarCareTea = () => {
                             </div>
                         ))}
                     </div>
-                </section>
+                </motion.section>
 
                 {/* Final CTA Section */}
-                <section className="max-w-4xl mx-auto px-6">
+                <motion.section {...animFadeUp} className="max-w-4xl mx-auto px-6">
                     <div className="bg-[#0b3a24] text-white rounded-3xl p-12 md:p-20 text-center relative overflow-hidden shadow-2xl border border-white/10">
                         <div className="absolute top-0 right-0 p-8 opacity-[0.03] select-none text-9xl font-headline font-black tracking-tighter pointer-events-none">
                             CHAI
@@ -834,7 +837,7 @@ const SugarCareTea = () => {
                             BUY NOW
                         </button>
                     </div>
-                </section>
+                </motion.section>
             </main>
 
             {/* Full-Screen Interactive Lightbox Modal */}

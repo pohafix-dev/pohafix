@@ -15,8 +15,8 @@ export const blogs = [
             <h3 className="text-2xl font-headline font-black mb-4 uppercase">1. Product Formulation Goals</h3>
             <p className="mb-6">Our product development team established three non-negotiable guidelines for the blend:</p>
             <ul className="list-disc pl-6 mb-8 space-y-2">
-                <li><strong>Authentic Chai Taste:</strong> The blend must brew a strong red-brown liquor with a full body and mouthfeel. It should taste like a classic, premium Assam CTC cha rather than a thin, medicinal herbal decoction.</li>
-                <li><strong>Mild Natural Sweetness:</strong> Provide a perceptible sweetness without adding sugar. This is achieved by combining gentle natural sweeteners (Stevia and Licorice) with sweet-spicy notes (Cinnamon) that naturally enhance sweetness perception.</li>
+                <li><strong>Authentic Chai Taste:</strong> The blend must brew a strong red-brown liquor with a full body and mouthfeel. It should taste like a classic, premium Assam CTC chai rather than a thin, medicinal herbal decoction.</li>
+                <li><strong>Mild Natural Sweetness:</strong> Provide a perceptible sweetness without adding sugar. This is achieved by combining gentle natural sweetener (Stevia) with sweet-spicy notes (Cinnamon and Cardamom) that naturally enhance sweetness perception.</li>
                 <li><strong>Strict Clean-Label Focus:</strong> No added sugars, artificial sweeteners, or synthetic flavorings. Furthermore, the product must follow FSSAI guidelines: displaying the non-caloric sweetener warning and keeping all health claims strictly structure-and-function wellness oriented (no claims of curing diabetes).</li>
             </ul>
 
@@ -29,7 +29,7 @@ export const blogs = [
                         <tr className="bg-primary/5">
                             <th className="p-3 border border-primary/20 font-bold">Ingredient</th>
                             <th className="p-3 border border-primary/20 font-bold">Baseline (%)</th>
-                            <th className="p-3 border border-primary/20 font-bold">Recipe A (%)</th>
+                            <th className="p-3 border border-primary/20 font-bold bg-[#e6f4ea]/30">Recipe A (%)</th>
                             <th className="p-3 border border-primary/20 font-bold">Recipe B (%)</th>
                             <th className="p-3 border border-primary/20 font-bold">Recipe C (%)</th>
                         </tr>
@@ -37,10 +37,10 @@ export const blogs = [
                     <tbody>
                         <tr>
                             <td className="p-3 border border-primary/20 font-bold">Assam CTC Tea</td>
+                            <td className="p-3 border border-primary/20">89.0%</td>
+                            <td className="p-3 border border-primary/20 font-bold bg-[#e6f4ea]/30">84.0%</td>
                             <td className="p-3 border border-primary/20">85.0%</td>
-                            <td className="p-3 border border-primary/20 font-bold bg-[#e6f4ea]/30">80.0%</td>
-                            <td className="p-3 border border-primary/20">80.0%</td>
-                            <td className="p-3 border border-primary/20">70.0%</td>
+                            <td className="p-3 border border-primary/20">78.0%</td>
                         </tr>
                         <tr>
                             <td className="p-3 border border-primary/20 font-bold">Cinnamon</td>
@@ -57,13 +57,6 @@ export const blogs = [
                             <td className="p-3 border border-primary/20">3.0%</td>
                         </tr>
                         <tr>
-                            <td className="p-3 border border-primary/20 font-bold">Fenugreek (Methi)</td>
-                            <td className="p-3 border border-primary/20">3.0%</td>
-                            <td className="p-3 border border-primary/20 font-bold bg-[#e6f4ea]/30">2.5%</td>
-                            <td className="p-3 border border-primary/20">4.0%</td>
-                            <td className="p-3 border border-primary/20">1.0%</td>
-                        </tr>
-                        <tr>
                             <td className="p-3 border border-primary/20 font-bold">Ginger</td>
                             <td className="p-3 border border-primary/20">2.0%</td>
                             <td className="p-3 border border-primary/20 font-bold bg-[#e6f4ea]/30">2.0%</td>
@@ -74,22 +67,15 @@ export const blogs = [
                             <td className="p-3 border border-primary/20 font-bold">Cardamom</td>
                             <td className="p-3 border border-primary/20">0.0%</td>
                             <td className="p-3 border border-primary/20 font-bold bg-[#e6f4ea]/30">2.0%</td>
-                            <td className="p-3 border border-primary/20">2.0%</td>
-                            <td className="p-3 border border-primary/20">2.0%</td>
-                        </tr>
-                        <tr>
-                            <td className="p-3 border border-primary/20 font-bold">Licorice (Mulethi)</td>
                             <td className="p-3 border border-primary/20">1.0%</td>
-                            <td className="p-3 border border-primary/20 font-bold bg-[#e6f4ea]/30">1.0%</td>
-                            <td className="p-3 border border-primary/20">2.0%</td>
-                            <td className="p-3 border border-primary/20">3.0%</td>
+                            <td className="p-3 border border-primary/20">4.0%</td>
                         </tr>
                         <tr>
                             <td className="p-3 border border-primary/20 font-bold">Stevia Extract</td>
-                            <td className="p-3 border border-primary/20">2.0%</td>
+                            <td className="p-3 border border-primary/20">1.0%</td>
                             <td className="p-3 border border-primary/20 font-bold bg-[#e6f4ea]/30">2.0%</td>
                             <td className="p-3 border border-primary/20">1.0%</td>
-                            <td className="p-3 border border-primary/20">4.0%</td>
+                            <td className="p-3 border border-primary/20">8.0%</td>
                         </tr>
                     </tbody>
                 </table>
@@ -100,13 +86,13 @@ export const blogs = [
             <p className="mb-6">Participants rated the brews on a 9-point hedonic scale for color, strength, aroma, sweetness, aftertaste, and overall acceptability:</p>
             <ul className="list-disc pl-6 mb-8 space-y-2">
                 <li><strong>Baseline:</strong> Strong, traditional tea taste, but lacked the rich spicy aroma (due to 0% Cardamom) and had a slightly flat finish.</li>
-                <li><strong>Recipe A (Balanced Sweet):</strong> Achieved the highest overall acceptability rating (88% positive score). The addition of 2% Cardamom combined with 6% Cinnamon provided a lovely fragrant spice aroma, and the 2% Stevia + 1% Licorice ratio delivered a smooth, natural sweetness with zero bitter or metallic aftertaste.</li>
-                <li><strong>Recipe B (Herbal Boost):</strong> Had higher levels of Tulsi and Fenugreek. While healthy, the 4% Fenugreek level imparted a distinct, persistent bitterness and a slightly cloudy appearance that participants disliked.</li>
-                <li><strong>Recipe C (Max-Sweet Light):</strong> Shifted too far toward the sweeteners. At 4% Stevia and 3% Licorice, the sweetness was cloying, and the lingering aftertaste of steviol glycosides was described as artificial.</li>
+                <li><strong>Recipe A (Balanced Sweet):</strong> Achieved the highest overall acceptability rating (88% positive score). The addition of 2% Cardamom combined with 6% Cinnamon provided a lovely fragrant spice aroma, and the 2% Stevia ratio delivered a smooth, natural sweetness with zero bitter or metallic aftertaste.</li>
+                <li><strong>Recipe B (Herbal Boost):</strong> Had higher levels of Tulsi and Cinnamon. At 6% Tulsi and 5% Cinnamon, the flavor was slightly too medicinal and robust, which masked the authentic tea taste.</li>
+                <li><strong>Recipe C (Max-Sweet Light):</strong> Shifted too far toward the sweeteners. At 8% Stevia, the sweetness was cloying, and the lingering aftertaste of steviol glycosides was described as artificial.</li>
             </ul>
 
             <h3 className="text-2xl font-headline font-black mb-4 uppercase">4. Rationale for Selecting Recipe A</h3>
-            <p className="mb-6">Based on the sensory data, <strong>Recipe A</strong> was selected for final scale-up. It balances therapeutic potential with maximum palatability. Keeping Fenugreek at 2.5% prevents bitterness while retaining its glycemic benefits. Stevia at 2% delivers the sweetness of sugar without the metabolic spike, while Licorice (1%) and Cinnamon (6%) synergistically smooth the flavor notes and mask stevia's aftertaste.</p>
+            <p className="mb-6">Based on the sensory data, <strong>Recipe A</strong> was selected for final scale-up. It balances therapeutic potential with maximum palatability. Stevia at 2% delivers the sweetness of sugar without the metabolic spike, while Cinnamon (6%) and Cardamom (2%) synergistically smooth the flavor notes and mask any potential aftertaste.</p>
             
             <h3 className="text-2xl font-headline font-black mb-4 uppercase">5. Manufacturing and Safety Protocols</h3>
             <p className="mb-6">Scaling from a 5 kg pilot batch to 100 kg commercial production requires strict adherence to Good Manufacturing Practices (GMP):</p>
@@ -114,7 +100,7 @@ export const blogs = [
                 <li><strong>Homogeneity:</strong> Ribbon blenders are used to ensure the fine herbal powders are uniformly distributed throughout the dry CTC tea leaves.</li>
                 <li><strong>Moisture Control:</strong> The final blend must maintain moisture levels below 6% to prevent caking, mold growth, or spoilage of the spices.</li>
                 <li><strong>Packaging Stability:</strong> The final product is filled in high-barrier laminate foil pouches. This protects the volatile essential oils in cardamom and cinnamon from light and oxygen degradation, extending shelf life to 12-18 months.</li>
-                <li><strong>Warning Declarations:</strong> Per FSSAI notification standards, the packaging clearly states <em>"CONTAINS NON-CALORIC SWEETENER (STEVIOL GLYCOSIDES)"</em> and <em>"NOT FOR MEDICINAL USE"</em>, along with a reminder to consult a physician if currently on blood-sugar-lowering medication (since ingredients like Fenugreek and Cinnamon can potentiate insulin effects).</li>
+                <li><strong>Warning Declarations:</strong> Per FSSAI notification standards, the packaging clearly states <em>"CONTAINS NON-CALORIC SWEETENER (STEVIOL GLYCOSIDES)"</em> and <em>"NOT FOR MEDICINAL USE"</em>, along with a reminder to consult a physician if currently on blood-sugar-lowering medication (since active ingredients like Cinnamon can potentiate insulin effects).</li>
             </ul>
 
             <div className="bg-[#fbf8f2] p-8 border-2 border-primary/20 rounded-xl my-10 text-center">
@@ -127,14 +113,14 @@ export const blogs = [
     {
         id: 12,
         title: "Natural Herbs for Blood Sugar Control: A Scientific Review",
-        summary: "What does clinical research say about Cinnamon, Tulsi, Fenugreek, Ginger, and Licorice? A deep dive into the glycemic impact of traditional wellness ingredients.",
+        summary: "What does clinical research say about Cinnamon, Tulsi, Ginger, and Stevia? A deep dive into the glycemic impact of traditional wellness ingredients.",
         category: "Nutrition",
         author: "Pohafix Dietitian",
         date: "June 09, 2026",
         readTime: "6 min",
         slug: "natural-herbs-for-blood-sugar-control",
         content: `
-            <p className="text-xl font-medium leading-relaxed mb-8">When it comes to managing blood sugar, what we consume daily plays a critical role. While traditional Indian kitchens have used spices like Cinnamon, Fenugreek, and Ginger for centuries, modern clinical research is beginning to back up these traditional practices. In this review, we examine the scientific evidence behind the functional ingredients in our Sugar Care Tea.</p>
+            <p className="text-xl font-medium leading-relaxed mb-8">When it comes to managing blood sugar, what we consume daily plays a critical role. While traditional Indian kitchens have used spices like Cinnamon, Tulsi, and Ginger for centuries, modern clinical research is beginning to back up these traditional practices. In this review, we examine the scientific evidence behind the functional ingredients in our Sugar Care Tea.</p>
             <p className="mb-6">Rather than relying on vague "wellness" buzzwords, let's explore peer-reviewed studies to see how these herbs actually impact glycemic health and metabolic pathways.</p>
             
             <h3 className="text-2xl font-headline font-black mb-4 uppercase">1. Cinnamon (Cassia & Verum)</h3>
@@ -144,28 +130,17 @@ export const blogs = [
             </blockquote>
             <p className="mb-8">In addition to metabolic support, cinnamon provides a warm, sweet aroma that tricks the brain into perceiving sweetness, allowing us to reduce the amount of direct sweeteners in the tea.</p>
 
-            <h3 className="text-2xl font-headline font-black mb-4 uppercase">2. Fenugreek (Methi)</h3>
-            <p className="mb-6">Fenugreek seeds are loaded with soluble fiber and unique compounds like 4-hydroxyisoleucine, which stimulates insulin secretion in response to glucose levels and improves insulin sensitivity.</p>
-            <blockquote className="border-l-4 border-primary pl-6 my-6 italic text-stone-700">
-                A comprehensive meta-analysis of clinical trials (published in <em>Medicina</em>, 2023) confirmed that fenugreek supplementation leads to a significant decrease in HbA1c (by an average of ~0.9%) and fasting plasma glucose in patients with Type 2 diabetes.
-            </blockquote>
-            <p className="mb-8">However, fenugreek is also notoriously bitter. To make our chai delicious, we keep fenugreek at a precise 2.5% of the blend and pre-roast the powder to mellow the flavor while retaining its health benefits.</p>
-
-            <h3 className="text-2xl font-headline font-black mb-4 uppercase">3. Tulsi (Holy Basil) & Ginger</h3>
+            <h3 className="text-2xl font-headline font-black mb-4 uppercase">2. Tulsi (Holy Basil) & Ginger</h3>
             <p className="mb-4"><strong>Tulsi (Holy Basil):</strong> Tulsi is packed with antioxidants and essential oils (like eugenol) that support pancreatic beta-cell function. Clinical trials have demonstrated that daily intake of dried Tulsi leaves (around 2.5g) results in reduced fasting and postprandial blood glucose levels.</p>
             <p className="mb-6"><strong>Ginger (Adrak):</strong> Beyond giving that classic spicy kick, gingerols in ginger increase GLUT4 glucose transporters on muscle cell membranes, allowing glucose clearance from the bloodstream without requiring more insulin. A meta-review in <em>Frontiers</em> (2025) confirmed ginger lowers both fasting blood glucose and HbA1c in type 2 diabetic subjects.</p>
 
-            <h3 className="text-2xl font-headline font-black mb-4 uppercase">4. Stevia & Licorice: The Natural Sweetener Duo</h3>
-            <ul className="list-disc pl-6 mb-8 space-y-3">
-                <li><strong>Stevia (Steviol Glycosides):</strong> Extracted from the leaves of the <em>Stevia rebaudiana</em> plant, stevia is roughly 200–300 times sweeter than sucrose. The American Heart Association (AHA) and American Diabetes Association (ADA) approve the use of high-purity steviol glycosides as non-nutritive sweeteners to help manage caloric intake and blood glucose. It passes through the body without triggering a glycemic response.</li>
-                <li><strong>Licorice (Mulethi):</strong> Licorice contains glycyrrhizin, which is 30–50 times sweeter than sugar. In addition to adding sweetness, licorice extracts have been shown by researchers at the <em>Max Planck Institute</em> to contain substances called "amorfrutins" that have anti-diabetic and anti-inflammatory properties.</li>
-            </ul>
+            <h3 className="text-2xl font-headline font-black mb-4 uppercase">3. Stevia: The Natural Sweetener</h3>
+            <p className="mb-6"><strong>Stevia (Steviol Glycosides):</strong> Extracted from the leaves of the <em>Stevia rebaudiana</em> plant, stevia is roughly 200–300 times sweeter than sucrose. The American Heart Association (AHA) and American Diabetes Association (ADA) approve the use of high-purity steviol glycosides as non-nutritive sweeteners to help manage caloric intake and blood glucose. It passes through the body without triggering a glycemic response.</p>
 
-            <h3 className="text-2xl font-headline font-black mb-4 uppercase">5. Safety Precautions and Drug Interactions</h3>
+            <h3 className="text-2xl font-headline font-black mb-4 uppercase">4. Safety Precautions and Drug Interactions</h3>
             <p className="mb-6">Because these herbs are highly active, there are several medical cautions to keep in mind:</p>
             <ul className="list-disc pl-6 mb-8 space-y-2">
                 <li><strong>Hypoglycemia:</strong> If you are taking prescription diabetes medications (like metformin or insulin), consuming herbs that lower blood sugar might theoretically increase the risk of low blood sugar (hypoglycemia). Monitor your levels and consult your physician.</li>
-                <li><strong>Licorice Content:</strong> Excessive consumption of glycyrrhizin can lead to potassium depletion and elevated blood pressure. However, in our blend, licorice makes up only 1.0% of the weight (less than 0.02g per cup), making it completely safe for daily enjoyment within reasonable limits (2-3 cups a day).</li>
                 <li><strong>Not a Cure:</strong> Sugar Care Tea is formulated as a wellness food to support a healthy lifestyle, not to replace medical treatment or serve as a drug.</li>
             </ul>
 
