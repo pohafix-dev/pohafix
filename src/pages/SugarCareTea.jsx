@@ -72,12 +72,16 @@ const SugarCareTea = () => {
     ];
 
     const ingredients = [
-        { name: "Premium Assam CTC Tea", desc: "For that rich, strong, and comforting malty chai base." },
-        { name: "Stevia Leaves", desc: "A calorie-free natural sweetener that adds a pleasant sweetness without sugar." },
-        { name: "Cinnamon (Dalchini)", desc: "Adds warm spice notes and supports natural wellness." },
-        { name: "Tulsi (Holy Basil)", desc: "Known for immunity support and aromatic herbal goodness." },
-        { name: "Ginger (Adrak)", desc: "Delivers that familiar, spicy kick we all love in a kadak chai." }
+        { name: "Premium Assam CTC Tea (80.0%)", desc: "Sourced from high-altitude estates for a bold, malty flavor and robust red-brown liquor." },
+        { name: "Cinnamon (Dalchini) (6.0%)", desc: "Adds sweet-spicy warmth and helps trigger insulin-like glycemic responses." },
+        { name: "Tulsi (Holy Basil) (4.0%)", desc: "Rich in antioxidants that protect pancreatic beta cells and soothe taste profile." },
+        { name: "Fenugreek (Methi) (2.5%)", desc: "Roasted seeds to minimize bitterness while maintaining glycemic and HbA1c benefits." },
+        { name: "Ginger (Adrak) (2.0%)", desc: "Dry ginger powder for that familiar spicy kick and GLUT4 transporter activation." },
+        { name: "Cardamom (Elaichi) (2.0%)", desc: "Ground cardamom pods that enrich the blend with a fragrant, authentic chai aroma." },
+        { name: "Licorice (Mulethi) (1.0%)", desc: "Natural root sweetener that smooths bitterness and amplifies stevia's sweet notes." },
+        { name: "Stevia Extract (2.0%)", desc: "Highly purified zero-calorie steviol glycosides that sweeten without blood sugar spikes." }
     ];
+
 
     const specialPoints = [
         "Rich Chai Taste",
@@ -421,9 +425,22 @@ const SugarCareTea = () => {
                             <h2 className="text-3xl md:text-5xl font-black font-headline text-black uppercase tracking-tight leading-none mb-6">
                                 INGREDIENTS
                             </h2>
-                            <p className="text-black/70 text-base md:text-lg leading-relaxed mb-8">
+                            <p className="text-black/70 text-base md:text-lg leading-relaxed mb-6">
                                 Every ingredient is sourced with absolute care. We don't use chemical sweeteners, synthetic flavors, or stabilizers. Just real ingredients for real tea lovers.
                             </p>
+
+                            {/* FSSAI & Safety Warning Block */}
+                            <div className="p-6 bg-amber-50/60 border border-amber-300/60 rounded-2xl flex flex-col gap-3 shadow-inner">
+                                <div className="flex items-center gap-2 text-amber-800 text-xs font-black uppercase tracking-widest">
+                                    <span className="material-symbols-outlined text-sm font-bold text-amber-600">warning</span>
+                                    FSSAI Compliance Declarations
+                                </div>
+                                <div className="space-y-2 text-[11px] text-stone-600 font-semibold leading-relaxed">
+                                    <p>• <span className="font-bold text-[#0b3a24] uppercase">Contains Non-Caloric Sweetener</span> (Purified Steviol Glycosides).</p>
+                                    <p>• <span className="font-bold text-[#0b3a24] uppercase">Not For Medicinal Use.</span> This tea blend is a dietary food product for wellness, not a drug or cure for diabetes. It is designed to support healthy lifestyles.</p>
+                                    <p>• <span className="font-bold text-amber-900 uppercase">Consult Your Physician</span> if you are on glycemic control medications (e.g., insulin or metformin), as active herbs like Fenugreek and Cinnamon may lower blood glucose levels.</p>
+                                </div>
+                            </div>
                         </div>
                         <div className="lg:col-span-7 space-y-4">
                             {ingredients.map((ing, idx) => (
@@ -438,6 +455,142 @@ const SugarCareTea = () => {
                         </div>
                     </div>
                 </section>
+
+                {/* Science & Formulation Recipe Study Section */}
+                <section className="bg-[#fcfaf5] py-20 border-y border-black/5 mb-24 relative overflow-hidden">
+                    <div className="max-w-7xl mx-auto px-6">
+                        <div className="text-center mb-16">
+                            <span className="text-[#0b3a24] font-headline font-black uppercase tracking-widest text-xs mb-3 block">R&D Formulation Study</span>
+                            <h2 className="text-3xl md:text-5xl font-black font-headline text-black uppercase tracking-tight mb-4">
+                                THE SCIENCE OF SWEET BALANCE
+                            </h2>
+                            <p className="text-black/70 max-w-2xl mx-auto text-base md:text-lg">
+                                We tested three optimized prototype recipes alongside our baseline control to achieve the perfect balance between authentic chai taste and therapeutic glycemic support.
+                            </p>
+                        </div>
+
+                        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
+                            {/* Table Column */}
+                            <div className="lg:col-span-7 overflow-x-auto bg-white p-6 rounded-2xl border border-black/5 shadow-sm">
+                                <table className="w-full text-left border-collapse text-sm">
+                                    <thead>
+                                        <tr className="border-b border-black/10">
+                                            <th className="p-3 font-headline font-black uppercase text-black/55 text-xs">Ingredients</th>
+                                            <th className="p-3 font-headline font-black uppercase text-black/55 text-xs text-center">Baseline</th>
+                                            <th className="p-3 font-headline font-black uppercase text-[#0b3a24] text-xs text-center bg-[#e6f4ea]/40 rounded-t-lg">Recipe A (Winner)</th>
+                                            <th className="p-3 font-headline font-black uppercase text-black/55 text-xs text-center">Recipe B</th>
+                                            <th className="p-3 font-headline font-black uppercase text-black/55 text-xs text-center">Recipe C</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody className="divide-y divide-black/5 font-semibold text-black/80">
+                                        <tr>
+                                            <td className="p-3 font-bold text-black text-xs md:text-sm">Assam CTC Tea</td>
+                                            <td className="p-3 text-center text-black/60 text-xs md:text-sm">85.0%</td>
+                                            <td className="p-3 text-center text-[#0b3a24] font-black bg-[#e6f4ea]/40 text-xs md:text-sm">80.0%</td>
+                                            <td className="p-3 text-center text-black/60 text-xs md:text-sm">80.0%</td>
+                                            <td className="p-3 text-center text-black/60 text-xs md:text-sm">70.0%</td>
+                                        </tr>
+                                        <tr>
+                                            <td className="p-3 font-bold text-black text-xs md:text-sm">Cinnamon</td>
+                                            <td className="p-3 text-center text-black/60 text-xs md:text-sm">5.0%</td>
+                                            <td className="p-3 text-center text-[#0b3a24] font-black bg-[#e6f4ea]/40 text-xs md:text-sm">6.0%</td>
+                                            <td className="p-3 text-center text-black/60 text-xs md:text-sm">5.0%</td>
+                                            <td className="p-3 text-center text-black/60 text-xs md:text-sm">5.0%</td>
+                                        </tr>
+                                        <tr>
+                                            <td className="p-3 font-bold text-black text-xs md:text-sm">Tulsi</td>
+                                            <td className="p-3 text-center text-black/60 text-xs md:text-sm">3.0%</td>
+                                            <td className="p-3 text-center text-[#0b3a24] font-black bg-[#e6f4ea]/40 text-xs md:text-sm">4.0%</td>
+                                            <td className="p-3 text-center text-black/60 text-xs md:text-sm">6.0%</td>
+                                            <td className="p-3 text-center text-black/60 text-xs md:text-sm">3.0%</td>
+                                        </tr>
+                                        <tr>
+                                            <td className="p-3 font-bold text-black text-xs md:text-sm">Fenugreek</td>
+                                            <td className="p-3 text-center text-black/60 text-xs md:text-sm">3.0%</td>
+                                            <td className="p-3 text-center text-[#0b3a24] font-black bg-[#e6f4ea]/40 text-xs md:text-sm">2.5%</td>
+                                            <td className="p-3 text-center text-black/60 text-xs md:text-sm">4.0%</td>
+                                            <td className="p-3 text-center text-black/60 text-xs md:text-sm">1.0%</td>
+                                        </tr>
+                                        <tr>
+                                            <td className="p-3 font-bold text-black text-xs md:text-sm">Ginger</td>
+                                            <td className="p-3 text-center text-black/60 text-xs md:text-sm">2.0%</td>
+                                            <td className="p-3 text-center text-[#0b3a24] font-black bg-[#e6f4ea]/40 text-xs md:text-sm">2.0%</td>
+                                            <td className="p-3 text-center text-black/60 text-xs md:text-sm">2.0%</td>
+                                            <td className="p-3 text-center text-black/60 text-xs md:text-sm">2.0%</td>
+                                        </tr>
+                                        <tr>
+                                            <td className="p-3 font-bold text-black text-xs md:text-sm">Cardamom</td>
+                                            <td className="p-3 text-center text-black/60 text-xs md:text-sm">0.0%</td>
+                                            <td className="p-3 text-center text-[#0b3a24] font-black bg-[#e6f4ea]/40 text-xs md:text-sm">2.0%</td>
+                                            <td className="p-3 text-center text-black/60 text-xs md:text-sm">2.0%</td>
+                                            <td className="p-3 text-center text-black/60 text-xs md:text-sm">2.0%</td>
+                                        </tr>
+                                        <tr>
+                                            <td className="p-3 font-bold text-black text-xs md:text-sm">Licorice</td>
+                                            <td className="p-3 text-center text-black/60 text-xs md:text-sm">1.0%</td>
+                                            <td className="p-3 text-center text-[#0b3a24] font-black bg-[#e6f4ea]/40 text-xs md:text-sm">1.0%</td>
+                                            <td className="p-3 text-center text-black/60 text-xs md:text-sm">2.0%</td>
+                                            <td className="p-3 text-center text-black/60 text-xs md:text-sm">3.0%</td>
+                                        </tr>
+                                        <tr className="border-b border-black/10">
+                                            <td className="p-3 font-bold text-black text-xs md:text-sm">Stevia Extract</td>
+                                            <td className="p-3 text-center text-black/60 text-xs md:text-sm">2.0%</td>
+                                            <td className="p-3 text-center text-[#0b3a24] font-black bg-[#e6f4ea]/40 rounded-b-lg text-xs md:text-sm">2.0%</td>
+                                            <td className="p-3 text-center text-black/60 text-xs md:text-sm">1.0%</td>
+                                            <td className="p-3 text-center text-black/60 text-xs md:text-sm">4.0%</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                                <div className="mt-4 p-4 bg-[#0b3a24]/5 border border-[#0b3a24]/10 rounded-xl text-xs font-semibold text-[#0b3a24] flex items-center gap-2">
+                                    <span className="material-symbols-outlined text-sm">science</span>
+                                    Recipe A achieved an 88% overall sensory acceptance score in blind testing.
+                                </div>
+                            </div>
+
+                            {/* Rationale Column */}
+                            <div className="lg:col-span-5 space-y-6">
+                                <div className="bg-white p-6 rounded-2xl border border-black/5 shadow-sm">
+                                    <h3 className="font-headline font-black text-lg text-black uppercase tracking-tight mb-3">Why Recipe A Wins</h3>
+                                    <p className="text-xs text-black/70 leading-relaxed mb-4">
+                                        Most diabetic-friendly teas taste bitter, grassy, or medicinal. We designed Recipe A to prioritize a real chai experience:
+                                    </p>
+                                    <ul className="space-y-3 text-xs font-bold text-black/80">
+                                        <li className="flex items-start gap-2">
+                                            <span className="material-symbols-outlined text-[#0b3a24] text-base shrink-0">check_circle</span>
+                                            <span>Authentic Body: 80% Premium Assam CTC preserves the strong, comforting malty chai flavor.</span>
+                                        </li>
+                                        <li className="flex items-start gap-2">
+                                            <span className="material-symbols-outlined text-[#0b3a24] text-base shrink-0">check_circle</span>
+                                            <span>Sweetness Synergy: 2% Stevia and 1% Licorice provide a smooth, sugar-like sweetness with zero metallic aftertaste.</span>
+                                        </li>
+                                        <li className="flex items-start gap-2">
+                                            <span className="material-symbols-outlined text-[#0b3a24] text-base shrink-0">check_circle</span>
+                                            <span>Muted Bitterness: Fenugreek is kept at exactly 2.5% to yield glucose management benefits without spoiling flavor.</span>
+                                        </li>
+                                        <li className="flex items-start gap-2">
+                                            <span className="material-symbols-outlined text-[#0b3a24] text-base shrink-0">check_circle</span>
+                                            <span>Rich Fragrance: 2% Cardamom and 6% Cinnamon provide a warm, aromatic spice finish.</span>
+                                        </li>
+                                    </ul>
+                                </div>
+
+                                <div className="bg-[#0b3a24] text-white p-6 rounded-2xl shadow-lg relative overflow-hidden">
+                                    <h4 className="font-headline font-black text-sm text-[#fdbd30] uppercase tracking-wider mb-2">Read The Formulation Papers</h4>
+                                    <p className="text-xs text-white/80 leading-relaxed mb-6">
+                                        Explore our deep dives on clinical trials for cinnamon, fenugreek, and the safety profiles of natural sweeteners.
+                                    </p>
+                                    <a href="/blog/science-and-research-behind-sugar-care-tea" className="inline-block bg-[#fdbd30] text-[#0b3a24] font-headline font-black text-xs uppercase tracking-widest px-6 py-3 rounded hover:bg-[#ffcf4d] transition-colors">
+                                        View Science Blogs
+                                    </a>
+                                    <div className="absolute -right-6 -bottom-6 opacity-5 pointer-events-none">
+                                        <span className="material-symbols-outlined text-9xl">menu_book</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
 
                 {/* What Makes It Special Section */}
                 <section className="bg-[#0b3a24] text-white py-24 mb-24 relative overflow-hidden">
